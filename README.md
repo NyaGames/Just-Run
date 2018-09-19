@@ -34,14 +34,14 @@ El juego se basa en los siguientes pilares:
  - **Ampliación:** _Just Run_ es ampliable con la inclusión de nuevos mapas y nuevas trampas, e incluso con diversos personajes con 
  diferentes estadísticas.
 
-		1.3. Género
+	1.3. Género
 _Just Run_ no embarca en un único género, sino que reúne conceptos de varios, a destacar:
 
 - **Plataformas:** la habilidad de escalar, saltar y rodar es principal en _Just Run_, actuando como núcleo de su experiencia jugable.
 
 - **Acción:** la tensión y el sentimiento de urgencia por lograr tu objetivo son las principales sensaciones que se buscan recrear. A parte de lógicamente el conflicto creado por el juego del “Gato y el Ratón”.
 
-		1.4. Propósito y público objetivo
+	1.4. Propósito y público objetivo
 El objetivo de _Just Run_ es ofrecer un entorno de posibilidades dinámico y divertido donde disfrutar de enfrentamientos frenéticos con amigos, familiares, incluso con personas de otros paises. Teniendo en cuenta esto, _Just Run_ se encuentra dirigido a un amplio espectro de jugadores, ya que no es necesario tener muchos conocimientos sobre la industria para disfrutar de él y tampoco poseerá contenidos sensibles.
 
 	1.5. Jugabilidad
