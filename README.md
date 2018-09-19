@@ -5,8 +5,7 @@ Juego de Juegos en Red
 
 Este es el documento de diseño de _Just Run_, un videojuego de PC desarrollado para la asignatura de Juegos en Red con objetivo de crear un producto original y de calidad con lo aprendido en dicha asignatura.
 
-	1.1. Concepto de juego
-
+		1.1. Concepto de juego
 
 Just Run es un videojuego PvP de 1v1 en 2D, de vista lateral; en el cuál cada jugador controla cada uno de los corredores, 
 uno de ellos actúa como perseguidor y el otro tiene el papel de escapista. 
@@ -23,7 +22,7 @@ los roles, el perseguidor se convertirá en escapista y viceversa.
 Al finalizar estas últimas rondas, el jugador con más puntuación obtendrá un punto de victoria. El jugador que obtenga dos puntos
 de victoria ganará la partida.
 
-	1.2. Características principales
+		1.2. Características principales
 
 El juego se basa en los siguientes pilares:
 
@@ -34,19 +33,29 @@ El juego se basa en los siguientes pilares:
  - **Ampliación:** _Just Run_ es ampliable con la inclusión de nuevos mapas y nuevas trampas, e incluso con diversos personajes con 
  diferentes estadísticas.
 
-	1.3. Género
+		1.3. Género
+	
 _Just Run_ no embarca en un único género, sino que reúne conceptos de varios, a destacar:
 
 - **Plataformas:** la habilidad de escalar, saltar y rodar es principal en _Just Run_, actuando como núcleo de su experiencia jugable.
 
 - **Acción:** la tensión y el sentimiento de urgencia por lograr tu objetivo son las principales sensaciones que se buscan recrear. A parte de lógicamente el conflicto creado por el juego del “Gato y el Ratón”.
 
-	1.4. Propósito y público objetivo
+		1.4. Propósito y publico objetivo
+	
 El objetivo de _Just Run_ es ofrecer un entorno de posibilidades dinámico y divertido donde disfrutar de enfrentamientos frenéticos con amigos, familiares, incluso con personas de otros paises. Teniendo en cuenta esto, _Just Run_ se encuentra dirigido a un amplio espectro de jugadores, ya que no es necesario tener muchos conocimientos sobre la industria para disfrutar de él y tampoco poseerá contenidos sensibles.
 
-	1.5. Jugabilidad
+		1.5. Jugabilidad
 
 Cada pantalla de Just Run ofrece una localización diferente en la que saltar y brincar. El perseguidor tiene que alcanzar al escapista en un tiempo limitado, premiando la velocidad. Para ello nos valdremos de los siguientes elementos:
+
+		1.6. Estilo visual
+		
+_Just Run_ tiene un estilo visual sencillo, colores planos y brillantes para los personajes con formas simples y un estilo _Pixel Art_ de colores menos saturados para el fondo. Esta elección de colores ayuda a que los jugadores sepan donde se encuentran en todo momento.
+	
+		1.7. Alcance
+		
+_Just Run_ será facilmente ampliable con nuevo contenido tras lanzar un paquete básico con todas las mecanicas básicas incluidas y probadas.
 
 
 Integrantes:
