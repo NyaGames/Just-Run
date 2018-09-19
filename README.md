@@ -19,7 +19,7 @@ que alcanzar al escapista. El perseguidor dispondrá de 60 segundos por ronda pa
 ya que el escapista tendrá a su disposición diferentes medios y trampas para lograr huir.  
 Al finalizar la ronda, ya sea pasados los 60 segundos o capturado el escapista, se le otorgará al perseguidor una puntuación en 
 función de la velocidad que haya tardado en capturarlo. Al finalizar las rondas, se lo sumará toda la puntuación y se intercambiarán
-los roles, el perseguidor en escapista y viceversa.
+los roles, el perseguidor se convertirá en escapista y viceversa.  
 Al finalizar estas últimas rondas, el jugador con más puntuación obtendrá un punto de victoria. El jugador que obtenga dos puntos
 de victoria ganará la partida.
 
