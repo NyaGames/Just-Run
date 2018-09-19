@@ -18,5 +18,7 @@ Al finalizar estas últimas rondas, el jugador con más puntuación obtendrá un
 de victoria ganará la partida.
 
 Integrantes:
-        - Diego Sánchez Ramírez
-        - Jaime Rodríguez Aguado
+        - Diego Sánchez Ramírez                 d.sanchez.2016@alumnos.urjc.es
+        - Jaime Rodríguez Aguado                j.rodriguezag.2016@alumnos.urjc.es
+        
+https://trello.com/b/rwEZNWxG/just-run
