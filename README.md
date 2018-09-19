@@ -28,7 +28,7 @@ El juego se basa en los siguientes pilares:
 
  - **Velocidad:** el planteamiento principal del juego se centra en que se desarrolle a una velocidad alta, es decir, pantallas cortas con personajes que se mueven rápido, de tal forma que se cree una tensión explosiva y en cierta medida un subidón de adrenalina.
 
- -**Variedad:** el uso de varias pantallas fomenta la inclusión de mecánicas nuevas que mantienen la experiencia de juego fresca y evita el tedio.
+ - **Variedad:** el uso de varias pantallas fomenta la inclusión de mecánicas nuevas que mantienen la experiencia de juego fresca y evita el tedio.
  
  - **Ampliación:** _Just Run_ es ampliable con la inclusión de nuevos mapas y nuevas trampas, e incluso con diversos personajes con 
  diferentes estadísticas.
