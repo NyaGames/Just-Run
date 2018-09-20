@@ -62,6 +62,8 @@ _Just Run_ será facilmente ampliable con nuevo contenido tras lanzar un paquete
 		2.2 Flujo de juego
 		
 		2.3 Sistema de puntuación
+	
+En la primera ronda, los jugadores pasarán por cinco niveles diferentes, cada uno con una temática diferentes, a su vez, con diferentes trampas y peligros. Cada nivel durará 60 segundos, que es el tiempo que tendrá el perseguidor para capturar al escapista. Cuanto más rápido lo capture, mayor puntuación obtendrá. Al principio de cada nivel de juego, el escapista comenzará con una puntuación de 6000 puntos que se irá restando poco a poco a medida que pasan los segundos hasta que llegue a 0 que será pasado los 60 segundos.  Después de los cinco niveles, comenzará la segunda ronda, en la cuál el escapista se convertirá en perseguidor y viceversa. Se jugarán los 5  niveles de nuevo y este segundo conseguirá su propia puntuación. Se realizará la suma de la puntuaciones de los cinco niveles y se obtendrá una puntuación total que se comparará con la suma total de su rival y el jugador que obtenga mayor puntuación obtendrá un punto de victoria; se resetearán las puntuaciones y se volverán a jugar las dos rondas. El primer jugador en obtener dos puntos de victoria, ganará la partida.
 		
 		2.3 Trampas
 		
@@ -73,6 +75,9 @@ _Just Run_ será facilmente ampliable con nuevo contenido tras lanzar un paquete
 		3.1 Diagrama de flujo
 		
 		3.2 Menú principal
+		
+En el menú principal de "Just Run" nos encontraremos varios elementos, entre ellos el título del videojuegos, que estará acompañado por varios botones; el primero de ellos será el botón para Jugar y por otra parte tenemos el botón para salir del juego y volver
+al escritorio. No obstante, en la esquina inferior derecha de la pantalla encontraremos un engranaje que nos llevará al apartado de opciones. Todos estos elementos estarán situados sobre un fondo en el se encontrarán diferentes islas que se corresponden con los diferentes niveles del videojuegos.
 		
 		3.3 Créditos
 		
