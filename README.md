@@ -57,33 +57,14 @@ _Just Run_ tiene un estilo visual sencillo, colores planos y brillantes para los
 _Just Run_ será facilmente ampliable con nuevo contenido tras lanzar un paquete básico con todas las mecanicas básicas incluidas y probadas.
 
 # 2. Mecanicas
+
 		2.1 Jugabilidad
+		
+
 		
 		2.2 Flujo de juego
 		
-		2.3 Sistema de puntuación
-	
-En la primera ronda, los jugadores pasarán por cinco niveles diferentes, cada uno con una temática diferentes, a su vez, con diferentes trampas y peligros. Cada nivel durará 60 segundos, que es el tiempo que tendrá el perseguidor para capturar al escapista. Cuanto más rápido lo capture, mayor puntuación obtendrá. Al principio de cada nivel de juego, el escapista comenzará con una puntuación de 6000 puntos que se irá restando poco a poco a medida que pasan los segundos hasta que llegue a 0 que será pasado los 60 segundos.  
-
-Después de los cinco niveles, comenzará la segunda ronda, en la cuál el escapista se convertirá en perseguidor y viceversa. Se jugarán los 5  niveles de nuevo y este segundo conseguirá su propia puntuación. Se realizará la suma de la puntuaciones de los cinco niveles y se obtendrá una puntuación total que se comparará con la suma total de su rival y el jugador que obtenga mayor puntuación obtendrá un punto de victoria; se resetearán las puntuaciones y se volverán a jugar las dos rondas. El primer jugador en obtener dos puntos de victoria, ganará la partida.
-		
-		2.3 Trampas
-		
-		2.4 Movimiento y físicas
-		
-		2.5 Controles
-		
-# 3. Interfaz
-		3.1 Diagrama de flujo
-		
-		3.2 Menú principal
-		
-En el menú principal de "Just Run" nos encontraremos varios elementos, entre ellos el título del videojuegos, que estará acompañado por varios botones; el primero de ellos será el botón para Jugar y por otra parte tenemos el botón para salir del juego y volver
-al escritorio. No obstante, en la esquina inferior derecha de la pantalla encontraremos un engranaje que nos llevará al apartado de opciones. Todos estos elementos estarán situados sobre un fondo en el se encontrarán diferentes islas que se corresponden con los diferentes niveles del videojuegos.
-		
-		3.3 Créditos
-		
-		3.4 Niveles y rondas
+Al iniciar el juego se abre una pantalla principal donde se pueden acceder a los diversos modos de juego, en este caso local y online, a los créditos de los desarrolladores, las opciones del juego y salir al escritorio.
 		
 Al iniciar una partida, ya sea en multijugador local como online, uno de los dos jugadores será el escapista mientras que el otro será el perseguidor. Cada partida durá hasta que el primer jugador obtenga dos puntos de victoria; para obtener un punto de victoria, se jugarán 2 rondas y cada ronda estará formada de 5 niveles con temáticas y estilos diferentes. Los diferentes niveles vienen dados por las siguiente temáticas:
 
@@ -97,11 +78,58 @@ Al iniciar una partida, ya sea en multijugador local como online, uno de los dos
 
 - **Volcán:** En este entorno en el que se encuentran los jugadores, el cielo estará cubierto de ceniza y polvo,¡el volcán va a erupcionar!, los jugadores deberán tener cuidado con las rocas que caen del cielo pero sin olvidar donde pisan.
 		
+		2.3 Sistema de puntuación
+	
+En la primera ronda, los jugadores pasarán por cinco niveles diferentes, cada uno con una temática diferentes, a su vez, con diferentes trampas y peligros. Cada nivel durará 60 segundos, que es el tiempo que tendrá el perseguidor para capturar al escapista. Cuanto más rápido lo capture, mayor puntuación obtendrá. Al principio de cada nivel de juego, el escapista comenzará con una puntuación de 6000 puntos que se irá restando poco a poco a medida que pasan los segundos hasta que llegue a 0 que será pasado los 60 segundos.  
+
+Después de los cinco niveles, comenzará la segunda ronda, en la cuál el escapista se convertirá en perseguidor y viceversa. Se jugarán los 5  niveles de nuevo y este segundo conseguirá su propia puntuación. Se realizará la suma de la puntuaciones de los cinco niveles y se obtendrá una puntuación total que se comparará con la suma total de su rival y el jugador que obtenga mayor puntuación obtendrá un punto de victoria; se resetearán las puntuaciones y se volverán a jugar las dos rondas. El primer jugador en obtener dos puntos de victoria, ganará la partida.
+		
+		2.3 Trampas
+		
+En los diversos niveles de juego se introducen diversas trampas que el escapista podrá activar a su gusto con el objetivo de dificultar el trabajo de su perseguidor. 
+
+- **Trampas rodantes:** El escapista podrá activar un objeto o personaje que recorrerá el nivel de punta a punta en horizontal a ras de suelo, de tal forma que el perseguidor tenga que saltar por encima de la trampa. Ejemplo: un bola de nieve o un caballero que carga.
+
+- **Proyectiles laterales:** Al activarla objetos pequeños apareceran a varias alturas en momentos alternativos de tal forma que el perseguidor tenga que esquivarlos. Ejemplo: balas de un vaquero o flechas.
+
+- **Objetos en caida vertical:** Diversos objetos caen de la parte superior del mapa entorpeciendo el movimiento del perseguidor. Ejemplo: meteoritos que caen o anclas que lanza un barco.
+
+- **Trampas colgantes:** Objetos que atrapan al perseguidor impidiendo su movimiento durante un tiempo limitado. Ejemplo: Remolino de agua.
+
+- **Terreno abrupto:** En algunos mapas, el suelo se abre o aparece algo que impide el normal movimiento, de tal forma que el perseguidor tiene que saltarlo o esquivarlo. Ejemplo: Arenas modevizas o ruptura en el suelo.
+
+		2.4 Movimiento y físicas
+		
+Al ser un juego de scroll lateral, toda la acción del juego se produce en un solo plano donde tanto objetos como personajes se mueven libremente. En el propio escenario habrá objetos que no se puedan atravesar, otros que se puedan atravesar libremente y otros que producen una variación en el movimiento de los jugadores.
+
+Toda la física del juego se aleja de la realista al no respetar fundamentos básicos como el momento lineal. Sin embargo, si que se producen colisiones entre escenario, personaje y objetos.
+		
+		2.5 Controles
+
+
+		
+# 3. Interfaz
+		3.1 Diagrama de flujo
+		
+		3.2 Menú principal
+		
+En el menú principal de "Just Run" nos encontraremos varios elementos, entre ellos el título del videojuegos, que estará acompañado por varios botones; el primero de ellos será el botón para Jugar y por otra parte tenemos el botón para salir del juego y volver
+al escritorio. No obstante, en la esquina inferior derecha de la pantalla encontraremos un engranaje que nos llevará al apartado de opciones. Todos estos elementos estarán situados sobre un fondo en el se encontrarán diferentes islas que se corresponden con los diferentes niveles del videojuegos.
+		
+		3.3 Créditos
+		
+Tras pulsar en el botón de creditos del menú principal, se llevará a una pantalla nueva donde aparecen los nombres de los desarrolladores y un botón para volver al menú principal.
+		
+		3.4 Niveles y rondas
+
+Dentro de los niveles la interfaz es minima, simplemente habrá representación gráfica para el contador de puntuación. Además de esto, para la pantalla del perseguidor habrá un contador de enfriamiento de la diversas trampas.
+		
 # 4. Arte
 
 _Just Run_ debe tener un arte que fomenté la tensión y la velocidad, además de ayudar al jugador a identificar las cosas que puede utilizar de las que no. Para ello se parte de una paleta de colores brillantes y saturados para los personajes y lo que va a estar en primer plano, y se usa otra paleta más apagada para lo que va a estar al fondo o no va a ser interactuable. Esto tambien ayuda a dar la sensación de profundidad.
 
 		4.1 Arte 2D
+		
 Como ya se ha indicado anteriormente, _Just Run_ es un juego en scroll lateral 2D, lo que significa que todo el apartado visual se encuentra en dos dimensiones. Con este objetivo se utilizaran dos estilos artísticos principalmente el _Pixel Art_ y el estilo vectorial.
 
 El _Pixel Art_ se utilizara principalmente para los fondos y los objetos del escenario con el objetivo de conseguir una mayor cantidad de detalle y de sentar una importante diferencia de estilo con los personajes. Esto ayuda a que los jugadores sepan en todo momento donde estan sus avatares.
@@ -113,6 +141,8 @@ El _Pixel Art_ se utilizara principalmente para los fondos y los objetos del esc
 A parte de esta diferencia de estilo, se usarán dos paletas distintas para personajes y escenarios, una más brillante para los personajes y otra más apagada para los escenarios.
 
 		4.2 Audio
+
+Se usará una música estilo _Chiptune_ para aderezar la experiencia jugable. Toda la música del juego se introducirá en formato _.mp3_ o en _.ogg_, al igual que los efectos de sonido necesarios. Entre estos elementos de audio destacan las músicas de cada pantalla, o los efectos de sonido de caida, de corte, etc.
 
 Integrantes:
         - Diego Sánchez Ramírez                 d.sanchezr.2016@alumnos.urjc.es
