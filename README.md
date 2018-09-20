@@ -84,7 +84,11 @@ al escritorio. No obstante, en la esquina inferior derecha de la pantalla encont
 		3.4 Niveles y rondas
 		
 # 4. Arte
+
+_Just Run_ debe tener un arte que fomenté la tensión y la velocidad, además de ayudar al jugador a identificar las cosas que puede utilizar de las que no. Para ello se parte de una paleta de colores brillantes y saturados para los personajes y lo que va a estar en primer plano, y se usa otra paleta más apagada para lo que va a estar al fondo o no va a ser interactuable. Esto tambien ayuda a dar la sensación de profundidad.
+
 		4.1 Arte 2D
+Como ya se ha indicado anteriormente, _Just Run_ es un juego en scroll lateral 2D, lo que significa que todo el apartado visual se encuentra en dos dimensiones.
 		
 <p align="center">
   <img src="https://github.com/NyaGames/Just-Run/blob/master/fondo%201.png">
