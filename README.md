@@ -86,7 +86,9 @@ al escritorio. No obstante, en la esquina inferior derecha de la pantalla encont
 # 4. Arte
 		4.1 Arte 2D
 		
-https://github.com/NyaGames/Just-Run/blob/master/fondo%201.png		
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/fondo%201.png">
+</p>	
 
 		4.2 Audio
 
