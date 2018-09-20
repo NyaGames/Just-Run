@@ -56,6 +56,32 @@ _Just Run_ tiene un estilo visual sencillo, colores planos y brillantes para los
 		
 _Just Run_ será facilmente ampliable con nuevo contenido tras lanzar un paquete básico con todas las mecanicas básicas incluidas y probadas.
 
+# 2. Mecanicas
+		2.1 Jugabilidad
+		
+		2.2 Flujo de juego
+		
+		2.3 Sistema de puntuación
+		
+		2.3 Trampas
+		
+		2.4 Movimiento y físicas
+		
+		2.5 Controles
+		
+# 3. Interfaz
+		3.1 Diagrama de flujo
+		
+		3.2 Menú principal
+		
+		3.3 Créditos
+		
+		3.4 Niveles y rondas
+		
+# 4. Arte
+		4.1 Arte 2D
+		
+		4.2 Audio
 
 Integrantes:
         - Diego Sánchez Ramírez                 d.sanchezr.2016@alumnos.urjc.es
