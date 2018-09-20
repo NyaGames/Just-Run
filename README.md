@@ -63,7 +63,9 @@ _Just Run_ será facilmente ampliable con nuevo contenido tras lanzar un paquete
 		
 		2.3 Sistema de puntuación
 	
-En la primera ronda, los jugadores pasarán por cinco niveles diferentes, cada uno con una temática diferentes, a su vez, con diferentes trampas y peligros. Cada nivel durará 60 segundos, que es el tiempo que tendrá el perseguidor para capturar al escapista. Cuanto más rápido lo capture, mayor puntuación obtendrá. Al principio de cada nivel de juego, el escapista comenzará con una puntuación de 6000 puntos que se irá restando poco a poco a medida que pasan los segundos hasta que llegue a 0 que será pasado los 60 segundos.  Después de los cinco niveles, comenzará la segunda ronda, en la cuál el escapista se convertirá en perseguidor y viceversa. Se jugarán los 5  niveles de nuevo y este segundo conseguirá su propia puntuación. Se realizará la suma de la puntuaciones de los cinco niveles y se obtendrá una puntuación total que se comparará con la suma total de su rival y el jugador que obtenga mayor puntuación obtendrá un punto de victoria; se resetearán las puntuaciones y se volverán a jugar las dos rondas. El primer jugador en obtener dos puntos de victoria, ganará la partida.
+En la primera ronda, los jugadores pasarán por cinco niveles diferentes, cada uno con una temática diferentes, a su vez, con diferentes trampas y peligros. Cada nivel durará 60 segundos, que es el tiempo que tendrá el perseguidor para capturar al escapista. Cuanto más rápido lo capture, mayor puntuación obtendrá. Al principio de cada nivel de juego, el escapista comenzará con una puntuación de 6000 puntos que se irá restando poco a poco a medida que pasan los segundos hasta que llegue a 0 que será pasado los 60 segundos.  
+
+Después de los cinco niveles, comenzará la segunda ronda, en la cuál el escapista se convertirá en perseguidor y viceversa. Se jugarán los 5  niveles de nuevo y este segundo conseguirá su propia puntuación. Se realizará la suma de la puntuaciones de los cinco niveles y se obtendrá una puntuación total que se comparará con la suma total de su rival y el jugador que obtenga mayor puntuación obtendrá un punto de victoria; se resetearán las puntuaciones y se volverán a jugar las dos rondas. El primer jugador en obtener dos puntos de victoria, ganará la partida.
 		
 		2.3 Trampas
 		
@@ -83,16 +85,32 @@ al escritorio. No obstante, en la esquina inferior derecha de la pantalla encont
 		
 		3.4 Niveles y rondas
 		
+Al iniciar una partida, ya sea en multijugador local como online, uno de los dos jugadores será el escapista mientras que el otro será el perseguidor. Cada partida durá hasta que el primer jugador obtenga dos puntos de victoria; para obtener un punto de victoria, se jugarán 2 rondas y cada ronda estará formada de 5 niveles con temáticas y estilos diferentes. Los diferentes niveles vienen dados por las siguiente temáticas:
+
+- **Nieve**: Los jugadores se encontrarán en un lugar donde predomina el frio y las bajas temperaturas, lo que permite el hábitat de fauna típica de este clima como los pingüinos. Esté nivel permitirá el uso de trampas como el lanzamiento de bolas de nieve o utilizar las aguas heladas para realentizar al enemigo. ¡Cuidado con las avalanchas!
+
+- **Castillo**: Los jugadores en este nivel se encontrarán en el interior de un castillo, lo que facilitará el uso de trampas punzantes y afiladas, pero no todo son trampas si no que también se celebran justas medievales.¡Aguanta el portón!
+
+- **Mar**: Los jugadores se encuentrán bajo el agua y pelearán conjuntamente con diferentes tipos de peces, en este hábitat donde viven los corales encontraremos numerosos peligros y trampas.¡No mordais el anzuelo!
+
+- **Desierto**: Nos encontramos en el desierto del lejado oeste, donde el paisaje es árido y las únicas vistas de las que dispondremos serán arena, puntiagudos cactus y plantas rodantes.¡A lo mejor os encontrais con algún vaquero famoso!
+
+- **Volcán:** En este entorno en el que se encuentran los jugadores, el cielo estará cubierto de ceniza y polvo,¡el volcán va a erupcionar!, los jugadores deberán tener cuidado con las rocas que caen del cielo pero sin olvidar donde pisan.
+		
 # 4. Arte
 
 _Just Run_ debe tener un arte que fomenté la tensión y la velocidad, además de ayudar al jugador a identificar las cosas que puede utilizar de las que no. Para ello se parte de una paleta de colores brillantes y saturados para los personajes y lo que va a estar en primer plano, y se usa otra paleta más apagada para lo que va a estar al fondo o no va a ser interactuable. Esto tambien ayuda a dar la sensación de profundidad.
 
 		4.1 Arte 2D
-Como ya se ha indicado anteriormente, _Just Run_ es un juego en scroll lateral 2D, lo que significa que todo el apartado visual se encuentra en dos dimensiones.
+Como ya se ha indicado anteriormente, _Just Run_ es un juego en scroll lateral 2D, lo que significa que todo el apartado visual se encuentra en dos dimensiones. Con este objetivo se utilizaran dos estilos artísticos principalmente el _Pixel Art_ y el estilo vectorial.
+
+El _Pixel Art_ se utilizara principalmente para los fondos y los objetos del escenario con el objetivo de conseguir una mayor cantidad de detalle y de sentar una importante diferencia de estilo con los personajes. Esto ayuda a que los jugadores sepan en todo momento donde estan sus avatares.
 		
 <p align="center">
   <img src="https://github.com/NyaGames/Just-Run/blob/master/fondo%201.png">
 </p>	
+
+A parte de esta diferencia de estilo, se usarán dos paletas distintas para personajes y escenarios, una más brillante para los personajes y otra más apagada para los escenarios.
 
 		4.2 Audio
 
