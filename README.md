@@ -112,7 +112,7 @@ Toda la física del juego se aleja de la realista al no respetar fundamentos bá
 		3.1 Diagrama de flujo
 		
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%2de%2Flujo.jpg">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%20de%20Flujo.jpg">
 </p>	
 		
 		
