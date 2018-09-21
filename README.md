@@ -110,12 +110,14 @@ Toda la física del juego se aleja de la realista al no respetar fundamentos bá
 		
 # 3. Interfaz
 		3.1 Diagrama de flujo
+				
 		
 <p align="center">
   <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%20de%20Flujo.jpg">
 </p>	
 		
-		
+_Diagrama de Flujo del Menú Principal_
+
 		3.2 Menú principal
 		
 En el menú principal de "Just Run" nos encontraremos varios elementos, entre ellos el título del videojuegos, que estará acompañado por varios botones; el primero de ellos será el botón para Jugar y por otra parte tenemos el botón para salir del juego y volver
