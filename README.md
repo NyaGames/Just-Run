@@ -111,8 +111,19 @@ Toda la física del juego se aleja de la realista al no respetar fundamentos bá
 		
 		2.5 Controles
 
-
-		
+Para moverme por los menús, tanto en el menú principal como en el menú de pausa, se utilizará el ratón y se utilizará el click izquierdo del ratón para seleccionar los botones entre las diferentes posibilidades.  
+  
+Dentro de la partida los controles serán:
+1. Jugador 1:  
+- *A y D*, para moverse a la **izquierda** y **derecha** respectivamente.
+- *W/Barra Espaciadora*, para **saltar**.
+- *S/Shift*, para **rodar**.
+  
+2. Jugador 2:  
+- *Flecha izquierda/derecha*, para moverse a la **izquierda** y **derecha**.
+- *Flecha hacia arriba*, para **saltar**.
+- *Flecha hacia abajo/Ctrl Derecho*, para **rodar**.
+  
 # 3. Interfaz
 		3.1 Diagrama de flujo
 				
