@@ -44,15 +44,11 @@ _Just Run_ no embarca en un único género, sino que reúne conceptos de varios,
 	
 El objetivo de _Just Run_ es ofrecer un entorno de posibilidades dinámico y divertido donde disfrutar de enfrentamientos frenéticos con amigos, familiares, incluso con personas de otros paises. Teniendo en cuenta esto, _Just Run_ se encuentra dirigido a un amplio espectro de jugadores, ya que no es necesario tener muchos conocimientos sobre la industria para disfrutar de él y tampoco poseerá contenidos sensibles.
 
-		1.5. Jugabilidad
-
-Cada pantalla de Just Run ofrece una localización diferente en la que saltar y brincar. El perseguidor tiene que alcanzar al escapista en un tiempo limitado, premiando la velocidad. Para ello nos valdremos de los siguientes elementos:
-
-		1.6. Estilo visual
+		1.5. Estilo visual
 		
 _Just Run_ tiene un estilo visual sencillo, colores planos y brillantes para los personajes con formas simples y un estilo _Pixel Art_ de colores menos saturados para el fondo. Esta elección de colores ayuda a que los jugadores sepan donde se encuentran en todo momento.
 	
-		1.7. Alcance
+		1.6. Alcance
 		
 _Just Run_ será facilmente ampliable con nuevo contenido tras lanzar un paquete básico con todas las mecanicas básicas incluidas y probadas.
 
@@ -60,7 +56,16 @@ _Just Run_ será facilmente ampliable con nuevo contenido tras lanzar un paquete
 
 		2.1 Jugabilidad
 		
+Cada pantalla de Just Run ofrece una localización diferente en la que saltar y brincar. El perseguidor tiene que alcanzar al escapista en un tiempo limitado, premiando la velocidad. Para ello nos valdremos de los siguientes elementos:
 
+Para mejorar la jugabilidad en el escenario, encontraremos diversos elementos repartidos por los diferentes niveles,
+que variarán en función del nivel en el que nos encontremos.  
+Los niveles estarán formados por varios pisos de plataformas en los cuales ambos jugadores pueden saltar, también 
+encontraremos otros elementos donde los jugadores tendrás que pasar rodando por debajo, además para facilitar el trabajo
+del escapista, habrá bloques y lugares en el escenario que el perseguidor no podrá atravesar.  
+Hay elementos que ayudan a la fluidez del movimiento por el escenario, haciendo el juego mas dinámico y 
+frenético; algunos de esos elementos son ráfagas de aire o un flujo de burbujas que lanzarán a los jugadores al aire
+permitiendolos alcanzar las plataformas más altas para facilitar tanto el escape como la captura al escapista.
 		
 		2.2 Flujo de juego
 		
