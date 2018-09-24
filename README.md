@@ -160,11 +160,19 @@ Todos los submenús tienen un botón que nos permite acceder de nuevo al menú p
 </p>
 	
 _Interfaz Menú Principal_
+  
+En cualquier momento de la partida, se podrá pulsar el botón "escape" del teclado con el que se abrirá el menú de pausa en el que encontraremos tres botones:
+- **Reanudar**: Se vuelve a la partida con normalidad.
 
+- **Opciones**: Nos permite acceder a las opciones de video y audio del juego para modificar volumenes y demás parámetros.
+
+- **Salir**: Volvemos al menú principal, abandonando la partida actual.
+  
 <p align="center">
   <img src="https://github.com/NyaGames/Just-Run/blob/master/PausaAmpliado.jpg">
 </p>
-_Interfaz del Menú de Pausa_  
+_Interfaz del Menú de Pausa_
+  
 
 		3.3 Créditos
 		
