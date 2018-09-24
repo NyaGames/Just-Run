@@ -89,7 +89,7 @@ En la primera ronda, los jugadores pasarán por cinco niveles diferentes, cada u
 
 Después de los cinco niveles, comenzará la segunda ronda, en la cuál el escapista se convertirá en perseguidor y viceversa. Se jugarán los 5  niveles de nuevo y este segundo conseguirá su propia puntuación. Se realizará la suma de la puntuaciones de los cinco niveles y se obtendrá una puntuación total que se comparará con la suma total de su rival y el jugador que obtenga mayor puntuación obtendrá un punto de victoria; se resetearán las puntuaciones y se volverán a jugar las dos rondas. El primer jugador en obtener dos puntos de victoria, ganará la partida.
 		
-		2.3 Trampas
+		2.4 Trampas
 		
 En los diversos niveles de juego se introducen diversas trampas que el escapista podrá activar a su gusto con el objetivo de dificultar el trabajo de su perseguidor. 
 
@@ -103,13 +103,13 @@ En los diversos niveles de juego se introducen diversas trampas que el escapista
 
 - **Terreno abrupto:** En algunos mapas, el suelo se abre o aparece algo que impide el normal movimiento, de tal forma que el perseguidor tiene que saltarlo o esquivarlo. Ejemplo: Arenas modevizas o ruptura en el suelo.
 
-		2.4 Movimiento y físicas
+		2.5 Movimiento y físicas
 		
 Al ser un juego de scroll lateral, toda la acción del juego se produce en un solo plano donde tanto objetos como personajes se mueven libremente. En el propio escenario habrá objetos que no se puedan atravesar, otros que se puedan atravesar libremente y otros que producen una variación en el movimiento de los jugadores.
 
 Toda la física del juego se aleja de la realista al no respetar fundamentos básicos como el momento lineal. Sin embargo, si que se producen colisiones entre escenario, personaje y objetos.
 		
-		2.5 Controles
+		2.6 Controles
 
 Para moverme por los menús, tanto en el menú principal como en el menú de pausa, se utilizará el ratón y se utilizará el click izquierdo del ratón para seleccionar los botones entre las diferentes posibilidades.  
   
@@ -136,8 +136,17 @@ _Diagrama de Flujo_
 
 		3.2 Menú principal
 		
-En el menú principal de "Just Run" nos encontraremos varios elementos, entre ellos el título del videojuegos, que estará acompañado por varios botones; el primero de ellos será el botón para Jugar y por otra parte tenemos el botón para salir del juego y volver
-al escritorio. No obstante, en la esquina inferior derecha de la pantalla encontraremos un engranaje que nos llevará al apartado de opciones. Todos estos elementos estarán situados sobre un fondo en el se encontrarán diferentes islas que se corresponden con los diferentes niveles del videojuegos.
+En el menú principal de "Just Run" nos encontraremos varios elementos, entre ellos el título del videojuegos, que estará acompañado por varios botones; los cuales nos permiten acceder a los distintos submenús, y a los diversos modos de juego.
+
+- **Jugar**: El botón jugar nos permite acceder a un submenú, él cual nos permite acceder a dos modos de juego distintos. "Con Amigos" nos permite crear una partida con nombre y contraseña, a la cual se podrá unir cualquier persona que conozca esta última."Online" nos permitirá empezar una partida con una persona desconocida de habilidad similar de cara a que el encuentro sea lo más interesante y excitante posible. Esto se consigue con un sistema de _Matchmaking_ que juntara a los jugadores por parejas en función de un valor numérico que estima su habilidad en el juego. Este valor numérico se verá modificado en función de las partidas ganadas y perdidas.
+
+- **Opciones**: Nos permite acceder a las opciones de video y audio del juego para modificar volumenes y demás parámetros.
+
+- **Créditos**: Abre un submenú donde aparecen los responsables de los distintos elementos del juego, gráficos, sonido, diseño etc.
+
+-**Salir**: Cierra la pestaña del navegador.
+
+Todos los submenús tienen un botón que nos permite acceder de nuevo al menú principal.
 		
 <p align="center">
   <img src="https://github.com/NyaGames/Just-Run/blob/master/interfaz%20prueba.jpg">
