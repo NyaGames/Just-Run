@@ -132,13 +132,18 @@ Dentro de la partida los controles serán:
   <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%20de%20Flujo.jpg">
 </p>	
 		
-_Diagrama de Flujo del Menú Principal_
+_Diagrama de Flujo_
 
 		3.2 Menú principal
 		
 En el menú principal de "Just Run" nos encontraremos varios elementos, entre ellos el título del videojuegos, que estará acompañado por varios botones; el primero de ellos será el botón para Jugar y por otra parte tenemos el botón para salir del juego y volver
 al escritorio. No obstante, en la esquina inferior derecha de la pantalla encontraremos un engranaje que nos llevará al apartado de opciones. Todos estos elementos estarán situados sobre un fondo en el se encontrarán diferentes islas que se corresponden con los diferentes niveles del videojuegos.
 		
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%20de%20Flujo.jpg">
+</p>
+	
+_Intezfaz Menú Principal_
 		3.3 Créditos
 		
 Tras pulsar en el botón de creditos del menú principal, se llevará a una pantalla nueva donde aparecen los nombres de los desarrolladores y un botón para volver al menú principal.
