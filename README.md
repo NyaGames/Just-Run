@@ -129,7 +129,7 @@ Dentro de la partida los controles serán:
 				
 		
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%20de%20Flujo.jpg">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/diagrama%20flujo.jpeg">
 </p>	
 		
 _Diagrama de Flujo_
