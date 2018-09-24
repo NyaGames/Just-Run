@@ -144,7 +144,7 @@ En el menú principal de "Just Run" nos encontraremos varios elementos, entre el
 
 - **Créditos**: Abre un submenú donde aparecen los responsables de los distintos elementos del juego, gráficos, sonido, diseño etc.
 
--**Salir**: Cierra la pestaña del navegador.
+- **Salir**: Cierra la pestaña del navegador.
 
 Todos los submenús tienen un botón que nos permite acceder de nuevo al menú principal.
 		
