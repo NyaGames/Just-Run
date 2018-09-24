@@ -140,10 +140,11 @@ En el menú principal de "Just Run" nos encontraremos varios elementos, entre el
 al escritorio. No obstante, en la esquina inferior derecha de la pantalla encontraremos un engranaje que nos llevará al apartado de opciones. Todos estos elementos estarán situados sobre un fondo en el se encontrarán diferentes islas que se corresponden con los diferentes niveles del videojuegos.
 		
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%20de%20Flujo.jpg">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/interfaz%20prueba.jpg">
 </p>
 	
 _Intezfaz Menú Principal_
+
 		3.3 Créditos
 		
 Tras pulsar en el botón de creditos del menú principal, se llevará a una pantalla nueva donde aparecen los nombres de los desarrolladores y un botón para volver al menú principal.
