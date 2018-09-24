@@ -132,8 +132,14 @@ Dentro de la partida los controles serán:
   <img src="https://github.com/NyaGames/Just-Run/blob/master/diagrama%20flujo.jpeg">
 </p>	
 		
-_Diagrama de Flujo del Menu Principal_
-
+_Diagrama de Flujo del Menú Principal_
+  
+  <p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%20de%20Flujo2.jpg">
+</p>	
+		
+_Diagrama de Flujo del Menú de Pausa_
+  
 
 		3.2 Menú principal
 		
