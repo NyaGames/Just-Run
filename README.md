@@ -134,6 +134,7 @@ Dentro de la partida los controles serán:
 		
 _Diagrama de Flujo del Menu Principal_
 
+
 		3.2 Menú principal
 		
 En el menú principal de "Just Run" nos encontraremos varios elementos, entre ellos el título del videojuegos, que estará acompañado por varios botones; los cuales nos permiten acceder a los distintos submenús, y a los diversos modos de juego.
@@ -152,7 +153,12 @@ Todos los submenús tienen un botón que nos permite acceder de nuevo al menú p
   <img src="https://github.com/NyaGames/Just-Run/blob/master/interfaz%20prueba.jpg">
 </p>
 	
-_Intezfaz Menú Principal_
+_Interfaz Menú Principal_
+
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/PausaAmpliado.jpg">
+</p>
+_Interfaz del Menú de Pausa_  
 
 		3.3 Créditos
 		
