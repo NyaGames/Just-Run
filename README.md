@@ -202,6 +202,8 @@ A parte de esta diferencia de estilo, se usarán dos paletas distintas para pers
 
 Se usará una música estilo _Chiptune_ para aderezar la experiencia jugable. Toda la música del juego se introducirá en formato _.mp3_ o en _.ogg_, al igual que los efectos de sonido necesarios. Entre estos elementos de audio destacan las músicas de cada pantalla, o los efectos de sonido de caida, de corte, etc.
 
+https://soundcloud.com/jusi-production/pantalla-inicio/s-gVslQ
+
 Integrantes:  
         - Diego Sánchez Ramírez                 d.sanchezr.2016@alumnos.urjc.es  
         - Jaime Rodríguez Aguado                j.rodriguezag.2016@alumnos.urjc.es
