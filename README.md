@@ -52,7 +52,7 @@ _Just Run_ tiene un estilo visual sencillo, colores planos y brillantes para los
 		
 _Just Run_ será facilmente ampliable con nuevo contenido tras lanzar un paquete básico con todas las mecanicas básicas incluidas y probadas.
 
-# 2. Mecanicas
+# 2. Mecánicas
 
 		2.1 Jugabilidad
 		
