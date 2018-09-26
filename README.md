@@ -81,11 +81,27 @@ Al iniciar una partida, ya sea en multijugador local como online, uno de los dos
 
 - **Castillo**: Los jugadores en este nivel se encontrarán en el interior de un castillo, lo que facilitará el uso de trampas punzantes y afiladas, pero no todo son trampas si no que también se celebran justas medievales.¡Aguanta el portón!
 
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/castillo.jpeg">
+</p>
+
 - **Mar**: Los jugadores se encuentrán bajo el agua y pelearán conjuntamente con diferentes tipos de peces, en este hábitat donde viven los corales encontraremos numerosos peligros y trampas.¡No mordais el anzuelo!
+
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/mar.jpeg">
+</p>
 
 - **Desierto**: Nos encontramos en el desierto del lejado oeste, donde el paisaje es árido y las únicas vistas de las que dispondremos serán arena, puntiagudos cactus y plantas rodantes.¡A lo mejor os encontrais con algún vaquero famoso!
 
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/desierto.jpeg">
+</p>
+
 - **Volcán:** En este entorno en el que se encuentran los jugadores, el cielo estará cubierto de ceniza y polvo,¡el volcán va a erupcionar!, los jugadores deberán tener cuidado con las rocas que caen del cielo pero sin olvidar donde pisan.
+
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/volcan.jpeg">
+</p>
 		
 		2.3 Sistema de puntuación
 	
