@@ -193,7 +193,7 @@ Como ya se ha indicado anteriormente, _Just Run_ es un juego en scroll lateral 2
 El _Pixel Art_ se utilizara principalmente para los fondos y los objetos del escenario con el objetivo de conseguir una mayor cantidad de detalle y de sentar una importante diferencia de estilo con los personajes. Esto ayuda a que los jugadores sepan en todo momento donde estan sus avatares.
 		
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/pantalla%20de%20carga.jpeg">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/fondo%201.png">
 </p>	
 
 A parte de esta diferencia de estilo, se usarán dos paletas distintas para personajes y escenarios, una más brillante para los personajes y otra más apagada para los escenarios.
