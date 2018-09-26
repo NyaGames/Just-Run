@@ -137,6 +137,8 @@ Dentro de la partida los controles serán:
 </p>	
 		
 _Diagrama de Flujo del Menú Principal_
+
+El juego se divide en una serie de escenas, empeznado por la pantalla principal, donde seleccionar en el menú que quiere hacer a continuación, procediendo a una pantalla de escena para la siguiente escena, y así sucesivamente.
   
   <p align="center">
   <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Diagrama%20de%20Flujo2.jpg">
