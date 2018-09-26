@@ -151,6 +151,12 @@ En el menú principal de "Just Run" nos encontraremos varios elementos, entre el
 
 - **Jugar**: El botón jugar nos permite acceder a un submenú, él cual nos permite acceder a dos modos de juego distintos. "Con Amigos" nos permite crear una partida con nombre y contraseña, a la cual se podrá unir cualquier persona que conozca esta última."Online" nos permitirá empezar una partida con una persona desconocida de habilidad similar de cara a que el encuentro sea lo más interesante y excitante posible. Esto se consigue con un sistema de _Matchmaking_ que juntara a los jugadores por parejas en función de un valor numérico que estima su habilidad en el juego. Este valor numérico se verá modificado en función de las partidas ganadas y perdidas.
 
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/pantalla%20de%20carga.jpeg">
+</p>
+
+_Pantalla de carga de búsqueda de partida_
+
 - **Opciones**: Nos permite acceder a las opciones de video y audio del juego para modificar volumenes y demás parámetros.
 
 - **Créditos**: Abre un submenú donde aparecen los responsables de los distintos elementos del juego, gráficos, sonido, diseño etc.
