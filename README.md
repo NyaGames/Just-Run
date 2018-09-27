@@ -18,8 +18,7 @@ ya que el escapista tendrá a su disposición diferentes medios y trampas para l
 Al finalizar la ronda, ya sea pasados los 60 segundos o capturado el escapista, se le otorgará al perseguidor una puntuación en 
 función de la velocidad que haya tardado en capturarlo. Al finalizar las rondas, se lo sumará toda la puntuación y se intercambiarán
 los roles, el perseguidor se convertirá en escapista y viceversa.  
-Al finalizar estas últimas rondas, el jugador con más puntuación obtendrá un punto de victoria. El jugador que obtenga dos puntos
-de victoria ganará la partida.
+Al finalizar estas últimas rondas, el jugador con más puntuación ganará la partida.  
 
 		1.2. Características principales
 
@@ -71,7 +70,7 @@ permitiendolos alcanzar las plataformas más altas para facilitar tanto el escap
 		
 Al iniciar el juego se abre una pantalla principal donde se pueden acceder a los diversos modos de juego, en este caso local y online, a los créditos de los desarrolladores, las opciones del juego y salir al escritorio.
 		
-Al iniciar una partida, ya sea en multijugador local como online, uno de los dos jugadores será el escapista mientras que el otro será el perseguidor. Cada partida durá hasta que el primer jugador obtenga dos puntos de victoria; para obtener un punto de victoria, se jugarán 2 rondas y cada ronda estará formada de 5 niveles con temáticas y estilos diferentes. Los diferentes niveles vienen dados por las siguiente temáticas:
+Al iniciar una partida, ya sea en multijugador local como online, uno de los dos jugadores será el escapista mientras que el otro será el perseguidor. Se jugarán 2 rondas y cada ronda estará formada de 5 niveles con temáticas y estilos diferentes. Los diferentes niveles vienen dados por las siguiente temáticas:
 
 - **Nieve**: Los jugadores se encontrarán en un lugar donde predomina el frio y las bajas temperaturas, lo que permite el hábitat de fauna típica de este clima como los pingüinos. Esté nivel permitirá el uso de trampas como el lanzamiento de bolas de nieve o utilizar las aguas heladas para realentizar al enemigo. ¡Cuidado con las avalanchas!
 
@@ -107,7 +106,7 @@ Al iniciar una partida, ya sea en multijugador local como online, uno de los dos
 	
 En la primera ronda, los jugadores pasarán por cinco niveles diferentes, cada uno con una temática diferentes, a su vez, con diferentes trampas y peligros. Cada nivel durará 60 segundos, que es el tiempo que tendrá el perseguidor para capturar al escapista. Cuanto más rápido lo capture, mayor puntuación obtendrá. Al principio de cada nivel de juego, el escapista comenzará con una puntuación de 6000 puntos que se irá restando poco a poco a medida que pasan los segundos hasta que llegue a 0 que será pasado los 60 segundos.  
 
-Después de los cinco niveles, comenzará la segunda ronda, en la cuál el escapista se convertirá en perseguidor y viceversa. Se jugarán los 5  niveles de nuevo y este segundo conseguirá su propia puntuación. Se realizará la suma de la puntuaciones de los cinco niveles y se obtendrá una puntuación total que se comparará con la suma total de su rival y el jugador que obtenga mayor puntuación obtendrá un punto de victoria; se resetearán las puntuaciones y se volverán a jugar las dos rondas. El primer jugador en obtener dos puntos de victoria, ganará la partida.
+Después de los cinco niveles, comenzará la segunda ronda, en la cuál el escapista se convertirá en perseguidor y viceversa. Se jugarán los 5  niveles de nuevo y este segundo conseguirá su propia puntuación. Se realizará la suma de la puntuaciones de los cinco niveles y se obtendrá una puntuación total que se comparará con la suma total de su rival y el jugador que obtenga mayor puntuación ganará la partida.
 		
 		2.4 Trampas
 		
