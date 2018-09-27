@@ -208,7 +208,13 @@ Tras pulsar en el botón de creditos del menú principal, se llevará a una pant
 		
 		3.4 Niveles y rondas
 
-Dentro de los niveles la interfaz es minima, simplemente habrá representación gráfica para el contador de puntuación. Además de esto, para la pantalla del perseguidor habrá un contador de enfriamiento de la diversas trampas.
+Dentro de los niveles la interfaz es minima, simplemente habrá representación gráfica para el contador de puntuación. Además de esto, para la pantalla del perseguidor habrá un contador de enfriamiento de la diversas trampas.  
+
+Una partida de _Just Run_ se desarrollará de la siguiente manera: 
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Escenas.png">
+</p>
+_Escenas y rondas_
 		
 # 4. Arte
 
