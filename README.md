@@ -231,7 +231,13 @@ El _Pixel Art_ se utilizara principalmente para los fondos y los objetos del esc
 
 A parte de esta diferencia de estilo, se usarán dos paletas distintas para personajes y escenarios, una más brillante para los personajes y otra más apagada para los escenarios.
 
-		4.2 Audio
+		4.2 Animaciones
+		
+Se ha implementado diferentes animaciones para dar fluidez a los personajes; algunas de las animaciones de los personajes son, animación de correr, animación de saltar, animación de doble salto y animación para el _dash_. 
+También se ha implementado una animación que te utilizará en la pantalla de carga y en la pantalla de búsqueda de _matchmaking_ para que el jugador sepa que el juego está cargando y no se ha quedado bloqueado.
+
+
+		4.3 Audio
 
 Se usará una música estilo _Chiptune_ para aderezar la experiencia jugable. Toda la música del juego se introducirá en formato _.mp3_ o en _.ogg_, al igual que los efectos de sonido necesarios. Entre estos elementos de audio destacan las músicas de cada pantalla, o los efectos de sonido de caida, de corte, etc.
 
