@@ -214,6 +214,7 @@ var playState = function(Just_run){
 	        this.jumping = false;     
 	    }
 	    if (this.jumps > 0 && this.WInputIsActive(5)) {
+	    	this.chaser.animations.play('doblejump');
 	    	if(hitWTrap&&this.activated){
 	    		this.chaser.body.velocity.y = this.salto/2.5;
 	        	this.jumping = true;
@@ -233,6 +234,7 @@ var playState = function(Just_run){
 	        this.jumping1 = false;	       
 	    }
 	    if (this.jumps1 > 0 && this.upInputIsActive(5)) {
+	    		this.escapist.animations.play('doblejump');
 	    		this.escapist.body.velocity.y = this.salto;
 	        	this.jumping1 = true;    
 	    }
@@ -244,7 +246,7 @@ var playState = function(Just_run){
 	    	game.state.start('load2');
 	    }
 	    if(this.timeRemaining < 0){
-		    game.state.start('load2');
+		    alert();
 		}
 	    if (this.spaceInputIsActive()) {
 	    		this.activated = true;
