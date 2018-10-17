@@ -105,6 +105,9 @@ var playState = function(Just_run){
 		 
 		    //Time remaining in seconds
 		    var timeRemaining = totalTime - timeElapsed;
+		    if(timeRemaining < 1){
+				game.state.start('load2');
+		    }
 		 
 		    //Convert seconds into minutes and seconds
 		    var minutes = Math.floor(timeRemaining / 60);
@@ -156,9 +159,6 @@ var playState = function(Just_run){
 	    game.physics.arcade.collide(this.escapist, this.wtrap);
 	    game.physics.arcade.collide(this.escapist, this.itrap);
 	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
-
-	    this.chaser.anchor.setTo(0.3,0.5);
-	    this.escapist.anchor.setTo(0.3,0.5);
 
 	    if (this.AInputIsActive()) {
 	    	this.chaser.scale.setTo(-1, 1);
@@ -251,9 +251,6 @@ var playState = function(Just_run){
 	    if(catched){
 	    	game.state.start('load2');
 	    }
-	    if(this.timeRemaining < 0){
-		    alert();
-		}
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;
 	    		this.watertrap();
@@ -273,6 +270,7 @@ var playState = function(Just_run){
 	    }
 
 	};
+
 	//controles con las flechas
 	playState.prototype.leftInputIsActive = function() {
 	    var isActive = false;
