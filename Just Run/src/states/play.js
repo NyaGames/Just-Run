@@ -136,9 +136,9 @@ var playState = function(Just_run){
 	};
 
 	playState.prototype.update = function() {
-	    game.physics.arcade.collide(this.chaser, this.ground);
+	    var onTheGround = game.physics.arcade.collide(this.chaser, this.ground);
 	    game.physics.arcade.collide(this.chaser, this.water);
-	    game.physics.arcade.collide(this.chaser, this.ice);
+	    var onTheLedge = game.physics.arcade.collide(this.chaser, this.ice);
 	    game.physics.arcade.collide(this.chaser, this.bola);
 	    game.physics.arcade.collide(this.chaser, this.chuzo1);
 	    game.physics.arcade.collide(this.chaser, this.chuzo2);
@@ -147,18 +147,16 @@ var playState = function(Just_run){
 	    game.physics.arcade.collide(this.chaser, this.p3);
 	    var hitWTrap = game.physics.arcade.collide(this.chaser, this.wtrap);
 	    var hitITrap = game.physics.arcade.collide(this.chaser, this.itrap);
-	    game.physics.arcade.collide(this.escapist, this.ground);
+	    var onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
 	    game.physics.arcade.collide(this.escapist, this.water);
-	    game.physics.arcade.collide(this.escapist, this.ice);
+	    var onTheLedge1 = game.physics.arcade.collide(this.escapist, this.ice);
 	    game.physics.arcade.collide(this.escapist, this.wtrap);
 	    game.physics.arcade.collide(this.escapist, this.itrap);
 	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
 
-	    var onTheGround = this.escapist.body.touching.down;
-	    var onTheGround1 = this.chaser.body.touching.down;
 	    if (this.AInputIsActive()) {
 	    	this.chaser.scale.setTo(-1, 1);
-	    	if(onTheGround){
+	    	if(onTheGround|| onTheLedge){
 	    		this.chaser.animations.play('run');
 	    	}
 	    	if(hitWTrap&&this.activated){
@@ -174,14 +172,14 @@ var playState = function(Just_run){
 	    	}
 	    } else if (this.DInputIsActive()) {
 	    	this.chaser.scale.setTo(1, 1);
-	    	if(onTheGround){
+	    	if(onTheGround || onTheLedge){
 	    		this.chaser.animations.play('run');
 	    	}
 	        if(hitWTrap&&this.activated){
 	    		this.chaser.body.velocity.x = this.chaser.body.velocity.x/1.5;
 	    		this.chaser.body.acceleration.x = this.aceleracion/1.5;
 	    	}else{
-	        	this.chaser.body.acceleration.x = this.aceleracion*(30-this.timeRemaining);
+	        	this.chaser.body.acceleration.x = this.aceleracion;
 	    	}
 	    	if(hitITrap&&this.activated){
 	    		this.chaser.body.acceleration.x = this.aceleracion*4;
@@ -194,14 +192,14 @@ var playState = function(Just_run){
 	    }
 
 	    if (this.leftInputIsActive()) {
-	    	if(onTheGround){
+	    	if(onTheGround1 || onTheLedge1){
 	    		this.escapist.scale.setTo(-1,1);
 	    		this.escapist.animations.play('run');
 	    	}
 	        	this.escapist.body.acceleration.x = -this.aceleracion;
 	    	
 	    } else if (this.rightInputIsActive()) {
-	    	if(onTheGround){
+	    	if(onTheGround1 || onTheLedge1){
 	    		this.escapist.scale.setTo(1,1);
 	    		this.escapist.animations.play('run');
 	    	}
@@ -211,9 +209,9 @@ var playState = function(Just_run){
 	        this.escapist.body.acceleration.x = 0;
 	    }
 	    //control del doble salto
-	    if (onTheGround) {
+	    if (onTheGround || onTheLedge) {
 	    	this.jumps = 2;
-	        this.jumping = false;	        
+	        this.jumping = false;     
 	    }
 	    if (this.jumps > 0 && this.WInputIsActive(5)) {
 	    	if(hitWTrap&&this.activated){
@@ -221,7 +219,6 @@ var playState = function(Just_run){
 	        	this.jumping = true;
 	        	this.jumps = 0;
 	    	}else{
-	    		this.chaser.animations.play("doblejump")
 	    		this.chaser.body.velocity.y = this.salto;
 	        	this.jumping = true;
 	    	}	        
@@ -231,14 +228,13 @@ var playState = function(Just_run){
 	        this.jumping = false;
 	    }
 
-	    if (onTheGround1) {
+	    if (onTheGround1 || onTheLedge1) {
 	    	this.jumps1 = 2;
-	        this.jumping1 = false;	        
+	        this.jumping1 = false;	       
 	    }
 	    if (this.jumps1 > 0 && this.upInputIsActive(5)) {
-	    		this.escapist.animations.play("doblejump")
 	    		this.escapist.body.velocity.y = this.salto;
-	        	this.jumping1 = true;        
+	        	this.jumping1 = true;    
 	    }
 	    if (this.jumping1 && this.upInputReleased()) {
 	        this.jumps1--;
