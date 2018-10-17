@@ -157,6 +157,9 @@ var playState = function(Just_run){
 	    game.physics.arcade.collide(this.escapist, this.itrap);
 	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
 
+	    this.chaser.anchor.setTo(0.3,0.5);
+	    this.escapist.anchor.setTo(0.3,0.5);
+
 	    if (this.AInputIsActive()) {
 	    	this.chaser.scale.setTo(-1, 1);
 	    	if(onTheGround|| onTheLedge){
