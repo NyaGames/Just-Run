@@ -85,7 +85,10 @@ var playState = function(Just_run){
 	    this.jumping1 = false;
 
 	    //variable para las trampas
-	    this.activated = false;
+	    this.activatedg = false;
+	    this.activatedb = false;
+	    this.activatedc = false;
+	    this.activatedgp = false;
 
 	    // suelo
 	    this.crearmundo();	 
@@ -214,6 +217,7 @@ var playState = function(Just_run){
 	        this.jumping = false;     
 	    }
 	    if (this.jumps > 0 && this.WInputIsActive(5)) {
+	    	this.chaser.animations.play('doblejump');
 	    	if(hitWTrap&&this.activated){
 	    		this.chaser.body.velocity.y = this.salto/2.5;
 	        	this.jumping = true;
@@ -233,6 +237,7 @@ var playState = function(Just_run){
 	        this.jumping1 = false;	       
 	    }
 	    if (this.jumps1 > 0 && this.upInputIsActive(5)) {
+	    		this.escapist.animations.play('doblejump');
 	    		this.escapist.body.velocity.y = this.salto;
 	        	this.jumping1 = true;    
 	    }
@@ -244,23 +249,23 @@ var playState = function(Just_run){
 	    	game.state.start('load2');
 	    }
 	    if(this.timeRemaining < 0){
-		    game.state.start('load2');
+		    alert();
 		}
-	    if (this.spaceInputIsActive()) {
-	    		this.activated = true;
+	    if (this.spaceInputIsActive() && !this.activatedg) {
+	    		this.activatedg = true;
 	    		this.watertrap();
 		    	this.icetrap();	
 	    }
-	    if (this.QInputIsActive()){
-	    		this.activated = true;	    		
+	    if (this.QInputIsActive() && !this.activatedb){
+	    		this.activatedb = true;	    		
 		    	this.balltrap();	
 	    }
-	    if (this.EInputIsActive()){
-	    		this.activated = true;
+	    if (this.EInputIsActive() && !this.activatedc){
+	    		this.activatedc = true;
 	    		this.strap();
 	    }
-	    if (this.RInputIsActive()){
-	    		this.activated = true;
+	    if (this.RInputIsActive() && !this.activatedgp){
+	    		this.activatedgp = true;
 		    	this.ptrap();
 	    }
 
@@ -385,7 +390,7 @@ var playState = function(Just_run){
 		block.body.immovable = true;
 		block.body.allowGravity = false;
 		this.water.add(block);
-		this.activated = false;
+		this.activatedg = false;
 	};
 	playState.prototype.icetrap = function(){
 		this.ice.destroy();
@@ -478,7 +483,7 @@ var playState = function(Just_run){
 			    block.body.immovable = true;
 			    block.body.allowGravity = false;
 			    this.ice.add(block);
-			    this.activated = false;
+			    this.activatedg = false;
 	};
 	playState.prototype.balltrap = function(){		
 	    this.bola.animations.play('rodar', 12, true);
@@ -494,6 +499,7 @@ var playState = function(Just_run){
 	    this.bola.body.immovable = true;
 	    this.bola.body.allowGravity = false;	
 	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
+	    this.activatedb = false;
 	};	
 	playState.prototype.strap = function(){
 		this.chuzo1.body.allowGravity = true;
@@ -513,6 +519,7 @@ var playState = function(Just_run){
 	    this.chuzo2.body.immovable = true;
 	    this.chuzo2.body.allowGravity = false;
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bestalactita');
+	    this.activatedc = false;
 	};
 	playState.prototype.ptrap = function(){
 		this.p1.body.velocity.x = 300;
@@ -538,6 +545,7 @@ var playState = function(Just_run){
 	    this.p3.body.immovable = true;
 	    this.p3.body.allowGravity = false;	
 	    this.botonpinguino = this.game.add.sprite(1040, 300, 'bepinguino');
+	    this.activatedgp = false;
 	};
 	playState.prototype.crearmundo = function(){
 		this.ground = this.game.add.group();
