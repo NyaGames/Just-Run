@@ -1,5 +1,5 @@
-var loadState = function(Just_Run) {
-	loadState.prototype.preload = function(){		
+var loadcarga_menuState = function(Just_Run) {
+	loadcarga_menuState.prototype.preload = function(){		
 		game.load.image('menu','assets/fondos/MenuPrincipal.png');
 		game.load.image('jugarp', 'assets/sprites/botones_menu/Jugar.png');
 		game.load.image('jugarg', 'assets/sprites/botones_menu/JugarBrillo.png');
@@ -8,7 +8,7 @@ var loadState = function(Just_Run) {
 		game.load.image('salirp', 'assets/sprites/botones_menu/Salir.png');
 		game.load.image('salirg', 'assets/sprites/botones_menu/SalirBrillo.png');
 	},
-	loadState.prototype.create = function(){
+	loadcarga_menuState.prototype.create = function(){
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');
 		pantallacarga.animations.play('load', 26, true);

@@ -5,6 +5,6 @@ var bootState = function(Just_Run){
 	bootState.prototype.create = function(){
 		game.physics.startSystem(Phaser.Physics.ARCADE);
 		game.stage.backgroundColor = 0xffc966;
-		game.state.start('load');
+		game.state.start('loadcarga_menu');
 	}
 }

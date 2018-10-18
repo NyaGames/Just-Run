@@ -6,6 +6,6 @@ var menuState = function(Just_Run) {
 		spaceKey.onDown.addOnce(this.start, this);
 	},
 	menuState.prototype.start = function(){
-		game.state.start('load1');
+		game.state.start('loadcarga_nieve');
 	}
 }

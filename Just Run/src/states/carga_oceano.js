@@ -1,6 +1,6 @@
-var loadcarga_nieveState = function(Just_Run) {
-	loadcarga_nieveState.prototype.preload = function(){		
-		game.load.image('snowfield', 'assets/fondos/nieve.png');
+var loadcarga_oceanoState = function(Just_Run) {
+	loadcarga_oceanoState.prototype.preload = function(){		
+		game.load.image('snowfield', 'assets/fondos/mar.jpg');
 		game.load.image('ground', 'assets/tiles/nieve/tierra.png');
 		game.load.image('snow', 'assets/tiles/nieve/nieve.png');		
 		game.load.image('water', 'assets/tiles/nieve/agua.png');
@@ -19,10 +19,10 @@ var loadcarga_nieveState = function(Just_Run) {
 		game.load.image('bepinguino', 'assets/sprites/nieve/bpinguino.png');
 		game.load.image('bapinguino', 'assets/sprites/nieve/pinguinoapagado.png');		
 	},
-	loadcarga_nieveState.prototype.create = function(){	
+	loadcarga_oceanoState.prototype.create = function(){	
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');
-		pantallacarga.animations.play('load', 26, true);	
-		game.state.start('playnieve');
+		pantallacarga.animations.play('load', 26, true);
+		game.state.start('playoceano');
 	}
 }

@@ -1,9 +1,9 @@
-var playnieveState = function(Just_run){
+var playdesiertoState = function(Just_run){
 		var startTime = new Date();
 		var totalTime = 30;
 		var timeElapsed = 0;
 		var timeLabel;
-	playnieveState.prototype.create = function() {        	
+	playdesiertoState.prototype.create = function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'snowfield');
 
@@ -106,7 +106,7 @@ var playnieveState = function(Just_run){
 		    //Time remaining in seconds
 		    var timeRemaining = totalTime - timeElapsed;
 		    if(timeRemaining < 1){
-				game.state.start('loadcarga_castillo');
+				game.state.start('loadcarga_volcan');
 		    }
 		 
 		    //Convert seconds into minutes and seconds
@@ -141,7 +141,7 @@ var playnieveState = function(Just_run){
 	    ]);
 	};
 
-	playnieveState.prototype.update = function() {
+	playdesiertoState.prototype.update = function() {
 	    var onTheGround = game.physics.arcade.collide(this.chaser, this.ground);
 	    game.physics.arcade.collide(this.chaser, this.water);
 	    var onTheLedge = game.physics.arcade.collide(this.chaser, this.ice);
@@ -249,38 +249,9 @@ var playnieveState = function(Just_run){
 	        this.jumping1 = false;
 	    }
 	    //control del dash
-	    if (this.ControlInputIsActive(5)) {
-	    	if(!onTheGround1 || !onTheLedge1){
-	    		if(this.leftInputIsActive()){
-	    			this.escapist.scale.setTo(-1,1);
-	    			this.escapist.animations.play('dash');
-	    			this.escapist.position.x -= 150;
-	    		}
-	    		if(this.rightInputIsActive()){
-	    			this.escapist.scale.setTo(1,1);
-	    			this.escapist.animations.play('dash');
-	    			this.escapist.position.x += 150;
-	    		}
-	    	}	    	
-	    }
-
-	    if (this.ShiftInputIsActive(5)) {
-	    	if(!onTheGround || !onTheLedge){
-	    		if(this.leftInputIsActive()){
-	    			this.chaser.scale.setTo(-1,1);
-	    			this.chaser.animations.play('dash');
-	    			this.chaser.position.x -= 150;
-	    		}
-	    		if(this.rightInputIsActive()){
-	    			this.chaser.scale.setTo(1,1);
-	    			this.chaser.animations.play('dash');
-	    			this.chaser.position.x += 150;
-	    		}
-	    	}	    	
-	    }
-
+	    
 	    if(catched){
-	    	game.state.start('loadcarga_castillo');
+	    	game.state.start('loadcarga_volcan');
 	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;
@@ -303,21 +274,21 @@ var playnieveState = function(Just_run){
 	};
 
 	//controles con las flechas
-	playnieveState.prototype.leftInputIsActive = function() {
+	playdesiertoState.prototype.leftInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.LEFT);
 	    isActive |= (this.game.input.activePointer.isDown &&
 	        this.game.input.activePointer.x < this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.rightInputIsActive = function() {
+	playdesiertoState.prototype.rightInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.RIGHT);
 	    isActive |= (this.game.input.activePointer.isDown &&
 	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.upInputIsActive = function(duration) {
+	playdesiertoState.prototype.upInputIsActive = function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.UP, duration);
 	    isActive |= (this.game.input.activePointer.justPressed(duration + 1000/60) &&
@@ -325,28 +296,28 @@ var playnieveState = function(Just_run){
 	        this.game.input.activePointer.x < this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.upInputReleased = function() {
+	playdesiertoState.prototype.upInputReleased = function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.UP);
 	    released |= this.game.input.activePointer.justReleased();
 	    return released;
 	};
 	//control con WASD
-	playnieveState.prototype.AInputIsActive = function() {
+	playdesiertoState.prototype.AInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.A);
 	    isActive |= (this.game.input.activePointer.isDown &&
 	        this.game.input.activePointer.x < this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.DInputIsActive = function() {
+	playdesiertoState.prototype.DInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.D);
 	    isActive |= (this.game.input.activePointer.isDown &&
 	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.WInputIsActive = function(duration) {
+	playdesiertoState.prototype.WInputIsActive = function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.W, duration);
 	    isActive |= (this.game.input.activePointer.justPressed(duration + 1000/60) &&
@@ -354,59 +325,57 @@ var playnieveState = function(Just_run){
 	        this.game.input.activePointer.x < this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.WInputReleased = function() {
+	playdesiertoState.prototype.WInputReleased = function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.W);
 	    released |= this.game.input.activePointer.justReleased();
 	    return released;
 	};
 	//control de las trampas
-	playnieveState.prototype.spaceInputIsActive = function() {
+	playdesiertoState.prototype.spaceInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
 	    isActive |= (this.game.input.activePointer.isDown &&
 	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.QInputIsActive = function() {
+	playdesiertoState.prototype.QInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.I);
 	    isActive |= (this.game.input.activePointer.isDown &&
 	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.EInputIsActive = function() {
+	playdesiertoState.prototype.EInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.O);
 	    isActive |= (this.game.input.activePointer.isDown &&
 	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.RInputIsActive = function() {
+	playdesiertoState.prototype.RInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.P);
 	    isActive |= (this.game.input.activePointer.isDown &&
 	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.ControlInputIsActive = function(duration) {
+	playdesiertoState.prototype.ControlInputIsActive = function() {
 	    var isActive = false;
-	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.CONTROL, duration);
-	    isActive |= (this.game.input.activePointer.justPressed(duration + 1000/60) &&
-	        this.game.input.activePointer.x > this.game.width/4 &&
-	        this.game.input.activePointer.x < this.game.width/2 + this.game.width/4);
+	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.CONTROL);
+	    isActive |= (this.game.input.activePointer.isDown &&
+	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playnieveState.prototype.ShiftInputIsActive = function(duration) {
+	playdesiertoState.prototype.ShiftInputIsActive = function() {
 	    var isActive = false;
-	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.SHIFT, duration);
-	    isActive |= (this.game.input.activePointer.justPressed(duration + 1000/60) &&
-	        this.game.input.activePointer.x > this.game.width/4 &&
-	        this.game.input.activePointer.x < this.game.width/2 + this.game.width/4);
+	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.SHIFT);
+	    isActive |= (this.game.input.activePointer.isDown &&
+	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
 	//metodos de las trampas
-	playnieveState.prototype.watertrap = function(){
+	playdesiertoState.prototype.watertrap = function(){
 		this.water.destroy();
 		this.wtrap = this.game.add.group();
 		block = this.game.add.sprite(448, this.game.height-128, 'waters');
@@ -416,7 +385,7 @@ var playnieveState = function(Just_run){
 		this.wtrap.add(block);
 		game.time.events.add(Phaser.Timer.SECOND * 4, this.releasew, this);
 	};	
-	playnieveState.prototype.releasew = function(){
+	playdesiertoState.prototype.releasew = function(){
 		this.wtrap.destroy();
 		this.water = this.game.add.group();
 		block = this.game.add.sprite(448, this.game.height-128, 'water');
@@ -426,7 +395,7 @@ var playnieveState = function(Just_run){
 		this.water.add(block);
 		this.activatedg = false;
 	};
-	playnieveState.prototype.icetrap = function(){
+	playdesiertoState.prototype.icetrap = function(){
 		this.ice.destroy();
 		    	
 		    	this.itrap = this.game.add.group();
@@ -473,7 +442,7 @@ var playnieveState = function(Just_run){
 			    this.itrap.add(block);
 			    game.time.events.add(Phaser.Timer.SECOND * 4, this.releasei, this);
 	};
-	playnieveState.prototype.releasei = function(){
+	playdesiertoState.prototype.releasei = function(){
 		this.itrap.destroy();
 		this.ice = this.game.add.group();
 		    	
@@ -519,13 +488,13 @@ var playnieveState = function(Just_run){
 			    this.ice.add(block);
 			    this.activatedg = false;
 	};
-	playnieveState.prototype.balltrap = function(){		
+	playdesiertoState.prototype.balltrap = function(){		
 	    this.bola.animations.play('rodar', 12, true);
 		this.bola.body.velocity.x = -200;
 		this.botonbola = this.game.add.sprite(1040, 360, 'babola');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.ballrelease, this);
 	};
-	playnieveState.prototype.ballrelease = function(){
+	playdesiertoState.prototype.ballrelease = function(){
 		this.bola.destroy();
 		this.bola = this.game.add.sprite(1100, 367, 'snowball');
 	    var rodar = this.bola.animations.add('rodar');
@@ -535,13 +504,13 @@ var playnieveState = function(Just_run){
 	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
 	    this.activatedb = false;
 	};	
-	playnieveState.prototype.strap = function(){
+	playdesiertoState.prototype.strap = function(){
 		this.chuzo1.body.allowGravity = true;
 	    this.chuzo2.body.allowGravity = true;
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'baestalactita');
 	    game.time.events.add(Phaser.Timer.SECOND * 7, this.srelease, this);
 	};
-	playnieveState.prototype.srelease = function(){
+	playdesiertoState.prototype.srelease = function(){
 		this.chuzo1.destroy();
 		this.chuzo2.destroy();
 		this.chuzo1 = this.game.add.sprite(650, -90, 'chuzo');
@@ -555,14 +524,14 @@ var playnieveState = function(Just_run){
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bestalactita');
 	    this.activatedc = false;
 	};
-	playnieveState.prototype.ptrap = function(){
+	playdesiertoState.prototype.ptrap = function(){
 		this.p1.body.velocity.x = 300;
 		this.p2.body.velocity.x = 300;
 		this.p3.body.velocity.x = 300;
 		this.botonpinguino = this.game.add.sprite(1040, 300, 'bapinguino');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.prelease, this);
 	};
-	playnieveState.prototype.prelease = function(){
+	playdesiertoState.prototype.prelease = function(){
 		this.p1.destroy();
 		this.p2.destroy();
 		this.p3.destroy();
@@ -581,7 +550,7 @@ var playnieveState = function(Just_run){
 	    this.botonpinguino = this.game.add.sprite(1040, 300, 'bepinguino');
 	    this.activatedgp = false;
 	};
-	playnieveState.prototype.crearmundo = function(){
+	playdesiertoState.prototype.crearmundo = function(){
 		this.ground = this.game.add.group();
 	    this.water = this.game.add.group();
 	    this.ice = this.game.add.group();
@@ -661,7 +630,7 @@ var playnieveState = function(Just_run){
 	    block.body.allowGravity = false;
 	    this.ice.add(block);
 	};
-	playnieveState.prototype.createTimer = function(){
+	playdesiertoState.prototype.createTimer = function(){
         totalTime = 30;
 	    timeLabel = game.add.text(game.world.centerX, 550, "00:00", {font: "50px Arial", fill: "#fff"});
 	    timeLabel.anchor.setTo(0.5, 0);
