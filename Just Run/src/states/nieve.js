@@ -2,8 +2,8 @@ var playState = function(Just_run){
 		var startTime = new Date();
 		var totalTime = 30;
 		var timeElapsed = 0;
-		var timeLabel;	
-	playState.prototype.create = function() {
+		var timeLabel;
+	playState.prototype.create = function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'snowfield');
 
@@ -248,6 +248,8 @@ var playState = function(Just_run){
 	        this.jumps1--;
 	        this.jumping1 = false;
 	    }
+	    //control del dash
+	    
 	    if(catched){
 	    	game.state.start('load2');
 	    }
