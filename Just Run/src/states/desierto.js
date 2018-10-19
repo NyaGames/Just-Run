@@ -50,6 +50,12 @@ var playdesiertoState = function(Just_run){
 	    this.chaser.body.maxVelocity.setTo(this.velocidadmaxima, this.velocidadmaxima * 10);
 	    this.chaser.body.drag.setTo(this.frenada, 0);
 	    game.physics.arcade.gravity.y = this.gravedad;
+
+	    //Cambio de Eje
+	    this.chaser.anchor.setTo(0.3,0.5);
+	    this.escapist.anchor.setTo(0.3,0.5);
+
+	    
 	    //animaciones chaser
 	    this.chaser.animations.add('run', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36], 33, true);
 	    this.chaser.animations.add('dash', [37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58], 33, true);
