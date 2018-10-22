@@ -230,7 +230,7 @@ var playnieveState = function(Just_run){
 	    //control del dash
 	    
 	    if(catched){
-	    	game.state.start('loadcarga_oceano');
+	    	game.state.start('loadcarga_castillo');
 	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;
