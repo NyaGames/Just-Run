@@ -1,8 +1,4 @@
 var playoceanoState = function(Just_run){
-		var startTime = new Date();
-		var totalTime = 30;
-		var timeElapsed = 0;
-		var timeLabel;
 	playoceanoState.prototype.create = function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'snowfield');
@@ -50,8 +46,6 @@ var playoceanoState = function(Just_run){
 	    this.chaser.body.maxVelocity.setTo(this.velocidadmaxima, this.velocidadmaxima * 10);
 	    this.chaser.body.drag.setTo(this.frenada, 0);
 	    game.physics.arcade.gravity.y = this.gravedad;
-
-	    
 	    //animaciones chaser
 	    this.chaser.animations.add('run', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36], 33, true);
 	    this.chaser.animations.add('dash', [37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58], 33, true);
@@ -67,11 +61,10 @@ var playoceanoState = function(Just_run){
 	    this.escapist.body.maxVelocity.setTo(this.velocidadmaxima, this.velocidadmaxima * 10);
 	    this.escapist.body.drag.setTo(this.frenada, 0);
 	    game.physics.arcade.gravity.y = this.gravedad;
-	    
+
 	    //Cambio de Eje
 	    this.chaser.anchor.setTo(0.3,0.5);
 	    this.escapist.anchor.setTo(0.3,0.5);
-
 
 	    //animaciones escapist
 	  	this.escapist.animations.add('run', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36], 33, true);
@@ -100,35 +93,14 @@ var playoceanoState = function(Just_run){
 	    // suelo
 	    this.crearmundo();	 
 
-	    //cronometro    
-	    this.createTimer();
-	 
-	    var gameTimer = game.time.events.loop(100, function(){
-	        var currentTime = new Date();
-		    var timeDifference = startTime.getTime() - currentTime.getTime();
-		 
-		    //Time elapsed in seconds
-		    timeElapsed = Math.abs(timeDifference / 1000);
-		 
-		    //Time remaining in seconds
-		    var timeRemaining = totalTime - timeElapsed;
-		    if(timeRemaining < 1){
-				game.state.start('loadcarga_desierto');
-		    }
-		 
-		    //Convert seconds into minutes and seconds
-		    var minutes = Math.floor(timeRemaining / 60);
-		    var seconds = Math.floor(timeRemaining) - (60 * minutes);
-		 
-		    //Display minutes, add a 0 to the start if less than 10
-		    var result = (minutes < 10) ? "0" + minutes : minutes;
-		 
-		    //Display seconds, add a 0 to the start if less than 10
-		    result += (seconds < 10) ? ":0" + seconds : ":" + seconds;
-		 
-		    timeLabel.text = result;
-		    
-	    });
+	  // Create a custom timer
+        this.timer = this.game.time.create();
+        
+        // Create a delayed event 1m and 30s from now
+        this.timerEvent = this.timer.add(	Phaser.Timer.SECOND * 30, this.endTimer, this);
+        
+        // Start the timer
+        this.timer.start();
 	    //control de las teclas, para evitar los usos por defecto, que pueden dar problemas
 	    this.game.input.keyboard.addKeyCapture([
 	        Phaser.Keyboard.LEFT,
@@ -144,7 +116,7 @@ var playoceanoState = function(Just_run){
 	        Phaser.Keyboard.P,
 	        Phaser.Keyboard.SPACEBAR,
 	        Phaser.Keyboard.SHIFT,
-	        Phaser.Keyboard.CONTROL
+	        Phaser.Keyboard.MINUS
 	    ]);
 	};
 
@@ -255,7 +227,8 @@ var playoceanoState = function(Just_run){
 	        this.jumps1--;
 	        this.jumping1 = false;
 	    }
-	    //control del dash	    
+	    //control del dash
+	    
 	    if(catched){
 	    	game.state.start('loadcarga_desierto');
 	    }
@@ -368,7 +341,7 @@ var playoceanoState = function(Just_run){
 	};
 	playoceanoState.prototype.ControlInputIsActive = function() {
 	    var isActive = false;
-	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.CONTROL);
+	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.MINUS);
 	    isActive |= (this.game.input.activePointer.isDown &&
 	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
@@ -636,10 +609,18 @@ var playoceanoState = function(Just_run){
 	    block.body.allowGravity = false;
 	    this.ice.add(block);
 	};
-	playoceanoState.prototype.createTimer = function(){
-        totalTime = 30;
-	    timeLabel = game.add.text(game.world.centerX, 550, "00:00", {font: "50px Arial", fill: "#fff"});
-	    timeLabel.anchor.setTo(0.5, 0);
-	    timeLabel.align = 'center'; 
-	};
+	playoceanoState.prototype.render = function () {
+        if (this.timer.running) {
+            this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
+        }
+    };
+    playoceanoState.prototype.endTimer = function() {
+        this.timer.stop();
+        game.state.start('loadcarga_desierto');
+    };
+    playoceanoState.prototype.formatTime = function(s) {
+        var minutes = "0" + Math.floor(s / 60);
+        var seconds = "0" + (s - minutes * 60);
+        return minutes.substr(-2) + ":" + seconds.substr(-2);   
+    }
 }

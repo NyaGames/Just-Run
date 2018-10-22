@@ -1,6 +1,6 @@
-var loadcarga_desiertoState = function(Just_Run) {
-	loadcarga_desiertoState.prototype.preload = function(){		
-		game.load.image('snowfield', 'assets/fondos/desierto.jpg');
+var loadcarga_volcanState = function(Just_Run) {
+	loadcarga_volcanState.prototype.preload = function(){		
+		game.load.image('snowfield', 'assets/fondos/volcan.jpg');
 		game.load.image('ground', 'assets/tiles/nieve/tierra.png');
 		game.load.image('snow', 'assets/tiles/nieve/nieve.png');		
 		game.load.image('water', 'assets/tiles/nieve/agua.png');
@@ -19,10 +19,10 @@ var loadcarga_desiertoState = function(Just_Run) {
 		game.load.image('bepinguino', 'assets/sprites/nieve/bpinguino.png');
 		game.load.image('bapinguino', 'assets/sprites/nieve/pinguinoapagado.png');		
 	},
-	loadcarga_desiertoState.prototype.create = function(){	
+	loadcarga_volcanState.prototype.create = function(){	
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');
 		pantallacarga.animations.play('load', 26, true);
-		game.state.start('playdesierto');
+		game.state.start('playvolcan');
 	}
 }
