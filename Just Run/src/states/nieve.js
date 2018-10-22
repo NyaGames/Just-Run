@@ -1,8 +1,4 @@
 var playnieveState = function(Just_run){
-		var startTime = new Date();
-		var totalTime = 30;
-		var timeElapsed = 0;
-		var timeLabel;
 	playnieveState.prototype.create = function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'snowfield');
@@ -94,38 +90,16 @@ var playnieveState = function(Just_run){
 	    this.activatedc = false;
 	    this.activatedgp = false;
 
-	    // suelo
-	    this.crearmundo();	 
+	    this.crearmundo();
 
-	    //cronometro    
-	    this.createTimer();
-	 
-	    var gameTimer = game.time.events.loop(100, function(){
-	        var currentTime = new Date();
-		    var timeDifference = startTime.getTime() - currentTime.getTime();
-		 
-		    //Time elapsed in seconds
-		    timeElapsed = Math.abs(timeDifference / 1000);
-		 
-		    //Time remaining in seconds
-		    var timeRemaining = totalTime - timeElapsed;
-		    if(timeRemaining < 1){
-				game.state.start('loadcarga_castillo');
-		    }
-		 
-		    //Convert seconds into minutes and seconds
-		    var minutes = Math.floor(timeRemaining / 60);
-		    var seconds = Math.floor(timeRemaining) - (60 * minutes);
-		 
-		    //Display minutes, add a 0 to the start if less than 10
-		    var result = (minutes < 10) ? "0" + minutes : minutes;
-		 
-		    //Display seconds, add a 0 to the start if less than 10
-		    result += (seconds < 10) ? ":0" + seconds : ":" + seconds;
-		 
-		    timeLabel.text = result;
-		    
-	    });
+	   // Create a custom timer
+        this.timer = this.game.time.create();
+        
+        // Create a delayed event 1m and 30s from now
+        this.timerEvent = this.timer.add(Phaser.Timer.MINUTE * 1 + Phaser.Timer.SECOND * 30, this.endTimer, this);
+        
+        // Start the timer
+        this.timer.start();
 	    //control de las teclas, para evitar los usos por defecto, que pueden dar problemas
 	    this.game.input.keyboard.addKeyCapture([
 	        Phaser.Keyboard.LEFT,
@@ -665,10 +639,23 @@ var playnieveState = function(Just_run){
 	    block.body.allowGravity = false;
 	    this.ice.add(block);
 	};
-	playnieveState.prototype.createTimer = function(){
-        totalTime = 30;
-	    timeLabel = game.add.text(game.world.centerX, 550, "00:00", {font: "50px Arial", fill: "#fff"});
-	    timeLabel.anchor.setTo(0.5, 0);
-	    timeLabel.align = 'center'; 
-	};
+	playnieveState.prototype.render = function () {
+        // If our timer is running, show the time in a nicely formatted way, else show 'Done!'
+        if (timer.running) {
+            game.debug.text(this.formatTime(Math.round((timerEvent.delay - timer.ms) / 1000)), 2, 14, "#ff0");
+        }
+        else {
+            game.debug.text("Done!", 2, 14, "#0f0");
+        }
+    };
+    playnieveState.prototype.endTimer = function() {
+        // Stop the timer when the delayed event triggers
+        timer.stop();
+    };
+    playnieveState.prototype.formatTime = function(s) {
+        // Convert seconds (s) to a nicely formatted and padded time string
+        var minutes = "0" + Math.floor(s / 60);
+        var seconds = "0" + (s - minutes * 60);
+        return minutes.substr(-2) + ":" + seconds.substr(-2);   
+    }
 }
