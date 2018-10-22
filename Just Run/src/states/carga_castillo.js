@@ -1,16 +1,14 @@
 var loadcarga_castilloState = function(Just_Run) {
 	loadcarga_castilloState.prototype.preload = function(){		
-		game.load.image('snowfield', 'assets/fondos/castillo.jpg');
-		game.load.image('ground', 'assets/tiles/nieve/tierra.png');
-		game.load.image('snow', 'assets/tiles/nieve/nieve.png');		
-		game.load.image('water', 'assets/tiles/nieve/agua.png');
-		game.load.image('waters', 'assets/tiles/nieve/agua_sin nieve.png');
-		game.load.image('ledge', 'assets/tiles/nieve/ledge.png');
-		game.load.image('ledges', 'assets/tiles/nieve/hielo_sin.png');
+		game.load.image('castle', 'assets/fondos/castillo.png');
+		game.load.image('ground', 'assets/tiles/castillo/tierra.png');
+		game.load.image('grass', 'assets/tiles/castillo/hierba.png');	
+		game.load.image('carpet', 'assets/tiles/castillo/alfombra.png');	
+		game.load.image('ledge', 'assets/tiles/castillo/wood.png');
 		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
 		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
-		game.load.spritesheet('snowball', 'assets/sprites/nieve/bola de nieve/BolaNieve.png', 106, 106, 12);
-		game.load.image('chuzo', 'assets/sprites/nieve/Estalactita.png');
+		game.load.spritesheet('horse', 'assets/sprites/Castillo/caballo96x78.png', 96, 78, 10);
+		game.load.image('aceite', 'assets/sprites/Castillo/Aceite.png');
 		game.load.image('pinguino', 'assets/sprites/nieve/pinguino.png');
 		game.load.image('bebola', 'assets/sprites/nieve/bbola.png');
 		game.load.image('babola', 'assets/sprites/nieve/bolaapagado.png');
