@@ -5,11 +5,15 @@ var loadcarga_castilloState = function(Just_Run) {
 		game.load.image('grass', 'assets/tiles/castillo/hierba.png');	
 		game.load.image('carpet', 'assets/tiles/castillo/alfombra.png');	
 		game.load.image('ledge', 'assets/tiles/castillo/wood.png');
+		game.load.image('pared', 'assets/tiles/castillo/ladrillos.png');
+		game.load.image('water', 'assets/tiles/castillo/agua.png');
+		game.load.image('coco', 'assets/sprites/Castillo/Cocodrilo.png');
 		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
 		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
 		game.load.spritesheet('horse', 'assets/sprites/Castillo/caballo96x78.png', 96, 78, 10);
 		game.load.image('aceite', 'assets/sprites/Castillo/Aceite.png');
-		game.load.image('pinguino', 'assets/sprites/nieve/pinguino.png');
+		game.load.image('flecha', 'assets/sprites/Castillo/Arrow.png');
+		game.load.image('puerta', 'assets/sprites/Castillo/animacionPuerta.png');
 		game.load.image('bebola', 'assets/sprites/nieve/bbola.png');
 		game.load.image('babola', 'assets/sprites/nieve/bolaapagado.png');
 		game.load.image('bestalactita', 'assets/sprites/nieve/bestalactita.png');
