@@ -118,20 +118,16 @@ var playcastilloState = function(Just_run){
 
 	playcastilloState.prototype.update = function() {
 	    var onTheGround = game.physics.arcade.collide(this.chaser, this.ground);
-	    var mojadito = game.physics.arcade.collide(this.chaser, this.water);
 	    var onTheLedge = game.physics.arcade.collide(this.chaser, this.wood);
 	    game.physics.arcade.collide(this.chaser, this.bola);
 	    game.physics.arcade.collide(this.chaser, this.aceite1);
 	    game.physics.arcade.collide(this.chaser, this.p1);
 	    game.physics.arcade.collide(this.chaser, this.p2);
 	    game.physics.arcade.collide(this.chaser, this.p3);
-	    var hitWTrap = game.physics.arcade.collide(this.chaser, this.wtrap);
-	    var hitITrap = game.physics.arcade.collide(this.chaser, this.itrap);
+	    var hitITrap = game.physics.arcade.collide(this.chaser, this.pinchos);
 	    var onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
 	    game.physics.arcade.collide(this.escapist, this.water);
 	    var onTheLedge1 = game.physics.arcade.collide(this.escapist, this.wood);
-	    game.physics.arcade.collide(this.escapist, this.wtrap);
-	    game.physics.arcade.collide(this.escapist, this.itrap);
 	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
 
 	    if(this.chaser.position.y > 600){
@@ -147,12 +143,6 @@ var playcastilloState = function(Just_run){
 	    	if(onTheGround|| onTheLedge){
 	    		this.chaser.animations.play('run');
 	    	}
-	    	if(hitWTrap&&this.activated){
-	    		this.chaser.body.velocity.x = this.chaser.body.velocity.x/1.5;
-	    		this.chaser.body.acceleration.x = -this.aceleracion/1.5;
-	    	}else{
-	        	this.chaser.body.acceleration.x = -this.aceleracion;
-	    	}
 	    	if(hitITrap&&this.activated){
 	    		this.chaser.body.acceleration.x = -this.aceleracion*4;
 	    	}else{
@@ -163,7 +153,7 @@ var playcastilloState = function(Just_run){
 	    	if(onTheGround || onTheLedge){
 	    		this.chaser.animations.play('run');
 	    	}
-	        if(hitWTrap&&this.activated){
+	        if(&&this.activated){
 	    		this.chaser.body.velocity.x = this.chaser.body.velocity.x/1.5;
 	    		this.chaser.body.acceleration.x = this.aceleracion/1.5;
 	    	}else{
@@ -178,7 +168,6 @@ var playcastilloState = function(Just_run){
 	    	this.chaser.animations.play('idle');
 	        this.chaser.body.acceleration.x = 0;
 	    }
-
 	    if (this.leftInputIsActive()) {
 	    	if(onTheGround1 || onTheLedge1){
 	    		this.escapist.scale.setTo(-1,1);
@@ -203,14 +192,8 @@ var playcastilloState = function(Just_run){
 	    }
 	    if (this.jumps > 0 && this.WInputIsActive(5)) {
 	    	this.chaser.animations.play('doblejump');
-	    	if(hitWTrap&&this.activated){
-	    		this.chaser.body.velocity.y = this.salto/2.5;
-	        	this.jumping = true;
-	        	this.jumps = 0;
-	    	}else{
 	    		this.chaser.body.velocity.y = this.salto;
-	        	this.jumping = true;
-	    	}	        
+	        	this.jumping = true;        
 	    }
 	    if (this.jumping && this.WInputReleased()) {
 	        this.jumps--;
@@ -356,99 +339,62 @@ var playcastilloState = function(Just_run){
 	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	//metodos de las trampas
-	playcastilloState.prototype.woodtrap = function(){
-		this.wood.destroy();
-		    	
-		    	this.itrap = this.game.add.group();
-		    	
-				block = this.game.add.sprite(120, this.game.height - 250, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
-			    block = this.game.add.sprite(240, this.game.height - 250, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
+	playcastilloState.prototype.icetrap = function(){
+	    this.pinchos = this.game.add.group();
+	    var block;
 
-			    block = this.game.add.sprite(700, this.game.height - 250, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
-			    block = this.game.add.sprite(820, this.game.height - 250, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
+		block = this.game.add.sprite(728, this.game.height - 250, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
+	    block = this.game.add.sprite(632, this.game.height - 250, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
+	    block = this.game.add.sprite(664, this.game.height - 250, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
+	    block = this.game.add.sprite(696, this.game.height - 250, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
 
+	    block = this.game.add.sprite(940, this.game.height - 400, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
+	    block = this.game.add.sprite(972, this.game.height - 400, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
+	    block = this.game.add.sprite(1004, this.game.height - 400, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
+	    block = this.game.add.sprite(1036, this.game.height - 400, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
 
-			    block = this.game.add.sprite(460, this.game.height - 400, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
-
-			    block = this.game.add.sprite(760, this.game.height - 500, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
-
-			    block = this.game.add.sprite(180, this.game.height - 500, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
-			    game.time.events.add(Phaser.Timer.SECOND * 4, this.releasei, this);
-	};
-	playcastilloState.prototype.releasei = function(){
-		this.itrap.destroy();
-		this.wood = this.game.add.group();
-		    	
-				block = this.game.add.sprite(120, this.game.height - 250, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.wood.add(block);
-			    block = this.game.add.sprite(240, this.game.height - 250, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.wood.add(block);
-
-			    block = this.game.add.sprite(700, this.game.height - 250, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.wood.add(block);
-			    block = this.game.add.sprite(820, this.game.height - 250, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.wood.add(block);
-
-
-			    block = this.game.add.sprite(460, this.game.height - 400, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.wood.add(block);
-
-			    block = this.game.add.sprite(760, this.game.height - 500, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.wood.add(block);
-
-			    block = this.game.add.sprite(180, this.game.height - 500, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.wood.add(block);
-			    this.activatedg = false;
+	    block = this.game.add.sprite(582, this.game.height - 378, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
+	    block = this.game.add.sprite(614, this.game.height - 378, 'pinchos');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.pinchos.add(block);
 	};
 	playcastilloState.prototype.balltrap = function(){
 		this.bola.scale.setTo(-1,1);		

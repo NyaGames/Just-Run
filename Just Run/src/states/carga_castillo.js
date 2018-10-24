@@ -14,12 +14,13 @@ var loadcarga_castilloState = function(Just_Run) {
 		game.load.image('aceite', 'assets/sprites/Castillo/Aceite.png');
 		game.load.image('flecha', 'assets/sprites/Castillo/Arrow.png');
 		game.load.image('puerta', 'assets/sprites/Castillo/animacionPuerta.png');
-		game.load.image('bebola', 'assets/sprites/nieve/bbola.png');
-		game.load.image('babola', 'assets/sprites/nieve/bolaapagado.png');
-		game.load.image('bestalactita', 'assets/sprites/nieve/bestalactita.png');
-		game.load.image('baestalactita', 'assets/sprites/nieve/estalactitaapagado.png');
-		game.load.image('bepinguino', 'assets/sprites/nieve/bpinguino.png');
-		game.load.image('bapinguino', 'assets/sprites/nieve/pinguinoapagado.png');		
+		game.load.image('bebola', 'assets/sprites/Castillo/PinchosON.png');
+		game.load.image('babola', 'assets/sprites/Castillo/PinchosOFF.png');
+		game.load.image('bestalactita', 'assets/sprites/Castillo/AceiteON.png');
+		game.load.image('baestalactita', 'assets/sprites/Castillo/AceiteOFF.png');
+		game.load.image('bepinguino', 'assets/sprites/Castillo/ElfoON.png');
+		game.load.image('bapinguino', 'assets/sprites/Castillo/ElfoOFF.png');	
+		game.load.image('pinchos', 'assets/sprites/Castillo/TrampaPinchos.png');		
 	},
 	loadcarga_castilloState.prototype.create = function(){	
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
