@@ -14,8 +14,8 @@ var loadcarga_castilloState = function(Just_Run) {
 		game.load.image('aceite', 'assets/sprites/Castillo/Aceite.png');
 		game.load.image('flecha', 'assets/sprites/Castillo/Arrow.png');
 		game.load.image('puerta', 'assets/sprites/Castillo/animacionPuerta.png');
-		game.load.image('bebola', 'assets/sprites/Castillo/PinchosON.png');
-		game.load.image('babola', 'assets/sprites/Castillo/PinchosOFF.png');
+		game.load.image('bebola', 'assets/sprites/Castillo/CaballeroON.png.png');
+		game.load.image('babola', 'assets/sprites/Castillo/CaballeroOFF.png');
 		game.load.image('bestalactita', 'assets/sprites/Castillo/AceiteON.png');
 		game.load.image('baestalactita', 'assets/sprites/Castillo/AceiteOFF.png');
 		game.load.image('bepinguino', 'assets/sprites/Castillo/ElfoON.png');

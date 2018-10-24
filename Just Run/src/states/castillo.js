@@ -153,7 +153,7 @@ var playcastilloState = function(Just_run){
 	    	if(onTheGround || onTheLedge){
 	    		this.chaser.animations.play('run');
 	    	}
-	        if(&&this.activated){
+	        if(this.activated){
 	    		this.chaser.body.velocity.x = this.chaser.body.velocity.x/1.5;
 	    		this.chaser.body.acceleration.x = this.aceleracion/1.5;
 	    	}else{
