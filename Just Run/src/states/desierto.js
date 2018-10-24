@@ -11,7 +11,7 @@ var playdesiertoState = function(Just_run){
 	    this.salto = -600; 
 		
 	    //crear bola de nieve
-	    this.bola = this.game.add.sprite(1100, 367, 'snowball');
+	    this.bola = this.game.add.sprite(1100, 367, 'tweed');
 	    var rodar = this.bola.animations.add('rodar');
 	    this.game.physics.enable(this.bola, Phaser.Physics.ARCADE);
 	    this.bola.body.immovable = true;
@@ -26,15 +26,18 @@ var playdesiertoState = function(Just_run){
 	    this.chuzo2.body.immovable = true;
 	    this.chuzo2.body.allowGravity = false;
 	    //crear penguinos
-	    this.p1 = this.game.add.sprite(-50,70, 'pinguino');
+	    this.p1 = this.game.add.sprite(-200,70, 'buitre');
+	    var rodar = this.bola.animations.add('rodar');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
-	    this.p2 = this.game.add.sprite(-50,315, 'pinguino');
+	    this.p2 = this.game.add.sprite(-200,315, 'buitre');
+	    var rodar = this.bola.animations.add('rodar');
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(-50,170, 'pinguino');
+	    this.p3 = this.game.add.sprite(-200,170, 'buitre');
+	    var rodar = this.bola.animations.add('rodar');
 	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
 	    this.p3.body.immovable = true;
 	    this.p3.body.allowGravity = false;
@@ -76,9 +79,9 @@ var playdesiertoState = function(Just_run){
 	    this.escapist.animations.play('idle');
 
 	    //crear botones
-	    this.botonpinguino = this.game.add.sprite(1040, 300, 'bepinguino');
-	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bestalactita');
-	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
+	    this.botonpinguino = this.game.add.sprite(1040, 300, 'bevaquero');
+	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bebuitre');
+	    this.botonbola = this.game.add.sprite(1040, 360, 'beTW');
 
 	    //variable para comprobar el salto
 	    this.jumping = false;
@@ -471,23 +474,23 @@ var playdesiertoState = function(Just_run){
 	playdesiertoState.prototype.balltrap = function(){		
 	    this.bola.animations.play('rodar', 12, true);
 		this.bola.body.velocity.x = -200;
-		this.botonbola = this.game.add.sprite(1040, 360, 'babola');
+		this.botonbola = this.game.add.sprite(1040, 360, 'baTW');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.ballrelease, this);
 	};
 	playdesiertoState.prototype.ballrelease = function(){
 		this.bola.destroy();
-		this.bola = this.game.add.sprite(1100, 367, 'snowball');
+		this.bola = this.game.add.sprite(1100, 367, 'tweed');
 	    var rodar = this.bola.animations.add('rodar');
 	    this.game.physics.enable(this.bola, Phaser.Physics.ARCADE);
 	    this.bola.body.immovable = true;
 	    this.bola.body.allowGravity = false;	
-	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
+	    this.botonbola = this.game.add.sprite(1040, 360, 'beTW');
 	    this.activatedb = false;
 	};	
 	playdesiertoState.prototype.strap = function(){
 		this.chuzo1.body.allowGravity = true;
 	    this.chuzo2.body.allowGravity = true;
-	    this.botonestalactita = this.game.add.sprite(1040, 330, 'baestalactita');
+	    this.botonestalactita = this.game.add.sprite(1040, 330, 'babuitre');
 	    game.time.events.add(Phaser.Timer.SECOND * 7, this.srelease, this);
 	};
 	playdesiertoState.prototype.srelease = function(){
@@ -501,33 +504,33 @@ var playdesiertoState = function(Just_run){
 	    this.game.physics.enable(this.chuzo2, Phaser.Physics.ARCADE);
 	    this.chuzo2.body.immovable = true;
 	    this.chuzo2.body.allowGravity = false;
-	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bestalactita');
+	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bebuitre');
 	    this.activatedc = false;
 	};
 	playdesiertoState.prototype.ptrap = function(){
 		this.p1.body.velocity.x = 300;
 		this.p2.body.velocity.x = 300;
 		this.p3.body.velocity.x = 300;
-		this.botonpinguino = this.game.add.sprite(1040, 300, 'bapinguino');
+		this.botonpinguino = this.game.add.sprite(1040, 300, 'bavaquero');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.prelease, this);
 	};
 	playdesiertoState.prototype.prelease = function(){
 		this.p1.destroy();
 		this.p2.destroy();
 		this.p3.destroy();
-		this.p1 = this.game.add.sprite(-50,70, 'pinguino');
+		this.p1 = this.game.add.sprite(-50,70, 'buitre');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
-	    this.p2 = this.game.add.sprite(-50,315, 'pinguino');
+	    this.p2 = this.game.add.sprite(-50,315, 'buitre');
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(-50,170, 'pinguino');
+	    this.p3 = this.game.add.sprite(-50,170, 'buitre');
 	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
 	    this.p3.body.immovable = true;
 	    this.p3.body.allowGravity = false;	
-	    this.botonpinguino = this.game.add.sprite(1040, 300, 'bepinguino');
+	    this.botonpinguino = this.game.add.sprite(1040, 300, 'bevaquero');
 	    this.activatedgp = false;
 	};
 	playdesiertoState.prototype.crearmundo = function(){

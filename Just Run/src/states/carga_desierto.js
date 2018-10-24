@@ -1,6 +1,6 @@
 var loadcarga_desiertoState = function(Just_Run) {
 	loadcarga_desiertoState.prototype.preload = function(){		
-		game.load.image('snowfield', 'assets/fondos/desierto.jpg');
+		game.load.image('snowfield', 'assets/fondos/FondoDesierto.png');
 		game.load.image('ground', 'assets/tiles/nieve/tierra.png');
 		game.load.image('snow', 'assets/tiles/nieve/nieve.png');		
 		game.load.image('water', 'assets/tiles/nieve/agua.png');
@@ -9,15 +9,16 @@ var loadcarga_desiertoState = function(Just_Run) {
 		game.load.image('ledges', 'assets/tiles/nieve/hielo_sin.png');
 		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
 		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
-		game.load.spritesheet('snowball', 'assets/sprites/nieve/bola de nieve/BolaNieve.png', 106, 106, 12);
-		game.load.image('chuzo', 'assets/sprites/nieve/Estalactita.png');
-		game.load.image('pinguino', 'assets/sprites/nieve/pinguino.png');
-		game.load.image('bebola', 'assets/sprites/nieve/bbola.png');
-		game.load.image('babola', 'assets/sprites/nieve/bolaapagado.png');
-		game.load.image('bestalactita', 'assets/sprites/nieve/bestalactita.png');
-		game.load.image('baestalactita', 'assets/sprites/nieve/estalactitaapagado.png');
-		game.load.image('bepinguino', 'assets/sprites/nieve/bpinguino.png');
-		game.load.image('bapinguino', 'assets/sprites/nieve/pinguinoapagado.png');		
+		game.load.spritesheet('tweed', 'assets/sprites/Desierto/TumbleWeed128x192.png', 128, 192, 8);
+		game.load.spritesheet('buitre', 'assets/sprites/Desierto/buitre200x70.png', 200, 70, 4);
+		game.load.image('cactus', 'assets/sprites/Desierto/Cactus.png');
+		game.load.image('vaquero', 'assets/sprites/Desierto/vaquero.png');
+		game.load.image('beTW', 'assets/sprites/Desierto/TWON.png');
+		game.load.image('baTW', 'assets/sprites/Desierto/TWOFF.png');
+		game.load.image('bebuitre', 'assets/sprites/Desierto/BuitreON.png');
+		game.load.image('babuitre', 'assets/sprites/Desierto/BuitreOFF.png');
+		game.load.image('bevaquero', 'assets/sprites/Desierto/VaqueroON.png');
+		game.load.image('bavaquero', 'assets/sprites/Desierto/VaqueroOFF.png');		
 	},
 	loadcarga_desiertoState.prototype.create = function(){	
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
