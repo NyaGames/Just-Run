@@ -230,7 +230,8 @@ var playdesiertoState = function(Just_run){
 	    //control del dash
 	    
 	    if(catched){
-	    	game.state.start('loadcarga_volcan');
+	    	this.pchaser++;
+	    	game.state.start('loadcarga_oceano');
 	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;
@@ -613,14 +614,21 @@ var playdesiertoState = function(Just_run){
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
+        this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
+        this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
     };
     playdesiertoState.prototype.endTimer = function() {
+    	this.pescapist++;
         this.timer.stop();
-        game.state.start('loadcarga_volcan');
+        game.state.start('loadcarga_oceano');
     };
     playdesiertoState.prototype.formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   
+    };
+    playdesiertoState.prototype.init = function(){
+    	this.pchaser = this.game.state.states["playcastillo"].pchaser;
+    	this.pescapist = this.game.state.states["playcastillo"].pescapist;
     }
 }

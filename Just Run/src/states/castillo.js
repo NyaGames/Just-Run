@@ -1,12 +1,13 @@
 var playcastilloState = function(Just_run){
 	playcastilloState.prototype.create = function() {        	
+		this.init();
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'castle');
 
 	    //variables del movimiento
 	    this.velocidadmaxima = 300;
 	    this.aceleracion = 500;
-	    this.frenada = 1300;
+	    this.frenada = 5000;
 	    this.gravedad = 1500; 
 	    this.salto = -600; 
 		
@@ -210,7 +211,8 @@ var playcastilloState = function(Just_run){
 	    //control del dash
 	    
 	    if(catched){
-	    	game.state.start('loadcarga_oceano');
+	    	this.pchaser++;
+	    	game.state.start('loadcarga_desierto');
 	    }
 	    if (this.spaceInputIsActive() && !this.activated) {
 	    		this.activated = true;
@@ -660,14 +662,21 @@ var playcastilloState = function(Just_run){
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
+        this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
+        this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
     };
     playcastilloState.prototype.endTimer = function() {
+    	this.pescapist++;
         this.timer.stop();
-        game.state.start('loadcarga_oceano');
+        game.state.start('loadcarga_desierto');
     };
     playcastilloState.prototype.formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   
+    };
+    playcastilloState.prototype.init = function(){
+    	this.pchaser = this.game.state.states["playnieve"].pchaser;
+    	this.pescapist = this.game.state.states["playnieve"].pescapist;
     }
 }

@@ -1,5 +1,6 @@
-var playnieveState = function(Just_run){
-	playnieveState.prototype.create = function() {        	
+var playnieveState = function(Just_run, puntuacionchaser, puntuacionescapist){
+	playnieveState.prototype.create = function() {
+		this.init();        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'snowfield');
 
@@ -93,11 +94,12 @@ var playnieveState = function(Just_run){
 	    // suelo
 	    this.crearmundo();	 
 
+
 	  // Create a custom timer
         this.timer = this.game.time.create();
         
         // Create a delayed event 1m and 30s from now
-        this.timerEvent = this.timer.add(	Phaser.Timer.SECOND * 30, this.endTimer, this);
+        this.timerEvent = this.timer.add(Phaser.Timer.SECOND * 30, this.endTimer, this);
         
         // Start the timer
         this.timer.start();
@@ -230,6 +232,7 @@ var playnieveState = function(Just_run){
 	    //control del dash
 	    
 	    if(catched){
+	    	this.pchaser++;
 	    	game.state.start('loadcarga_castillo');
 	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
@@ -613,14 +616,21 @@ var playnieveState = function(Just_run){
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
+        this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
+        this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
     };
     playnieveState.prototype.endTimer = function() {
         this.timer.stop();
+        this.pescapist++;
         game.state.start('loadcarga_castillo');
     };
     playnieveState.prototype.formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   
+    };
+    playnieveState.prototype.init = function(){
+    	this.pchaser = this.game.state.states["loadcarga_nieve"].puntuacionchaser;
+    	this.pescapist = this.game.state.states["loadcarga_nieve"].puntuacionescapist;
     }
 }
