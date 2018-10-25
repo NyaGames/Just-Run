@@ -1,12 +1,9 @@
 var loadcarga_desiertoState = function(Just_Run) {
 	loadcarga_desiertoState.prototype.preload = function(){		
 		game.load.image('snowfield', 'assets/fondos/FondoDesierto.png');
-		game.load.image('ground', 'assets/tiles/nieve/tierra.png');
-		game.load.image('snow', 'assets/tiles/nieve/nieve.png');		
-		game.load.image('water', 'assets/tiles/nieve/agua.png');
-		game.load.image('waters', 'assets/tiles/nieve/agua_sin nieve.png');
-		game.load.image('ledge', 'assets/tiles/nieve/ledge.png');
-		game.load.image('ledges', 'assets/tiles/nieve/hielo_sin.png');
+		game.load.image('ground', 'assets/tiles/desierto/arena.png');
+		game.load.image('arena', 'assets/tiles/desierto/arenaSombra.png');
+		game.load.image('ledge', 'assets/tiles/desierto/SandStone.png');
 		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
 		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
 		game.load.spritesheet('tweed', 'assets/sprites/Desierto/TumbleWeed128x192.png', 128, 192, 8);
