@@ -2,7 +2,7 @@ var loadcarga_nieveState = function(Just_Run) {
 	this.puntuacionchaser = 0;
 	this.puntuacionescapist = 0;
 	loadcarga_nieveState.prototype.preload = function(){		
-		game.load.image('snowfield', 'assets/fondos/nieve.png');
+		game.load.image('snowfield', 'assets/fondos/nieveoscuro.png');
 		game.load.image('ground', 'assets/tiles/nieve/tierra.png');
 		game.load.image('snow', 'assets/tiles/nieve/nieve.png');		
 		game.load.image('water', 'assets/tiles/nieve/agua.png');
