@@ -4,6 +4,9 @@ var loadcarga_desiertoState = function(Just_Run) {
 		game.load.image('ground', 'assets/tiles/desierto/arena.png');
 		game.load.image('arena', 'assets/tiles/desierto/arenaSombra.png');
 		game.load.image('ledge', 'assets/tiles/desierto/SandStone.png');
+		game.load.image('plataforma', 'assets/tiles/desierto/plataforma.png');
+		game.load.image('bala', 'assets/sprites/Desierto/bala.png');
+		game.load.image('vaquero', 'assets/sprites/Desierto/vaquero.png');
 		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
 		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
 		game.load.spritesheet('tweed', 'assets/sprites/Desierto/TumbleWeed128x192.png', 128, 192, 8);

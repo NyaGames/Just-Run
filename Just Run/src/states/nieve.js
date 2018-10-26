@@ -233,7 +233,8 @@ var playnieveState = function(Just_run, puntuacionchaser, puntuacionescapist){
 	    
 	    if(catched){
 	    	this.pchaser++;
-	    	game.state.start('loadcarga_castillo');
+	    	this.game.add.sprite(0,0,"catched");
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
 	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;
@@ -622,7 +623,11 @@ var playnieveState = function(Just_run, puntuacionchaser, puntuacionescapist){
     playnieveState.prototype.endTimer = function() {
         this.timer.stop();
         this.pescapist++;
-        game.state.start('loadcarga_castillo');
+		this.game.add.sprite(0,0,"libre");
+	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
+    };
+    playnieveState.prototype.cambio = function(){
+    	game.state.start('loadcarga_castillo');
     };
     playnieveState.prototype.formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);

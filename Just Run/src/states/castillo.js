@@ -212,7 +212,8 @@ var playcastilloState = function(Just_run){
 	    
 	    if(catched){
 	    	this.pchaser++;
-	    	game.state.start('loadcarga_desierto');
+	    	this.game.add.sprite(0,0,"catched");
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
 	    }
 	    if (this.spaceInputIsActive() && !this.activated) {
 	    		this.activated = true;
@@ -665,11 +666,16 @@ var playcastilloState = function(Just_run){
         this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
         this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
     };
-    playcastilloState.prototype.endTimer = function() {
-    	this.pescapist++;
+     playcastilloState.prototype.endTimer = function() {
         this.timer.stop();
-        game.state.start('loadcarga_desierto');
+        this.pescapist++;
+		this.game.add.sprite(0,0,"libre");
+	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
+    playcastilloState.prototype.cambio = function(){
+    	game.state.start('loadcarga_desierto');
+    };
+
     playcastilloState.prototype.formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
