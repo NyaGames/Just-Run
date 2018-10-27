@@ -631,6 +631,9 @@ var playnieveState = function(Just_run, puntuacionchaser, puntuacionescapist){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playnieveState.prototype.cambio = function(){
+    	if(this.pchaser > 5){
+    		this.pchaser = 1;
+    	}
     	game.state.start('loadcarga_castillo');
     };
     playnieveState.prototype.formatTime = function(s) {

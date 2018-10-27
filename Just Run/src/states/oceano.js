@@ -26,19 +26,19 @@ var playoceanoState = function(Just_run){
 	    this.ancla2.body.immovable = true;
 	    this.ancla2.body.allowGravity = false;
 	    //crear penguinos
-	    this.p1 = this.game.add.sprite(164,70, 'pinguino');
+	    this.p1 = this.game.add.sprite(164,70, 'erizo');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
-	    this.p2 = this.game.add.sprite(256,315, 'pinguino');
+	    this.p2 = this.game.add.sprite(256,315, 'erizo');
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(850,315, 'pinguino');
+	    this.p3 = this.game.add.sprite(850,315, 'erizo');
 	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
 	    this.p3.body.immovable = true;
 	    this.p3.body.allowGravity = false;
-	    this.p4 = this.game.add.sprite(818,70, 'pinguino');
+	    this.p4 = this.game.add.sprite(818,70, 'erizo');
 	    this.game.physics.enable(this.p4, Phaser.Physics.ARCADE);
 	    this.p4.body.immovable = true;
 	    this.p4.body.allowGravity = false;
@@ -80,7 +80,7 @@ var playoceanoState = function(Just_run){
 	    this.escapist.animations.play('idle');
 
 	    //crear botones
-	    this.botonpinguino = this.game.add.sprite(1040, 300, 'bepinguino');
+	    this.botonerizo = this.game.add.sprite(1040, 300, 'beerizo');
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bestalactita');
 	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
 
@@ -388,26 +388,26 @@ var playoceanoState = function(Just_run){
 		this.p1.body.velocity.x = 300;
 		this.p2.body.velocity.x = 300;
 		this.p3.body.velocity.x = 300;
-		this.botonpinguino = this.game.add.sprite(1040, 300, 'bapinguino');
+		this.botonerizo = this.game.add.sprite(1040, 300, 'baerizo');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.prelease, this);
 	};
 	playoceanoState.prototype.prelease = function(){
 		this.p1.destroy();
 		this.p2.destroy();
 		this.p3.destroy();
-		this.p1 = this.game.add.sprite(-50,70, 'pinguino');
+		this.p1 = this.game.add.sprite(-50,70, 'erizo');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
-	    this.p2 = this.game.add.sprite(-50,315, 'pinguino');
+	    this.p2 = this.game.add.sprite(-50,315, 'erizo');
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(-50,170, 'pinguino');
+	    this.p3 = this.game.add.sprite(-50,170, 'erizo');
 	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
 	    this.p3.body.immovable = true;
 	    this.p3.body.allowGravity = false;	
-	    this.botonpinguino = this.game.add.sprite(1040, 300, 'bepinguino');
+	    this.botonerizo = this.game.add.sprite(1040, 300, 'beerizo');
 	    this.activatedgp = false;
 	};
 	playoceanoState.prototype.crearmundo = function(){
@@ -605,6 +605,9 @@ var playoceanoState = function(Just_run){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
     };
     playoceanoState.prototype.cambio = function(){
+    	if(this.pchaser > 5){
+    		this.pchaser = this.game.state.states["playdesierto"].pchaser + 1;
+    	}
         game.state.start('loadcarga_volcan');
     };
     playoceanoState.prototype.formatTime = function(s) {

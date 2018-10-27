@@ -629,6 +629,9 @@ var playvolcanState = function(Just_run){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playvolcanState.prototype.cambio = function(){
+    	if(this.pchaser > 5){
+    		this.pchaser = this.game.state.states["playoceano"].pchaser + 1;
+    	}
         if(this.pchaser > this.pescapist){
         	game.state.start('victoriaC');
         }else{

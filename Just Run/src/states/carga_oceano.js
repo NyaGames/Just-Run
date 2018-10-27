@@ -8,7 +8,7 @@ var loadcarga_oceanoState = function(Just_Run) {
 		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
 		game.load.spritesheet('snowball', 'assets/sprites/Oceano/Tiburon.png', 104, 42, 4);
 		game.load.image('ancla', 'assets/sprites/Oceano/Ancla.png');
-		game.load.image('pinguino', 'assets/sprites/Oceano/ErizoCerrado.png');
+		game.load.image('erizo', 'assets/sprites/Oceano/ErizoCerrado.png');
 		game.load.image('bebola', 'assets/sprites/Oceano/TiburonON.png');
 		game.load.image('babola', 'assets/sprites/Oceano/TiburonOFF.png');
 		game.load.image('bestalactita', 'assets/sprites/Oceano/AnclaON.png');

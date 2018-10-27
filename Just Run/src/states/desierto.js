@@ -619,6 +619,9 @@ var playdesiertoState = function(Just_run){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playdesiertoState.prototype.cambio = function(){
+    	if(this.pchaser > 5){
+    		this.pchaser = this.game.state.states["playcastillo"].pchaser + 1;
+    	}
     	game.state.start("loadcarga_oceano");
     };
     playdesiertoState.prototype.formatTime = function(s) {
