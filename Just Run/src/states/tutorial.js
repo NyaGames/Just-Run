@@ -4,6 +4,6 @@ var tutorialState = function(Just_Run) {
 		game.time.events.add(Phaser.Timer.SECOND * 5, this.start, this);
 	},
 	tutorialState.prototype.start = function(){
-		game.state.start('loadcarga_volcan');
+		game.state.start('loadcarga_desierto');
 	}
 }
