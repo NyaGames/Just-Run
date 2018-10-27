@@ -11,8 +11,7 @@ var playvolcanState = function(Just_run){
 	    this.salto = -600; 
 		
 	    //crear bola de nieve
-	    this.bola = this.game.add.sprite(1100, 367, 'snowball');
-	    var rodar = this.bola.animations.add('rodar');
+	    this.bola = this.game.add.sprite(1100, 375, 'snowball');
 	    this.game.physics.enable(this.bola, Phaser.Physics.ARCADE);
 	    this.bola.body.immovable = true;
 	    this.bola.body.allowGravity = false;
@@ -25,6 +24,10 @@ var playvolcanState = function(Just_run){
 	    this.game.physics.enable(this.chuzo2, Phaser.Physics.ARCADE);
 	    this.chuzo2.body.immovable = true;
 	    this.chuzo2.body.allowGravity = false;
+	    this.chuzo3 = this.game.add.sprite(1000, -90, 'chuzo');
+	    this.game.physics.enable(this.chuzo3, Phaser.Physics.ARCADE);
+	    this.chuzo3.body.immovable = true;
+	    this.chuzo3.body.allowGravity = false;
 	    //crear penguinos
 	    this.p1 = this.game.add.sprite(-50,70, 'pinguino');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
@@ -122,15 +125,14 @@ var playvolcanState = function(Just_run){
 
 	playvolcanState.prototype.update = function() {
 	    var onTheGround = game.physics.arcade.collide(this.chaser, this.ground);
-	    game.physics.arcade.collide(this.chaser, this.water);
 	    var onTheLedge = game.physics.arcade.collide(this.chaser, this.ice);
 	    game.physics.arcade.collide(this.chaser, this.bola);
 	    game.physics.arcade.collide(this.chaser, this.chuzo1);
 	    game.physics.arcade.collide(this.chaser, this.chuzo2);
+	    game.physics.arcade.collide(this.chaser, this.chuzo3);
 	    game.physics.arcade.collide(this.chaser, this.p1);
 	    game.physics.arcade.collide(this.chaser, this.p2);
 	    game.physics.arcade.collide(this.chaser, this.p3);
-	    var hitWTrap = game.physics.arcade.collide(this.chaser, this.wtrap);
 	    var hitITrap = game.physics.arcade.collide(this.chaser, this.itrap);
 	    var onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
 	    game.physics.arcade.collide(this.escapist, this.water);
@@ -144,33 +146,13 @@ var playvolcanState = function(Just_run){
 	    	if(onTheGround|| onTheLedge){
 	    		this.chaser.animations.play('run');
 	    	}
-	    	if(hitWTrap&&this.activated){
-	    		this.chaser.body.velocity.x = this.chaser.body.velocity.x/1.5;
-	    		this.chaser.body.acceleration.x = -this.aceleracion/1.5;
-	    	}else{
 	        	this.chaser.body.acceleration.x = -this.aceleracion;
-	    	}
-	    	if(hitITrap&&this.activated){
-	    		this.chaser.body.acceleration.x = -this.aceleracion*4;
-	    	}else{
-	        	this.chaser.body.acceleration.x = -this.aceleracion;
-	    	}
 	    } else if (this.DInputIsActive()) {
 	    	this.chaser.scale.setTo(1, 1);
 	    	if(onTheGround || onTheLedge){
 	    		this.chaser.animations.play('run');
-	    	}
-	        if(hitWTrap&&this.activated){
-	    		this.chaser.body.velocity.x = this.chaser.body.velocity.x/1.5;
-	    		this.chaser.body.acceleration.x = this.aceleracion/1.5;
-	    	}else{
-	        	this.chaser.body.acceleration.x = this.aceleracion;
-	    	}
-	    	if(hitITrap&&this.activated){
-	    		this.chaser.body.acceleration.x = this.aceleracion*4;
-	    	}else{
-	        	this.chaser.body.acceleration.x = this.aceleracion;
-	    	}
+	    	}   	
+	    	this.chaser.body.acceleration.x = this.aceleracion;
 	    } else {
 	    	this.chaser.animations.play('idle');
 	        this.chaser.body.acceleration.x = 0;
@@ -200,14 +182,8 @@ var playvolcanState = function(Just_run){
 	    }
 	    if (this.jumps > 0 && this.WInputIsActive(5)) {
 	    	this.chaser.animations.play('doblejump');
-	    	if(hitWTrap&&this.activated){
-	    		this.chaser.body.velocity.y = this.salto/2.5;
-	        	this.jumping = true;
-	        	this.jumps = 0;
-	    	}else{
 	    		this.chaser.body.velocity.y = this.salto;
-	        	this.jumping = true;
-	    	}	        
+	        	this.jumping = true;      
 	    }
 	    if (this.jumping && this.WInputReleased()) {
 	        this.jumps--;
@@ -228,7 +204,9 @@ var playvolcanState = function(Just_run){
 	        this.jumping1 = false;
 	    }
 	    //control del dash
-	    
+	    if(this.activatedg && hitITrap){
+	    	this.chaser.body.velocity.y = this.salto;
+	    }
 	     var sumar = true;
 	   if(catched){
 	   		if(sumar){
@@ -240,7 +218,6 @@ var playvolcanState = function(Just_run){
 	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;
-	    		this.watertrap();
 		    	this.icetrap();	
 	    }
 	    if (this.QInputIsActive() && !this.activatedb){
@@ -359,131 +336,75 @@ var playvolcanState = function(Just_run){
 	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	//metodos de las trampas
-	playvolcanState.prototype.watertrap = function(){
-		this.water.destroy();
-		this.wtrap = this.game.add.group();
-		block = this.game.add.sprite(448, this.game.height-128, 'waters');
-		this.game.physics.enable(block, Phaser.Physics.ARCADE);
-		block.body.immovable = true;
-		block.body.allowGravity = false;
-		this.wtrap.add(block);
-		game.time.events.add(Phaser.Timer.SECOND * 4, this.releasew, this);
-	};	
-	playvolcanState.prototype.releasew = function(){
-		this.wtrap.destroy();
-		this.water = this.game.add.group();
-		block = this.game.add.sprite(448, this.game.height-128, 'water');
-		this.game.physics.enable(block, Phaser.Physics.ARCADE);
-		block.body.immovable = true;
-		block.body.allowGravity = false;
-		this.water.add(block);
-		this.activatedg = false;
-	};
 	playvolcanState.prototype.icetrap = function(){
-		this.ice.destroy();
-		    	
-		    	this.itrap = this.game.add.group();
-		    	
-				block = this.game.add.sprite(120, this.game.height - 250, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
-			    block = this.game.add.sprite(240, this.game.height - 250, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
+		this.ice.destroy();		    	
+		this.itrap = this.game.add.group();
 
-			    block = this.game.add.sprite(700, this.game.height - 250, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
-			    block = this.game.add.sprite(820, this.game.height - 250, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
+		block = this.game.add.sprite(120, this.game.height - 250, 'ledges');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.itrap.add(block);
+
+	    block = this.game.add.sprite(700+64, this.game.height - 250, 'ledges');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.itrap.add(block);
 
 
-			    block = this.game.add.sprite(460, this.game.height - 400, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
+	    block = this.game.add.sprite(760+64, this.game.height - 450, 'ledges');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.itrap.add(block);
 
-			    block = this.game.add.sprite(760, this.game.height - 500, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
+	    block = this.game.add.sprite(180, this.game.height - 450, 'ledges');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.itrap.add(block);
 
-			    block = this.game.add.sprite(180, this.game.height - 500, 'ledges');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.itrap.add(block);
-			    game.time.events.add(Phaser.Timer.SECOND * 4, this.releasei, this);
+	    game.time.events.add(Phaser.Timer.SECOND * 4, this.releasei, this);
 	};
 	playvolcanState.prototype.releasei = function(){
 		this.itrap.destroy();
 		this.ice = this.game.add.group();
-		    	
-				block = this.game.add.sprite(120, this.game.height - 250, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.ice.add(block);
-			    block = this.game.add.sprite(240, this.game.height - 250, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.ice.add(block);
+		 block = this.game.add.sprite(120, this.game.height - 250, 'ledge');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.ice.add(block);
 
-			    block = this.game.add.sprite(700, this.game.height - 250, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.ice.add(block);
-			    block = this.game.add.sprite(820, this.game.height - 250, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.ice.add(block);
+	    block = this.game.add.sprite(700+64, this.game.height - 250, 'ledge');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.ice.add(block);
 
 
-			    block = this.game.add.sprite(460, this.game.height - 400, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.ice.add(block);
 
-			    block = this.game.add.sprite(760, this.game.height - 500, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.ice.add(block);
+	    block = this.game.add.sprite(760+64, this.game.height - 450, 'ledge');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;ty = false;
+	    this.ice.add(block);
 
-			    block = this.game.add.sprite(180, this.game.height - 500, 'ledge');
-			    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-			    block.body.immovable = true;
-			    block.body.allowGravity = false;
-			    this.ice.add(block);
+	    block = this.game.add.sprite(180, this.game.height - 450, 'ledge');
+	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
+	    block.body.immovable = true;
+	    block.body.allowGravity = false;
+	    this.ice.add(block);
 			    this.activatedg = false;
 	};
-	playvolcanState.prototype.balltrap = function(){		
-	    this.bola.animations.play('rodar', 12, true);
+	playvolcanState.prototype.balltrap = function(){	
 		this.bola.body.velocity.x = -200;
 		this.botonbola = this.game.add.sprite(1040, 360, 'babola');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.ballrelease, this);
 	};
 	playvolcanState.prototype.ballrelease = function(){
 		this.bola.destroy();
-		this.bola = this.game.add.sprite(1100, 367, 'snowball');
-	    var rodar = this.bola.animations.add('rodar');
-	    this.game.physics.enable(this.bola, Phaser.Physics.ARCADE);
+		this.bola = this.game.add.sprite(1100, 375, 'snowball');
 	    this.bola.body.immovable = true;
 	    this.bola.body.allowGravity = false;	
 	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
@@ -491,13 +412,18 @@ var playvolcanState = function(Just_run){
 	};	
 	playvolcanState.prototype.strap = function(){
 		this.chuzo1.body.allowGravity = true;
+		this.chuzo1.body.velocity.x = -300;
 	    this.chuzo2.body.allowGravity = true;
+	    this.chuzo2.body.velocity.x = -300;
+	    this.chuzo3.body.allowGravity = true;
+	    this.chuzo3.body.velocity.x = -300;
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'baestalactita');
 	    game.time.events.add(Phaser.Timer.SECOND * 7, this.srelease, this);
 	};
 	playvolcanState.prototype.srelease = function(){
 		this.chuzo1.destroy();
 		this.chuzo2.destroy();
+		this.chuzo3.destroy();
 		this.chuzo1 = this.game.add.sprite(650, -90, 'chuzo');
 	    this.game.physics.enable(this.chuzo1, Phaser.Physics.ARCADE);
 	    this.chuzo1.body.immovable = true;
@@ -506,6 +432,10 @@ var playvolcanState = function(Just_run){
 	    this.game.physics.enable(this.chuzo2, Phaser.Physics.ARCADE);
 	    this.chuzo2.body.immovable = true;
 	    this.chuzo2.body.allowGravity = false;
+	    this.chuzo3 = this.game.add.sprite(1000, -90, 'chuzo');
+	    this.game.physics.enable(this.chuzo3, Phaser.Physics.ARCADE);
+	    this.chuzo3.body.immovable = true;
+	    this.chuzo3.body.allowGravity = false;
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bestalactita');
 	    this.activatedc = false;
 	};
@@ -537,10 +467,8 @@ var playvolcanState = function(Just_run){
 	};
 	playvolcanState.prototype.crearmundo = function(){
 		this.ground = this.game.add.group();
-	    this.water = this.game.add.group();
 	    this.ice = this.game.add.group();
-	    this.wtrap = this.game.add.group();
-	    this.itrap = this.game.add.group();
+
 
 	    var block;
 	    for(var i = 0; i <34; i++){
@@ -559,57 +487,53 @@ var playvolcanState = function(Just_run){
 		    block.body.immovable = true;
 		    block.body.allowGravity = false;
 		    this.ground.add(block);
-		    if(i < 14 || i > 18){
-		    	block = this.game.add.sprite(i*32, this.game.height - 128, 'snow');
+		    if(i == 6 || i == 25){
+			    block = this.game.add.sprite(32*i, this.game.height - 128, 'lava');
 		    	this.game.physics.enable(block, Phaser.Physics.ARCADE);
 			    block.body.immovable = true;
 			    block.body.allowGravity = false;
-			    this.ground.add(block);	
+			    this.ground.add(block);
+			    block = this.game.add.sprite(i*32, this.game.height - 160, 'lava');
+		    	this.game.physics.enable(block, Phaser.Physics.ARCADE);
+			    block.body.immovable = true;
+			    block.body.allowGravity = false;
+			    this.ground.add(block);
+			    block = this.game.add.sprite(i*32, this.game.height - 192, 'lava');
+		    	this.game.physics.enable(block, Phaser.Physics.ARCADE);
+			    block.body.immovable = true;
+			    block.body.allowGravity = false;
+			    this.ground.add(block);
+			    block = this.game.add.sprite(i*32, this.game.height - 224, 'lava');
+		    	this.game.physics.enable(block, Phaser.Physics.ARCADE);
+			    block.body.immovable = true;
+			    block.body.allowGravity = false;
+			    this.ground.add(block);
 		    }
-	    }
-	    
-	    block = this.game.add.sprite(448, this.game.height-128, 'water');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-		block.body.immovable = true;
-		block.body.allowGravity = false;
-		this.water.add(block);
+		    
+	    }   
+	    //trampa arena
 
 	    block = this.game.add.sprite(120, this.game.height - 250, 'ledge');
 	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
 	    block.body.immovable = true;
 	    block.body.allowGravity = false;
 	    this.ice.add(block);
-	    block = this.game.add.sprite(240, this.game.height - 250, 'ledge');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.ice.add(block);
 
-	    block = this.game.add.sprite(700, this.game.height - 250, 'ledge');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.ice.add(block);
-	    block = this.game.add.sprite(820, this.game.height - 250, 'ledge');
+	    block = this.game.add.sprite(700+64, this.game.height - 250, 'ledge');
 	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
 	    block.body.immovable = true;
 	    block.body.allowGravity = false;
 	    this.ice.add(block);
 
 
-	    block = this.game.add.sprite(460, this.game.height - 400, 'ledge');
+
+	    block = this.game.add.sprite(760+64, this.game.height - 450, 'ledge');
 	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
 	    block.body.immovable = true;
-	    block.body.allowGravity = false;
+	    block.body.allowGravity = false;ty = false;
 	    this.ice.add(block);
 
-	    block = this.game.add.sprite(760, this.game.height - 500, 'ledge');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.ice.add(block);
-
-	    block = this.game.add.sprite(180, this.game.height - 500, 'ledge');
+	    block = this.game.add.sprite(180, this.game.height - 450, 'ledge');
 	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
 	    block.body.immovable = true;
 	    block.body.allowGravity = false;
@@ -646,4 +570,5 @@ var playvolcanState = function(Just_run){
     playvolcanState.prototype.init = function(){
     	this.pchaser = this.game.state.states["playoceano"].pchaser;
     	this.pescapist = this.game.state.states["playoceano"].pescapist;
-    }}
+    }
+}

@@ -1,21 +1,19 @@
 var loadcarga_volcanState = function(Just_Run) {
 	loadcarga_volcanState.prototype.preload = function(){		
-		game.load.image('snowfield', 'assets/fondos/volcan.jpg');
-		game.load.image('ground', 'assets/tiles/nieve/tierra.png');
-		game.load.image('snow', 'assets/tiles/nieve/nieve.png');		
-		game.load.image('water', 'assets/tiles/nieve/agua.png');
-		game.load.image('waters', 'assets/tiles/nieve/agua_sin nieve.png');
-		game.load.image('ledge', 'assets/tiles/nieve/ledge.png');
-		game.load.image('ledges', 'assets/tiles/nieve/hielo_sin.png');
+		game.load.image('snowfield', 'assets/fondos/volcan.png');
+		game.load.image('ground', 'assets/tiles/volcan/arena.png');	
+		game.load.image('lava', 'assets/tiles/volcan/lava.png');
+		game.load.image('ledge', 'assets/tiles/volcan/ledge.png');
+		game.load.image('ledges', 'assets/tiles/volcan/ledges.png');
 		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
 		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
-		game.load.spritesheet('snowball', 'assets/sprites/nieve/bola de nieve/BolaNieve.png', 106, 106, 12);
-		game.load.image('chuzo', 'assets/sprites/nieve/Estalactita.png');
+		game.load.image('snowball', 'assets/sprites/volcan/ola.png');
+		game.load.image('chuzo', 'assets/sprites/volcan/meteorito.png');
 		game.load.image('pinguino', 'assets/sprites/nieve/pinguino.png');
-		game.load.image('bebola', 'assets/sprites/nieve/bbola.png');
-		game.load.image('babola', 'assets/sprites/nieve/bolaapagado.png');
-		game.load.image('bestalactita', 'assets/sprites/nieve/bestalactita.png');
-		game.load.image('baestalactita', 'assets/sprites/nieve/estalactitaapagado.png');
+		game.load.image('bebola', 'assets/sprites/volcan/olaON.png');
+		game.load.image('babola', 'assets/sprites/volcan/olaOFF.png');
+		game.load.image('bestalactita', 'assets/sprites/volcan/meteoritoON.png');
+		game.load.image('baestalactita', 'assets/sprites/volcan/meteoritoOFF.png');
 		game.load.image('bepinguino', 'assets/sprites/nieve/bpinguino.png');
 		game.load.image('bapinguino', 'assets/sprites/nieve/pinguinoapagado.png');		
 	},
