@@ -229,8 +229,14 @@ var playvolcanState = function(Just_run){
 	    }
 	    //control del dash
 	    
-	    if(catched){
-	    	game.state.start('loadcarga_volcan');
+	     var sumar = true;
+	   if(catched){
+	   		if(sumar){
+	   			sumar = false;
+	    		this.pchaser++;
+	   		}
+	    	this.game.add.sprite(0,0,"catched");
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;
@@ -613,14 +619,28 @@ var playvolcanState = function(Just_run){
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
+        this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
+        this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
     };
     playvolcanState.prototype.endTimer = function() {
         this.timer.stop();
-        game.state.start('loadcarga_castillo');
+        this.escapist++;
+	    this.game.add.sprite(0,0,"libre");
+	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
+    };
+    playvolcanState.prototype.cambio = function(){
+        if(this.pchaser > this.pescapist){
+        	game.state.start('victoriaC');
+        }else{
+        	game.state.start('victoriaE');
+        }
     };
     playvolcanState.prototype.formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   
-    }
-}
+    };
+    playvolcanState.prototype.init = function(){
+    	this.pchaser = this.game.state.states["playoceano"].pchaser;
+    	this.pescapist = this.game.state.states["playoceano"].pescapist;
+    }}

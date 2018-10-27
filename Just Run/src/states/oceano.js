@@ -17,27 +17,31 @@ var playoceanoState = function(Just_run){
 	    this.bola.body.immovable = true;
 	    this.bola.body.allowGravity = false;
 	    //crear ancla de punta
-	    this.ancla1 = this.game.add.sprite(650, -90, 'ancla');
+	    this.ancla1 = this.game.add.sprite(0, -90, 'ancla');
 	    this.game.physics.enable(this.ancla1, Phaser.Physics.ARCADE);
 	    this.ancla1.body.immovable = true;
 	    this.ancla1.body.allowGravity = false;
-	    this.ancla2 = this.game.add.sprite(400, -90, 'ancla');
+	    this.ancla2 = this.game.add.sprite(928, -90, 'ancla');
 	    this.game.physics.enable(this.ancla2, Phaser.Physics.ARCADE);
 	    this.ancla2.body.immovable = true;
 	    this.ancla2.body.allowGravity = false;
 	    //crear penguinos
-	    this.p1 = this.game.add.sprite(-50,70, 'pinguino');
+	    this.p1 = this.game.add.sprite(164,70, 'pinguino');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
-	    this.p2 = this.game.add.sprite(-50,315, 'pinguino');
+	    this.p2 = this.game.add.sprite(256,315, 'pinguino');
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(-50,170, 'pinguino');
+	    this.p3 = this.game.add.sprite(850,315, 'pinguino');
 	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
 	    this.p3.body.immovable = true;
 	    this.p3.body.allowGravity = false;
+	    this.p4 = this.game.add.sprite(818,70, 'pinguino');
+	    this.game.physics.enable(this.p4, Phaser.Physics.ARCADE);
+	    this.p4.body.immovable = true;
+	    this.p4.body.allowGravity = false;
 
 	    // crear jugadores
 	    this.chaser = this.game.add.sprite(60, this.game.height - 300, 'chaser');
@@ -141,10 +145,10 @@ var playoceanoState = function(Just_run){
 	    	game.time.events.add(Phaser.Timer.SECOND * 5, this.platform, this);
 	    }
 	    if(onBubble){
-	    	this.chaser.body.velocity.y = this.salto;
+	    	this.chaser.body.velocity.y = this.salto*2;
 	    }
 	    if(onBubble1){
-	    	this.escapist.body.velocity.y = this.salto;
+	    	this.escapist.body.velocity.y = this.salto*2;
 	    }
 	    if (this.AInputIsActive()) {
 	    	this.chaser.scale.setTo(-1, 1);
@@ -345,7 +349,8 @@ var playoceanoState = function(Just_run){
 	//metodos de las trampas
 	playoceanoState.prototype.balltrap = function(){		
 	    this.bola.animations.play('rodar', 12, true);
-		this.bola.body.velocity.x = -200;
+		this.bola.body.velocity.x = (-this.bola.body.position.x + this.chaser.body.position.x)/2;
+		this.bola.body.velocity.y = (-this.bola.body.position.y + this.chaser.body.position.y)/2;
 		this.botonbola = this.game.add.sprite(1040, 360, 'babola');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.ballrelease, this);
 	};
@@ -368,11 +373,11 @@ var playoceanoState = function(Just_run){
 	playoceanoState.prototype.srelease = function(){
 		this.ancla1.destroy();
 		this.ancla2.destroy();
-		this.ancla1 = this.game.add.sprite(650, -90, 'ancla');
+		this.ancla1 = this.game.add.sprite(0, -90, 'ancla');
 	    this.game.physics.enable(this.ancla1, Phaser.Physics.ARCADE);
 	    this.ancla1.body.immovable = true;
 	    this.ancla1.body.allowGravity = false;
-	    this.ancla2 = this.game.add.sprite(400, -90, 'ancla');
+	    this.ancla2 = this.game.add.sprite(928, -90, 'ancla');
 	    this.game.physics.enable(this.ancla2, Phaser.Physics.ARCADE);
 	    this.ancla2.body.immovable = true;
 	    this.ancla2.body.allowGravity = false;
@@ -438,8 +443,8 @@ var playoceanoState = function(Just_run){
 			    block.body.allowGravity = false;
 			    this.ground.add(block);
 	    	}
-	    	if(i == 0 || i == 2 || i == 7 || i == 22 || i == 30 || i ==32){
-	    		block = this.game.add.sprite(32*i, this.game.height - 32, 'bubble');
+	    	if(i == 0 || i == 29){
+	    		block = this.game.add.sprite(32*i, this.game.height - 158, 'bubble');
 		    	this.game.physics.enable(block, Phaser.Physics.ARCADE);
 			    block.body.immovable = true;
 			    block.body.allowGravity = false;
@@ -590,6 +595,8 @@ var playoceanoState = function(Just_run){
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
+        this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
+        this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
     };
     playoceanoState.prototype.endTimer = function() {
         this.timer.stop();
