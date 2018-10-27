@@ -231,10 +231,14 @@ var playnieveState = function(Just_run, puntuacionchaser, puntuacionescapist){
 	    }
 	    //control del dash
 	    
-	    if(catched){
-	    	this.pchaser++;
+	    this.sumar = true;
+	   if(catched){
+	   		if(this.sumar === true){
+	   			this.sumar = false;
+	    		this.pchaser++;
+	   		}
 	    	this.game.add.sprite(0,0,"catched");
-	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;

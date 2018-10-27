@@ -210,10 +210,14 @@ var playcastilloState = function(Just_run){
 	    }
 	    //control del dash
 	    
-	    if(catched){
-	    	this.pchaser++;
+	    var sumar = true;
+	   if(catched){
+	   		if(sumar){
+	   			sumar = false;
+	    		this.pchaser++;
+	   		}
 	    	this.game.add.sprite(0,0,"catched");
-	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	    }
 	    if (this.spaceInputIsActive() && !this.activated) {
 	    		this.activated = true;

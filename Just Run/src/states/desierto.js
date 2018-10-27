@@ -18,11 +18,7 @@ var playdesiertoState = function(Just_run){
 	    this.bola.body.allowGravity = false;
 
 	    //crear chuzo de punta
-	    this.vaquero = this.game.add.sprite(-50, this.game.height-128, 'vaquero');
-	    this.game.physics.enable(this.vaquero, Phaser.Physics.ARCADE);
-	    this.vaquero.body.immovable = true;
-	    this.vaquero.body.allowGravity = false;
-	    this.b1 = this.game.add.sprite(-100, this.game.height-120, 'bala');
+	    this.b1 = this.game.add.sprite(-50, this.game.height-220, 'bala');
 	    this.game.physics.enable(this.b1, Phaser.Physics.ARCADE);
 	    this.b1.body.immovable = true;
 	    this.b1.body.allowGravity = false;
@@ -149,6 +145,7 @@ var playdesiertoState = function(Just_run){
 	    game.physics.arcade.collide(this.chaser, this.p2);
 	    game.physics.arcade.collide(this.chaser, this.p3);
 	    game.physics.arcade.collide(this.chaser, this.cactus);
+	    game.physics.arcade.collide(this.chaser, this.b1);
 	    var hitITrap = game.physics.arcade.collide(this.chaser, this.itrap);
 	    var onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
 	    var onTheLedge1 = game.physics.arcade.collide(this.escapist, this.ice);
@@ -225,11 +222,14 @@ var playdesiertoState = function(Just_run){
 	        this.jumping1 = false;
 	    }
 	    //control del dash
-	    
-	    if(catched){
-	    	this.pchaser++;
+	    var sumar = true;
+	   if(catched){
+	   		if(sumar){
+	   			sumar = false;
+	    		this.pchaser++;
+	   		}
 	    	this.game.add.sprite(0,0,"catched");
-	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;
@@ -389,24 +389,18 @@ var playdesiertoState = function(Just_run){
 	    this.activatedb = false;
 	};	
 	playdesiertoState.prototype.strap = function(){
-		this.vaquero.position.setTo(0, this.game.height - 128);
-		this.b1.position.setTo(0, this.game.height - 120);
-		this.b1.body.velocity.x = 400;
+		this.b1.body.velocity.x = (-this.b1.body.position.x + this.chaser.body.position.x)*2;
+		this.b1.body.velocity.y = (-this.b1.body.position.y + this.chaser.body.position.y)*2;
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bavaquero');
-	    game.time.events.add(Phaser.Timer.SECOND * 7, this.srelease, this);
+	    game.time.events.add(Phaser.Timer.SECOND * 5, this.srelease, this);
 	};
 	playdesiertoState.prototype.srelease = function(){
-
-		this.chuzo1.destroy();
-		this.chuzo2.destroy();
-		this.chuzo1 = this.game.add.sprite(650, -90, 'chuzo');
-	    this.game.physics.enable(this.chuzo1, Phaser.Physics.ARCADE);
-	    this.chuzo1.body.immovable = true;
-	    this.chuzo1.body.allowGravity = false;
-	    this.chuzo2 = this.game.add.sprite(400, -90, 'chuzo');
-	    this.game.physics.enable(this.chuzo2, Phaser.Physics.ARCADE);
-	    this.chuzo2.body.immovable = true;
-	    this.chuzo2.body.allowGravity = false;
+		this.b1.destroy();
+		this.b1 = this.game.add.sprite(-50, this.game.height-220, 'bala');
+	    this.game.physics.enable(this.b1, Phaser.Physics.ARCADE);
+	    this.b1.body.immovable = true;
+	    this.b1.body.allowGravity = false;
+	   
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bevaquero');
 	    this.activatedc = false;
 	};
@@ -621,8 +615,8 @@ var playdesiertoState = function(Just_run){
     };
     playdesiertoState.prototype.endTimer = function() {
     	this.pchaser++;
-	    this.game.add.sprite(0,0,"catched");
-	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
+	    this.game.add.sprite(0,0,"libre");
+	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playdesiertoState.prototype.cambio = function(){
     	game.state.start("loadcarga_oceano");

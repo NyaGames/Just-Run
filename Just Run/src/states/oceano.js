@@ -210,10 +210,14 @@ var playoceanoState = function(Just_run){
 	    }
 	    //control del dash
 	    
-	    if(catched){
-	    	this.pchaser++;
+	    var sumar = true;
+	   if(catched){
+	   		if(sumar){
+	   			sumar = false;
+	    		this.pchaser++;
+	   		}
 	    	this.game.add.sprite(0,0,"catched");
-	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	    }
 	    if (this.QInputIsActive() && !this.activatedb){
 	    		this.activatedb = true;	    		
@@ -600,5 +604,9 @@ var playoceanoState = function(Just_run){
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   
+    };
+    playoceanoState.prototype.init = function(){
+    	this.pchaser = this.game.state.states["playdesierto"].pchaser;
+    	this.pescapist = this.game.state.states["playdesierto"].pescapist;
     }
 }
