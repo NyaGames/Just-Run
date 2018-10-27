@@ -9,12 +9,13 @@ var loadcarga_oceanoState = function(Just_Run) {
 		game.load.spritesheet('snowball', 'assets/sprites/Oceano/Tiburon.png', 104, 42, 4);
 		game.load.image('ancla', 'assets/sprites/Oceano/Ancla.png');
 		game.load.image('erizo', 'assets/sprites/Oceano/ErizoCerrado.png');
+		game.load.image('erizoa', 'assets/sprites/Oceano/ErizoAbierto.png');
 		game.load.image('bebola', 'assets/sprites/Oceano/TiburonON.png');
 		game.load.image('babola', 'assets/sprites/Oceano/TiburonOFF.png');
 		game.load.image('bestalactita', 'assets/sprites/Oceano/AnclaON.png');
 		game.load.image('baestalactita', 'assets/sprites/Oceano/AnclaOFF.png');
-		game.load.image('bepinguino', 'assets/sprites/Oceano/ErizoON.png');
-		game.load.image('bapinguino', 'assets/sprites/Oceano/ErizoOFF.png');		
+		game.load.image('beerizo', 'assets/sprites/Oceano/ErizoON.png');
+		game.load.image('baerizo', 'assets/sprites/Oceano/ErizoOFF.png');		
 	},
 	loadcarga_oceanoState.prototype.create = function(){	
 		var pantallacarga = game.add.sprite(350, 150, 'carga');

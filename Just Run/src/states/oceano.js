@@ -25,23 +25,29 @@ var playoceanoState = function(Just_run){
 	    this.game.physics.enable(this.ancla2, Phaser.Physics.ARCADE);
 	    this.ancla2.body.immovable = true;
 	    this.ancla2.body.allowGravity = false;
+
+	    this.erizos = game.add.group();
 	    //crear penguinos
-	    this.p1 = this.game.add.sprite(164,70, 'erizo');
+	    this.p1 = this.game.add.sprite(284, 90, 'erizo');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
-	    this.p2 = this.game.add.sprite(256,315, 'erizo');
+	    this.erizos.add(this.p1);
+	    this.p2 = this.game.add.sprite(256,335, 'erizo');
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(850,315, 'erizo');
+	    this.erizos.add(this.p2);
+	    this.p3 = this.game.add.sprite(850,335, 'erizo');
 	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
 	    this.p3.body.immovable = true;
 	    this.p3.body.allowGravity = false;
-	    this.p4 = this.game.add.sprite(818,70, 'erizo');
+	    this.erizos.add(this.p3);
+	    this.p4 = this.game.add.sprite(818, 90, 'erizo');
 	    this.game.physics.enable(this.p4, Phaser.Physics.ARCADE);
 	    this.p4.body.immovable = true;
 	    this.p4.body.allowGravity = false;
+	    this.erizos.add(this.p4);
 
 	    // crear jugadores
 	    this.chaser = this.game.add.sprite(60, this.game.height - 300, 'chaser');
@@ -129,6 +135,7 @@ var playoceanoState = function(Just_run){
 	    game.physics.arcade.collide(this.chaser, this.bola);
 	    game.physics.arcade.collide(this.chaser, this.ancla1);
 	    game.physics.arcade.collide(this.chaser, this.ancla2);
+	    var spikes = game.physics.arcade.collide(this.chaser, this.erizos);
 	    var onTheLedge = game.physics.arcade.collide(this.chaser, this.ledge);
 	    var onTheLedge1 = game.physics.arcade.collide(this.escapist, this.ledge);
 	    var onBubble = game.physics.arcade.collide(this.chaser, this.burbuja);
@@ -222,6 +229,9 @@ var playoceanoState = function(Just_run){
 	   		}
 	    	this.game.add.sprite(0,0,"catched");
 	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
+	    }
+	    if(spikes && this.activatedgp){
+	    	this.chaser.body.velocity.x = this.salto;
 	    }
 	    if (this.QInputIsActive() && !this.activatedb){
 	    		this.activatedb = true;	    		
@@ -385,9 +395,30 @@ var playoceanoState = function(Just_run){
 	    this.activatedc = false;
 	};
 	playoceanoState.prototype.ptrap = function(){
-		this.p1.body.velocity.x = 300;
-		this.p2.body.velocity.x = 300;
-		this.p3.body.velocity.x = 300;
+		this.p1.destroy();
+		this.p2.destroy();
+		this.p3.destroy();
+		this.p4.destroy();
+		this.p1 = this.game.add.sprite(264, 90, 'erizoa');
+	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
+	    this.p1.body.immovable = true;
+	    this.p1.body.allowGravity = false;
+	    this.erizos.add(this.p1);
+	    this.p2 = this.game.add.sprite(256,335, 'erizoa');
+	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
+	    this.p2.body.immovable = true;
+	    this.p2.body.allowGravity = false;
+	    this.erizos.add(this.p2);
+	    this.p3 = this.game.add.sprite(850,335, 'erizoa');
+	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
+	    this.p3.body.immovable = true;
+	    this.p3.body.allowGravity = false;
+	    this.erizos.add(this.p3);
+	    this.p4 = this.game.add.sprite(818, 90, 'erizoa');
+	    this.game.physics.enable(this.p4, Phaser.Physics.ARCADE);
+	    this.p4.body.immovable = true;
+	    this.p4.body.allowGravity = false;
+	    this.erizos.add(this.p4);
 		this.botonerizo = this.game.add.sprite(1040, 300, 'baerizo');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.prelease, this);
 	};
@@ -395,18 +426,27 @@ var playoceanoState = function(Just_run){
 		this.p1.destroy();
 		this.p2.destroy();
 		this.p3.destroy();
-		this.p1 = this.game.add.sprite(-50,70, 'erizo');
+		this.p4.destroy();
+		this.p1 = this.game.add.sprite(264, 90, 'erizo');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
-	    this.p2 = this.game.add.sprite(-50,315, 'erizo');
+	    this.erizos.add(this.p1);
+	    this.p2 = this.game.add.sprite(256,335, 'erizo');
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(-50,170, 'erizo');
+	    this.erizos.add(this.p2);
+	    this.p3 = this.game.add.sprite(850,335, 'erizo');
 	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
 	    this.p3.body.immovable = true;
-	    this.p3.body.allowGravity = false;	
+	    this.p3.body.allowGravity = false;
+	    this.erizos.add(this.p3);
+	    this.p4 = this.game.add.sprite(818, 90, 'erizo');
+	    this.game.physics.enable(this.p4, Phaser.Physics.ARCADE);
+	    this.p4.body.immovable = true;
+	    this.p4.body.allowGravity = false;
+	    this.erizos.add(this.p4);
 	    this.botonerizo = this.game.add.sprite(1040, 300, 'beerizo');
 	    this.activatedgp = false;
 	};
