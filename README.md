@@ -215,8 +215,26 @@ Una partida de _Just Run_ se desarrollará de la siguiente manera:
 <p align="center">
   <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Escenas.png">
 </p>
-_Escenas y rondas_
-		
+_Escenas y rondas_  
+
+
+Dependiendo del jugador que gane en cada ronda, se mostrará una pantalla que indicará quien se lleva el punto de la ronda y que a su vez servirá como pantalla de carga entre rondas.  
+Esas pantallas son:  
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Cazado.png">
+</p>  
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Libre.png">
+</p>  
+	
+Cuando acaba la partida, se mostrará una pantalla que indicará quien es el ganador de esta, y se representará con las siguientes imagenes.  
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Victoria.png">
+</p>  
+<p align="center">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/VictoriaEscapist.png">
+</p> 
+  
 # 4. Arte
 
 _Just Run_ debe tener un arte que fomenté la tensión y la velocidad, además de ayudar al jugador a identificar las cosas que puede utilizar de las que no. Para ello se parte de una paleta de colores brillantes y saturados para los personajes y lo que va a estar en primer plano, y se usa otra paleta más apagada para lo que va a estar al fondo o no va a ser interactuable. Esto tambien ayuda a dar la sensación de profundidad.
@@ -237,7 +255,9 @@ A parte de esta diferencia de estilo, se usarán dos paletas distintas para pers
 		
 Se ha implementado diferentes animaciones para dar fluidez a los personajes; algunas de las animaciones de los personajes son, animación de correr, animación de saltar, animación de doble salto y animación para el _dash_. 
 También se ha implementado una animación que te utilizará en la pantalla de carga y en la pantalla de búsqueda de _matchmaking_ para que el jugador sepa que el juego está cargando y no se ha quedado bloqueado.
-
+  
+  
+También se han realizado animaciones para varias de las trampas, como la animación de un caballo, la animacion de un buitre o la animación de un tiburón entre otras.
 
 		4.3 Audio
 
