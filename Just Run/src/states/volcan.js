@@ -29,18 +29,14 @@ var playvolcanState = function(Just_run){
 	    this.chuzo3.body.immovable = true;
 	    this.chuzo3.body.allowGravity = false;
 	    //crear penguinos
-	    this.p1 = this.game.add.sprite(-50,100, 'pinguino');
+	    this.p1 = this.game.add.sprite(-50,110, 'pinguino');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
-	    this.p2 = this.game.add.sprite(-50,315, 'pinguino');
+	    this.p2 = this.game.add.sprite(-50,325, 'pinguino');
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
-	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(-50,200, 'pinguino');
-	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
-	    this.p3.body.immovable = true;
-	    this.p3.body.allowGravity = false;
+	    this.p2.body.allowGravity = false;;
 
 	    // crear jugadores
 	    this.chaser = this.game.add.sprite(60, this.game.height - 300, 'chaser');
@@ -140,6 +136,14 @@ var playvolcanState = function(Just_run){
 	    game.physics.arcade.collide(this.escapist, this.wtrap);
 	    game.physics.arcade.collide(this.escapist, this.itrap);
 	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
+	    if(this.chaser.body.position.y > this.game.height - 64){
+	    	this.chaser.body.position.x = 60;
+	    	this.chaser.body.position.y = this.game.height - 300;
+	    }
+	    if(this.escapist.body.position.y > this.game.height - 64){
+	    	this.escapist.body.position.x = 60;
+	    	this.escapist.body.position.y = this.game.height - 300;
+	    }
 
 	    if (this.AInputIsActive()) {
 	    	this.chaser.scale.setTo(-1, 1);
@@ -405,7 +409,7 @@ var playvolcanState = function(Just_run){
 	playvolcanState.prototype.ballrelease = function(){
 		this.bola.destroy();
 		this.bola = this.game.add.sprite(1100, 375, 'snowball');
-		this.bola = this.game.add.sprite(1100, 375, 'snowball');
+		this.game.physics.enable(this.bola, Phaser.Physics.ARCADE);
 	    this.bola.body.immovable = true;
 	    this.bola.body.allowGravity = false;	
 	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
@@ -443,26 +447,20 @@ var playvolcanState = function(Just_run){
 	playvolcanState.prototype.ptrap = function(){
 		this.p1.body.velocity.x = 300;
 		this.p2.body.velocity.x = 300;
-		this.p3.body.velocity.x = 300;
 		this.botonpinguino = this.game.add.sprite(1040, 300, 'bapinguino');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.prelease, this);
 	};
 	playvolcanState.prototype.prelease = function(){
 		this.p1.destroy();
 		this.p2.destroy();
-		this.p3.destroy();
-		this.p1 = this.game.add.sprite(-50,100, 'pinguino');
+		this.p1 = this.game.add.sprite(-50,110, 'pinguino');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
-	    this.p2 = this.game.add.sprite(-50,315, 'pinguino');
+	    this.p2 = this.game.add.sprite(-50,325, 'pinguino');
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(-50,200, 'pinguino');
-	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
-	    this.p3.body.immovable = true;
-	    this.p3.body.allowGravity = false;	
 	    this.botonpinguino = this.game.add.sprite(1040, 300, 'bepinguino');
 	    this.activatedgp = false;
 	};
@@ -554,7 +552,7 @@ var playvolcanState = function(Just_run){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playvolcanState.prototype.cambio = function(){
-    	if(this.pchaser > 5){
+    	if(catched){
     		this.pchaser = this.game.state.states["playoceano"].pchaser + 1;
     	}
         if(this.pchaser > this.pescapist){
