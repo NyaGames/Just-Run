@@ -10,7 +10,7 @@ var playnieveState = function(Just_run, puntuacionchaser, puntuacionescapist){
 	    this.frenada = 1300;
 	    this.gravedad = 1500; 
 	    this.salto = -600; 
-		
+	 
 	    //crear bola de nieve
 	    this.bola = this.game.add.sprite(1100, 367, 'snowball');
 	    var rodar = this.bola.animations.add('rodar');
@@ -471,6 +471,7 @@ var playnieveState = function(Just_run, puntuacionchaser, puntuacionescapist){
 			    this.ice.add(block);
 			    this.activatedg = false;
 	};
+	
 	playnieveState.prototype.balltrap = function(){		
 	    this.bola.animations.play('rodar', 12, true);
 		this.bola.body.velocity.x = -200;
