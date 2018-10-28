@@ -129,6 +129,7 @@ var playcastilloState = function(Just_run){
 	    game.physics.arcade.collide(this.escapist, this.water);
 	    var onTheLedge1 = game.physics.arcade.collide(this.escapist, this.wood);
 	    this.catched = game.physics.arcade.collide(this.escapist, this.chaser);
+	    if(this.timer.running){
 	    if(!this.catched){
 	    if(this.chaser.body.position.y > this.game.height - 64){
 	    	this.chaser.body.position.x = 60;
@@ -229,6 +230,7 @@ var playcastilloState = function(Just_run){
 			this.game.add.sprite(0,0,"catched");
 	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 		}
+	}
 	};
 
 	//controles con las flechas

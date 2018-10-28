@@ -154,6 +154,7 @@ var playdesiertoState = function(Just_run){
 	    game.physics.arcade.collide(this.escapist, this.wtrap);
 	    game.physics.arcade.collide(this.escapist, this.itrap);
 	    this.catched = game.physics.arcade.collide(this.escapist, this.chaser);
+	    if(this.timer.running){
 	    if(!this.catched){
 	     if(this.chaser.body.position.y > this.game.height - 64){
 	    	this.chaser.body.position.x = 60;
@@ -249,6 +250,7 @@ var playdesiertoState = function(Just_run){
 	    }else{	
 			this.game.add.sprite(0,0,"catched");
 	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
+	}
 	}
 	};
 
@@ -616,7 +618,7 @@ var playdesiertoState = function(Just_run){
         this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
     };
     playdesiertoState.prototype.endTimer = function() {
-    	this.pchaser++;
+    	this.pescapist++;
 	    this.game.add.sprite(0,0,"libre");
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };

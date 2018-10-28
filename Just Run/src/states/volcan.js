@@ -554,7 +554,7 @@ var playvolcanState = function(Just_run){
     };
     playvolcanState.prototype.cambio = function(){
     	if(this.catched){
-    		this.pchaser = this.game.state.states["playoceano"].pchaser + 1;
+    		this.pchaser = this.game.state.states["playoceano"].pchaser+1;
     	}
         if(this.pchaser > this.pescapist){
         	game.state.start('victoriaC');

@@ -131,6 +131,7 @@ var playoceanoState = function(Just_run){
 	};
 
 	playoceanoState.prototype.update = function() {
+		if(this.timer.running){
 	    var onTheGround = game.physics.arcade.collide(this.chaser, this.ground);
 	    game.physics.arcade.collide(this.chaser, this.bola);
 	    game.physics.arcade.collide(this.chaser, this.ancla1);
@@ -145,6 +146,7 @@ var playoceanoState = function(Just_run){
 	    game.physics.arcade.collide(this.chaser, this.p3);
 	    var onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
 	    this.catched = game.physics.arcade.collide(this.escapist, this.chaser);
+
 	    if(!this.catched){
 	     if(this.chaser.body.position.y > this.game.height - 64){
 	    	this.chaser.body.position.x = 60;
@@ -154,6 +156,7 @@ var playoceanoState = function(Just_run){
 	    	this.escapist.body.position.x = 60;
 	    	this.escapist.body.position.y = this.game.height - 300;
 	    }
+		
 
 	    if(onTheLedge){
 	    	this.ledge.body.allowGravity = true;
@@ -246,6 +249,7 @@ var playoceanoState = function(Just_run){
 	    }else{	
 			this.game.add.sprite(0,0,"catched");
 	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
+	}
 	}
 
 	};
