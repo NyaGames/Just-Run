@@ -13,11 +13,9 @@ Durante las diversas rondas, el perseguidor tiene el deber de alcanzar al escapi
 de evitarlo haciendo uso de todos los medios a su alcance.
 
 El juego estará dividido en varias rondas, cada una tendrá una temática diferente, sin embargo, el objetivo no cambia y hay
-que alcanzar al escapista. El perseguidor dispondrá de 60 segundos por ronda para alcanzar al escapista, pero no será tarea fácil,
+que alcanzar al escapista. El perseguidor dispondrá de 30 segundos por ronda para alcanzar al escapista, pero no será tarea fácil,
 ya que el escapista tendrá a su disposición diferentes medios y trampas para lograr huir.  
-Al finalizar la ronda, ya sea pasados los 60 segundos o capturado el escapista, se le otorgará al perseguidor una puntuación en 
-función de la velocidad que haya tardado en capturarlo. Al finalizar las rondas, se lo sumará toda la puntuación y se intercambiarán
-los roles, el perseguidor se convertirá en escapista y viceversa.  
+Al finalizar la ronda, ya sea pasados los 30 segundos o capturado el escapista, se le otorgará al perseguidor una puntuación. Al finalizar las rondas, se lo sumará toda la puntuación y se intercambiarán los roles, el perseguidor se convertirá en escapista y viceversa.  
 Al finalizar estas últimas rondas, el jugador con más puntuación ganará la partida.  
 
 		1.2. Características principales
@@ -104,7 +102,7 @@ Al iniciar una partida, ya sea en multijugador local como online, uno de los dos
 		
 		2.3 Sistema de puntuación
 	
-En la primera ronda, los jugadores pasarán por cinco niveles diferentes, cada uno con una temática diferentes, a su vez, con diferentes trampas y peligros. Cada nivel durará 60 segundos, que es el tiempo que tendrá el perseguidor para capturar al escapista. Cuanto más rápido lo capture, mayor puntuación obtendrá. Al principio de cada nivel de juego, el escapista comenzará con una puntuación de 6000 puntos que se irá restando poco a poco a medida que pasan los segundos hasta que llegue a 0 que será pasado los 60 segundos.  
+En la primera ronda, los jugadores pasarán por cinco niveles diferentes, cada uno con una temática diferentes, a su vez, con diferentes trampas y peligros. Cada nivel durará 30 segundos, que es el tiempo que tendrá el perseguidor para capturar al escapista. Cuanto más rápido lo capture, mayor puntuación obtendrá. Al principio de cada nivel de juego, el escapista comenzará con una puntuación de 3000 puntos que se irá restando poco a poco a medida que pasan los segundos hasta que llegue a 0 que será pasado los 30 segundos.  
 
 Después de los cinco niveles, comenzará la segunda ronda, en la cuál el escapista se convertirá en perseguidor y viceversa. Se jugarán los 5  niveles de nuevo y este segundo conseguirá su propia puntuación. Se realizará la suma de la puntuaciones de los cinco niveles y se obtendrá una puntuación total que se comparará con la suma total de su rival y el jugador que obtenga mayor puntuación ganará la partida.
 		
@@ -135,7 +133,7 @@ Para moverme por los menús, tanto en el menú principal como en el menú de pau
 Dentro de la partida los controles serán:
 1. Jugador 1:  
 - *A y D*, para moverse a la **izquierda** y **derecha** respectivamente.
-- *W/Barra Espaciadora*, para **saltar**.
+- *W*, para **saltar**.
 - *S/Shift*, para **Dash**.
   
 2. Jugador 2:  
@@ -143,6 +141,10 @@ Dentro de la partida los controles serán:
 - *Flecha hacia arriba*, para **saltar**.
 - *Flecha hacia abajo/Ctrl Derecho*, para **Dash**.
   
+3. Escapista:
+- *I/O/P*, habilidades.
+- *Barra espaciadora*, cambio en el terreno.
+
 # 3. Interfaz
 		3.1 Diagrama de flujo
 				
@@ -183,7 +185,7 @@ _Pantalla de carga de búsqueda de partida_
 Todos los submenús tienen un botón que nos permite acceder de nuevo al menú principal.
 		
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/interfaz%20prueba.jpg">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/MenuPrincipa.png">
 </p>
 	
 _Interfaz Menú Principal_
