@@ -646,7 +646,7 @@ var playoceanoState = function(Just_run){
     };
     playoceanoState.prototype.endTimer = function() {
         this.timer.stop();
-        this.escapist++;
+        this.pescapist++;
 	    this.game.add.sprite(0,0,"libre");
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };

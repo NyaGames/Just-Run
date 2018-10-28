@@ -208,16 +208,15 @@ var playvolcanState = function(Just_run){
 	        this.jumps1--;
 	        this.jumping1 = false;
 	    }
+	    if(catched){
+	    	this.game.add.sprite(0,0,"catched");
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
+	    }
 	    //control del dash
 	    if(this.activatedg && hitITrap){
 	    	this.chaser.body.velocity.y = this.salto;
 	    }
-	     var sumar = true;
-	   if(catched){
-	   		if(sumar){
-	   			sumar = false;
-	    		this.pchaser++;
-	   		}
+	    if(catched){
 	    	this.game.add.sprite(0,0,"catched");
 	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	    }
@@ -237,7 +236,7 @@ var playvolcanState = function(Just_run){
 	    		this.activatedgp = true;
 		    	this.ptrap();
 	    }
-	}
+	    }
 	};
 
 	//controles con las flechas

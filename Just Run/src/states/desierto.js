@@ -618,12 +618,14 @@ var playdesiertoState = function(Just_run){
         this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
     };
     playdesiertoState.prototype.endTimer = function() {
+    	this.timer.stop();
     	this.pescapist++;
 	    this.game.add.sprite(0,0,"libre");
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playdesiertoState.prototype.cambio = function(){
     	if(this.catched){
+    		this.pchaser++;
     		this.pchaser = this.game.state.states["playcastillo"].pchaser+1;
     	}
     	game.state.start('loadcarga_oceano');
