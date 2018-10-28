@@ -136,6 +136,7 @@ var playvolcanState = function(Just_run){
 	    game.physics.arcade.collide(this.escapist, this.wtrap);
 	    game.physics.arcade.collide(this.escapist, this.itrap);
 	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
+	    if(this.timer.running){
 	    if(this.chaser.body.position.y > this.game.height - 64){
 	    	this.chaser.body.position.x = 60;
 	    	this.chaser.body.position.y = this.game.height - 300;
@@ -236,7 +237,7 @@ var playvolcanState = function(Just_run){
 	    		this.activatedgp = true;
 		    	this.ptrap();
 	    }
-
+	}
 	};
 
 	//controles con las flechas
@@ -552,7 +553,7 @@ var playvolcanState = function(Just_run){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playvolcanState.prototype.cambio = function(){
-    	if(catched){
+    	if(this.catched){
     		this.pchaser = this.game.state.states["playoceano"].pchaser + 1;
     	}
         if(this.pchaser > this.pescapist){

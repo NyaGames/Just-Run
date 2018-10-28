@@ -153,7 +153,8 @@ var playdesiertoState = function(Just_run){
 	    var onTheLedge5 = game.physics.arcade.collide(this.escapist, this.plataforma2);
 	    game.physics.arcade.collide(this.escapist, this.wtrap);
 	    game.physics.arcade.collide(this.escapist, this.itrap);
-	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
+	    this.catched = game.physics.arcade.collide(this.escapist, this.chaser);
+	    if(!this.catched){
 	     if(this.chaser.body.position.y > this.game.height - 64){
 	    	this.chaser.body.position.x = 60;
 	    	this.chaser.body.position.y = this.game.height - 300;
@@ -229,16 +230,6 @@ var playdesiertoState = function(Just_run){
 	        this.jumps1--;
 	        this.jumping1 = false;
 	    }
-	    //control del dash
-	    var sumar = true;
-	   if(catched){
-	   		if(sumar){
-	   			sumar = false;
-	    		this.pchaser++;
-	   		}
-	    	this.game.add.sprite(0,0,"catched");
-	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
-	    }
 	    if (this.spaceInputIsActive() && !this.activatedg) {
 	    		this.activatedg = true;
 	    		this.sandtrap();
@@ -255,7 +246,10 @@ var playdesiertoState = function(Just_run){
 	    		this.activatedgp = true;
 		    	this.ptrap();
 	    }
-
+	    }else{	
+			this.game.add.sprite(0,0,"catched");
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
+	}
 	};
 
 	//controles con las flechas
@@ -627,10 +621,10 @@ var playdesiertoState = function(Just_run){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playdesiertoState.prototype.cambio = function(){
-    	if(catched){
-    		this.pchaser = this.game.state.states["playcastillo"].pchaser + 1;
+    	if(this.catched){
+    		this.pchaser = this.game.state.states["playcastillo"].pchaser+1;
     	}
-    	game.state.start("loadcarga_oceano");
+    	game.state.start('loadcarga_oceano');
     };
     playdesiertoState.prototype.formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);

@@ -128,8 +128,8 @@ var playcastilloState = function(Just_run){
 	    var onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
 	    game.physics.arcade.collide(this.escapist, this.water);
 	    var onTheLedge1 = game.physics.arcade.collide(this.escapist, this.wood);
-	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
-
+	    this.catched = game.physics.arcade.collide(this.escapist, this.chaser);
+	    if(!this.catched){
 	    if(this.chaser.body.position.y > this.game.height - 64){
 	    	this.chaser.body.position.x = 60;
 	    	this.chaser.body.position.y = this.game.height - 300;
@@ -209,17 +209,6 @@ var playcastilloState = function(Just_run){
 	        this.jumps1--;
 	        this.jumping1 = false;
 	    }
-	    //control del dash
-	    
-	    var sumar = true;
-	   if(catched){
-	   		if(sumar){
-	   			sumar = false;
-	    		this.pchaser++;
-	   		}
-	    	this.game.add.sprite(0,0,"catched");
-	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
-	    }
 	    if (this.spaceInputIsActive() && !this.activated) {
 	    		this.activated = true;
 	    		this.woodtrap();	
@@ -236,7 +225,10 @@ var playcastilloState = function(Just_run){
 	    		this.activatedgp = true;
 		    	this.ptrap();
 	    }
-
+	    }else{	
+			this.game.add.sprite(0,0,"catched");
+	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
+		}
 	};
 
 	//controles con las flechas
@@ -678,8 +670,8 @@ var playcastilloState = function(Just_run){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playcastilloState.prototype.cambio = function(){
-    	if(catched){
-    		this.pchaser = this.game.state.states["playnieve"].pchaser + 1;
+    	if(this.catched){
+    		this.pchaser = this.game.state.states["playnieve"].pchaser+1;
     	}
     	game.state.start('loadcarga_desierto');
     };
