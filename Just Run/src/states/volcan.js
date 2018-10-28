@@ -29,7 +29,7 @@ var playvolcanState = function(Just_run){
 	    this.chuzo3.body.immovable = true;
 	    this.chuzo3.body.allowGravity = false;
 	    //crear penguinos
-	    this.p1 = this.game.add.sprite(-50,70, 'pinguino');
+	    this.p1 = this.game.add.sprite(-50,100, 'pinguino');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
@@ -37,7 +37,7 @@ var playvolcanState = function(Just_run){
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(-50,170, 'pinguino');
+	    this.p3 = this.game.add.sprite(-50,200, 'pinguino');
 	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
 	    this.p3.body.immovable = true;
 	    this.p3.body.allowGravity = false;
@@ -405,6 +405,7 @@ var playvolcanState = function(Just_run){
 	playvolcanState.prototype.ballrelease = function(){
 		this.bola.destroy();
 		this.bola = this.game.add.sprite(1100, 375, 'snowball');
+		this.bola = this.game.add.sprite(1100, 375, 'snowball');
 	    this.bola.body.immovable = true;
 	    this.bola.body.allowGravity = false;	
 	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
@@ -450,7 +451,7 @@ var playvolcanState = function(Just_run){
 		this.p1.destroy();
 		this.p2.destroy();
 		this.p3.destroy();
-		this.p1 = this.game.add.sprite(-50,70, 'pinguino');
+		this.p1 = this.game.add.sprite(-50,100, 'pinguino');
 	    this.game.physics.enable(this.p1, Phaser.Physics.ARCADE);
 	    this.p1.body.immovable = true;
 	    this.p1.body.allowGravity = false;
@@ -458,7 +459,7 @@ var playvolcanState = function(Just_run){
 	    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 	    this.p2.body.immovable = true;
 	    this.p2.body.allowGravity = false;
-	    this.p3 = this.game.add.sprite(-50,170, 'pinguino');
+	    this.p3 = this.game.add.sprite(-50,200, 'pinguino');
 	    this.game.physics.enable(this.p3, Phaser.Physics.ARCADE);
 	    this.p3.body.immovable = true;
 	    this.p3.body.allowGravity = false;	
