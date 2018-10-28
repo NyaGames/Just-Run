@@ -130,12 +130,13 @@ var playcastilloState = function(Just_run){
 	    var onTheLedge1 = game.physics.arcade.collide(this.escapist, this.wood);
 	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
 
-	    if(this.chaser.position.y > 600){
-	    	this.chaser.position.setTo(60, this.game.height - 300);
+	    if(this.chaser.body.position.y > this.game.height - 64){
+	    	this.chaser.body.position.x = 60;
+	    	this.chaser.body.position.y = this.game.height - 300;
 	    }
-
-	     if(this.escapist.position.y > 600){
-	    	this.escapist.position.setTo(1000, this.game.height - 300);
+	    if(this.escapist.body.position.y > this.game.height - 64){
+	    	this.escapist.body.position.x = 60;
+	    	this.escapist.body.position.y = this.game.height - 300;
 	    }
 
 	    if (this.AInputIsActive()) {
@@ -677,7 +678,7 @@ var playcastilloState = function(Just_run){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playcastilloState.prototype.cambio = function(){
-    	if(this.pchaser > 5){
+    	if(catched){
     		this.pchaser = this.game.state.states["playnieve"].pchaser + 1;
     	}
     	game.state.start('loadcarga_desierto');

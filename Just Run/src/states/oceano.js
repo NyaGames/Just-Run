@@ -145,6 +145,14 @@ var playoceanoState = function(Just_run){
 	    game.physics.arcade.collide(this.chaser, this.p3);
 	    var onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
 	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
+	     if(this.chaser.body.position.y > this.game.height - 64){
+	    	this.chaser.body.position.x = 60;
+	    	this.chaser.body.position.y = this.game.height - 300;
+	    }
+	    if(this.escapist.body.position.y > this.game.height - 64){
+	    	this.escapist.body.position.x = 60;
+	    	this.escapist.body.position.y = this.game.height - 300;
+	    }
 
 	    if(onTheLedge){
 	    	this.ledge.body.allowGravity = true;
@@ -642,10 +650,10 @@ var playoceanoState = function(Just_run){
         this.timer.stop();
         this.escapist++;
 	    this.game.add.sprite(0,0,"libre");
-	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
+	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playoceanoState.prototype.cambio = function(){
-    	if(this.pchaser > 5){
+    	if(catched){
     		this.pchaser = this.game.state.states["playdesierto"].pchaser + 1;
     	}
         game.state.start('loadcarga_volcan');

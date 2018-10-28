@@ -141,6 +141,10 @@ var playnieveState = function(Just_run, puntuacionchaser, puntuacionescapist){
 	    game.physics.arcade.collide(this.escapist, this.itrap);
 	    var catched = game.physics.arcade.collide(this.escapist, this.chaser);
 
+	    if(this.chaser.body.position.y > this.game.height - 64){
+	    	this.chaser.body.position.x = 60;
+	    	this.chaser.body.position.y = this.game.height - 300;
+	    }
 	    if (this.AInputIsActive()) {
 	    	this.chaser.scale.setTo(-1, 1);
 	    	if(onTheGround|| onTheLedge){
@@ -631,7 +635,7 @@ var playnieveState = function(Just_run, puntuacionchaser, puntuacionescapist){
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     };
     playnieveState.prototype.cambio = function(){
-    	if(this.pchaser > 5){
+    	if(catched){
     		this.pchaser = 1;
     	}
     	game.state.start('loadcarga_castillo');
