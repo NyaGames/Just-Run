@@ -136,7 +136,7 @@ var playcastilloState = function(Just_run){
 	    	this.chaser.body.position.y = this.game.height - 300;
 	    }
 	    if(this.escapist.body.position.y > this.game.height - 64){
-	    	this.escapist.body.position.x = 60;
+	    	this.escapist.body.position.x = 1000;
 	    	this.escapist.body.position.y = this.game.height - 300;
 	    }
 
