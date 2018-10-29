@@ -97,7 +97,7 @@ Al iniciar una partida, ya sea en multijugador local como online, uno de los dos
 - **Volcán:** En este entorno en el que se encuentran los jugadores, el cielo estará cubierto de ceniza y polvo,¡el volcán va a erupcionar!, los jugadores deberán tener cuidado con las rocas que caen del cielo pero sin olvidar donde pisan.
 
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/volcan.jpeg">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/PantallazoVolcan.png">
 </p>
 		
 		2.3 Sistema de puntuación
