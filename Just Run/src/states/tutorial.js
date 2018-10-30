@@ -1,9 +1,11 @@
 var tutorialState = function(Just_Run) {	
 	tutorialState.prototype.create = function(){
+		//muestra la pantalla del tutorial hasta que se pulse el espacio
 		this.background = game.add.sprite(0,0,'tutorial');
-		game.time.events.add(Phaser.Timer.SECOND * 5, this.start, this);
+		var spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+		spaceKey.onDown.addOnce(this.start, this);
 	},
 	tutorialState.prototype.start = function(){
-		game.state.start('loadcarga_nieve');
+		game.state.start('loadcarga_castillo');
 	}
 }

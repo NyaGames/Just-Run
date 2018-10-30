@@ -1,6 +1,7 @@
 var loadcarga_desiertoState = function(Just_Run) {
 	loadcarga_desiertoState.prototype.preload = function(){		
-		game.load.image('snowfield', 'assets/fondos/FondoDesierto.png');
+		//carga de los sprites usados en el mundo del desierto
+		game.load.image('fondo', 'assets/fondos/FondoDesierto.png');
 		game.load.image('ground', 'assets/tiles/desierto/arena.png');
 		game.load.image('arena', 'assets/tiles/desierto/arenaSombra.png');
 		game.load.image('ledge', 'assets/tiles/desierto/SandStone.png');
@@ -21,6 +22,7 @@ var loadcarga_desiertoState = function(Just_Run) {
 		game.load.image('bavaquero', 'assets/sprites/Desierto/VaqueroOFF.png');		
 	},
 	loadcarga_desiertoState.prototype.create = function(){	
+		//ejecucion de la pantalla de carga y del siguiente estado
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');
 		pantallacarga.animations.play('load', 26, true);

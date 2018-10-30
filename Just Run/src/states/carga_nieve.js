@@ -1,7 +1,9 @@
 var loadcarga_nieveState = function(Just_Run) {
+	//declaracion de las variables globales que se van a usar para la puntuacion durante todo el juego
 	this.puntuacionchaser = 0;
 	this.puntuacionescapist = 0;
-	loadcarga_nieveState.prototype.preload = function(){		
+	loadcarga_nieveState.prototype.preload = function(){
+	//carga de los sprites usados en el mundo de la nieve		
 		game.load.image('snowfield', 'assets/fondos/nieveoscuro.png');
 		game.load.image('ground', 'assets/tiles/nieve/tierra.png');
 		game.load.image('snow', 'assets/tiles/nieve/nieve.png');		
@@ -22,6 +24,7 @@ var loadcarga_nieveState = function(Just_Run) {
 		game.load.image('bapinguino', 'assets/sprites/nieve/pinguinoapagado.png');		
 	},
 	loadcarga_nieveState.prototype.create = function(){	
+		//ejecución de la pantalla de carga y del siguiente estado
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');
 		pantallacarga.animations.play('load', 26, true);	

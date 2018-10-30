@@ -1,5 +1,6 @@
 var bootState = function(Just_Run){
 	bootState.prototype.preload = function(){
+		//carga de los sprites que se van a usar a lo largo de todo el juego, los que seran generales como la pantalla de carga
 		game.load.spritesheet('carga', 'assets/sprites/pantalla de carga/CargaBien2.png', 350, 350, 26);
 		game.load.image('tutorial', 'assets/fondos/Tutorial.png');
 		game.load.image('catched', 'assets/sprites/Animacion Entre Niveles/Cazado.png');

@@ -1,5 +1,6 @@
 var loadcarga_oceanoState = function(Just_Run) {
-	loadcarga_oceanoState.prototype.preload = function(){		
+	loadcarga_oceanoState.prototype.preload = function(){	
+	//carga de los sprites del mundo de oceano	
 		game.load.image('snowfield', 'assets/fondos/oceano.png');
 		game.load.image('ground', 'assets/tiles/oceano/arena.png');
 		game.load.image('bubble', 'assets/sprites/Oceano/Burbuja.png');
@@ -18,6 +19,7 @@ var loadcarga_oceanoState = function(Just_Run) {
 		game.load.image('baerizo', 'assets/sprites/Oceano/ErizoOFF.png');		
 	},
 	loadcarga_oceanoState.prototype.create = function(){	
+		//ejecución de la pantalla de carga y ejecución del siguiente estado
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');
 		pantallacarga.animations.play('load', 26, true);

@@ -1,5 +1,6 @@
 var loadcarga_volcanState = function(Just_Run) {
 	loadcarga_volcanState.prototype.preload = function(){		
+		//carga de los sprites del nivel del volcan
 		game.load.image('snowfield', 'assets/fondos/volcan.png');
 		game.load.image('ground', 'assets/tiles/volcan/arena.png');	
 		game.load.image('lava', 'assets/tiles/volcan/lava.png');
@@ -18,6 +19,7 @@ var loadcarga_volcanState = function(Just_Run) {
 		game.load.image('bapinguino', 'assets/sprites/volcan/lavacubeOFF.png');		
 	},
 	loadcarga_volcanState.prototype.create = function(){	
+		//ejecucíon de la pantalla de carga y del siguiente estado
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');
 		pantallacarga.animations.play('load', 26, true);

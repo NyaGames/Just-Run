@@ -74,8 +74,8 @@ var playcastilloState = function(Just_run){
 
 	    //crear botones
 	    this.botonflecha = this.game.add.sprite(1040, 300, 'bepinguino');
-	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bestalactita');
-	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
+	    this.botonestalactita = this.game.add.sprite(1040, 330, 'beaceite');
+	    this.botonbola = this.game.add.sprite(1040, 360, 'becaballero');
 
 	    //variable para comprobar el salto
 	    this.jumping = false;
@@ -112,8 +112,6 @@ var playcastilloState = function(Just_run){
 	        Phaser.Keyboard.O,
 	        Phaser.Keyboard.P,
 	        Phaser.Keyboard.SPACEBAR,
-	        Phaser.Keyboard.SHIFT,
-	        Phaser.Keyboard.MINUS
 	    ]);
 	};
 
@@ -127,7 +125,6 @@ var playcastilloState = function(Just_run){
 	    game.physics.arcade.collide(this.chaser, this.p3);
 	    var onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
 	    game.physics.arcade.collide(this.escapist, this.water);
-	    var onTheLedge1 = game.physics.arcade.collide(this.escapist, this.wood);
 	    this.catched = game.physics.arcade.collide(this.escapist, this.chaser);
 	    if(this.timer.running){
 	    if(!this.catched){
@@ -209,20 +206,16 @@ var playcastilloState = function(Just_run){
 	    if (this.jumping1 && this.upInputReleased()) {
 	        this.jumps1--;
 	        this.jumping1 = false;
-	    }
-	    if (this.spaceInputIsActive() && !this.activated) {
-	    		this.activated = true;
-	    		this.woodtrap();	
-	    }
-	    if (this.QInputIsActive() && !this.activatedb){
+	    }	
+	    if (this.IInputIsActive() && !this.activatedb){
 	    		this.activatedb = true;	    		
 		    	this.balltrap();	
 	    }
-	    if (this.EInputIsActive() && !this.activatedc){
+	    if (this.OInputIsActive() && !this.activatedc){
 	    		this.activatedc = true;
 	    		this.strap();
 	    }
-	    if (this.RInputIsActive() && !this.activatedgp){
+	    if (this.PInputIsActive() && !this.activatedgp){
 	    		this.activatedgp = true;
 		    	this.ptrap();
 	    }
@@ -232,164 +225,76 @@ var playcastilloState = function(Just_run){
 		}
 	}
 	};
-
-	//controles con las flechas
-	playcastilloState.prototype.leftInputIsActive = function() {
+		//controles con las flechas y devuelven un bool en caso de que este activo	
+	playnieveState.prototype.leftInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.LEFT);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x < this.game.width/4);
 	    return isActive;
 	};
-	playcastilloState.prototype.rightInputIsActive = function() {
+	playnieveState.prototype.rightInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.RIGHT);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playcastilloState.prototype.upInputIsActive = function(duration) {
+	//recibe un duración para evitar saltos infinitos
+	playnieveState.prototype.upInputIsActive = function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.UP, duration);
-	    isActive |= (this.game.input.activePointer.justPressed(duration + 1000/60) &&
-	        this.game.input.activePointer.x > this.game.width/4 &&
-	        this.game.input.activePointer.x < this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playcastilloState.prototype.upInputReleased = function() {
+	playnieveState.prototype.upInputReleased = function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.UP);
-	    released |= this.game.input.activePointer.justReleased();
 	    return released;
 	};
 	//control con WASD
-	playcastilloState.prototype.AInputIsActive = function() {
+	playnieveState.prototype.AInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.A);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x < this.game.width/4);
 	    return isActive;
 	};
-	playcastilloState.prototype.DInputIsActive = function() {
+	playnieveState.prototype.DInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.D);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playcastilloState.prototype.WInputIsActive = function(duration) {
+	//recibe un duración para evitar saltos infinitos
+	playnieveState.prototype.WInputIsActive = function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.W, duration);
-	    isActive |= (this.game.input.activePointer.justPressed(duration + 1000/60) &&
-	        this.game.input.activePointer.x > this.game.width/4 &&
-	        this.game.input.activePointer.x < this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playcastilloState.prototype.WInputReleased = function() {
+	playnieveState.prototype.WInputReleased = function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.W);
-	    released |= this.game.input.activePointer.justReleased();
 	    return released;
 	};
 	//control de las trampas
-	playcastilloState.prototype.spaceInputIsActive = function() {
+	playnieveState.prototype.spaceInputIsAcive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playcastilloState.prototype.QInputIsActive = function() {
+	playnieveState.prototype.IinputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.I);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playcastilloState.prototype.EInputIsActive = function() {
+	playnieveState.prototype.OInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.O);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
 	};
-	playcastilloState.prototype.RInputIsActive = function() {
+	playnieveState.prototype.PInputIsActive = function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.P);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
 	    return isActive;
-	};
-	playcastilloState.prototype.ControlInputIsActive = function() {
-	    var isActive = false;
-	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.MINUS);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
-	    return isActive;
-	};
-	playcastilloState.prototype.ShiftInputIsActive = function() {
-	    var isActive = false;
-	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.SHIFT);
-	    isActive |= (this.game.input.activePointer.isDown &&
-	        this.game.input.activePointer.x > this.game.width/2 + this.game.width/4);
-	    return isActive;
-	};
-	playcastilloState.prototype.woodtrap = function(){
-	    this.pinchos = this.game.add.group();
-	    var block;
-
-		block = this.game.add.sprite(728, this.game.height - 264, 'pinchos');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.pinchos.add(block);
-	    block = this.game.add.sprite(632, this.game.height - 264, 'pinchos');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.pinchos.add(block);
-	    block = this.game.add.sprite(664, this.game.height - 264, 'pinchos');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.pinchos.add(block);
-	    block = this.game.add.sprite(696, this.game.height - 264, 'pinchos');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.pinchos.add(block);
-
-	    block = this.game.add.sprite(940, this.game.height - 414, 'pinchos');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.pinchos.add(block);
-	    block = this.game.add.sprite(972, this.game.height - 414, 'pinchos');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.pinchos.add(block);
-	    block = this.game.add.sprite(1004, this.game.height - 414, 'pinchos');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.pinchos.add(block);
-	    block = this.game.add.sprite(1036, this.game.height - 414, 'pinchos');
-	    this.game.physics.enable(block, Phaser.Physics.ARCADE);
-	    block.body.immovable = true;
-	    block.body.allowGravity = false;
-	    this.pinchos.add(block);
-	    game.time.events.add(Phaser.Timer.SECOND * 4, this.woodrelease, this);
-	};
-	playcastilloState.prototype.woodrelease = function(){
-		this.pinchos.destroy();
-		this.activated = false;
 	};
 	playcastilloState.prototype.balltrap = function(){
 		this.bola.scale.setTo(-1,1);		
 	    this.bola.animations.play('rodar', 12, true);
 		this.bola.body.velocity.x = -200;
-		this.botonbola = this.game.add.sprite(1040, 360, 'babola');
+		this.botonbola = this.game.add.sprite(1040, 360, 'bacaballero');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.ballrelease, this);
 	};
 	playcastilloState.prototype.ballrelease = function(){
@@ -399,7 +304,7 @@ var playcastilloState = function(Just_run){
 	    this.game.physics.enable(this.bola, Phaser.Physics.ARCADE);
 	    this.bola.body.immovable = true;
 	    this.bola.body.allowGravity = false;	
-	    this.botonbola = this.game.add.sprite(1040, 360, 'bebola');
+	    this.botonbola = this.game.add.sprite(1040, 360, 'becaballero');
 	    this.activatedb = false;
 	};	
 	playcastilloState.prototype.strap = function(){
@@ -413,7 +318,7 @@ var playcastilloState = function(Just_run){
 	    this.game.physics.enable(this.aceite1, Phaser.Physics.ARCADE);
 	    this.aceite1.body.immovable = true;
 	    this.aceite1.body.allowGravity = false;
-	    this.botonestalactita = this.game.add.sprite(1040, 330, 'bestalactita');
+	    this.botonestalactita = this.game.add.sprite(1040, 330, 'beaceite');
 	    this.activatedc = false;
 	};
 	playcastilloState.prototype.ptrap = function(){
