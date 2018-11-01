@@ -18,10 +18,9 @@ var loadcarga_castilloState = function(Just_Run) {
 		game.load.image('becaballero', 'assets/sprites/Castillo/CaballeroON.png');
 		game.load.image('bacaballero', 'assets/sprites/Castillo/CaballeroOFF.png');
 		game.load.image('beaceite', 'assets/sprites/Castillo/AceiteON.png');
-		game.load.image('baestalactita', 'assets/sprites/Castillo/AceiteOFF.png');
-		game.load.image('bepinguino', 'assets/sprites/Castillo/ElfoON.png');
-		game.load.image('bapinguino', 'assets/sprites/Castillo/ElfoOFF.png');	
-		game.load.image('pinchos', 'assets/sprites/Castillo/TrampaPinchos.png');		
+		game.load.image('baaceite', 'assets/sprites/Castillo/AceiteOFF.png');
+		game.load.image('beelfo', 'assets/sprites/Castillo/ElfoON.png');
+		game.load.image('baelfo', 'assets/sprites/Castillo/ElfoOFF.png');			
 	},
 	loadcarga_castilloState.prototype.create = function(){
 		//ejecucion de la pantalla de carga durante la carga y del siguientes estado

@@ -6,6 +6,6 @@ var tutorialState = function(Just_Run) {
 		spaceKey.onDown.addOnce(this.start, this);
 	},
 	tutorialState.prototype.start = function(){
-		game.state.start('loadcarga_castillo');
+		game.state.start('loadcarga_nieve');
 	}
 }
