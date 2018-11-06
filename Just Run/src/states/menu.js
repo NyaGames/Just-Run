@@ -1,4 +1,5 @@
-var menuState = function(Just_Run) {	
+var menuState = function(Just_Run) {		
+		this.estado = 1;
 	menuState.prototype.create = function(){
 		//muestra el menu hasta que se pulse espacio sobre jugar
 		this.background = game.add.sprite(0,0,'menu');
@@ -8,8 +9,7 @@ var menuState = function(Just_Run) {
 		this.opciones = game.add.sprite(960, 500, 'opcionesp');		
 	},
 	menuState.prototype.update = function(){
-		var estado = 1;
-		if(estado === 1){
+		if(this.estado === 1){
 			this.jugar.destroy();
 			this.salir.destroy();
 			this.opciones.destroy();
@@ -17,7 +17,7 @@ var menuState = function(Just_Run) {
 			this.salir = game.add.sprite(320, 400, 'salirp');
 			this.opciones = game.add.sprite(960, 500, 'opcionesp');
 			this.spaceKey.onDown.addOnce(this.start, this);
-		}else if(estado === 2){
+		}else if(this.estado === 2){
 			this.jugar.destroy();
 			this.salir.destroy();
 			this.opciones.destroy();
@@ -25,7 +25,7 @@ var menuState = function(Just_Run) {
 			this.salir = game.add.sprite(320, 400, 'salirg');
 			this.opciones = game.add.sprite(960, 500, 'opcionesp');
 			this.spaceKey.onDown.addOnce(this.closeCurrentWindow, this);
-		}else if(estado === 3){
+		}else if(this.estado === 3){
 			this.jugar.destroy();
 			this.salir.destroy();
 			this.opciones.destroy();
@@ -34,16 +34,16 @@ var menuState = function(Just_Run) {
 			this.opciones = game.add.sprite(960, 500, 'opcionesg');
 			this.spaceKey.onDown.addOnce(this.options, this);
 		}
-		if(this.input.keyboard.isDown(Phaser.Keyboard.DOWN) === true){
-			estado++;
-			if(estado > 3){
-				estado = 1;	
+		if(this.downInputIsActive(5)){
+			this.estado++;
+			if(this.estado > 3){
+				this.estado = 1;	
 			}
 		}
-		if(this.input.keyboard.isDown(Phaser.Keyboard.UP) === true){
-			estado--;
-			if(estado < 1){
-				estado = 3;	
+		if(this.upInputIsActive(5)){
+			this.estado--;
+			if(this.estado < 1){
+				this.estado = 3;	
 			}
 		}
 	}
@@ -55,5 +55,26 @@ var menuState = function(Just_Run) {
 	},
 	menuState.prototype.closeCurrentWindow = function(){
 	  window.close();
-	}
+	},
+	//control de las teclas
+	menuState.prototype.upInputIsActive = function(duration) {
+	    var isActive = false;
+	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.UP, duration);
+	    return isActive;
+	};
+	menuState.prototype.upInputReleased = function() {
+	    var released = false;
+	    released = this.input.keyboard.upDuration(Phaser.Keyboard.UP);
+	    return released;
+	};
+	menuState.prototype.downInputIsActive = function(duration) {
+	    var isActive = false;
+	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.DOWN, duration);
+	    return isActive;
+	};
+	menuState.prototype.downInputReleased = function() {
+	    var released = false;
+	    released = this.input.keyboard.upDuration(Phaser.Keyboard.DOWN);
+	    return released;
+	};
 }
