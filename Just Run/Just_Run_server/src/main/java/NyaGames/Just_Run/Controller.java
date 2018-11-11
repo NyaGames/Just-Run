@@ -6,24 +6,28 @@ import java.util.*;
 
 @RestController
 public class Controller{
-	private int puntuacionEscapist = 0;
-	private int puntuacionChaser = 0;
+	private String puntuacionEscapist = "pene";
+	private String puntuacionChaser = "polla";
 	
-	@RequestMapping(value = "/puntuacionescapist", method = RequestMethod.POST)
+	/*@RequestMapping(value = "/puntuacionescapist", method = RequestMethod.POST)
 	public void setPuntuacionEscapist() {
 		puntuacionEscapist++;
+	}*/
+	@RequestMapping(value = "/puntuacionescapist", method = RequestMethod.POST)
+	public void setPuntuacionEscapist(@RequestBody String number) {
+		puntuacionEscapist = number;
 	}
 	@RequestMapping(value = "/puntuacionescapist", method = RequestMethod.GET)
-	public ResponseEntity<Integer> getPuntacionEscapist() {
-		return new ResponseEntity<Integer>(puntuacionEscapist, HttpStatus.CREATED);
+	public ResponseEntity<String> getPuntacionEscapist() {
+		return new ResponseEntity<String>(puntuacionEscapist, HttpStatus.CREATED);
 	}
 	@RequestMapping(value = "/puntuacioneschaser", method = RequestMethod.POST)
-	public void setPuntuacionChaser() {
-		puntuacionChaser++;
+	public void setPuntuacionChaser(@RequestBody String number) {
+		puntuacionChaser = number;
 	}
 	@RequestMapping(value = "/puntuacionchaser", method = RequestMethod.GET)
-	public ResponseEntity<Integer> getPuntuacionChaser() {
-		return new ResponseEntity<Integer>(puntuacionChaser, HttpStatus.CREATED);
+	public ResponseEntity<String> getPuntuacionChaser() {
+		return new ResponseEntity<String>(puntuacionChaser, HttpStatus.CREATED);
 	}
 	
 }

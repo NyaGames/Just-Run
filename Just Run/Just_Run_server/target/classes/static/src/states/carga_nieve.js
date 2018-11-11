@@ -1,6 +1,7 @@
 var loadcarga_nieveState = function(Just_Run) {
 	//declaracion de las variables globales que se van a usar para la puntuacion durante todo el juego
-	this.initPuntuaciones();
+	this.puntuacionchaser = 0;
+	this.puntuacionescapist = 0;
 	loadcarga_nieveState.prototype.preload = function(){
 	//carga de los sprites usados en el mundo de la nieve		
 		game.load.image('snowfield', 'assets/fondos/nieveoscuro.png');
@@ -28,9 +29,5 @@ var loadcarga_nieveState = function(Just_Run) {
 		var loading = pantallacarga.animations.add('load');
 		pantallacarga.animations.play('load', 26, true);	
 		game.state.start('playnieve');
-	},
-	loadcarga_nieveState.prototype.create = function(){
-		this.puntuacionchaser = 0;
-		this.puntuacionescapist = 0;
 	}
 }

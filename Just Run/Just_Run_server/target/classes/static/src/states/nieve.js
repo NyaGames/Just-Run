@@ -1,6 +1,6 @@
 var playnieveState = function(Just_run){
-	const URLe="/puntuacionescapist";
-	const URLc="/puntuacioneschaser";
+	const URLe="/puntuacionescapist"
+	const URLc="/puntuacioneschaser"
 	playnieveState.prototype.create = function() {  	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'snowfield');
@@ -497,11 +497,14 @@ var playnieveState = function(Just_run){
     };
     //recibe la puntuacion del nivel anterior
     playnieveState.prototype.init = function(){
-    	$.post(URLe, this.pchaser, function(){
-    		alert();
-    	});
     	this.pchaser = this.game.state.states["loadcarga_nieve"].puntuacionchaser;
     	this.pescapist = this.game.state.states["loadcarga_nieve"].puntuacionescapist;
+    	var pchaserString = this.pchaser.toString();
+    	var pescapistString = this.pescapist.toString();
+    	$.post(URLe, pchaserString, function(){console.log("lanzado1")});
+    	$.post(URLc, pescapistString, function(){console.log("lanzado2")});
+    	$.get(URLe, function(data){console.log(data)});
+    	$.get(URLc, function(data){console.log(data)});
     }
 
 }
