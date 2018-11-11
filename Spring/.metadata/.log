@@ -1,0 +1,98 @@
+!SESSION 2018-11-11 17:43:43.221 -----------------------------------------------
+eclipse.buildId=3.9.6.201809180749-RELEASE-e49
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.jface 2 0 2018-11-11 17:44:33.898
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-11-11 17:44:33.898
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1c963be,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1c4fc34,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2018-11-11 17:44:36.815
+!MESSAGE org.eclipse.jdt.junit.ResultView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2018-11-11 17:44:36.816
+!MESSAGE org.springframework.ide.eclipse.aop.ui.navigator.aopReferenceModelNavigator: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2018-11-11 17:44:36.816
+!MESSAGE org.eclipse.contribution.xref.ui.views.XReferenceView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.jface.text 2 0 2018-11-11 17:44:41.208
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-11-11 17:44:44.041
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\diesa'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 4 0 2018-11-11 17:45:54.528
+!MESSAGE Unable to store working set state.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\diesa\OneDrive\Documentos\GitHub\Just-Run\.metadata\.plugins\org.eclipse.ui.workbench\workingsets.xml (El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.ui.internal.AbstractWorkingSetManager.saveState(AbstractWorkingSetManager.java:805)
+	at org.eclipse.ui.internal.WorkingSetManager.saveState(WorkingSetManager.java:147)
+	at org.eclipse.ui.internal.WorkingSetManager.workingSetChanged(WorkingSetManager.java:170)
+	at org.eclipse.ui.internal.AbstractWorkingSet.fireWorkingSetChanged(AbstractWorkingSet.java:139)
+	at org.eclipse.ui.internal.WorkingSet.setElements(WorkingSet.java:245)
+	at org.eclipse.jdt.internal.ui.workingsets.DynamicSourcesWorkingSetUpdater.lambda$0(DynamicSourcesWorkingSetUpdater.java:223)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3933)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3564)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+
+!ENTRY org.eclipse.ui.ide 4 4 2018-11-11 17:50:32.551
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 2 1 2018-11-11 17:50:32.552
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2018-11-11 17:50:32.552
+!MESSAGE The project description file (.project) for 'Servers' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-11-11 17:50:34.995
+!MESSAGE The workspace will exit with unsaved changes in this session.
