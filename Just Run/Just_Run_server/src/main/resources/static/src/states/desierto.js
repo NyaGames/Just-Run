@@ -4,6 +4,8 @@ var playdesiertoState = function(Just_run){
 	playdesiertoState.prototype.create = function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'fondo');
+	    song = game.add.audio('song');
+		song.play();
 
 	    //llama al metodo para iniciar los jugadores, el mundo, las trampas, el cronometro y lo que recibe de los mapas anteriores
 	    this.crearJugadores();
@@ -568,6 +570,7 @@ var playdesiertoState = function(Just_run){
     		this.pchaser++;
     		this.pchaser = this.game.state.states["playcastillo"].pchaser+1;
     	}
+    	game.sound.stopAll();
     	game.state.start('loadcarga_oceano');
     };
     //crea el formato del cronometro

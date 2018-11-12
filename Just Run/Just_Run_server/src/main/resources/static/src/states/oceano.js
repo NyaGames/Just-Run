@@ -4,6 +4,8 @@ var playoceanoState = function(Just_run){
 	playoceanoState.prototype.create = function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'sea');
+	    song = game.add.audio('song');
+		song.play();
 	    //metodos para iniciar todo lo necesario
 	    this.crearJugadores();
 	    this.initTraps();
@@ -517,6 +519,7 @@ var playoceanoState = function(Just_run){
     	if(this.catched){
     		this.pchaser = this.game.state.states["playdesierto"].pchaser+1;
     	}
+    	game.sound.stopAll();
     	game.state.start('loadcarga_volcan');
     };
     //crea la logica del cronometro

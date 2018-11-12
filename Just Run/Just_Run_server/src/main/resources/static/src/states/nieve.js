@@ -11,6 +11,8 @@ var playnieveState = function(Just_run){
 	    this.crearmundo();    
 	    this.initTimer();
 	    this.init();
+	    song = game.add.audio('song');
+		song.play();
 
 	    //control de las teclas, para evitar los usos por defecto, que pueden dar problemas
 	    this.game.input.keyboard.addKeyCapture([
@@ -487,6 +489,7 @@ var playnieveState = function(Just_run){
     	if(this.catched){
     		this.pchaser = 1;
     	}
+    	game.sound.stopAll();
     	game.state.start('loadcarga_castillo');
     };
     //crea el timer, su maximo de tiempo y lo inicia

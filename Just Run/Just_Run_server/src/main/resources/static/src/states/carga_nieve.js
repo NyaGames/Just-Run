@@ -21,7 +21,8 @@ var loadcarga_nieveState = function(Just_Run) {
 		game.load.image('bestalactita', 'assets/sprites/nieve/bestalactita.png');
 		game.load.image('baestalactita', 'assets/sprites/nieve/estalactitaapagado.png');
 		game.load.image('bepinguino', 'assets/sprites/nieve/bpinguino.png');
-		game.load.image('bapinguino', 'assets/sprites/nieve/pinguinoapagado.png');		
+		game.load.image('bapinguino', 'assets/sprites/nieve/pinguinoapagado.png');	
+		game.load.audio('song', 'assets/music/nieve.mp3');	
 	},
 	loadcarga_nieveState.prototype.create = function(){	
 		//ejecución de la pantalla de carga y del siguiente estado
