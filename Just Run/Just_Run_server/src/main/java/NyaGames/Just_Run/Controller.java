@@ -25,7 +25,7 @@ public class Controller{
 	public void setPuntuacionChaser(@RequestBody String number) {
 		puntuacionChaser = number;
 	}
-	@RequestMapping(value = "/puntuacionchaser", method = RequestMethod.GET)
+	@RequestMapping(value = "/puntuacioneschaser", method = RequestMethod.GET)
 	public ResponseEntity<String> getPuntuacionChaser() {
 		return new ResponseEntity<String>(puntuacionChaser, HttpStatus.CREATED);
 	}

@@ -1,4 +1,6 @@
 var playvolcanState = function(Just_run){
+	const URLe="/puntuacionescapist"
+	const URLc="/puntuacioneschaser"
 	playvolcanState.prototype.create = function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'volcano');
@@ -374,6 +376,12 @@ var playvolcanState = function(Just_run){
     playvolcanState.prototype.init = function(){
     	this.pchaser = this.game.state.states["playoceano"].pchaser;
     	this.pescapist = this.game.state.states["playoceano"].pescapist;
+    	var pchaserString = this.pchaser.toString();
+    	var pescapistString = this.pescapist.toString();  
+    	$.post(URLe, pchaserString, function(){console.log("lanzado1")});
+    	$.post(URLc, pescapistString, function(){console.log("lanzado2")});
+    	$.get(URLe, function(data){console.log(data)});
+    	$.get(URLc, function(data){console.log(data)});
     };
     //crea los jugadores y todas las variables relacionadas	
 	playvolcanState.prototype.crearJugadores = function(){
