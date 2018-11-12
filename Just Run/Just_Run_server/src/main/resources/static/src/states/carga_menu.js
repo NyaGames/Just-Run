@@ -9,6 +9,8 @@ var loadcarga_menuState = function(Just_Run) {
 		game.load.image('salirp', 'assets/sprites/botones_menu/Salir.png');
 		game.load.image('salirg', 'assets/sprites/botones_menu/SalirBrillo.png');
 		game.load.image('ayudap', 'assets/sprites/botones_menu/Ayuda.png');
+		game.load.image('ayudag', 'assets/sprites/botones_menu/AyudaBrillo.png')
+		game.load.audio('song', 'assets/music/menu.mp3');
 	},
 	loadcarga_menuState.prototype.create = function(){
 		//ejecucion de la pantalla de carga e inicialización del siguiente estado

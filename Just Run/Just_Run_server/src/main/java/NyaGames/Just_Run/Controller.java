@@ -6,28 +6,30 @@ import java.util.*;
 
 @RestController
 public class Controller{
-	private String puntuacionEscapist = "pene";
-	private String puntuacionChaser = "polla";
+	public Jugador escapist = new Jugador();
+	public Jugador chaser = new Jugador();
 	
-	/*@RequestMapping(value = "/puntuacionescapist", method = RequestMethod.POST)
-	public void setPuntuacionEscapist() {
-		puntuacionEscapist++;
-	}*/
-	@RequestMapping(value = "/puntuacionescapist", method = RequestMethod.POST)
-	public void setPuntuacionEscapist(@RequestBody String number) {
-		puntuacionEscapist = number;
+	@GetMapping(value = "/puntuacionescapist")
+	public Jugador getEscapist() {
+		return escapist;
 	}
-	@RequestMapping(value = "/puntuacionescapist", method = RequestMethod.GET)
-	public ResponseEntity<String> getPuntacionEscapist() {
-		return new ResponseEntity<String>(puntuacionEscapist, HttpStatus.CREATED);
+	
+	@PostMapping(value = "/puntuacionescapist")
+	public ResponseEntity<Boolean> setEscapist(@RequestBody Jugador player){
+		escapist.ID = player.ID;
+		escapist.puntuacion = player.puntuacion;
+		return new ResponseEntity<Boolean>(true, HttpStatus.ACCEPTED);
 	}
-	@RequestMapping(value = "/puntuacioneschaser", method = RequestMethod.POST)
-	public void setPuntuacionChaser(@RequestBody String number) {
-		puntuacionChaser = number;
+	@GetMapping(value = "/puntuacionchaser")
+	public Jugador getChaser() {
+		return chaser;
 	}
-	@RequestMapping(value = "/puntuacioneschaser", method = RequestMethod.GET)
-	public ResponseEntity<String> getPuntuacionChaser() {
-		return new ResponseEntity<String>(puntuacionChaser, HttpStatus.CREATED);
+	
+	@PostMapping(value = "/puntuacionchaser")
+	public ResponseEntity<Boolean> setChaser(@RequestBody Jugador player){
+		chaser.ID = player.ID;
+		chaser.puntuacion = player.puntuacion;
+		return new ResponseEntity<Boolean>(true, HttpStatus.ACCEPTED);
 	}
 	
 }

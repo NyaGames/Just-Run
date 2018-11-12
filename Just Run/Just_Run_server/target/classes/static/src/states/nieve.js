@@ -1,6 +1,6 @@
 var playnieveState = function(Just_run){
 	const URLe="/puntuacionescapist"
-	const URLc="/puntuacioneschaser"
+	const URLc="/puntuacionchaser"
 	playnieveState.prototype.create = function() {  	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'snowfield');
@@ -499,12 +499,54 @@ var playnieveState = function(Just_run){
     playnieveState.prototype.init = function(){
     	this.pchaser = this.game.state.states["loadcarga_nieve"].puntuacionchaser;
     	this.pescapist = this.game.state.states["loadcarga_nieve"].puntuacionescapist;
-    	var pchaserString = this.pchaser.toString();
-    	var pescapistString = this.pescapist.toString();
-    	$.post(URLe, pchaserString, function(){console.log("lanzado1")});
-    	$.post(URLc, pescapistString, function(){console.log("lanzado2")});
-    	$.get(URLe, function(data){console.log(data)});
-    	$.get(URLc, function(data){console.log(data)});
+    	var object = JSON.stringify({ID: "chaser", puntuacion: this.pchaser});
+    	var object1 = JSON.stringify({ID: "escapist", puntuacion: this.pescapist});
+        $.ajax(URLe, 
+        {
+            method: "POST",
+            data: object,
+            processData: false,
+            
+            success: function() { console.log("yes");},
+            
+            headers:{
+                "Content-Type": "application/json"
+            },
+        });
+        $.ajax(URLc, 
+                {
+                    method: "POST",
+                    data: object1,
+                    processData: false,
+                    
+                    success: function() { console.log("yep");},
+                    
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                });
+        $.ajax(URLe, 
+                {
+                    method: "GET",
+                    processData: false,
+                    
+                    success: function(data) { console.log(data.puntuacion);},
+                    
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                });
+        $.ajax(URLc, 
+                {
+                    method: "GET",
+                    processData: false,
+                    
+                    success: function(data) { console.log(data.puntuacion);},
+                    
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                });
     }
 
 }

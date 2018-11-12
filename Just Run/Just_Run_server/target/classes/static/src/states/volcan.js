@@ -376,12 +376,54 @@ var playvolcanState = function(Just_run){
     playvolcanState.prototype.init = function(){
     	this.pchaser = this.game.state.states["playoceano"].pchaser;
     	this.pescapist = this.game.state.states["playoceano"].pescapist;
-    	var pchaserString = this.pchaser.toString();
-    	var pescapistString = this.pescapist.toString();  
-    	$.post(URLe, pchaserString, function(){console.log("lanzado1")});
-    	$.post(URLc, pescapistString, function(){console.log("lanzado2")});
-    	$.get(URLe, function(data){console.log(data)});
-    	$.get(URLc, function(data){console.log(data)});
+    	var object = JSON.stringify({ID: "chaser", puntuacion: this.pchaser});
+    	var object1 = JSON.stringify({ID: "escapist", puntuacion: this.pescapist});
+        $.ajax(URLe, 
+        {
+            method: "POST",
+            data: object,
+            processData: false,
+            
+            success: function() { console.log("yes");},
+            
+            headers:{
+                "Content-Type": "application/json"
+            },
+        });
+        $.ajax(URLc, 
+                {
+                    method: "POST",
+                    data: object1,
+                    processData: false,
+                    
+                    success: function() { console.log("yep");},
+                    
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                });
+        $.ajax(URLe, 
+                {
+                    method: "GET",
+                    processData: false,
+                    
+                    success: function(data) { console.log(data.puntuacion);},
+                    
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                });
+        $.ajax(URLc, 
+                {
+                    method: "GET",
+                    processData: false,
+                    
+                    success: function(data) { console.log(data.puntuacion);},
+                    
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                });
     };
     //crea los jugadores y todas las variables relacionadas	
 	playvolcanState.prototype.crearJugadores = function(){
