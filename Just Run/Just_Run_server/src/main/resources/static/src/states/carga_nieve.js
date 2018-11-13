@@ -38,6 +38,7 @@ var loadcarga_nieveState = function(Just_Run) {
 		game.load.image('water', 'assets/tiles/nieve/agua.png');
 		game.load.image('waters', 'assets/tiles/nieve/agua_sin nieve.png');
 		game.load.image('ledge', 'assets/tiles/nieve/ledge.png');
+		game.load.image('particulas', 'assets/tiles/nieve/particulasnieve.png');
 		game.load.image('ledges', 'assets/tiles/nieve/hielo_sin.png');
 		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
 		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
