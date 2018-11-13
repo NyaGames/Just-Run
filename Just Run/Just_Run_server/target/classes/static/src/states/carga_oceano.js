@@ -16,7 +16,8 @@ var loadcarga_oceanoState = function(Just_Run) {
 		game.load.image('beancla', 'assets/sprites/Oceano/AnclaON.png');
 		game.load.image('baestalactita', 'assets/sprites/Oceano/AnclaOFF.png');
 		game.load.image('beerizo', 'assets/sprites/Oceano/ErizoON.png');
-		game.load.image('baerizo', 'assets/sprites/Oceano/ErizoOFF.png');		
+		game.load.image('baerizo', 'assets/sprites/Oceano/ErizoOFF.png');
+		game.load.audio('song', 'assets/music/oceano.mp3');		
 	},
 	loadcarga_oceanoState.prototype.create = function(){	
 		//ejecución de la pantalla de carga y ejecución del siguiente estado

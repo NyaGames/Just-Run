@@ -71,7 +71,6 @@ var menuState = function(Just_Run) {
 		game.state.start('tutorial');
 	},
 	menuState.prototype.options = function(){
-		game.sound.stopAll();
 		alert("opciones");
 	},
 	menuState.prototype.closeCurrentWindow = function(){

@@ -16,6 +16,7 @@ var loadcarga_volcanState = function(Just_Run) {
 		game.load.image('bameteorito', 'assets/sprites/volcan/meteoritoOFF.png');
 		game.load.image('bemagma', 'assets/sprites/volcan/lavacubeON.png');
 		game.load.image('bamagma', 'assets/sprites/volcan/lavacubeOFF.png');		
+		game.load.audio('song', 'assets/music/volcan.mp3');
 	},
 	loadcarga_volcanState.prototype.create = function(){	
 		//ejecucíon de la pantalla de carga y del siguiente estado

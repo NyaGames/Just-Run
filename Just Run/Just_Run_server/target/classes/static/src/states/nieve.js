@@ -11,6 +11,8 @@ var playnieveState = function(Just_run){
 	    this.crearmundo();    
 	    this.initTimer();
 	    this.init();
+	    song = game.add.audio('song');
+		song.play();
 
 	    //control de las teclas, para evitar los usos por defecto, que pueden dar problemas
 	    this.game.input.keyboard.addKeyCapture([
@@ -487,6 +489,7 @@ var playnieveState = function(Just_run){
     	if(this.catched){
     		this.pchaser = 1;
     	}
+    	game.sound.stopAll();
     	game.state.start('loadcarga_castillo');
     };
     //crea el timer, su maximo de tiempo y lo inicia
@@ -497,40 +500,17 @@ var playnieveState = function(Just_run){
     };
     //recibe la puntuacion del nivel anterior
     playnieveState.prototype.init = function(){
-    	this.pchaser = this.game.state.states["loadcarga_nieve"].puntuacionchaser;
-    	this.pescapist = this.game.state.states["loadcarga_nieve"].puntuacionescapist;
-    	var object = JSON.stringify({ID: "chaser", puntuacion: this.pchaser});
-    	var object1 = JSON.stringify({ID: "escapist", puntuacion: this.pescapist});
-        $.ajax(URLe, 
-        {
-            method: "POST",
-            data: object,
-            processData: false,
-            
-            success: function() { console.log("yes");},
-            
-            headers:{
-                "Content-Type": "application/json"
-            },
-        });
-        $.ajax(URLc, 
-                {
-                    method: "POST",
-                    data: object1,
-                    processData: false,
-                    
-                    success: function() { console.log("yep");},
-                    
-                    headers:{
-                        "Content-Type": "application/json"
-                    },
-                });
+    	//this.pchaser = this.game.state.states["loadcarga_nieve"].pchaser;
+    	//this.pescapist = this.game.state.states["loadcarga_nieve"].pescapist;
+    	
         $.ajax(URLe, 
                 {
                     method: "GET",
                     processData: false,
                     
-                    success: function(data) { console.log(data.puntuacion);},
+                    success: function(data) {
+                    	document.getElementById("pescapist").innerHTML = data.puntuacion;
+                    },
                     
                     headers:{
                         "Content-Type": "application/json"
@@ -541,7 +521,9 @@ var playnieveState = function(Just_run){
                     method: "GET",
                     processData: false,
                     
-                    success: function(data) { console.log(data.puntuacion);},
+                    success: function(data) {
+                    	document.getElementById("pchaser").innerHTML = data.puntuacion;
+                    },
                     
                     headers:{
                         "Content-Type": "application/json"

@@ -1,7 +1,35 @@
 var loadcarga_nieveState = function(Just_Run) {
 	//declaracion de las variables globales que se van a usar para la puntuacion durante todo el juego
-	this.puntuacionchaser = 0;
-	this.puntuacionescapist = 0;
+	const URLe="/puntuacionescapist"
+	const URLc="/puntuacionchaser"
+	this.pchaser = 0;
+	this.pescapist = 0;
+	var object = JSON.stringify({ID: "chaser", puntuacion: this.pchaser});
+	var object1 = JSON.stringify({ID: "escapist", puntuacion: this.pescapist});
+    $.ajax(URLe, 
+    {
+        method: "POST",
+        data: object,
+        processData: false,
+        
+        success: function() { console.log("yes");},
+        
+        headers:{
+            "Content-Type": "application/json"
+        },
+    });
+    $.ajax(URLc, 
+            {
+                method: "POST",
+                data: object1,
+                processData: false,
+                
+                success: function() { console.log("yep");},
+                
+                headers:{
+                    "Content-Type": "application/json"
+                },
+            });
 	loadcarga_nieveState.prototype.preload = function(){
 	//carga de los sprites usados en el mundo de la nieve		
 		game.load.image('snowfield', 'assets/fondos/nieveoscuro.png');

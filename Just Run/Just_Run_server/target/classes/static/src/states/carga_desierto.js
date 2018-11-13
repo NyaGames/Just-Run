@@ -20,6 +20,7 @@ var loadcarga_desiertoState = function(Just_Run) {
 		game.load.image('babuitre', 'assets/sprites/Desierto/BuitreOFF.png');
 		game.load.image('bevaquero', 'assets/sprites/Desierto/VaqueroON.png');
 		game.load.image('bavaquero', 'assets/sprites/Desierto/VaqueroOFF.png');		
+		game.load.audio('song', 'assets/music/desierto.mp3');
 	},
 	loadcarga_desiertoState.prototype.create = function(){	
 		//ejecucion de la pantalla de carga y del siguiente estado
