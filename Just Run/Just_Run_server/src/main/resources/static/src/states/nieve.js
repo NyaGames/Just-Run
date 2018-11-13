@@ -2,7 +2,8 @@ var playnieveState = function(Just_run){
 	const URLe="/puntuacionescapist"
 	const URLc="/puntuacionchaser"
 
-	var emitter;
+	var emitterc;
+	var emittere;
 	
 	playnieveState.prototype.create = function() {  	
 		//inicializacion de los sprites
@@ -20,10 +21,13 @@ var playnieveState = function(Just_run){
 
 		//particles
 
-		emitter = game.add.emitter(this.chaser.body.position.x, this.chaser.body.position.y, 200);
+		emitterc = game.add.emitter(this.chaser.body.position.x, this.chaser.body.position.y, 1);
 
-   		emitter.makeParticles('particulas');
+   		emitterc.makeParticles('particulas');
 
+   		emittere = game.add.emitter(this.escapist.body.position.x, this.escapist.body.position.y, 1);
+
+   		emittere.makeParticles('particulas');
 
 		
 
@@ -51,10 +55,17 @@ var playnieveState = function(Just_run){
 	    //comprueba que el tiempo no se ha acabado y que el escapist no ha sido cazado
 	    if(this.timer.running){
 	    if(!this.catched){
-	    	//creacion de particulas
-	    	if(!this.onTheGround){
-	    		emitter.start(false, 2000, 10); 
-	    	}
+	    	
+
+			 //creacion de particulas chaser
+			if(this.onTheGround){
+				emitterc.start(true, 100, null, 2); 
+			}
+			//Particulas escapist
+			if(this.onTheGround1){
+				emittere.start(true, 100, null, 2); 
+			}
+
 	    	//en caso de que se caigan fuera los limites hacen respawn
 		    if(this.chaser.body.position.y > this.game.height - 64){
 		    	this.chaser.body.position.x = 60;
@@ -155,8 +166,10 @@ var playnieveState = function(Just_run){
 
 	}
 
-	emitter.emitX = this.chaser.body.position.x+27;
-	emitter.emitY = this.chaser.body.position.y+50;
+	emitterc.emitX = this.chaser.body.position.x+27;
+	emitterc.emitY = this.chaser.body.position.y+50;
+	emittere.emitX = this.escapist.body.position.x+27;
+	emittere.emitY = this.escapist.body.position.y+50;
 	}
 
 	};
