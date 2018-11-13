@@ -4,6 +4,8 @@ var playvolcanState = function(Just_run){
 	playvolcanState.prototype.create = function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'volcano');
+	    song = game.add.audio('song');
+		song.play();
 	    //metodos para iniciar todo lo necesario
 	    this.crearJugadores();
 	    this.initTraps();
@@ -360,9 +362,11 @@ var playvolcanState = function(Just_run){
     		this.pchaser = this.game.state.states["playoceano"].pchaser+1;
     	}
     	if(this.pchaser > this.pescapist){
+    		game.sound.stopAll();
     		game.state.start("victoriaC");
     	}
     	if(this.pescapist > this.pchaser){
+    		game.sound.stopAll();
     		game.state.start("victoriaE");
     	}
     };

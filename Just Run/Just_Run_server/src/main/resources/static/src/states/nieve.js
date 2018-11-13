@@ -516,40 +516,17 @@ var playnieveState = function(Just_run){
     };
     //recibe la puntuacion del nivel anterior
     playnieveState.prototype.init = function(){
-    	this.pchaser = this.game.state.states["loadcarga_nieve"].puntuacionchaser;
-    	this.pescapist = this.game.state.states["loadcarga_nieve"].puntuacionescapist;
-    	var object = JSON.stringify({ID: "chaser", puntuacion: this.pchaser});
-    	var object1 = JSON.stringify({ID: "escapist", puntuacion: this.pescapist});
-        $.ajax(URLe, 
-        {
-            method: "POST",
-            data: object,
-            processData: false,
-            
-            success: function() { console.log("yes");},
-            
-            headers:{
-                "Content-Type": "application/json"
-            },
-        });
-        $.ajax(URLc, 
-                {
-                    method: "POST",
-                    data: object1,
-                    processData: false,
-                    
-                    success: function() { console.log("yep");},
-                    
-                    headers:{
-                        "Content-Type": "application/json"
-                    },
-                });
+    	//this.pchaser = this.game.state.states["loadcarga_nieve"].pchaser;
+    	//this.pescapist = this.game.state.states["loadcarga_nieve"].pescapist;
+    	
         $.ajax(URLe, 
                 {
                     method: "GET",
                     processData: false,
                     
-                    success: function(data) { console.log(data.puntuacion);},
+                    success: function(data) {
+                    	document.getElementById("pescapist").innerHTML = data.puntuacion;
+                    },
                     
                     headers:{
                         "Content-Type": "application/json"
@@ -560,7 +537,9 @@ var playnieveState = function(Just_run){
                     method: "GET",
                     processData: false,
                     
-                    success: function(data) { console.log(data.puntuacion);},
+                    success: function(data) {
+                    	document.getElementById("pchaser").innerHTML = data.puntuacion;
+                    },
                     
                     headers:{
                         "Content-Type": "application/json"

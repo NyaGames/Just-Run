@@ -21,6 +21,25 @@
          <script src="src/states/desierto.js"></script>
          <script src="src/states/volcan.js"></script>
          <script src="script/jquery-3.3.1.js"></script>
+         <style type="text/css">
+         	#Just_Run{
+         		position: absolute;
+         		z-index: 0;
+         		margin-left: 230px;
+         	}
+         	#pchaser{
+         		position: absolute;
+         		z-index: 1;
+         		margin-top: 580px;
+         		margin-left: 300px;
+         	}
+         	#pescapist{
+         		position: absolute;
+         		z-index: 1;
+         		margin-top: 580px;
+         		margin-left: 1000px;
+         	}
+         </style>
     </head>
     <body>
     <script type="text/javascript">
@@ -48,5 +67,7 @@
     	game.state.start('boot');
     </script>
     <div id="Just_Run"></div>
+    <p ip="pchaser">Puntuacion Chaser</p>
+    <p ip="pescapist">Puntuacion Escapist</p>
     </body>
 </html>

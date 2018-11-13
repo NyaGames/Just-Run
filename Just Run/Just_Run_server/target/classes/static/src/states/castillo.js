@@ -4,6 +4,8 @@ var playcastilloState = function(Just_run){
 	playcastilloState.prototype.create = function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'castle');
+	    song = game.add.audio('song');
+		song.play();
 
 	    this.crearJugadores();
 	    this.initTraps();
@@ -483,6 +485,7 @@ var playcastilloState = function(Just_run){
     	if(this.catched){
     		this.pchaser = this.game.state.states["playnieve"].pchaser+1;
     	}
+    	game.sound.stopAll();
     	game.state.start('loadcarga_desierto');
     };
     //crea el formato de timer

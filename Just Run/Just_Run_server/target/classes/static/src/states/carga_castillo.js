@@ -20,7 +20,8 @@ var loadcarga_castilloState = function(Just_Run) {
 		game.load.image('beaceite', 'assets/sprites/Castillo/AceiteON.png');
 		game.load.image('baaceite', 'assets/sprites/Castillo/AceiteOFF.png');
 		game.load.image('beelfo', 'assets/sprites/Castillo/ElfoON.png');
-		game.load.image('baelfo', 'assets/sprites/Castillo/ElfoOFF.png');			
+		game.load.image('baelfo', 'assets/sprites/Castillo/ElfoOFF.png');		
+		game.load.audio('song', 'assets/music/castillo.mp3');
 	},
 	loadcarga_castilloState.prototype.create = function(){
 		//ejecucion de la pantalla de carga durante la carga y del siguientes estado
