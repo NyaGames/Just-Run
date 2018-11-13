@@ -1,6 +1,9 @@
 var playnieveState = function(Just_run){
 	const URLe="/puntuacionescapist"
 	const URLc="/puntuacionchaser"
+
+	var emitter;
+	
 	playnieveState.prototype.create = function() {  	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'snowfield');
@@ -13,6 +16,16 @@ var playnieveState = function(Just_run){
 	    this.init();
 	    song = game.add.audio('song');
 		song.play();
+
+
+		//particles
+
+		emitter = game.add.emitter(this.chaser.body.position.x, this.chaser.body.position.y, 200);
+
+   		emitter.makeParticles('particulas');
+
+        emitter.start(false, 5000, 20);
+		
 
 	    //control de las teclas, para evitar los usos por defecto, que pueden dar problemas
 	    this.game.input.keyboard.addKeyCapture([
@@ -30,6 +43,7 @@ var playnieveState = function(Just_run){
 	        Phaser.Keyboard.SPACEBAR,
 	    ]);
 	};
+
 
 	playnieveState.prototype.update = function() {
 		//crea las colisiones que los diversos elementos del mapa, asi como las variables de control usadas durante el nivel
@@ -133,6 +147,8 @@ var playnieveState = function(Just_run){
 			this.game.add.sprite(0,0,"catched");
 	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	}
+	emitter.emitX = this.chaser.body.position.x+36;
+	emitter.emitY = this.chaser.body.position.y+50;
 	}
 	};
 
