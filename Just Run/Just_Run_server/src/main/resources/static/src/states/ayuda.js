@@ -12,43 +12,8 @@ var ayudaState = function(Just_Run) {
 		this.infovolcan = game.add.sprite(-2000,0,'infovolcan');
 	},
 	ayudaState.prototype.update = function(){
-		if(this.estado === 0){
-			this.infonieve.position.x = -2000;
-			this.infocastillo.position.x = -2000;
-			this.infodesierto.position.x = -2000;
-			this.infooceano.position.x = -2000;
-			this.infovolcan.position.x = -2000;
-		}else if(this.estado === 1){
-			this.infonieve.position.x = 0;
-			this.infocastillo.position.x = -2000;
-			this.infodesierto.position.x = -2000;
-			this.infooceano.position.x = -2000;
-			this.infovolcan.position.x = -2000;
-		}else if(this.estado === 2){
-			this.infonieve.position.x = -2000;
-			this.infocastillo.position.x = 0;
-			this.infodesierto.position.x = -2000;
-			this.infooceano.position.x = -2000;
-			this.infovolcan.position.x = -2000;
-			
-		}else if(this.estado === 3){
-			this.infonieve.position.x = -2000;
-			this.infocastillo.position.x = -2000;
-			this.infodesierto.position.x = 0;
-			this.infooceano.position.x = -2000;
-			this.infovolcan.position.x = -2000;			
-		}else if(this.estado === 4){
-			this.infonieve.position.x = -2000;
-			this.infocastillo.position.x = -2000;
-			this.infodesierto.position.x = -2000;
-			this.infooceano.position.x = 0;
-			this.infovolcan.position.x = -2000;
-		}else if(this.estado === 5){
-			this.infonieve.position.x = -2000;
-			this.infocastillo.position.x = -2000;
-			this.infodesierto.position.x = -2000;
-			this.infooceano.position.x = -2000;
-			this.infovolcan.position.x = 0;
+		if(this.spaceKey.isDown){
+			game.state.start('loadcarga_nieve');
 		}
 		if(this.escape.isDown){
 			game.state.start('loadcarga_menu');

@@ -1,4 +1,4 @@
-var tutorialState = function(Just_Run) {
+var tutorialState = function(Just_Run) {	
 	tutorialState.prototype.create = function(){
 		//muestra la pantalla del tutorial hasta que se pulse el espacio
 		this.background = game.add.sprite(0,0,'tutorial');
