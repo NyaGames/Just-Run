@@ -3,11 +3,14 @@ var loadcarga_menuState = function(Just_Run) {
 		//carga de lo qu se usara en el menú principal
 		game.load.image('menu','assets/fondos/MenuPrincipal.png');
 		game.load.image('jugarp', 'assets/sprites/botones_menu/Jugar.png');
-		game.load.image('jugarg', 'assets/sprites/botones_menu/JugarBrillo.png');
+		game.load.image('jugarg', 'assets/sprites/botones_menu/JugarBrillo2.png');
 		game.load.image('opcionesp', 'assets/sprites/botones_menu/Opciones.png');
 		game.load.image('opcionesg', 'assets/sprites/botones_menu/OpcionesBrillo.png');
+		game.load.image('islas', 'assets/fondos/islasMenu.png');
+		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
+		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
 		game.load.image('salirp', 'assets/sprites/botones_menu/Salir.png');
-		game.load.image('salirg', 'assets/sprites/botones_menu/SalirBrillo.png');
+		game.load.image('salirg', 'assets/sprites/botones_menu/SalirBrillo2.png');
 		game.load.image('ayudap', 'assets/sprites/botones_menu/Ayuda.png');
 		game.load.image('ayudag', 'assets/sprites/botones_menu/AyudaBrillo.png')
 		game.load.audio('song', 'assets/music/menu.mp3');
