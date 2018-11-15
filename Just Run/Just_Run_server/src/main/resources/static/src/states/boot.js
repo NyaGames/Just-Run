@@ -1,4 +1,3 @@
-var JustRun = {}
 var bootState = function(Just_Run){
 	bootState.prototype.preload = function(){
 		//carga de los sprites que se van a usar a lo largo de todo el juego, los que seran generales como la pantalla de carga

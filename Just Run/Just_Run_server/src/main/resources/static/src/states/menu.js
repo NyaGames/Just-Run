@@ -1,17 +1,8 @@
 var menuState = function(Just_Run) {		
 		this.estado = 1;
-<<<<<<< HEAD
 
 		var num;
-=======
-	menuState.prototype.preload = function(){
-		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
-		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
-	},
->>>>>>> de4302eda4c46b1abcff40b6ec36b6961db12d88
 	menuState.prototype.create = function(){
-		JustRun.chaser;
-		JustRun.escapist;
 		//muestra el menu hasta que se pulse espacio sobre jugar
 		song = game.add.audio('song');
 		song.play();
@@ -64,7 +55,7 @@ var menuState = function(Just_Run) {
 
 			if(this.spaceKey.isDown){
 				game.sound.stopAll();
-				game.state.start('matchmaking');
+				game.state.start('tutorial');
 			}
 		}else if(this.estado === 2){
 			//animaciones
