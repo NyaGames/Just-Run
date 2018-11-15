@@ -15,9 +15,7 @@ var loadcarga_menuState = function(Just_Run) {
 		game.load.image('ayudag', 'assets/sprites/botones_menu/AyudaBrillo.png')
 		game.load.audio('song', 'assets/music/menu.mp3');
 	},
-
 	loadcarga_menuState.prototype.create = function(){
-
 		//ejecucion de la pantalla de carga e inicialización del siguiente estado
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');
