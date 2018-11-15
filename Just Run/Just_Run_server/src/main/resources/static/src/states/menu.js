@@ -15,7 +15,7 @@ var menuState = function(Just_Run) {
 		this.ayuda = game.add.sprite(50, 520, 'ayudap');
 
 		//creacion animaciones menu
-		this.chaser = this.game.add.sprite(360, this.game.height - 245, 'chaser');
+		this.chaser = this.game.add.sprite(360,this.game.height-245,'chaser');
 		this.chaser.animations.add('run', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36], 33, true);
 		this.chaser.animations.play('run');
 		this.chaser.scale.setTo(1.5,1.5);
@@ -23,8 +23,6 @@ var menuState = function(Just_Run) {
 		this.escapist.animations.add('run', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36], 33, true);	
 		this.escapist.animations.play('run');
 		this.escapist.scale.setTo(1.5,1.5);
-
-		
 	},
 
 
