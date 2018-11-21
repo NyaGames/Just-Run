@@ -8,19 +8,20 @@ import org.springframework.http.*;
 @RequestMapping("/escapist")
 public class EscapistController {
 	Escapist escapist;
-	
+	@CrossOrigin
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Escapist createEscapist() {
 		escapist = new Escapist();
 		
+		escapist.setID();
 		escapist.setPosicionX(1000);
 		escapist.setPosicionY(300);
 		escapist.setPuntuacion(0);
 		
 		return escapist;
 	}	
-
+	@CrossOrigin
 	@GetMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Escapist> getEscapist(){
@@ -32,7 +33,7 @@ public class EscapistController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
+	@CrossOrigin
 	@PutMapping
 	public ResponseEntity<Escapist> updateEscapist(@RequestBody Escapist GameEscapist){
 		Escapist savedescapist = escapist;

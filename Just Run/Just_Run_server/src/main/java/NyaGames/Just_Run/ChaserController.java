@@ -1,26 +1,24 @@
 package NyaGames.Just_Run;
-
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.*;
-
-
 @RestController
 @RequestMapping("/chaser")
 public class ChaserController {
 	Chaser chaser;
-	
+	@CrossOrigin
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Chaser createChaser() {
 		chaser = new Chaser();
 		
+		chaser.setID();
 		chaser.setPosicionX(60);
 		chaser.setPosicionY(300);
 		chaser.setPuntuacion(0);
 		
 		return chaser;
 	}	
-
+	@CrossOrigin
 	@GetMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Chaser> getChaser(){
@@ -32,7 +30,7 @@ public class ChaserController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
+	@CrossOrigin
 	@PutMapping
 	public ResponseEntity<Chaser> updateChaser(@RequestBody Chaser GameChaser){
 		Chaser savedChaser = chaser;
@@ -45,7 +43,7 @@ public class ChaserController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
+	@CrossOrigin
 	@DeleteMapping
 	public ResponseEntity<Chaser> deleteChaser(){
 		Chaser savedchaser = chaser;

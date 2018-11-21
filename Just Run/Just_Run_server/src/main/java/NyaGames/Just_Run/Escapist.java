@@ -1,12 +1,19 @@
 package NyaGames.Just_Run;
 
 public class Escapist {
+	private String ID;
 	private int puntuacion;
 	private int posicionX;
 	private int posicionY;
 	
 	Escapist(){
 		
+	}
+	public String getID() {
+		return ID;
+	}
+	public void setID() {
+		ID = "Escapist";
 	}
 	public int getPosicionX() {
 		return posicionX;

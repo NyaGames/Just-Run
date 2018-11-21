@@ -1,7 +1,10 @@
-var playcastilloState = function(Just_run){
-	const URLe="/puntuacionescapist"
-	const URLc="/puntuacioneschaser"
-	playcastilloState.prototype.create = function() {        	
+JustRun.playcastilloState = function(game){
+	
+}
+
+JustRun.playcastilloState.prototype = {
+		
+	create: function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'castle');
 	    song = game.add.audio('song');
@@ -28,9 +31,9 @@ var playcastilloState = function(Just_run){
 	        Phaser.Keyboard.P,
 	        Phaser.Keyboard.SPACEBAR,
 	    ]);
-	};
+	},
 
-	playcastilloState.prototype.update = function() {
+	update: function() {
 	    this.initCollisions();
 	    	//se ejecuta todo el bucle de control siempre y cuando siga el tiempo corriendo y no se haya escapado
 	    if(this.timer.running){
@@ -123,81 +126,81 @@ var playcastilloState = function(Just_run){
 	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 		}
 	}
-	};
+	},
 
 	//controles con las flechas y devuelven un bool en caso de que este activo	
-	playcastilloState.prototype.leftInputIsActive = function() {
+	leftInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.LEFT);
 	    return isActive;
-	};
-	playcastilloState.prototype.rightInputIsActive = function() {
+	},
+	rightInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.RIGHT);
 	    return isActive;
-	};
+	},
 	//recibe un duración para evitar saltos infinitos
-	playcastilloState.prototype.upInputIsActive = function(duration) {
+	upInputIsActive: function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.UP, duration);
 	    return isActive;
-	};
-	playcastilloState.prototype.upInputReleased = function() {
+	},
+	upInputReleased: function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.UP);
 	    return released;
-	};
+	},
 	//control con WASD
-	playcastilloState.prototype.AInputIsActive = function() {
+	AInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.A);
 	    return isActive;
-	};
-	playcastilloState.prototype.DInputIsActive = function() {
+	},
+	DInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.D);
 	    return isActive;
-	};
+	},
 	//recibe un duración para evitar saltos infinitos
-	playcastilloState.prototype.WInputIsActive = function(duration) {
+	WInputIsActive = function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.W, duration);
 	    return isActive;
-	};
-	playcastilloState.prototype.WInputReleased = function() {
+	},
+	WInputReleased: function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.W);
 	    return released;
-	};
+	},
 	//control de las trampas
-	playcastilloState.prototype.spaceInputIsAcive = function() {
+	spaceInputIsAcive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
 	    return isActive;
-	};
-	playcastilloState.prototype.IinputIsActive = function() {
+	},
+	IinputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.I);
 	    return isActive;
-	};
-	playcastilloState.prototype.OInputIsActive = function() {
+	},
+	OInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.O);
 	    return isActive;
-	};
-	playcastilloState.prototype.PInputIsActive = function() {
+	},
+	PInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.P);
 	    return isActive;
-	};
-	playcastilloState.prototype.balltrap = function(){
+	},
+	balltrap: function(){
 		this.bola.scale.setTo(-1,1);		
 	    this.bola.animations.play('rodar', 12, true);
 		this.bola.body.velocity.x = -200;
 		this.botonbola = this.game.add.sprite(1040, 360, 'bacaballero');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.ballrelease, this);
-	};
-	playcastilloState.prototype.ballrelease = function(){
+	},
+	ballrelease: function(){
 		this.bola.destroy();
 		this.bola = this.game.add.sprite(1100, 395, 'horse');
 	    var rodar = this.bola.animations.add('rodar');
@@ -206,13 +209,13 @@ var playcastilloState = function(Just_run){
 	    this.bola.body.allowGravity = false;	
 	    this.botonbola = this.game.add.sprite(1040, 360, 'becaballero');
 	    this.activatedb = false;
-	};	
-	playcastilloState.prototype.strap = function(){
+	},	
+	strap: function(){
 		this.aceite1.body.allowGravity = true;
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'baaceite');
 	    game.time.events.add(Phaser.Timer.SECOND * 7, this.srelease, this);
-	};
-	playcastilloState.prototype.srelease = function(){
+	},
+	srelease: function(){
 		this.aceite1.destroy();
 		this.aceite1 = this.game.add.sprite(520, -90, 'aceite');
 	    this.game.physics.enable(this.aceite1, Phaser.Physics.ARCADE);
@@ -220,16 +223,16 @@ var playcastilloState = function(Just_run){
 	    this.aceite1.body.allowGravity = false;
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'beaceite');
 	    this.activatedc = false;
-	};
-	playcastilloState.prototype.ptrap = function(){
+	},
+	ptrap: function(){
 		this.p1.body.velocity.x = 300;
 		this.p2.body.velocity.x = 300;
 		this.p3.body.velocity.x = 300;
 		this.botonflecha = this.game.add.sprite(1040, 300, 'baelfo');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.prelease, this);
-	};
+	},
 	//resetea las fotos
-	playcastilloState.prototype.prelease = function(){
+	prelease: function(){
 		this.p1.destroy();
 		this.p2.destroy();
 		this.p3.destroy();
@@ -247,9 +250,9 @@ var playcastilloState = function(Just_run){
 	    this.p3.body.allowGravity = false;	
 	    this.botonflecha = this.game.add.sprite(1040, 300, 'beelfo');
 	    this.activatedgp = false;
-	};
+	},
 	//crea todos los elementos estaticos del mundo
-	playcastilloState.prototype.crearmundo = function(){
+	crearmundo: function(){
 		this.ground = this.game.add.group();
 	    this.wood = this.game.add.group();
 
@@ -464,38 +467,38 @@ var playcastilloState = function(Just_run){
 	    this.game.physics.enable(this.puerta, Phaser.Physics.ARCADE);
 	    this.puerta.body.immovable = true;
 	    this.puerta.body.allowGravity = false;
-	};
+	},
 	//renderia los elementos de la UI
-	playcastilloState.prototype.render = function () {
+	render = function () {
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
         this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
         this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
-    };
+    },
     //gestiona el cambio cuando se acaba el tiempo
-     playcastilloState.prototype.endTimer = function() {
+     endTimer: function() {
         this.timer.stop();
         this.pescapist++;
 		this.game.add.sprite(0,0,"libre");
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
-    };
+    },
     //genera el cambio de pantallas
-    playcastilloState.prototype.cambio = function(){
+    cambio: function(){
     	if(this.catched){
     		this.pchaser = this.game.state.states["playnieve"].pchaser+1;
     	}
     	game.sound.stopAll();
     	game.state.start('loadcarga_desierto');
-    };
+    },
     //crea el formato de timer
-    playcastilloState.prototype.formatTime = function(s) {
+    formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   
-    };
+    },
     //carga los datos de la pantalla anterior
-    playcastilloState.prototype.init = function(){
+    init: function(){
     	this.pchaser = this.game.state.states["playnieve"].pchaser;
     	this.pescapist = this.game.state.states["playnieve"].pescapist;var object = JSON.stringify({ID: "chaser", puntuacion: this.pchaser});
     	var object1 = JSON.stringify({ID: "escapist", puntuacion: this.pescapist});
@@ -545,9 +548,9 @@ var playcastilloState = function(Just_run){
                         "Content-Type": "application/json"
                     },
                 });
-    };
+    },
     //crea los jugadores y todas las variables relacionadas	
-	playcastilloState.prototype.crearJugadores = function(){
+	crearJugadores: function(){
 		//variables del movimiento
 	    this.velocidadmaxima = 300;
 	    this.aceleracion = 500;
@@ -595,17 +598,17 @@ var playcastilloState = function(Just_run){
 	    //variable para comprobar el salto
 	    this.jumping = false;
 	    this.jumping1 = false;	 
-	};
+	},
 	//crea el timer, su maximo de tiempo y lo inicia
-	playcastilloState.prototype.initTimer = function(){		
+	initTimer: function(){		
         this.timer = this.game.time.create();
        
         this.timerEvent = this.timer.add(Phaser.Timer.SECOND * 30, this.endTimer, this);
 
         this.timer.start();
-	};
+	},
 	//inicializa las trampas
-	playcastilloState.prototype.initTraps = function(){
+	initTraps: function(){
 	  //crear bola de nieve
 	    this.bola = this.game.add.sprite(1100, 395, 'horse');
 	    var rodar = this.bola.animations.add('rodar');
@@ -639,9 +642,9 @@ var playcastilloState = function(Just_run){
 	    this.activatedb = false;
 	    this.activatedc = false;
 	    this.activatedgp = false;
-	};
+	},
 	//inicializa las colisiones
-	playcastilloState.prototype.initCollisions = function(){
+	initCollisions: function(){
 		this.onTheGround = game.physics.arcade.collide(this.chaser, this.ground);
 	    this.onTheLedge = game.physics.arcade.collide(this.chaser, this.wood);
 	    game.physics.arcade.collide(this.chaser, this.bola);
@@ -653,5 +656,5 @@ var playcastilloState = function(Just_run){
 	    game.physics.arcade.collide(this.escapist, this.water);
 	    this.onTheLedge1 = game.physics.arcade.collide(this.escapist, this.wood);
 	    this.catched = game.physics.arcade.collide(this.escapist, this.chaser);
-	};
+	}
 }

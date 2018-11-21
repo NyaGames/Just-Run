@@ -5,8 +5,6 @@ var loadcarga_volcanState = function(Just_Run) {
 		game.load.image('ground', 'assets/tiles/volcan/arena.png');	
 		game.load.image('lava', 'assets/tiles/volcan/lava.png');
 		game.load.image('ledge', 'assets/tiles/volcan/ledge.png');
-		game.load.spritesheet('chaser', 'assets/sprites/rojo/Rojo64pxl.png', 48, 48, 178);
-		game.load.spritesheet('escapist', 'assets/sprites/verde/verde64pxl.png', 48, 48, 155);
 		game.load.image('ola', 'assets/sprites/volcan/ola.png');
 		game.load.image('meteor', 'assets/sprites/volcan/meteorito.png');
 		game.load.image('magma', 'assets/sprites/volcan/lavacube.png');

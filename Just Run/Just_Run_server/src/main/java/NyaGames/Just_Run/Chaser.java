@@ -1,12 +1,18 @@
 package NyaGames.Just_Run;
-
 public class Chaser {
+	private String ID;
 	private int puntuacion;
 	private int posicionX;
 	private int posicionY;
 	
 	Chaser(){
 		
+	}
+	public String getID() {
+		return ID;
+	}
+	public void setID() {
+		ID = "Chaser";
 	}
 	public int getPosicionX() {
 		return posicionX;

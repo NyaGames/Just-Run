@@ -1,7 +1,9 @@
-var playoceanoState = function(Just_run){
-	const URLe="/puntuacionescapist"
-	const URLc="/puntuacioneschaser"
-	playoceanoState.prototype.create = function() {        	
+JustRun.playoceanoState = function(game){
+	
+}
+
+JustRun.playoceanoState.prototype = {
+	create: function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'sea');
 	    song = game.add.audio('song');
@@ -28,9 +30,9 @@ var playoceanoState = function(Just_run){
 	        Phaser.Keyboard.P,
 	        Phaser.Keyboard.SPACEBAR,
 	    ]);
-	};
+	},
 
-	playoceanoState.prototype.update = function() {
+	update: function() {
 		this.initCollisions();
 		//se ejecuta siempre y cuando el tiempo no se haya acabado, o no se haya pillado al escapista
 		if(this.timer.running){
@@ -143,8 +145,8 @@ var playoceanoState = function(Just_run){
 	}
 	}
 
-	};
-	playoceanoState.prototype.platform = function(){
+	},
+	platform: function(){
 		this.ledge.destroy();
 		this.activatedg = false;
 		this.ledge = this.game.add.sprite(460, this.game.height - 350, 'piedra');
@@ -153,81 +155,81 @@ var playoceanoState = function(Just_run){
 	    this.ledge.body.allowGravity = false;
 	}
 	//controles con las flechas y devuelven un bool en caso de que este activo	
-	playoceanoState.prototype.leftInputIsActive = function() {
+	leftInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.LEFT);
 	    return isActive;
-	};
-	playoceanoState.prototype.rightInputIsActive = function() {
+	},
+	rightInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.RIGHT);
 	    return isActive;
-	};
+	},
 	//recibe un duración para evitar saltos infinitos
-	playoceanoState.prototype.upInputIsActive = function(duration) {
+	upInputIsActive: function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.UP, duration);
 	    return isActive;
-	};
-	playoceanoState.prototype.upInputReleased = function() {
+	},
+	upInputReleased: function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.UP);
 	    return released;
-	};
+	},
 	//control con WASD
-	playoceanoState.prototype.AInputIsActive = function() {
+	AInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.A);
 	    return isActive;
-	};
-	playoceanoState.prototype.DInputIsActive = function() {
+	},
+	DInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.D);
 	    return isActive;
-	};
+	},
 	//recibe un duración para evitar saltos infinitos
-	playoceanoState.prototype.WInputIsActive = function(duration) {
+	WInputIsActive: function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.W, duration);
 	    return isActive;
-	};
-	playoceanoState.prototype.WInputReleased = function() {
+	},
+	WInputReleased: function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.W);
 	    return released;
-	};
+	},
 	//control de las trampas
-	playoceanoState.prototype.spaceInputIsAcive = function() {
+	spaceInputIsAcive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
 	    return isActive;
-	};
-	playoceanoState.prototype.IinputIsActive = function() {
+	},
+	IinputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.I);
 	    return isActive;
-	};
-	playoceanoState.prototype.OInputIsActive = function() {
+	},
+	OInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.O);
 	    return isActive;
-	};
-	playoceanoState.prototype.PInputIsActive = function() {
+	},
+	PInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.P);
 	    return isActive;
-	};
+	},
 	//metodos de las trampas
 	//activa el tiburon
-	playoceanoState.prototype.sharktrap = function(){		
+	sharktrap: function(){		
 	    this.tiburon.animations.play('rodar', 12, true);
 		this.tiburon.body.velocity.x = (-this.tiburon.body.position.x + this.chaser.body.position.x)/2;
 		this.tiburon.body.velocity.y = (-this.tiburon.body.position.y + this.chaser.body.position.y)/2;
 		this.botontiburon = this.game.add.sprite(1040, 360, 'batiburon');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.sharkrelease, this);
-	};
+	},
 	//resetea el tiburon
-	playoceanoState.prototype.sharkrelease = function(){
+	sharkrelease: function(){
 		this.tiburon.destroy();
 		this.tiburon = this.game.add.sprite(1100, 367, 'shark');
 	    var rodar = this.tiburon.animations.add('rodar');
@@ -236,16 +238,16 @@ var playoceanoState = function(Just_run){
 	    this.tiburon.body.allowGravity = false;	
 	    this.botontiburon = this.game.add.sprite(1040, 360, 'betiburon');
 	    this.activatedb = false;
-	};
+	},
 	//activa el ancla
-	playoceanoState.prototype.strap = function(){
+	strap: function(){
 		this.ancla1.body.allowGravity = true;
 	    this.ancla2.body.allowGravity = true;
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'baestalactita');
 	    game.time.events.add(Phaser.Timer.SECOND * 7, this.srelease, this);
-	};
+	},
 	//resetea el ancla
-	playoceanoState.prototype.srelease = function(){
+	srelease: function(){
 		this.ancla1.destroy();
 		this.ancla2.destroy();
 		this.ancla1 = this.game.add.sprite(0, -90, 'ancla');
@@ -258,9 +260,9 @@ var playoceanoState = function(Just_run){
 	    this.ancla2.body.allowGravity = false;
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'beancla');
 	    this.activatedc = false;
-	};
+	},
 	//activa la trampa de los erizos y inicia el timer hasta el reseteo
-	playoceanoState.prototype.ptrap = function(){
+	ptrap: function(){
 		this.p1.destroy();
 		this.p2.destroy();
 		this.p3.destroy();
@@ -287,9 +289,9 @@ var playoceanoState = function(Just_run){
 	    this.erizos.add(this.p4);
 		this.botonerizo = this.game.add.sprite(1040, 300, 'baerizo');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.prelease, this);
-	};
+	},
 	//resetea la trampa de los erizos
-	playoceanoState.prototype.prelease = function(){
+	prelease: function(){
 		this.p1.destroy();
 		this.p2.destroy();
 		this.p3.destroy();
@@ -316,9 +318,9 @@ var playoceanoState = function(Just_run){
 	    this.erizos.add(this.p4);
 	    this.botonerizo = this.game.add.sprite(1040, 300, 'beerizo');
 	    this.activatedgp = false;
-	};
+	},
 	//crea todos los bloque inamovibles
-	playoceanoState.prototype.crearmundo = function(){
+	crearmundo: function(){
 		this.ground = this.game.add.group();
 		this.burbuja= this.game.add.group();
 
@@ -498,38 +500,38 @@ var playoceanoState = function(Just_run){
 	    block.body.immovable = true;
 	    block.body.allowGravity = false;
 	    this.ground.add(block);
-	};
+	},
 	//muestra la IU por pantalla
-	playoceanoState.prototype.render = function () {
+	render = function () {
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
         this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
         this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
-    };
+    },
     //para el cronometro y gestiona la puntuacion
-    playoceanoState.prototype.endTimer = function() {
+    endTimer: function() {
         this.timer.stop();
         this.pescapist++;
 	    this.game.add.sprite(0,0,"libre");
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
-    };
+    },
     //gestiona el cammbio de pantalla
-    playoceanoState.prototype.cambio = function(){
+    cambio: function(){
     	if(this.catched){
     		this.pchaser = this.game.state.states["playdesierto"].pchaser+1;
     	}
     	game.sound.stopAll();
     	game.state.start('loadcarga_volcan');
-    };
+    },
     //crea la logica del cronometro
-    playoceanoState.prototype.formatTime = function(s) {
+    formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   
-    };
+    },
     //carga la puntuacion del nivel anterior
-    playoceanoState.prototype.init = function(){
+    init: function(){
     	this.pchaser = this.game.state.states["playdesierto"].pchaser;
     	this.pescapist = this.game.state.states["playdesierto"].pescapist;
     	var object = JSON.stringify({ID: "chaser", puntuacion: this.pchaser});
@@ -580,9 +582,9 @@ var playoceanoState = function(Just_run){
                         "Content-Type": "application/json"
                     },
                 });
-    };
+    },
     //crea los jugadores y todas las variables relacionadas	
-	playoceanoState.prototype.crearJugadores = function(){
+	crearJugadores: function(){
 		//variables del movimiento
 	    this.velocidadmaxima = 300;
 	    this.aceleracion = 500;
@@ -630,17 +632,17 @@ var playoceanoState = function(Just_run){
 	    //variable para comprobar el salto
 	    this.jumping = false;
 	    this.jumping1 = false;	 
-	};
+	},
 	//crea el timer, su maximo de tiempo y lo inicia
-	playoceanoState.prototype.initTimer = function(){		
+	initTimer: function(){		
         this.timer = this.game.time.create();
        
         this.timerEvent = this.timer.add(Phaser.Timer.SECOND * 30, this.endTimer, this);
 
         this.timer.start();
-	};
+	},
 	//inicializa las trampas
-	playoceanoState.prototype.initTraps = function(){
+	initTraps: function(){
 
 	    //crear tiburon
 	    this.tiburon = this.game.add.sprite(1100, 367, 'shark');
@@ -691,9 +693,9 @@ var playoceanoState = function(Just_run){
 	    this.botonestalactita = this.game.add.sprite(1040, 330, 'beancla');
 	    this.botontiburon = this.game.add.sprite(1040, 360, 'betiburon');
 
-	};
+	},
 	//inicializa las colisiones
-	playoceanoState.prototype.initCollisions = function(){		
+	initCollisions: function(){		
 	    this.onTheGround = game.physics.arcade.collide(this.chaser, this.ground);
 	    game.physics.arcade.collide(this.chaser, this.tiburon);
 	    game.physics.arcade.collide(this.chaser, this.ancla1);
@@ -708,5 +710,5 @@ var playoceanoState = function(Just_run){
 	    game.physics.arcade.collide(this.chaser, this.p3);
 	    this.onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
 	    this.catched = game.physics.arcade.collide(this.escapist, this.chaser);
-	};
+	}
 }

@@ -1,7 +1,9 @@
-var playdesiertoState = function(Just_run){
-	const URLe="/puntuacionescapist"
-	const URLc="/puntuacioneschaser"
-	playdesiertoState.prototype.create = function() {        	
+JustRun.playdesiertoState = function(game){
+	
+}
+JustRun.playdesiertoState.prototype = {
+		
+	create: function() {        	
 		//inicializacion de los sprites
 	    this.background = game.add.sprite(0,0,'fondo');
 	    song = game.add.audio('song');
@@ -28,8 +30,8 @@ var playdesiertoState = function(Just_run){
 	        Phaser.Keyboard.O,
 	        Phaser.Keyboard.P,
 	    ]);
-	};
-	playdesiertoState.prototype.update = function() {
+	},
+	update: function() {
 		//crea las colisiones que los diversos elementos del mapa, asi como las variables de control usadas durante el nivel
 	    this.initCollisions();
 	    //comprueba que el tiempo no se ha acabado y que el escapist no ha sido cazado
@@ -130,83 +132,83 @@ var playdesiertoState = function(Just_run){
 	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	}
 	}
-	};
+	},
 	//controles con las flechas y devuelven un bool en caso de que este activo	
-	playdesiertoState.prototype.leftInputIsActive = function() {
+	leftInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.LEFT);
 	    return isActive;
-	};
-	playdesiertoState.prototype.rightInputIsActive = function() {
+	},
+	rightInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.RIGHT);
 	    return isActive;
-	};
+	},
 	//recibe un duración para evitar saltos infinitos
-	playdesiertoState.prototype.upInputIsActive = function(duration) {
+	upInputIsActive: function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.UP, duration);
 	    return isActive;
-	};
-	playdesiertoState.prototype.upInputReleased = function() {
+	},
+	upInputReleased: function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.UP);
 	    return released;
-	};
+	},
 	//control con WASD
-	playdesiertoState.prototype.AInputIsActive = function() {
+	AInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.A);
 	    return isActive;
-	};
-	playdesiertoState.prototype.DInputIsActive = function() {
+	},
+	DInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.D);
 	    return isActive;
-	};
+	},
 	//recibe un duración para evitar saltos infinitos
-	playdesiertoState.prototype.WInputIsActive = function(duration) {
+	WInputIsActive: function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.W, duration);
 	    return isActive;
-	};
-	playdesiertoState.prototype.WInputReleased = function() {
+	},
+	WInputReleased: function() {
 	    var released = false;
 	    released = this.input.keyboard.upDuration(Phaser.Keyboard.W);
 	    return released;
-	};
+	},
 	//control de las trampas
-	playdesiertoState.prototype.spaceInputIsAcive = function() {
+	spaceInputIsAcive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
 	    return isActive;
-	};
-	playdesiertoState.prototype.IinputIsActive = function() {
+	},
+	IinputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.I);
 	    return isActive;
-	};
-	playdesiertoState.prototype.OInputIsActive = function() {
+	},
+	OInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.O);
 	    return isActive;
-	};
-	playdesiertoState.prototype.PInputIsActive = function() {
+	},
+	PInputIsActive: function() {
 	    var isActive = false;
 	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.P);
 	    return isActive;
-	};
+	},
 	//metodos de las trampas
 	//funcion que ejecuta el movimiento de la bola a ras de suelo, modificando la velocidad, cambiando el boton y llamando al metodo que resetea la trampa tras x tiempo
-	playdesiertoState.prototype.balltrap = function(){	
+	balltrap: function(){	
 		this.bola.scale.setTo(0.5,0.5);		
 	    this.bola.animations.play('rodar', 12, true);
 		this.bola.body.velocity.x = -200;
 		this.botonbola = this.game.add.sprite(1040, 360, 'baTW');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.ballrelease, this);
-	};
+	},
 	//reseta la trampa de la bola
-	playdesiertoState.prototype.ballrelease = function(){
+	ballrelease: function(){
 		this.bola.destroy();
 		this.bola = this.game.add.sprite(1100, 380, 'tweed');
 	    var rodar = this.bola.animations.add('rodar');
@@ -215,16 +217,16 @@ var playdesiertoState = function(Just_run){
 	    this.bola.body.allowGravity = false;	
 	    this.botonbola = this.game.add.sprite(1040, 360, 'beTW');
 	    this.activatedb = false;
-	};	
+	},	
 	//activa la velocidad de la bala para que vaya a la posicion del chaser
-	playdesiertoState.prototype.strap = function(){
+	strap: function(){
 		this.bala.body.velocity.x = (-this.bala.body.position.x + this.chaser.body.position.x)*2;
 		this.bala.body.velocity.y = (-this.bala.body.position.y + this.chaser.body.position.y)*2;
 	    this.botonbala = this.game.add.sprite(1040, 330, 'bavaquero');
 	    game.time.events.add(Phaser.Timer.SECOND * 5, this.srelease, this);
-	};
+	},
 	//resetea la posicion y velocidad de la bala
-	playdesiertoState.prototype.srelease = function(){
+	srelease: function(){
 		this.bala.destroy();
 		this.bala = this.game.add.sprite(-50, this.game.height-220, 'bala');
 	    this.game.physics.enable(this.bala, Phaser.Physics.ARCADE);
@@ -233,9 +235,9 @@ var playdesiertoState = function(Just_run){
 	   
 	    this.botonbala = this.game.add.sprite(1040, 330, 'bevaquero');
 	    this.activatedc = false;
-	};
+	},
 	//activa la velocidad de los buitres
-	playdesiertoState.prototype.ptrap = function(){
+	ptrap: function(){
 		this.buitre1.scale.setTo(0.5,0.5);	
 		this.buitre2.scale.setTo(0.5,0.5);	
 		this.buitre3.scale.setTo(0.5,0.5);	
@@ -247,9 +249,9 @@ var playdesiertoState = function(Just_run){
 		this.buitre3.body.velocity.x = 300;
 		this.botonbuitre = this.game.add.sprite(1040, 300, 'babuitre');
 		game.time.events.add(Phaser.Timer.SECOND * 7, this.prelease, this);
-	};
+	},
 	//resetea los buitres en posicion y velocidad
-	playdesiertoState.prototype.prelease = function(){
+	prelease: function(){
 		this.buitre1.destroy();
 		this.buitre2.destroy();
 		this.buitre3.destroy();
@@ -270,9 +272,9 @@ var playdesiertoState = function(Just_run){
 	    this.buitre3.body.allowGravity = false;	
 	    this.botonbuitre = this.game.add.sprite(1040, 300, 'bebuitre');
 	    this.activatedgp = false;
-	};
+	},
 	//crea todo el mundo, los diversos grupos de colisiones de cara a definir las interacciones
-	playdesiertoState.prototype.crearmundo = function(){
+	crearmundo: function(){
 		this.ground = this.game.add.group();
 		this.cactus = this.game.add.group();
 	    this.ice = this.game.add.group();
@@ -435,9 +437,9 @@ var playdesiertoState = function(Just_run){
 	    block.body.immovable = true;
 	    block.body.allowGravity = false;
 	    this.ice.add(block);
-	};
+	},
 	//crea los jugadores y todas las variables relacionadas	
-	playdesiertoState.prototype.crearJugadores = function(){
+	crearJugadores: function(){
 		//variables del movimiento
 	    this.velocidadmaxima = 300;
 	    this.aceleracion = 500;
@@ -485,9 +487,9 @@ var playdesiertoState = function(Just_run){
 	    //variable para comprobar el salto
 	    this.jumping = false;
 	    this.jumping1 = false;	 
-	};
+	},
 	//inicializa todas las trampas
-	playdesiertoState.prototype.initTraps = function(){
+	initTraps: function(){
 	    //crear bola del oeste
 	    this.bola = this.game.add.sprite(1100, 380, 'tweed');
 	    var rodar = this.bola.animations.add('rodar');
@@ -540,47 +542,47 @@ var playdesiertoState = function(Just_run){
 	    this.activatedb = false;
 	    this.activatedc = false;
 	    this.activatedgp = false;
-	};
+	},
 	//crea el timer, su maximo de tiempo y lo inicia
-	playdesiertoState.prototype.initTimer = function(){		
+	initTimer: function(){		
         this.timer = this.game.time.create();
        
         this.timerEvent = this.timer.add(Phaser.Timer.SECOND * 30, this.endTimer, this);
 
         this.timer.start();
-	};
+	},
 	//muestras por pantalla todos los textos necesarios
-	playdesiertoState.prototype.render = function () {
+	render: function () {
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
         this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
         this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
-    };
+    },
     //se activa cuando acaba el tiempo para subir la puntuacion del escapista y activa el cambio
-    playdesiertoState.prototype.endTimer = function() {
+    endTimer: function() {
     	this.timer.stop();
     	this.pescapist++;
 	    this.game.add.sprite(0,0,"libre");
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
-    };
+    },
     //comprueba que la puntuacion es correcta y cambia de estado
-    playdesiertoState.prototype.cambio = function(){
+    cambio: function(){
     	if(this.catched){
     		this.pchaser++;
     		this.pchaser = this.game.state.states["playcastillo"].pchaser+1;
     	}
     	game.sound.stopAll();
     	game.state.start('loadcarga_oceano');
-    };
+    },
     //crea el formato del cronometro
-    playdesiertoState.prototype.formatTime = function(s) {
+    formatTime = function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   
-    };
+    },
     //recibe la puntuacion del nivel anterior
-    playdesiertoState.prototype.init = function(){
+    init: function(){
     	this.pchaser = this.game.state.states["playcastillo"].pchaser;
     	this.pescapist = this.game.state.states["playcastillo"].pescapist;
     	var object = JSON.stringify({ID: "chaser", puntuacion: this.pchaser});
@@ -631,9 +633,9 @@ var playdesiertoState = function(Just_run){
                         "Content-Type": "application/json"
                     },
                 });
-    };
+    },
     //inicializa todas las colisiones y las variables booleanas relacionadas
-    playdesiertoState.prototype.initCollisions = function(){
+    initCollisions: function(){
     	this.onTheGround = game.physics.arcade.collide(this.chaser, this.ground);
 	    this.onTheLedge = game.physics.arcade.collide(this.chaser, this.ice);
 	    this.onTheLedge2 = game.physics.arcade.collide(this.chaser, this.plataforma1);
