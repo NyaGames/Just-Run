@@ -47,7 +47,7 @@ JustRun.menuState.prototype = {
 			this.ayuda = game.add.sprite(50, 520, 'ayudap');
 			if(this.spaceKey.isDown){
 				game.sound.stopAll();
-				game.state.start('matchmaking');
+				game.state.start('tutorial');
 			}
 		}else if(estado === 2){
 			//animaciones

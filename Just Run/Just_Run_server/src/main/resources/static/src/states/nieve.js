@@ -83,7 +83,10 @@ JustRun.playnieveState.prototype = {
 		   		escapist.ID = data.ID;
 		   		escapist.posicionX = data.posicionX;
 		   		escapist.posicionY = data.posicionY;
-		   		escapist.puntuacion = data.puntuacion;		   		
+		   		escapist.puntuacion = data.puntuacion;	
+		   		escapist.IPressed = data.IPressed;
+		   		escapist.OPressed = data.OPressed;
+		   		escapist.PPressed = data.PPressed;
 			    escapist.animations.play('idle');
 
 			    escapist.anchor.setTo(0.3,0.5);			    
@@ -112,7 +115,6 @@ JustRun.playnieveState.prototype = {
 		        Phaser.Keyboard.I,
 		        Phaser.Keyboard.O,
 		        Phaser.Keyboard.P,
-		        Phaser.Keyboard.SPACEBAR,
 		    ]);
 		},
 		update: function() {
@@ -194,6 +196,19 @@ JustRun.playnieveState.prototype = {
 				        jumping = false;
 				    }
 				    
+			    	if (escapist.IPressed && !this.activatedb){
+			    		this.activatedb = true;	    		
+				    	this.balltrap();					    	
+				    }
+				    if (escapist.OPressed && !this.activatedc){
+				    		this.activatedc = true;
+				    		this.strap();
+				    }
+				    if (escapist.PPressed && !this.activatedgp){
+				    		this.activatedgp = true;
+					    	this.ptrap()
+					}
+
 				    $.ajax({
 			    		method: "GET",
 			    		url: "/escapist",
@@ -202,10 +217,23 @@ JustRun.playnieveState.prototype = {
 			    			"Content-Type": "application/json"
 			    		}
 			    	}).done(function(data){
-			    		console.log(data)
-			    		escapist.body.position.x = data.posicionX;
-			        	escapist.body.position.y = data.posicionY;
-			        	console.log(escapist.body)
+			    		console.log(data);
+			    		if(data.posicionX < escapist.body.position.x-5){
+					    		escapist.scale.setTo(-1,1);
+					    		escapist.animations.play('run');
+					        	escapist.body.acceleration.x = -aceleracion;
+			    		}else if(data.posicionX > escapist.body.position.x+5){
+				    			escapist.scale.setTo(1,1);
+					    		escapist.animations.play('run');
+					           	escapist.body.acceleration.x = aceleracion;
+			    		}else{
+				    			escapist.animations.play('idle');
+						        escapist.body.acceleration.x = 0;
+			    		}
+			    		if(data.posicionY < escapist.body.position.y-130){
+				    		escapist.animations.play('doblejump');
+				    		escapist.body.velocity.y = salto;
+			    		}
 			    	})
 		    	}
 		    	if(JustRun.userID == 2){
@@ -247,6 +275,22 @@ JustRun.playnieveState.prototype = {
 					        this.jumps1--;
 					        jumping1 = false;
 					    }
+					  //detecta si se han pulsado las teclas que activan las trampas
+					    if (this.IinputIsActive() && !this.activatedb){
+					    		this.activatedb = true;	    		
+						    	this.balltrap();
+						    	escapist.IPressed = true;						    	
+					    }
+					    if (this.OInputIsActive() && !this.activatedc){
+					    		this.activatedc = true;
+					    		this.strap();
+					    		escapist.OPressed = true;
+					    }
+					    if (this.PInputIsActive() && !this.activatedgp){
+					    		this.activatedgp = true;
+						    	this.ptrap();
+						    	escapist.PPressed = true;
+						}	     
 					    $.ajax({
 				    		method: "GET",
 				    		url: "/chaser",
@@ -256,25 +300,8 @@ JustRun.playnieveState.prototype = {
 				    		}
 				    	}).done(function(data){
 				    		console.log(data);
-				    		chaser.body.position.x = data.posicionX;
-				        	chaser.body.position.y = data.posicionY;
-				        	console.log(chaser.body)
 				    	})
-					  //detecta si se han pulsado las teclas que activan las trampas
-					    if (this.IinputIsActive() && !this.activatedb){
-					    		this.activatedb = true;	    		
-						    	this.balltrap();	
-					    }
-					    if (this.OInputIsActive() && !this.activatedc){
-					    		this.activatedc = true;
-					    		this.strap();
-					    }
-					    if (this.PInputIsActive() && !this.activatedgp){
-					    		this.activatedgp = true;
-						    	this.ptrap();
-						}
-		    	}	     
-		
+		    	}		
 			    this.jsonear(chaser, escapist);
 			}else{	
 				//se ha pillado al escapista se muestra la pantalla de cazado y se empieza el cambio de escenas
@@ -314,12 +341,6 @@ JustRun.playnieveState.prototype = {
 		    var released = false;
 		    released = this.input.keyboard.upDuration(Phaser.Keyboard.W);
 		    return released;
-		},
-		//control de las trampas
-		spaceInputIsAcive: function() {
-		    var isActive = false;
-		    isActive = this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
-		    return isActive;
 		},
 		IinputIsActive: function() {
 		    var isActive = false;
@@ -631,6 +652,9 @@ JustRun.playnieveState.prototype = {
 				objeto1.posicionX = e.posicionX;
 				objeto1.posicionY = e.posicionY;
 				objeto1.puntuacion = e.puntuacion;
+				objeto1.IPressed = e.IPressed;
+				objeto1.OPressed = e.OPressed;
+				objeto1.PPressed = e.PPressed;
 				
 				$.ajax({
 		    		method: "PUT",

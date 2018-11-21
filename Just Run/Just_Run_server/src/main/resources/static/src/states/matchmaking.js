@@ -32,7 +32,7 @@ JustRun.matchmakingState.prototype = {
 				}
 			})		
 			if(cambio){
-				game.state.start('tutorial');
+				game.state.start('loadcarga_nieve');
 			}
 		}	
 }

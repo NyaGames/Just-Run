@@ -153,7 +153,7 @@ JustRun.playoceanoState.prototype = {
 	    this.game.physics.enable(this.ledge, Phaser.Physics.ARCADE);
 	    this.ledge.body.immovable = true;
 	    this.ledge.body.allowGravity = false;
-	}
+	},
 	//controles con las flechas y devuelven un bool en caso de que este activo	
 	leftInputIsActive: function() {
 	    var isActive = false;
@@ -502,7 +502,7 @@ JustRun.playoceanoState.prototype = {
 	    this.ground.add(block);
 	},
 	//muestra la IU por pantalla
-	render = function () {
+	render: function () {
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
@@ -525,7 +525,7 @@ JustRun.playoceanoState.prototype = {
     	game.state.start('loadcarga_volcan');
     },
     //crea la logica del cronometro
-    formatTime = function(s) {
+    formatTime: function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   

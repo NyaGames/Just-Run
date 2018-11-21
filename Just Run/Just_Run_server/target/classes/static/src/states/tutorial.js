@@ -9,6 +9,6 @@ JustRun.tutorialState.prototype = {
 			spaceKey.onDown.addOnce(this.start, this);
 		},
 		start: function(){
-			game.state.start('loadcarga_nieve');
+			game.state.start('matchmaking');
 		}	
 }

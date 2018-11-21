@@ -162,7 +162,7 @@ JustRun.playcastilloState.prototype = {
 	    return isActive;
 	},
 	//recibe un duración para evitar saltos infinitos
-	WInputIsActive = function(duration) {
+	WInputIsActive: function(duration) {
 	    var isActive = false;
 	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.W, duration);
 	    return isActive;
@@ -469,7 +469,7 @@ JustRun.playcastilloState.prototype = {
 	    this.puerta.body.allowGravity = false;
 	},
 	//renderia los elementos de la UI
-	render = function () {
+	render: function () {
         if (this.timer.running) {
             this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
         }
@@ -492,7 +492,7 @@ JustRun.playcastilloState.prototype = {
     	game.state.start('loadcarga_desierto');
     },
     //crea el formato de timer
-    formatTime = function(s) {
+    formatTime: function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   

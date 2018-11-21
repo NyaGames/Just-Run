@@ -18,6 +18,9 @@ public class EscapistController {
 		escapist.setPosicionX(1000);
 		escapist.setPosicionY(300);
 		escapist.setPuntuacion(0);
+		escapist.setIPressed(false);
+		escapist.setOPressed(false);
+		escapist.setPPressed(false);
 		
 		return escapist;
 	}	
@@ -41,6 +44,9 @@ public class EscapistController {
 			escapist.setPosicionX(GameEscapist.getPosicionX());
 			escapist.setPosicionY(GameEscapist.getPosicionY());
 			escapist.setPuntuacion(GameEscapist.getPuntuacion());
+			escapist.setIPressed(GameEscapist.getIPressed());
+			escapist.setOPressed(GameEscapist.getOPressed());
+			escapist.setPPressed(GameEscapist.getPPressed());			
 			return new ResponseEntity<>(escapist, HttpStatus.OK);
 		}else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

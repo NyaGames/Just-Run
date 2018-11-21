@@ -576,7 +576,7 @@ JustRun.playdesiertoState.prototype = {
     	game.state.start('loadcarga_oceano');
     },
     //crea el formato del cronometro
-    formatTime = function(s) {
+    formatTime: function(s) {
         var minutes = "0" + Math.floor(s / 60);
         var seconds = "0" + (s - minutes * 60);
         return minutes.substr(-2) + ":" + seconds.substr(-2);   
