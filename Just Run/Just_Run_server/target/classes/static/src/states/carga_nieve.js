@@ -31,7 +31,7 @@ JustRun.loadcarga_nieveState.prototype = {
 			pantallacarga.animations.play('load', 26, true);	
 			$.ajax({
 	            method: "POST",
-	            url: 'http://localhost:8080/chaser',
+	            url: '/chaser',
 	            processData: false,
 	            headers: {
 	                "Content-Type": "application/json"
@@ -39,7 +39,15 @@ JustRun.loadcarga_nieveState.prototype = {
 	        });
 			$.ajax({
 	            method: "POST",
-	            url: 'http://localhost:8080/escapist',
+	            url: '/escapist',
+	            processData: false,
+	            headers: {
+	                "Content-Type": "application/json"
+	            },
+	        });
+			$.ajax({
+	            method: "POST",
+	            url: '/traps',
 	            processData: false,
 	            headers: {
 	                "Content-Type": "application/json"

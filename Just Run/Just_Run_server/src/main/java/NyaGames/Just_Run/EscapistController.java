@@ -21,7 +21,7 @@ public class EscapistController {
 		escapist.setIPressed(false);
 		escapist.setOPressed(false);
 		escapist.setPPressed(false);
-		
+		escapist.setCazado(false);
 		return escapist;
 	}	
 	@CrossOrigin
@@ -41,13 +41,14 @@ public class EscapistController {
 	public ResponseEntity<Escapist> updateEscapist(@RequestBody Escapist GameEscapist){
 		Escapist savedescapist = escapist;
 		if(savedescapist != null) {
-			escapist.setPosicionX(GameEscapist.getPosicionX());
-			escapist.setPosicionY(GameEscapist.getPosicionY());
-			escapist.setPuntuacion(GameEscapist.getPuntuacion());
-			escapist.setIPressed(GameEscapist.getIPressed());
-			escapist.setOPressed(GameEscapist.getOPressed());
-			escapist.setPPressed(GameEscapist.getPPressed());			
-			return new ResponseEntity<>(escapist, HttpStatus.OK);
+			savedescapist.setPosicionX(GameEscapist.getPosicionX());
+			savedescapist.setPosicionY(GameEscapist.getPosicionY());
+			savedescapist.setPuntuacion(GameEscapist.getPuntuacion());
+			savedescapist.setIPressed(GameEscapist.getIPressed());
+			savedescapist.setOPressed(GameEscapist.getOPressed());
+			savedescapist.setPPressed(GameEscapist.getPPressed());
+			savedescapist.setCazado(GameEscapist.getCazado());
+			return new ResponseEntity<>(savedescapist, HttpStatus.OK);
 		}else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}

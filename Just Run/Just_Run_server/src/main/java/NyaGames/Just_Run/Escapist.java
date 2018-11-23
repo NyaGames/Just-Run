@@ -8,6 +8,7 @@ public class Escapist {
 	private boolean IPressed;
 	private boolean OPressed;
 	private boolean PPressed;
+	private boolean cazado;
 	
 	Escapist(){
 		
@@ -54,5 +55,11 @@ public class Escapist {
 	}
 	public boolean getOPressed() {
 		return OPressed;
+	}
+	public void setCazado(boolean c) {
+		cazado= c;
+	}
+	public boolean getCazado() {
+		return cazado;
 	}
 }

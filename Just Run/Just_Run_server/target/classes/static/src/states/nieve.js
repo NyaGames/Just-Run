@@ -4,18 +4,20 @@ JustRun.playnieveState = function(game){
 	var emitterc;
 	var emittere;
 	
-	var chaser = {
-		ID: -1,
-		posicionX: -1,
-		posicionY: -1,
-		puntuacion: -1,
+	var chaser;
+	var escapist;
+	
+	var newposicionEscapist = {
+		x: -1,
+		y: -1,
 	};
-	var escapist = {
-		ID: -1,
-		posicionX: -1,
-		posicionY: -1,
-		puntuacion: -1,
-	};	
+	var newposicionChaser = {
+			x: -1,
+			y: -1,
+	};
+	var IPressed;
+	var OPressed;
+	var PPressed;
 	//variables del movimiento
     var velocidadmaxima = 300;
     var aceleracion = 500;
@@ -27,8 +29,29 @@ JustRun.playnieveState = function(game){
     var jumping1;
     
     var cargacompleta = false;
+    
+
+    //variable para las trampas
+    var activatedb = false;
+    var activatedc = false;
+    var activatedgp = false;
 JustRun.playnieveState.prototype = {
 		init: function(){
+			chaser = {
+					ID: -1,
+					posicionX: -1,
+					posicionY: -1,
+					puntuacion: -1,
+				};
+			escapist = {
+					ID: -1,
+					posicionX: -1,
+					posicionY: -1,
+					puntuacion: -1,
+					IPressed: false,
+					OPressed: false,
+					PPressed: false
+			};
 			console.log(JustRun.userID);
 			this.getChaser(function (data) {
 	            chaser = game.add.sprite(data.posicionX, data.posicionY, 'chaser');
@@ -87,11 +110,18 @@ JustRun.playnieveState.prototype = {
 		   		escapist.IPressed = data.IPressed;
 		   		escapist.OPressed = data.OPressed;
 		   		escapist.PPressed = data.PPressed;
+		   		escapist.cazado = data.cazado;
+		   		
 			    escapist.animations.play('idle');
 
 			    escapist.anchor.setTo(0.3,0.5);			    
 			    jumping1 = false;	 
 	    	    cargacompleta = true;
+			})
+			this.getTrampas(function (data){
+				IPressed = data.I;
+				OPressed = data.O;
+				PPressed = data.P;
 			})
 		},
     
@@ -103,8 +133,8 @@ JustRun.playnieveState.prototype = {
 		    this.initTraps();
 		    this.crearmundo();    
 		    this.initTimer();
-		    song = game.add.audio('song');
-			song.play();
+		    //song = game.add.audio('song');
+			//song.play();
 
 		    //control de las teclas, para evitar los usos por defecto, que pueden dar problemas
 		    game.input.keyboard.addKeyCapture([
@@ -127,6 +157,18 @@ JustRun.playnieveState.prototype = {
 		    if(!this.catched){	    	
 		    	chaser.ID = "Chaser";
 		    	escapist.ID = "Escapist";
+		    	$.ajax({
+		    		method: "GET",
+		    		url: "/traps",
+		    		processData: false,
+		    		headers: {
+		    			"Content-Type": "application/json"
+		    		}
+		    	}).done(function(data){
+		    		IPressed = data.I;
+		    		OPressed = data.O;
+		    		PPressed = data.P;
+		    	});
 		    	 //creacion de particulas chaser
 				if(this.onTheGround){
 					emitterc.start(true, 100, null, 2); 
@@ -145,7 +187,36 @@ JustRun.playnieveState.prototype = {
 			    	escapist.body.position.x = 1000;
 			    	escapist.body.position.y = game.height - 300;
 			    }
+			    if(escapist.cazado){
+					game.add.sprite(0,0,"catched");
+			    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
+			    }	
 		    	if(JustRun.userID == 1){
+		    		 $.ajax({
+				    		method: "GET",
+				    		url: "/escapist",
+				    		processData: false,
+				    		headers: {
+				    			"Content-Type": "application/json"
+				    		}
+				    	}).done(function(data){
+				    		newposicionEscapist.x = data.posicionX;
+				    		newposicionEscapist.y = data.posicionY;
+				    	});
+		    		 if(IPressed && !this.activatedb){
+					    	this.activatedb = true;	    		
+					    	this.balltrap();
+					    }
+					    if (OPressed && !this.activatedc){
+				    		this.activatedc = true;
+				    		this.strap();
+					    }
+					    if (PPressed && !this.activatedgp){
+					    		this.activatedgp = true;
+						    	this.ptrap();
+						}
+				    escapist.body.position.x = newposicionEscapist.x;
+			    	escapist.body.position.y = newposicionEscapist.y;
 		    		 //control de movimiento y de las animaciones
 				    if (this.AInputIsActive()) {
 				    	chaser.scale.setTo(-1, 1);
@@ -195,48 +266,22 @@ JustRun.playnieveState.prototype = {
 				        this.jumps--;
 				        jumping = false;
 				    }
-				    
-			    	if (escapist.IPressed && !this.activatedb){
-			    		this.activatedb = true;	    		
-				    	this.balltrap();					    	
-				    }
-				    if (escapist.OPressed && !this.activatedc){
-				    		this.activatedc = true;
-				    		this.strap();
-				    }
-				    if (escapist.PPressed && !this.activatedgp){
-				    		this.activatedgp = true;
-					    	this.ptrap()
-					}
-
+		    	}
+		    	if(JustRun.userID == 2){		    	     
 				    $.ajax({
 			    		method: "GET",
-			    		url: "/escapist",
+			    		url: "/chaser",
 			    		processData: false,
 			    		headers: {
 			    			"Content-Type": "application/json"
 			    		}
 			    	}).done(function(data){
-			    		console.log(data);
-			    		if(data.posicionX < escapist.body.position.x-5){
-					    		escapist.scale.setTo(-1,1);
-					    		escapist.animations.play('run');
-					        	escapist.body.acceleration.x = -aceleracion;
-			    		}else if(data.posicionX > escapist.body.position.x+5){
-				    			escapist.scale.setTo(1,1);
-					    		escapist.animations.play('run');
-					           	escapist.body.acceleration.x = aceleracion;
-			    		}else{
-				    			escapist.animations.play('idle');
-						        escapist.body.acceleration.x = 0;
-			    		}
-			    		if(data.posicionY < escapist.body.position.y-130){
-				    		escapist.animations.play('doblejump');
-				    		escapist.body.velocity.y = salto;
-			    		}
+			    		newposicionChaser.x = data.posicionX;
+			    		newposicionChaser.y = data.posicionY;
+			    		console.log(newposicionEscapist);
 			    	})
-		    	}
-		    	if(JustRun.userID == 2){
+			    	chaser.body.position.x = newposicionChaser.x;
+			    	chaser.body.position.y = newposicionChaser.y;
 		    		if (this.AInputIsActive()) {
 				    	if(this.onTheGround1 || this.onTheLedge1){
 				    		escapist.scale.setTo(-1,1);
@@ -245,6 +290,7 @@ JustRun.playnieveState.prototype = {
 				        	escapist.body.acceleration.x = -aceleracion;
 				        	escapist.posicionX = escapist.body.position.x;
 				        	escapist.posicionY = escapist.body.position.y;
+				        	console.log(escapist);
 				    	
 				    } else if (this.DInputIsActive()) {
 				    	if(this.onTheGround1 || this.onTheLedge1){
@@ -279,32 +325,23 @@ JustRun.playnieveState.prototype = {
 					    if (this.IinputIsActive() && !this.activatedb){
 					    		this.activatedb = true;	    		
 						    	this.balltrap();
-						    	escapist.IPressed = true;						    	
+						    	IPressed = true;	
 					    }
 					    if (this.OInputIsActive() && !this.activatedc){
 					    		this.activatedc = true;
 					    		this.strap();
-					    		escapist.OPressed = true;
+					    		OPressed = true;
 					    }
 					    if (this.PInputIsActive() && !this.activatedgp){
 					    		this.activatedgp = true;
 						    	this.ptrap();
-						    	escapist.PPressed = true;
-						}	     
-					    $.ajax({
-				    		method: "GET",
-				    		url: "/chaser",
-				    		processData: false,
-				    		headers: {
-				    			"Content-Type": "application/json"
-				    		}
-				    	}).done(function(data){
-				    		console.log(data);
-				    	})
+						    	PPressed = true;
+						}	
 		    	}		
 			    this.jsonear(chaser, escapist);
 			}else{	
 				//se ha pillado al escapista se muestra la pantalla de cazado y se empieza el cambio de escenas
+				escapist.cazado = true;
 				game.add.sprite(0,0,"catched");
 		    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 
@@ -375,6 +412,7 @@ JustRun.playnieveState.prototype = {
 		    this.bola.body.allowGravity = false;	
 		    this.botonbola = game.add.sprite(1040, 360, 'bebola');
 		    this.activatedb = false;
+		    IPressed = false;
 		},
 		//activa la gravedad de los chuzos	
 		strap: function(){
@@ -397,6 +435,7 @@ JustRun.playnieveState.prototype = {
 		    this.chuzo2.body.allowGravity = false;
 		    this.botonestalactita = game.add.sprite(1040, 330, 'bestalactita');
 		    this.activatedc = false;
+		    OPressed = false;
 		},
 		//activa la velocidad de los pinguinos
 		ptrap: function(){
@@ -425,6 +464,7 @@ JustRun.playnieveState.prototype = {
 		    this.p3.body.allowGravity = false;	
 		    this.botonpinguino = game.add.sprite(1040, 300, 'bepinguino');
 		    this.activatedgp = false;
+		    PPressed = false;
 		},
 		//crear mundo y los grupos de colision
 		crearmundo: function(){
@@ -543,10 +583,6 @@ JustRun.playnieveState.prototype = {
 		    this.botonestalactita = game.add.sprite(1040, 330, 'bestalactita');
 		    this.botonbola = game.add.sprite(1040, 360, 'bebola');
 
-		    //variable para las trampas
-		    this.activatedb = false;
-		    this.activatedc = false;
-		    this.activatedgp = false;
 		},
 		//crea el timer, su maximo de tiempo y lo inicia
 		initTimer: function(){		
@@ -627,6 +663,18 @@ JustRun.playnieveState.prototype = {
 	    		callback(data)
 	    	})
 	    },
+	    getTrampas: function(callback){
+	    	$.ajax({
+	    		method: "GET",
+	    		url: "/traps",
+	    		processData: false,
+	    		headers: {
+	    			"Content-Type": "application/json"
+	    		}
+	    	}).done(function(data){
+	    		callback(data)
+	    	})
+	    },
 	    jsonear: function(c, e){
 	    	if(JustRun.userID == 1){
 	    		var objeto = new Object();
@@ -652,10 +700,10 @@ JustRun.playnieveState.prototype = {
 				objeto1.posicionX = e.posicionX;
 				objeto1.posicionY = e.posicionY;
 				objeto1.puntuacion = e.puntuacion;
-				objeto1.IPressed = e.IPressed;
-				objeto1.OPressed = e.OPressed;
-				objeto1.PPressed = e.PPressed;
-				
+				objeto1.IPressed = escapist.IPressed;
+				objeto1.OPressed = escapist.OPressed;
+				objeto1.PPressed = escapist.PPressed;
+				console.log(escapist.IPressed);
 				$.ajax({
 		    		method: "PUT",
 		    		url: "/escapist",
@@ -665,6 +713,19 @@ JustRun.playnieveState.prototype = {
 		    			"Content-Type": "application/json"
 		    		}
 		    	})
-	    	}	    			
+	    	}
+	    	var object = new Object();
+	    	object.I = IPressed;
+	    	object.O = OPressed;
+	    	object.P = PPressed;
+	    	$.ajax({
+	    		method: "PUT",
+	    		url: "/traps",
+	    		processData: false,
+	    		data: JSON.stringify(object),
+	    		headers: {
+	    			"Content-Type": "application/json"
+	    		}
+	    	})
 	    }
 }
