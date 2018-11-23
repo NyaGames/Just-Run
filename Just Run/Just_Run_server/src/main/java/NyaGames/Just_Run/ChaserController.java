@@ -45,14 +45,14 @@ public class ChaserController {
 	}
 	@CrossOrigin
 	@DeleteMapping
-	public ResponseEntity<Chaser> deleteChaser(){
+	public void deleteChaser(@RequestBody int GameChaser){
 		Chaser savedchaser = chaser;
 		if(savedchaser != null) {
-			chaser = null;
-			return new ResponseEntity<>(chaser, HttpStatus.OK);
-		}else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+			chaser.setPosicionX(60);
+			chaser.setPosicionY(300);
+			chaser.setPuntuacion(GameChaser);
+			System.out.println(chaser.getPuntuacion());
+	}
 	}
 	
 }

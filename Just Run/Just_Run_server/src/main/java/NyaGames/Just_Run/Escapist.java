@@ -5,9 +5,6 @@ public class Escapist {
 	private int puntuacion;
 	private int posicionX;
 	private int posicionY;
-	private boolean IPressed;
-	private boolean OPressed;
-	private boolean PPressed;
 	private boolean cazado;
 	
 	Escapist(){
@@ -37,24 +34,6 @@ public class Escapist {
 	}
 	public void setPuntuacion(int p) {
 		puntuacion = p;
-	}
-	public boolean getIPressed() {
-		return IPressed;
-	}
-	public void setIPressed(boolean iPressed) {
-		IPressed = iPressed;
-	}
-	public void setOPressed(boolean oPressed) {
-		OPressed = oPressed;
-	}
-	public boolean getPPressed() {
-		return PPressed;
-	}
-	public void setPPressed(boolean pPressed) {
-		PPressed = pPressed;
-	}
-	public boolean getOPressed() {
-		return OPressed;
 	}
 	public void setCazado(boolean c) {
 		cazado= c;

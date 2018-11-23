@@ -18,9 +18,6 @@ public class EscapistController {
 		escapist.setPosicionX(1000);
 		escapist.setPosicionY(300);
 		escapist.setPuntuacion(0);
-		escapist.setIPressed(false);
-		escapist.setOPressed(false);
-		escapist.setPPressed(false);
 		escapist.setCazado(false);
 		return escapist;
 	}	
@@ -44,9 +41,6 @@ public class EscapistController {
 			savedescapist.setPosicionX(GameEscapist.getPosicionX());
 			savedescapist.setPosicionY(GameEscapist.getPosicionY());
 			savedescapist.setPuntuacion(GameEscapist.getPuntuacion());
-			savedescapist.setIPressed(GameEscapist.getIPressed());
-			savedescapist.setOPressed(GameEscapist.getOPressed());
-			savedescapist.setPPressed(GameEscapist.getPPressed());
 			savedescapist.setCazado(GameEscapist.getCazado());
 			return new ResponseEntity<>(savedescapist, HttpStatus.OK);
 		}else {
@@ -55,14 +49,14 @@ public class EscapistController {
 	}
 	
 	@DeleteMapping
-	public ResponseEntity<Escapist> deleteEscapist(){
-		Escapist savedescapist = escapist;
-		if(savedescapist != null) {
-			escapist = null;
-			return new ResponseEntity<>(escapist, HttpStatus.OK);
-		}else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+	public void deleteEscapist(@RequestBody int GameChaser){
+		Escapist savedchaser = escapist;
+		if(savedchaser != null) {
+			escapist.setPosicionX(1000);
+			escapist.setPosicionY(300);
+			escapist.setPuntuacion(GameChaser);
+			System.out.println(escapist.getPuntuacion());
+	}
 	}
 	
 }
