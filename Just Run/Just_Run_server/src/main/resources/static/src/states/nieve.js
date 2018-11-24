@@ -29,10 +29,16 @@ JustRun.playnieveState = function(game){
     var jumping1;
     
     var cargacompleta = false;
+    var cargacompleta1 = false;
     
+    var idle = false;
     var corriendoizq = false;
     var corriendoder = false;
     var saltando = false;
+    var idle1 = false;
+    var corriendoizq1 = false;
+    var corriendoder1 = false;
+    var saltando1 = false;
     
 
     //variable para las trampas
@@ -85,6 +91,7 @@ JustRun.playnieveState.prototype = {
 	    	    
 	    	    //variable para comprobar el salto
 	    	    jumping = false;
+	    	    cargacompleta1 = true;
 	        })
 			this.getEscapist(function(data){
 				escapist = game.add.sprite(data.posicionX, data.posicionY, 'escapist');
@@ -150,7 +157,7 @@ JustRun.playnieveState.prototype = {
 		    this.initCollisions();
 		    //comprueba que el tiempo no se ha acabado y que el escapist no ha sido cazado
 
-		    if(cargacompleta){
+		    if(cargacompleta && cargacompleta1){
 		    if(this.timer.running){
 		    if(!this.catched){	    	
 		    	chaser.ID = "Chaser";
@@ -167,6 +174,16 @@ JustRun.playnieveState.prototype = {
 		    		OPressed = data.O;
 		    		PPressed = data.P;
 		    	});
+		    	this.getAnimations(function (data){
+					var idle = data.ChaserIdle;
+				    var corriendoizq = data.ChaserRunL;
+				    var corriendoder = data.ChaserRunR;
+				    var saltando = data.ChaserJump;
+				    var idle1 = data.EscapistIdle;
+				    var corriendoizq1 = data.EscapistRunL;
+				    var corriendoder1 = data.EscapistRunR;
+				    var saltando1 = data.EscapistJump;
+				})
 		    	 //creacion de particulas chaser
 				if(this.onTheGround){
 					emitterc.start(true, 100, null, 2); 
@@ -201,35 +218,18 @@ JustRun.playnieveState.prototype = {
 				    			"Content-Type": "application/json"
 				    		}
 				    	}).done(function(data){
-					    	if(newposicionEscapist.x > data.posicionX - 10){
-					    		corriendoizq = true;
-					    		corriendoder = false;
-					    		saltando = false;
-					    	}else if(newposicionEscapist.x > data.posicionX + 10){
-					    		corriendoder = true;
-					    		corriendoizq = false;
-					    		saltando = false;
-					    	}
-					    	if(newposicionEscapist.y < data.posicionY - 10){
-					    		saltando = true;
-					    	}
 					    		newposicionEscapist.x = data.posicionX;
 					    		newposicionEscapist.y = data.posicionY;
 				    	});
-		    		 if(saltando){
-		    			 if(corriendoizq){
-		    				 escapist.scale.setTo(-1,1);
-		    			 }else if (corriendoder){
-		    				 escapist.scale.setTo(1,1);
-		    			 }
-		    			 escapist.animations.play("doblejump");
-		    		 }else if(corriendoizq){
+		    		 if(corriendoizq1){
 		    			 escapist.scale.setTo(-1,1);
 		    			 escapist.animations.play("run");
-		    		 }else if(corriendoder){
-		    			 escapist.scale.setTo(1,1);
+		    		 }else if(corriendoder1){
+		    			 escapist.scale.setTo(-1,1);
 		    			 escapist.animations.play("run");
-		    		 }else{
+		    		 }else if(saltando1){
+		    			 escapist.animations.play("doblejump");
+		    		 }else if(idle1){
 		    			 escapist.animations.play("idle");
 		    		 }
 		    		 if(IPressed && !activatedb){
@@ -251,6 +251,7 @@ JustRun.playnieveState.prototype = {
 				    	chaser.scale.setTo(-1, 1);
 				    	if(this.onTheGround || this.onTheLedge){
 				    		chaser.animations.play('run');
+				    		corriendoizq = true;
 				    		
 				    	}
 				        	chaser.body.acceleration.x = -aceleracion;
@@ -260,11 +261,13 @@ JustRun.playnieveState.prototype = {
 				    	chaser.scale.setTo(1, 1);
 				    	if(this.onTheGround || this.onTheLedge){
 				    		chaser.animations.play('run'); 
+				    		corriendoder = true;
 				    	}
 				        	chaser.body.acceleration.x = aceleracion;
 				        	chaser.posicionX = chaser.body.position.x;
 				        	chaser.posicionY = chaser.body.position.y;
 				    } else {
+				    	idle = true;
 				    	chaser.animations.play('idle');
 				        chaser.body.acceleration.x = 0;
 				        chaser.posicionX = chaser.body.position.x;
@@ -278,6 +281,7 @@ JustRun.playnieveState.prototype = {
 				    }
 				    if (this.jumps > 0 && this.WInputIsActive(5)) {
 				    	chaser.animations.play('doblejump');
+				    	saltando = true;
 				    	if(this.activated){
 				    		chaser.body.velocity.y = salto/2.5;
 				    		chaser.posicionX = chaser.body.position.x;
@@ -307,14 +311,25 @@ JustRun.playnieveState.prototype = {
 			    	}).done(function(data){
 			    		newposicionChaser.x = data.posicionX;
 			    		newposicionChaser.y = data.posicionY;
-			    		console.log(newposicionEscapist);
 			    	})
+			    	if(corriendoizq){
+			    		chaser.scale.setTo(-1,1);
+			    		chaser.animations.play("run");
+		    		 }else if(corriendoder){
+		    			 chaser.scale.setTo(-1,1);
+		    			 chaser.animations.play("run");
+		    		 }else if(saltando){
+		    			 chaser.animations.play("doblejump");
+		    		 }else if(idle){
+		    			 chaser.animations.play("idle");
+		    		 }
 			    	chaser.body.position.x = newposicionChaser.x;
 			    	chaser.body.position.y = newposicionChaser.y;
 		    		if (this.AInputIsActive()) {
 				    	if(this.onTheGround1 || this.onTheLedge1){
 				    		escapist.scale.setTo(-1,1);
 				    		escapist.animations.play('run');
+				    		corriendoizq1 = true;
 				    	}
 				        	escapist.body.acceleration.x = -aceleracion;
 				        	escapist.posicionX = escapist.body.position.x;
@@ -325,12 +340,14 @@ JustRun.playnieveState.prototype = {
 				    	if(this.onTheGround1 || this.onTheLedge1){
 				    		escapist.scale.setTo(1,1);
 				    		escapist.animations.play('run');
+				    		corriendoder1 = true;
 				    	}
 				           	escapist.body.acceleration.x = aceleracion;
 				           	escapist.posicionX = escapist.body.position.x;
 				        	escapist.posicionY = escapist.body.position.y;
 				    } else {
 				    	escapist.animations.play('idle');
+				    	idle1 = true;
 				        escapist.body.acceleration.x = 0;
 				        escapist.posicionX = escapist.body.position.x;
 			        	escapist.posicionY = escapist.body.position.y;
@@ -341,6 +358,7 @@ JustRun.playnieveState.prototype = {
 					    }
 					    if (this.jumps1 > 0 && this.WInputIsActive(5)) {
 					    		escapist.animations.play('doblejump');
+					    		saltando1 = true;
 					    		escapist.body.velocity.y = salto;
 					    		escapist.posicionX = escapist.body.position.x;
 					        	escapist.posicionY = escapist.body.position.y;
@@ -723,6 +741,18 @@ JustRun.playnieveState.prototype = {
 	    		callback(data)
 	    	})
 	    },
+	    getAnimations: function(callback){
+	    	$.ajax({
+	    		method: "GET",
+	    		url: "/animations",
+	    		processData: false,
+	    		headers: {
+	    			"Content-Type": "application/json"
+	    		}
+	    	}).done(function(data){
+	    		callback(data)
+	    	})
+	    },
 	    jsonear: function(c, e){
 	    	if(JustRun.userID == 1){
 	    		var objeto = new Object();
@@ -767,6 +797,24 @@ JustRun.playnieveState.prototype = {
 	    		url: "/traps",
 	    		processData: false,
 	    		data: JSON.stringify(object),
+	    		headers: {
+	    			"Content-Type": "application/json"
+	    		}
+	    	})
+	    	var object1 = new Object();
+	    	object1.ChaserIdle = idle;
+	    	object1.ChaserRunL = corriendoizq;
+	    	object1.ChaserRunR = corriendoder;
+	    	object1.ChaserJump = saltando;
+	    	object1.EscapistIdle = idle1;
+	    	object1.EscapistRunL = corriendoizq1;
+	    	object1.EscapistRunR = corriendoder1;
+	    	object1.EscapistJump = saltando1;
+	    	$.ajax({
+	    		method: "PUT",
+	    		url: "/animations",
+	    		processData: false,
+	    		data: JSON.stringify(object1),
 	    		headers: {
 	    			"Content-Type": "application/json"
 	    		}

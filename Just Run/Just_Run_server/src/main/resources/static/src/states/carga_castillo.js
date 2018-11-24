@@ -29,30 +29,6 @@ JustRun.loadcarga_castilloState.prototype = {
 			var pantallacarga = game.add.sprite(350, 150, 'carga');
 			var loading = pantallacarga.animations.add('load');
 			pantallacarga.animations.play('load', 26, true);
-			$.ajax({
-	            method: "POST",
-	            url: '/chaser',
-	            processData: false,
-	            headers: {
-	                "Content-Type": "application/json"
-	            },
-	        });
-			$.ajax({
-	            method: "POST",
-	            url: '/escapist',
-	            processData: false,
-	            headers: {
-	                "Content-Type": "application/json"
-	            },
-	        });
-			$.ajax({
-	            method: "POST",
-	            url: '/traps',
-	            processData: false,
-	            headers: {
-	                "Content-Type": "application/json"
-	            },
-	        });
 			game.state.start('playcastillo');
 		}
 }

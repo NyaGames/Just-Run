@@ -53,6 +53,14 @@ JustRun.loadcarga_nieveState.prototype = {
 	                "Content-Type": "application/json"
 	            },
 	        });
+			$.ajax({
+	            method: "POST",
+	            url: '/animations',
+	            processData: false,
+	            headers: {
+	                "Content-Type": "application/json"
+	            },
+	        });
 			game.state.start('playnieve');
 		}
 }
