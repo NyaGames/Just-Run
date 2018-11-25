@@ -31,4 +31,10 @@ public class MatchMakingController {
 		}
 		return new ResponseEntity<>(false, HttpStatus.ACCEPTED);
 	}	
+	@CrossOrigin
+	@DeleteMapping
+	public void reset() {
+		chaser = null;
+		escapist = null;
+	}
 }

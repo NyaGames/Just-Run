@@ -159,7 +159,15 @@ JustRun.playnieveState.prototype = {
 
 		    if(cargacompleta && cargacompleta1){
 		    if(this.timer.running){
-		    if(!this.catched){	    	
+		    if(!this.catched){	    
+		    	if(chaser.puntuacion > escapist.puntuacion){
+		    		game.sound.stopAll();
+		    		game.state.start("victoriaC");
+		    	}
+		    	if(escapist.puntuacion > chaser.puntuacion){
+		    		game.sound.stopAll();
+		    		game.state.start("victoriaE");
+		    	}
 		    	chaser.ID = "Chaser";
 		    	escapist.ID = "Escapist";
 		    	$.ajax({
@@ -697,7 +705,14 @@ JustRun.playnieveState.prototype = {
 	    			"Content-Type": "application/json"
 	    		}
 	    	})
-	    	game.state.start('loadcarga_castillo');
+	    	if(chaser.puntuacion > escapist.puntuacion){
+	    		game.sound.stopAll();
+	    		game.state.start("victoriaC");
+	    	}
+	    	if(escapist.puntuacion > chaser.puntuacion){
+	    		game.sound.stopAll();
+	    		game.state.start("victoriaE");
+	    	}
 	    },
 	    //crea el timer, su maximo de tiempo y lo inicia
 	    formatTime: function(s) {
