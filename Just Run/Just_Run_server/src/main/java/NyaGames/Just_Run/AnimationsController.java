@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/animations")
 public class AnimationsController {
 	Animations animaciones;
-	
+	//creamos las animaciones, siendo la estandar los idles de ambos personajes
 	@CrossOrigin
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -26,6 +26,8 @@ public class AnimationsController {
 		
 		return animaciones;
 	}	
+	
+	//GET de las animaciones, que las devuelve en caso de estar creadas
 	@CrossOrigin
 	@GetMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -39,6 +41,7 @@ public class AnimationsController {
 		}
 	}
 	
+	//actualizamos las animaciones con un JSON que recibe del cliente
 	@CrossOrigin
 	@PutMapping
 	public ResponseEntity<Animations> updateAnimaciones(@RequestBody Animations GameTraps){

@@ -8,6 +8,8 @@ import org.springframework.http.*;
 @RequestMapping("/escapist")
 public class EscapistController {
 	Escapist escapist;
+	
+	//crea un escapist con posiciones por default
 	@CrossOrigin
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -21,6 +23,8 @@ public class EscapistController {
 		escapist.setCazado(false);
 		return escapist;
 	}	
+	
+	//devuelve el escapist si este existe
 	@CrossOrigin
 	@GetMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -33,6 +37,8 @@ public class EscapistController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+	
+	//actualiza el escapist con la información del cliente
 	@CrossOrigin
 	@PutMapping
 	public ResponseEntity<Escapist> updateEscapist(@RequestBody Escapist GameEscapist){
@@ -48,6 +54,8 @@ public class EscapistController {
 		}
 	}
 	
+	
+	//resetea la posición del escapist
 	@DeleteMapping
 	public void deleteEscapist(@RequestBody int GameChaser){
 		Escapist savedchaser = escapist;

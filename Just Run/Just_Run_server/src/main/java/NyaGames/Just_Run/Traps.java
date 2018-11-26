@@ -1,6 +1,7 @@
 package NyaGames.Just_Run;
 
 public class Traps {
+	//parametros de las trampas que pueden estar activas, con getters y setters
 	public boolean I;
 	public boolean O;
 	public boolean P;

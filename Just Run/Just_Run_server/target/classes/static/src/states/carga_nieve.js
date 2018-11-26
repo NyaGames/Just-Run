@@ -2,7 +2,6 @@ JustRun.loadcarga_nieveState = function(game){
 	
 }
 JustRun.loadcarga_nieveState.prototype = {
-		//declaracion de las variables globales que se van a usar para la puntuacion durante todo el juego
 		preload: function(){
 		//carga de los sprites usados en el mundo de la nieve		
 			game.load.image('snowfield', 'assets/fondos/nieveoscuro.png');
@@ -29,6 +28,7 @@ JustRun.loadcarga_nieveState.prototype = {
 			var pantallacarga = game.add.sprite(350, 150, 'carga');
 			var loading = pantallacarga.animations.add('load');
 			pantallacarga.animations.play('load', 26, true);	
+			//creacion del chaser, escapist, trampas y animaciones en el servidor
 			$.ajax({
 	            method: "POST",
 	            url: '/chaser',

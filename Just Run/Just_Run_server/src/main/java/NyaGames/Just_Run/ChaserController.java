@@ -5,6 +5,8 @@ import org.springframework.http.*;
 @RequestMapping("/chaser")
 public class ChaserController {
 	Chaser chaser;
+	
+	//crea el chaser con unas posiciones por default
 	@CrossOrigin
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -18,6 +20,8 @@ public class ChaserController {
 		
 		return chaser;
 	}	
+	
+	//recibe el objeto chaser del cliente
 	@CrossOrigin
 	@GetMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -30,6 +34,8 @@ public class ChaserController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+	
+	//actualiza el chaser del servidor con la informacion que recibe
 	@CrossOrigin
 	@PutMapping
 	public ResponseEntity<Chaser> updateChaser(@RequestBody Chaser GameChaser){
@@ -43,6 +49,8 @@ public class ChaserController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+	
+	//resetea la posicion del chaser
 	@CrossOrigin
 	@DeleteMapping
 	public void deleteChaser(@RequestBody int GameChaser){

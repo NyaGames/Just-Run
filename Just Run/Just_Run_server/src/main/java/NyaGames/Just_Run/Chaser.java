@@ -1,5 +1,6 @@
 package NyaGames.Just_Run;
 public class Chaser {
+	//parametros propios del Chaser con sus setters y getters
 	private String ID;
 	private int puntuacion;
 	private int posicionX;

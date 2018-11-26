@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/traps")
 public class TrapsController {
 	Traps trampas;
+	
+	//crea las trampas a false, es decir, desactivadas
 	@CrossOrigin
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -20,6 +22,8 @@ public class TrapsController {
 		
 		return trampas;
 	}	
+	
+	//devuelve las trampas que deben estar activadas a desactivadas
 	@CrossOrigin
 	@GetMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -32,6 +36,8 @@ public class TrapsController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+	
+	//actualiza las trampas desde el cliente
 	@CrossOrigin
 	@PutMapping
 	public ResponseEntity<Traps> updateTraps(@RequestBody Traps GameTraps){
@@ -46,6 +52,7 @@ public class TrapsController {
 		}
 	}
 	
+	//borra las trampas
 	@DeleteMapping
 	public ResponseEntity<Traps> deleteTraps(){
 		Traps savedtrampas = trampas;

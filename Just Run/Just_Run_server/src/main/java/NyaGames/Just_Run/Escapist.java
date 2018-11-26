@@ -1,6 +1,8 @@
 package NyaGames.Just_Run;
 
 public class Escapist {
+	
+	//parametros propios del escapist con getters y setters
 	private String ID;
 	private int puntuacion;
 	private int posicionX;

@@ -1,6 +1,7 @@
 JustRun.playnieveState = function(game){
 	
 }
+//variables globales necesarias para la gestión de la información que se recibe del servidor
 	var emitterc;
 	var emittere;
 	
@@ -15,9 +16,25 @@ JustRun.playnieveState = function(game){
 			x: -1,
 			y: -1,
 	};
+
+    
 	var IPressed;
 	var OPressed;
 	var PPressed;
+
+    //variables de carga de los get
+    var cargacompleta = false;
+    var cargacompleta1 = false;
+    
+    //animaciones del chaser y escapist respectivamente
+    var idle = false;
+    var corriendoizq = false;
+    var corriendoder = false;
+    var saltando = false;
+    var idle1 = false;
+    var corriendoizq1 = false;
+    var corriendoder1 = false;
+    var saltando1 = false;
 	//variables del movimiento
     var velocidadmaxima = 300;
     var aceleracion = 500;
@@ -27,19 +44,6 @@ JustRun.playnieveState = function(game){
     
     var jumping;
     var jumping1;
-    
-    var cargacompleta = false;
-    var cargacompleta1 = false;
-    
-    var idle = false;
-    var corriendoizq = false;
-    var corriendoder = false;
-    var saltando = false;
-    var idle1 = false;
-    var corriendoizq1 = false;
-    var corriendoder1 = false;
-    var saltando1 = false;
-    
 
     //variable para las trampas
     var activatedb = false;
@@ -47,6 +51,7 @@ JustRun.playnieveState = function(game){
     var activatedgp = false;
 JustRun.playnieveState.prototype = {
 		init: function(){
+			//inicia los datos y recibe la información del servidor para iniciar el juego
 			chaser = {
 					ID: -1,
 					posicionX: -1,
@@ -60,6 +65,7 @@ JustRun.playnieveState.prototype = {
 					puntuacion: -1,
 			};
 			console.log(JustRun.userID);
+			//callbacks de los getters, para inicializar los jugadores
 			this.getChaser(function (data) {
 	            chaser = game.add.sprite(data.posicionX, data.posicionY, 'chaser');
 	    	    game.physics.enable(chaser, Phaser.Physics.ARCADE);
@@ -123,6 +129,7 @@ JustRun.playnieveState.prototype = {
 			    jumping1 = false;	 
 	    	    cargacompleta = true;
 			})
+			//conseguir las trampas
 			this.getTrampas(function (data){
 				IPressed = data.I;
 				OPressed = data.O;
@@ -160,6 +167,7 @@ JustRun.playnieveState.prototype = {
 		    if(cargacompleta && cargacompleta1){
 		    if(this.timer.running){
 		    if(!this.catched){	    
+		    	//control del cambio de pantallas
 		    	if(chaser.puntuacion > escapist.puntuacion){
 		    		game.sound.stopAll();
 		    		game.state.start("victoriaC");
@@ -170,6 +178,7 @@ JustRun.playnieveState.prototype = {
 		    	}
 		    	chaser.ID = "Chaser";
 		    	escapist.ID = "Escapist";
+		    	//consigue la informacion de las trampas y de las animaciones
 		    	$.ajax({
 		    		method: "GET",
 		    		url: "/traps",
@@ -210,7 +219,7 @@ JustRun.playnieveState.prototype = {
 			    	escapist.body.position.x = 1000;
 			    	escapist.body.position.y = game.height - 300;
 			    }	
-				
+				//hitbox de la colision entre jugadores para el cliente donde no se produce la colision
 		    	if(chaser.body.position.x < escapist.body.position.x+70 && chaser.body.position.x > escapist.body.position.x-70){
 		    		if(chaser.body.position.y < escapist.body.position.y+50 && chaser.body.position.x > escapist.body.position.y-50){
 		    			game.add.sprite(0,0,"catched");
@@ -218,6 +227,7 @@ JustRun.playnieveState.prototype = {
 		    		}
 		    	}
 		    	if(JustRun.userID == 1){
+		    		//control de la posicion que recibe del server (escapist)
 		    		 $.ajax({
 				    		method: "GET",
 				    		url: "/escapist",
@@ -229,6 +239,7 @@ JustRun.playnieveState.prototype = {
 					    		newposicionEscapist.x = data.posicionX;
 					    		newposicionEscapist.y = data.posicionY;
 				    	});
+		    		 //control animaciones del escapist
 		    		 if(corriendoizq1){
 		    			 escapist.scale.setTo(-1,1);
 		    			 escapist.animations.play("run");
@@ -240,6 +251,7 @@ JustRun.playnieveState.prototype = {
 		    		 }else if(idle1){
 		    			 escapist.animations.play("idle");
 		    		 }
+		    		 //control de las trampas en el otro cliente
 		    		 if(IPressed && !activatedb){
 					    	activatedb = true;	    		
 					    	this.balltrap();
@@ -254,7 +266,7 @@ JustRun.playnieveState.prototype = {
 						}
 				    escapist.body.position.x = newposicionEscapist.x;
 			    	escapist.body.position.y = newposicionEscapist.y;
-		    		 //control de movimiento y de las animaciones
+			    	//control del movimiento del chaser
 				    if (this.AInputIsActive()) {
 				    	chaser.scale.setTo(-1, 1);
 				    	if(this.onTheGround || this.onTheLedge){
@@ -308,7 +320,8 @@ JustRun.playnieveState.prototype = {
 				        jumping = false;
 				    }
 		    	}
-		    	if(JustRun.userID == 2){		    	     
+		    	if(JustRun.userID == 2){	
+		    		//recibe la info del chaser
 				    $.ajax({
 			    		method: "GET",
 			    		url: "/chaser",
@@ -320,6 +333,7 @@ JustRun.playnieveState.prototype = {
 			    		newposicionChaser.x = data.posicionX;
 			    		newposicionChaser.y = data.posicionY;
 			    	})
+			    	//control animaciones del chaser en el otro cliente
 			    	if(corriendoizq){
 			    		chaser.scale.setTo(-1,1);
 			    		chaser.animations.play("run");
@@ -333,6 +347,7 @@ JustRun.playnieveState.prototype = {
 		    		 }
 			    	chaser.body.position.x = newposicionChaser.x;
 			    	chaser.body.position.y = newposicionChaser.y;
+			    	//control movimiento escapist
 		    		if (this.AInputIsActive()) {
 				    	if(this.onTheGround1 || this.onTheLedge1){
 				    		escapist.scale.setTo(-1,1);
@@ -393,6 +408,7 @@ JustRun.playnieveState.prototype = {
 						    	PPressed = true;
 						}
 		    	}
+		    	//crear los JSON que se subiran al servidor
 			    this.jsonear(chaser, escapist);
 			}else{	
 				//se ha pillado al escapista se muestra la pantalla de cazado y se empieza el cambio de escenas
@@ -720,6 +736,7 @@ JustRun.playnieveState.prototype = {
 	        var seconds = "0" + (s - minutes * 60);
 	        return minutes.substr(-2) + ":" + seconds.substr(-2);   
 	    },
+	    //get del chaser
 	    getChaser: function(callback){
 	    	$.ajax({
 	    		method: "GET",
@@ -732,6 +749,7 @@ JustRun.playnieveState.prototype = {
 	    		callback(data)
 	    	})
 	    },
+	    //GET del escapist
 	    getEscapist: function(callback){
 	    	$.ajax({
 	    		method: "GET",
@@ -744,6 +762,7 @@ JustRun.playnieveState.prototype = {
 	    		callback(data)
 	    	})
 	    },
+	    //GET de las trampas
 	    getTrampas: function(callback){
 	    	$.ajax({
 	    		method: "GET",
@@ -756,6 +775,7 @@ JustRun.playnieveState.prototype = {
 	    		callback(data)
 	    	})
 	    },
+	    //GET de las animaciones
 	    getAnimations: function(callback){
 	    	$.ajax({
 	    		method: "GET",
@@ -768,6 +788,7 @@ JustRun.playnieveState.prototype = {
 	    		callback(data)
 	    	})
 	    },
+	    //crea los JSON y los sube al server
 	    jsonear: function(c, e){
 	    	if(JustRun.userID == 1){
 	    		var objeto = new Object();

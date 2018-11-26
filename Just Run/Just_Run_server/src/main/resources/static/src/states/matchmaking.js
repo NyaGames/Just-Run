@@ -4,12 +4,14 @@ JustRun.matchmakingState = function(game){
 }
 var cambio = false;
 JustRun.matchmakingState.prototype = {
+		//carga la imagen de busqueda
 		preload: function(){		
 			//carga de lo qu se usara en el menú principal
 			game.load.image('buscando','assets/fondos/Buscando.png')
 		},
 
 		create: function(){
+			//crea un jugador al conectarse, y dice que jugador es cada cliente mediante un ID
 			$.ajax({
 	    		method: "POST",
 	    		url: "/matchmaking",
@@ -34,6 +36,7 @@ JustRun.matchmakingState.prototype = {
 			pantallacarga.animations.play('load', 26, true);
 		},
 		update: function(){
+			//hace la comprobación de si los dos jugadores estan conectados, en ese caso, carga el nivel
 			$.get("/matchmaking", function(data){
 				console.log(data);
 				if(data){
