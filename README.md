@@ -73,31 +73,31 @@ Al iniciar una partida, ya sea en multijugador local como online, uno de los dos
 - **Nieve**: Los jugadores se encontrarán en un lugar donde predomina el frio y las bajas temperaturas, lo que permite el hábitat de fauna típica de este clima como los pingüinos. Esté nivel permitirá el uso de trampas como el lanzamiento de bolas de nieve o utilizar las aguas heladas para realentizar al enemigo. ¡Cuidado con las avalanchas!
 
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/nieve.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/local/assets/fondos/Pantallazos/PantallazoNieve.png">
 </p>
 
 - **Castillo**: Los jugadores en este nivel se encontrarán en el interior de un castillo, lo que facilitará el uso de trampas punzantes y afiladas, pero no todo son trampas si no que también se celebran justas medievales.¡Aguanta el portón!
 
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/castillo.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/local/assets/fondos/Pantallazos/PantallazoCastillo.png">
 </p>
 
 - **Mar**: Los jugadores se encuentrán bajo el agua y pelearán conjuntamente con diferentes tipos de peces, en este hábitat donde viven los corales encontraremos numerosos peligros y trampas.¡No mordais el anzuelo!
 
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/oceano.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/local/assets/fondos/Pantallazos/PantallazoOceano.png">
 </p>
 
 - **Desierto**: Nos encontramos en el desierto del lejado oeste, donde el paisaje es árido y las únicas vistas de las que dispondremos serán arena, puntiagudos cactus y plantas rodantes.¡A lo mejor os encontrais con algún vaquero famoso!
 
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/desierto.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/local/assets/fondos/Pantallazos/PantallazoDesierto.png">
 </p>
 
 - **Volcán:** En este entorno en el que se encuentran los jugadores, el cielo estará cubierto de ceniza y polvo,¡el volcán va a erupcionar!, los jugadores deberán tener cuidado con las rocas que caen del cielo pero sin olvidar donde pisan.
 
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/PantallazoVolcan.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/local/assets/fondos/Pantallazos/PantallazoVolcan.png">
 </p>
 		
 		2.3 Sistema de puntuación
@@ -150,7 +150,7 @@ Dentro de la partida los controles serán:
 				
 		
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Diagrama%20de%20Flujo.jpg">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%20de%20Flujo.jpg">
 </p>	
 		
 _Diagrama de Flujo del Menú Principal_
@@ -158,7 +158,7 @@ _Diagrama de Flujo del Menú Principal_
 El juego se divide en una serie de escenas, empezando por la pantalla principal, donde seleccionar en el menú al que se quiere acceder a continuación, procediendo a una pantalla de carga de escena para la siguiente escena, y así sucesivamente.
   
   <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Diagrama%20de%20Flujo2.jpg">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Diagrama%20de%20Flujo2.jpg">
 </p>	
 		
 _Diagrama de Flujo del Menú de Pausa_
@@ -171,7 +171,7 @@ En el menú principal de "Just Run" nos encontraremos varios elementos, entre el
 - **Jugar**: El botón jugar nos permite acceder a un submenú, él cual nos permite acceder a dos modos de juego distintos. "Con Amigos" nos permite crear una partida con nombre y contraseña, a la cual se podrá unir cualquier persona que conozca esta última."Online" nos permitirá empezar una partida con una persona desconocida de habilidad similar de cara a que el encuentro sea lo más interesante y excitante posible. Esto se consigue con un sistema de _Matchmaking_ que juntara a los jugadores por parejas en función de un valor numérico que estima su habilidad en el juego. Este valor numérico se verá modificado en función de las partidas ganadas y perdidas.
 
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/pantalla%20de%20carga.jpeg">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/Just_Run_server/src/main/resources/static/assets/fondos/Buscando.png">
 </p>
 
 _Pantalla de carga de búsqueda de partida_
@@ -185,7 +185,7 @@ _Pantalla de carga de búsqueda de partida_
 Todos los submenús tienen un botón que nos permite acceder de nuevo al menú principal.
 		
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/MenuPrincipa.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/Just_Run_server/src/main/resources/static/assets/fondos/Pantallazos/PantallazoMenu.png">
 </p>
 	
 _Interfaz Menú Principal_
@@ -197,10 +197,6 @@ En cualquier momento de la partida, se podrá pulsar el botón "escape" del tecl
 
 - **Salir**: Volvemos al menú principal, abandonando la partida actual.
   
-<p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/PausaAmpliado.jpg">
-</p>
-_Interfaz del Menú de Pausa_
   
 
 		3.3 Créditos
@@ -213,7 +209,7 @@ Dentro de los niveles la interfaz es minima, simplemente habrá representación 
 
 Una partida de _Just Run_ se desarrollará de la siguiente manera: 
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Escenas.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/Just_Run_server/src/main/resources/static/assets/fondos/Escenas.png">
 </p>
 _Escenas y rondas_  
 
@@ -221,18 +217,18 @@ _Escenas y rondas_
 Dependiendo del jugador que gane en cada ronda, se mostrará una pantalla que indicará quien se lleva el punto de la ronda y que a su vez servirá como pantalla de carga entre rondas.  
 Esas pantallas son:  
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Cazado.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/Just_Run_server/src/main/resources/static/assets/fondos/Cazado.png">
 </p>  
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Libre.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/Just_Run_server/src/main/resources/static/assets/fondos/Libre.png">
 </p>  
 	
 Cuando acaba la partida, se mostrará una pantalla que indicará quien es el ganador de esta, y se representará con las siguientes imagenes.  
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/Victoria.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/Just_Run_server/src/main/resources/static/assets/fondos/Victoria.png">
 </p>  
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/VictoriaEscapist.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/Just_Run_server/src/main/resources/static/assets/fondos/VictoriaEscapist.png">
 </p> 
   
 # 4. Arte
@@ -246,7 +242,7 @@ Como ya se ha indicado anteriormente, _Just Run_ es un juego en scroll lateral 2
 El _Pixel Art_ se utilizara principalmente para los fondos y los objetos del escenario con el objetivo de conseguir una mayor cantidad de detalle y de sentar una importante diferencia de estilo con los personajes. Esto ayuda a que los jugadores sepan en todo momento donde estan sus avatares.
 		
 <p align="center">
-  <img src="https://github.com/NyaGames/Just-Run/blob/master/images/fondo%201.png">
+  <img src="https://github.com/NyaGames/Just-Run/blob/master/Just%20Run/Just_Run_server/src/main/resources/static/assets/fondos/nieveoscuro.png">
 </p>	
 
 A parte de esta diferencia de estilo, se usarán dos paletas distintas para personajes y escenarios, una más brillante para los personajes y otra más apagada para los escenarios.
