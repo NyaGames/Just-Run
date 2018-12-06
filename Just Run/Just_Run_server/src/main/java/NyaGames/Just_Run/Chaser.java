@@ -34,4 +34,8 @@ public class Chaser {
 	public void setPuntuacion(int p) {
 		puntuacion = p;
 	}
+	public String ToString() {
+		String string = "ChaserX: "+posicionX+", ChaserY: "+posicionY+", ChaserPuntuacion: "+puntuacion+", ";
+		return string;
+	}
 }

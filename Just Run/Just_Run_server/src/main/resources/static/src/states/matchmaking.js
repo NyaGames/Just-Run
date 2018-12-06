@@ -3,6 +3,10 @@ JustRun.matchmakingState = function(game){
 	JustRun.userID = -1;
 }
 var cambio = false;
+var cambio1 = false
+var connection = new WebSocket('ws://'+window.location.host+'/echo');
+
+var object = {"id": "join", "cambio": false, "cambio1": false, "userID": -1};
 JustRun.matchmakingState.prototype = {
 		//carga la imagen de busqueda
 		preload: function(){		
@@ -11,22 +15,7 @@ JustRun.matchmakingState.prototype = {
 		},
 
 		create: function(){
-			//crea un jugador al conectarse, y dice que jugador es cada cliente mediante un ID
-			$.ajax({
-	    		method: "POST",
-	    		url: "/matchmaking",
-	    		processData: false,
-	    		headers: {
-	    			"Content-Type": "application/json"
-	    		}
-	    	}).done(function(data){
-	    		if(data){
-	    			JustRun.userID = 1;
-	    		}else{
-	    			JustRun.userID = 2;
-	    		}
-	    	})
-			
+			//crea un jugador al conectarse, y dice que jugador es cada cliente mediante un ID	
 			var buscando = game.add.sprite(0,0,'buscando');
 
 			//animacion pantalla carga
@@ -37,14 +26,32 @@ JustRun.matchmakingState.prototype = {
 		},
 		update: function(){
 			//hace la comprobación de si los dos jugadores estan conectados, en ese caso, carga el nivel
-			$.get("/matchmaking", function(data){
-				console.log(data);
-				if(data){
-					cambio = true;
+			connection.send(JSON.stringify(object));
+			connection.onmessage = function(event){
+				console.log(event.data);
+				var message = JSON.parse(event.data);
+				if(message.userID == 1 && JustRun.userID != 1){
+					JustRun.userID = 1;
+					cambio1 = message.cambio1;
+				}else if(message.userID == 2 && JustRun.userID != 1){
+					JustRun.userID = 2;
+					cambio = message.cambio;
 				}
-			})		
-			if(cambio){
-				game.state.start('loadcarga_nieve');
 			}
+			if(JustRun.userID == 1){
+				if(game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){
+					cambio = true;
+					
+				}
+			}
+			if(JustRun.userID == 2){
+				if(game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){
+					cambio1 = true;
+				}
+			}
+			if(cambio || cambio1){
+				game.state.start("loadcarga_nieve");
+			}
+			console.log(JustRun.userID);
 		}	
 }

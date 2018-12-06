@@ -27,40 +27,17 @@ JustRun.loadcarga_nieveState.prototype = {
 			//ejecución de la pantalla de carga y del siguiente estado
 			var pantallacarga = game.add.sprite(350, 150, 'carga');
 			var loading = pantallacarga.animations.add('load');
+			var object;
 			pantallacarga.animations.play('load', 26, true);	
 			//creacion del chaser, escapist, trampas y animaciones en el servidor
-			$.ajax({
-	            method: "POST",
-	            url: '/chaser',
-	            processData: false,
-	            headers: {
-	                "Content-Type": "application/json"
-	            },
-	        });
-			$.ajax({
-	            method: "POST",
-	            url: '/escapist',
-	            processData: false,
-	            headers: {
-	                "Content-Type": "application/json"
-	            },
-	        });
-			$.ajax({
-	            method: "POST",
-	            url: '/traps',
-	            processData: false,
-	            headers: {
-	                "Content-Type": "application/json"
-	            },
-	        });
-			$.ajax({
-	            method: "POST",
-	            url: '/animations',
-	            processData: false,
-	            headers: {
-	                "Content-Type": "application/json"
-	            },
-	        });
+				object = {"id":"Chaser", "x":60,"y":300, "puntuacion":0};
+				connection.send(JSON.stringify(object));
+				object = {"id":"Escapist", "x":1000,"y":300, "puntuacion":0, "cazado":false};
+				connection.send(JSON.stringify(object));
+				object = {"id":"Traps", "I":false, "O":false, "P":false};
+				connection.send(JSON.stringify(object));
+				object = {"id":"Animations", "ChaserIdle":true, "ChaserRunL":false, "ChaserRunR":false, "ChaserJump":false, "EscapistIdle": true, "EscapistRunL": false, "EscapistRunR": false, "EscapistJump": false};
+				connection.send(JSON.stringify(object));
 			game.state.start('playnieve');
 		}
 }

@@ -2,7 +2,6 @@ var JustRun = {}
 JustRun.bootState = function(game){
 	
 }
-
 JustRun.bootState.prototype = {
 		preload: function(){
 	    	game.stage.disableVisibilityChange = true;
