@@ -2,11 +2,11 @@ JustRun.matchmakingState = function(game){
 
 	JustRun.userID = -1;
 }
-var cambio = false;
-var cambio1 = false
 var connection = new WebSocket('ws://'+window.location.host+'/echo');
+var listo = false;
+var listo1 = false;
 
-var object = {"id": "join", "cambio": false, "cambio1": false, "userID": -1};
+var object = {"id": "join", "userID": -1, "cambio": "", "listo": "", "listo1": ""};
 JustRun.matchmakingState.prototype = {
 		//carga la imagen de busqueda
 		preload: function(){		
@@ -32,24 +32,22 @@ JustRun.matchmakingState.prototype = {
 				var message = JSON.parse(event.data);
 				if(message.userID == 1 && JustRun.userID != 1){
 					JustRun.userID = 1;
-					cambio1 = message.cambio1;
 				}else if(message.userID == 2 && JustRun.userID != 1){
 					JustRun.userID = 2;
-					cambio = message.cambio;
 				}
+				object.cambio = message.cambio;
 			}
 			if(JustRun.userID == 1){
 				if(game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){
-					cambio = true;
-					
+					object.listo = true;
 				}
-			}
+			}	
 			if(JustRun.userID == 2){
 				if(game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){
-					cambio1 = true;
+					object.listo1 = true;
 				}
-			}
-			if(cambio || cambio1){
+			}	
+			if(object.cambio == "cambio"){
 				game.state.start("loadcarga_nieve");
 			}
 			console.log(JustRun.userID);

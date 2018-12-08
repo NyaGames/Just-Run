@@ -24,7 +24,8 @@ public class WebSocketEchoHandler extends TextWebSocketHandler {
 	Traps trampas = new Traps();
 	Animations animaciones = new Animations();
 	int counter = 0;
-	boolean v = false;
+	boolean listo = false;
+	boolean listo1 = false;
 	int ID = 0;
 	
 	@Override
@@ -146,14 +147,22 @@ public class WebSocketEchoHandler extends TextWebSocketHandler {
 			System.out.println(counter);
 			if(counter == 1) {
 				newNode.put("userID", ""+1);
-				newNode.put("cambio", nodeReceived.get("cambio").asBoolean());
-				newNode.put("cambio1", nodeReceived.get("cambio1").asBoolean());
+				if(listo == false) {
+					listo = nodeReceived.get("listo").asBoolean();
+				}	
 			}
 			if(counter == 2) {
-				v = true;
 				newNode.put("userID", ""+2);
-				newNode.put("cambio", nodeReceived.get("cambio").asBoolean());
-				newNode.put("cambio1", nodeReceived.get("cambio1").asBoolean());
+				if(listo1==false) {
+					listo1 = nodeReceived.get("listo1").asBoolean();					
+				}
+			}
+			System.out.println("jugador 1: "+listo);
+			System.out.println("jugador 2: "+listo1);
+			if(listo) {
+				if(listo1) {
+					newNode.put("cambio", "cambio");
+				}
 			}
 			break;
 		}
