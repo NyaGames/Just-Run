@@ -84,6 +84,9 @@ JustRun.playnieveState.prototype = {
 					break;
 				}
 			};
+			if(this.catched){
+				ObjetoEscapist.cazado = true;
+			}
 		    if(this.timer.running){
 		    if(!ObjetoEscapist.cazado){		    	
 		    	 //creacion de particulas chaser
@@ -273,14 +276,7 @@ JustRun.playnieveState.prototype = {
 			}else{	
 				//se ha pillado al escapista se muestra la pantalla de cazado y se empieza el cambio de escenas
 				//control del cambio de pantallas
-		    	if(ObjetoChaser.puntuacion >= ObjetoEscapist.puntuacion){
-		    		game.sound.stopAll();
-		    		game.state.start("victoriaC");
-		    	}
-		    	if(ObjetoEscapist.puntuacion > ObjetoChaser.puntuacion){
-		    		game.sound.stopAll();
-		    		game.state.start("victoriaE");
-		    	}
+				ObjetoChaser.puntuacion++;
 				ObjetoEscapist.cazado = true;
 				game.add.sprite(0,0,"catched");
 		    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
@@ -543,7 +539,7 @@ JustRun.playnieveState.prototype = {
 		    this.onTheLedge1 = game.physics.arcade.collide(escapist, this.ice);
 		    game.physics.arcade.collide(escapist, this.wtrap);
 		    game.physics.arcade.collide(escapist, this.itrap);
-		    this.catched = game.physics.arcade.collide(escapist, chaser);
+		    this.catched = game.physics.arcade.collide(chaser, escapist);
 		},
 		crearJugadores: function(){
 			ObjetoChaser = {
@@ -641,21 +637,18 @@ JustRun.playnieveState.prototype = {
 	    },
 	    //comprueba que la puntuacion es correcta y cambia de estado
 	    cambio: function(){
-	    	if(this.catched){
-	    		ObjetoChaser.puntuacion = 1;
-	    	}
 	    	game.sound.stopAll();
+	    	if(ObjetoEscapist.cazado){
+	    		ObjetoChaser.puntuacion++;
+	    	}else{
+	    		ObjetoEscapist.puntuacion++;
+	    	}
+	    	this.sendear();
 	    	console.log(ObjetoChaser.puntuacion);
 	    	console.log(ObjetoEscapist.puntuacion);
-	    	
-	    	if(ObjetoChaser.puntuacion > ObjetoEscapist.puntuacion){
 	    		game.sound.stopAll();
-	    		game.state.start("victoriaC");
-	    	}
-	    	if(ObjetoEscapist.puntuacion > ObjetoChaser.puntuacion){
-	    		game.sound.stopAll();
-	    		game.state.start("victoriaE");
-	    	}
+	    		game.state.start("loadcarga_castillo");
+	    		
 	    },
 	    //crea el timer, su maximo de tiempo y lo inicia
 	    formatTime: function(s) {
