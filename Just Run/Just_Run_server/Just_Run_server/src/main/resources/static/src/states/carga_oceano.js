@@ -1,5 +1,8 @@
-var loadcarga_oceanoState = function(Just_Run) {
-	loadcarga_oceanoState.prototype.preload = function(){	
+JustRun.loadcarga_oceanoState = function(game){
+	
+}
+JustRun.loadcarga_castilloState.prototype = {
+	preload: function(){	
 	//carga de los sprites del mundo de oceano	
 		game.load.image('sea', 'assets/fondos/oceano.png');
 		game.load.image('ground', 'assets/tiles/oceano/arena.png');
@@ -17,7 +20,7 @@ var loadcarga_oceanoState = function(Just_Run) {
 		game.load.image('baerizo', 'assets/sprites/Oceano/ErizoOFF.png');
 		game.load.audio('song', 'assets/music/oceano.mp3');		
 	},
-	loadcarga_oceanoState.prototype.create = function(){	
+	create: function(){	
 		//ejecución de la pantalla de carga y ejecución del siguiente estado
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');

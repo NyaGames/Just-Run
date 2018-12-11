@@ -1,5 +1,6 @@
 JustRun.playnieveState = function(game){
-	
+	JustRun.puntuacionC = 0;
+	JustRun.puntuacionE = 0;
 }
 //variables globales necesarias para la gestión de la información que se recibe del servidor
 	var emitterc;
@@ -8,6 +9,8 @@ JustRun.playnieveState = function(game){
 	var chaser;
 	var escapist;
 	var object;
+	var sumado = false;
+	var sumado1 = false;
 	
     //variables de carga de los get
     var cargacompleta = false;
@@ -638,16 +641,20 @@ JustRun.playnieveState.prototype = {
 	    //comprueba que la puntuacion es correcta y cambia de estado
 	    cambio: function(){
 	    	game.sound.stopAll();
-	    	if(ObjetoEscapist.cazado){
-	    		ObjetoChaser.puntuacion++;
-	    	}else{
+	    	if(ObjetoEscapist.cazado && !sumado){
 	    		ObjetoEscapist.puntuacion++;
+	    		JustRun.puntuacionE++;
+	    		sumado = true;
+	    	}else if(!sumado1){
+	    		ObjetoChaser.puntuacion++;
+	    		JustRun.puntuacionC++;
+	    		sumado1 = true;
 	    	}
 	    	this.sendear();
 	    	console.log(ObjetoChaser.puntuacion);
 	    	console.log(ObjetoEscapist.puntuacion);
-	    		game.sound.stopAll();
-	    		game.state.start("loadcarga_castillo");
+	    	game.sound.stopAll();
+	    	game.state.start("loadcarga_castillo");
 	    		
 	    },
 	    //crea el timer, su maximo de tiempo y lo inicia

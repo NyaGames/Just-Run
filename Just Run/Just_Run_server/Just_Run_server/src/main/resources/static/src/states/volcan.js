@@ -1,25 +1,47 @@
 JustRun.playvolcanState = function(game){
 	
 }
+//variables globales necesarias para la gestión de la información que se recibe del servidor
+var emitterc;
+var emittere;
+
+var chaser;
+var escapist;
+var object;
+var sumado = false;
+var sumado1 = false;
+
+//variables de carga de los get
+var cargacompleta = false;
+
+//variables del movimiento
+var velocidadmaxima = 300;
+var aceleracion = 500;
+var frenada = 3600;
+var gravedad = 1500; 
+var salto = -600;
+
+var jumping;
+var jumping1;
+
+//variable para las trampas
+var activatedb = false;
+var activatedc = false;
+var activatedgp = false;
 JustRun.playvolcanState.prototype = {
 		create: function() {        	
 			//inicializacion de los sprites
 		    this.background = game.add.sprite(0,0,'volcano');
-		    song = game.add.audio('song');
-			song.play();
-		    //metodos para iniciar todo lo necesario
+		  //llama al metodo para iniciar los jugadores, el mundo, las trampas, el cronometro y lo que recibe de los mapas anteriores
 		    this.crearJugadores();
 		    this.initTraps();
 		    this.crearmundo();    
 		    this.initTimer();
-		    this.init();
+		    song = game.add.audio('song');
+			song.play();
 
 		    //control de las teclas, para evitar los usos por defecto, que pueden dar problemas
-		    this.game.input.keyboard.addKeyCapture([
-		        Phaser.Keyboard.LEFT,
-		        Phaser.Keyboard.RIGHT,
-		        Phaser.Keyboard.UP,
-		        Phaser.Keyboard.DOWN,
+		    game.input.keyboard.addKeyCapture([
 		        Phaser.Keyboard.A,
 		        Phaser.Keyboard.D,
 		        Phaser.Keyboard.W,
@@ -27,133 +49,255 @@ JustRun.playvolcanState.prototype = {
 		        Phaser.Keyboard.I,
 		        Phaser.Keyboard.O,
 		        Phaser.Keyboard.P,
-		        Phaser.Keyboard.SPACEBAR,
 		    ]);
 		},
-
 		update: function() {
-			this.initCollisions();
-		    //se ejecuta el buble si el tiempo no ha acabado y si el escapista sigue libre
+			//crea las colisiones que los diversos elementos del mapa, asi como las variables de control usadas durante el nivel
+		    this.initCollisions();
+		    //comprueba que el tiempo no se ha acabado y que el escapist no ha sido cazado
+	    	object = {"id":"get"};
+			//callbacks de los getters, para inicializar los jugadores
+			connection.send(JSON.stringify(object));
+			connection.onmessage = function(event){
+				var msg = event.data;
+				message = JSON.parse(msg);
+				switch(message.id){
+				case "get":
+					ObjetoChaser.posicionX = message.ChaserX;
+					ObjetoChaser.posicionY = message.ChaserY;
+					ObjetoChaser.puntuacion = message.ChaserPuntuacion;
+					ObjetoEscapist.posicionX = message.EscapistX;
+					ObjetoEscapist.posicionY = message.EscapistY;
+					ObjetoEscapist.puntuacion = message.EscapistPuntuacion;
+					ObjetoEscapist.cazado = message.EscapistCazado;
+					ObjetoTrampas.IPressed = message.IPressed;
+					ObjetoTrampas.OPressed = message.OPressed;
+					ObjetoTrampas.PPressed = message.PPressed;
+					ObjetoAnimaciones.ChaserIdle = message.ChaserIdle;
+					ObjetoAnimaciones.ChaserRunL = message.ChaserRunL;
+					ObjetoAnimaciones.ChaserRunR = message.ChaserRunR;
+					ObjetoAnimaciones.ChaserJump = message.ChaserJump;
+					ObjetoAnimaciones.EscapistIdle = message.EscapistIdle;
+					ObjetoAnimaciones.EscapistRunL = message.EscapistRunL;
+					ObjetoAnimaciones.EscapistRunR = message.EscapistRunR;
+					ObjetoAnimaciones.EscapistJump = message.EscapistJump;
+					break;
+				}
+			};
+			if(this.catched){
+				ObjetoEscapist.cazado = true;
+			}
 		    if(this.timer.running){
-		    	if(!this.catched){
-		    //respawn si se sale del mapa
-		    if(this.chaser.body.position.y > this.game.height - 64){
-		    	this.chaser.body.position.x = 60;
-		    	this.chaser.body.position.y = this.game.height - 300;
-		    }
-		    if(this.escapist.body.position.y > this.game.height - 64){
-		    	this.escapist.body.position.x = 60;
-		    	this.escapist.body.position.y = this.game.height - 300;
-		    }
-		    //control izquierda/derecha y gestion de las animacioens
-		    if (this.AInputIsActive()) {
-		    	this.chaser.scale.setTo(-1, 1);
-		    	if(this.onTheGround|| this.onTheLedge){
-		    		this.chaser.animations.play('run');
-		    	}
-		        	this.chaser.body.acceleration.x = -this.aceleracion;
-		    } else if (this.DInputIsActive()) {
-		    	this.chaser.scale.setTo(1, 1);
-		    	if(this.	onTheGround || this.onTheLedge){
-		    		this.chaser.animations.play('run');
-		    	}   	
-		    	this.chaser.body.acceleration.x = this.aceleracion;
-		    } else {
-		    	this.chaser.animations.play('idle');
-		        this.chaser.body.acceleration.x = 0;
-		    }
+		    if(!ObjetoEscapist.cazado){		
 
-		    if (this.leftInputIsActive()) {
-		    	if(this.onTheGround1 || this.onTheLedge1){
-		    		this.escapist.scale.setTo(-1,1);
-		    		this.escapist.animations.play('run');
-		    	}
-		        	this.escapist.body.acceleration.x = -this.aceleracion;
-		    	
-		    } else if (this.rightInputIsActive()) {
-		    	if(this.onTheGround1 || this.onTheLedge1){
-		    		this.escapist.scale.setTo(1,1);
-		    		this.escapist.animations.play('run');
-		    	}
-		           	this.escapist.body.acceleration.x = this.aceleracion;
-		    } else {
-		    	this.escapist.animations.play('idle');
-		        this.escapist.body.acceleration.x = 0;
-		    }
-		    //control del doble salto
-		    if (this.onTheGround || this.onTheLedge) {
-		    	this.jumps = 2;
-		        this.jumping = false;     
-		    }
-		    if (this.jumps > 0 && this.WInputIsActive(5)) {
-		    	this.chaser.animations.play('doblejump');
-		    		this.chaser.body.velocity.y = this.salto;
-		        	this.jumping = true;      
-		    }
-		    if (this.jumping && this.WInputReleased()) {
-		        this.jumps--;
-		        this.jumping = false;
-		    }
+			    //salto alto  de las burbujas
+			    if(this.onBubble){
+			    	chaser.body.velocity.y = this.salto*2;
+			    }
+			    if(this.onBubble1){
+			    	escapist.body.velocity.y = this.salto*2;
+			    }
+		    	 //creacion de particulas chaser
+				if(this.onTheGround){
+					emitterc.start(true, 100, null, 2); 
+				}
+				//Particulas escapist
+				if(this.onTheGround1){
+					emittere.start(true, 100, null, 2); 
+				}
 
-		    if (this.onTheGround1 || this.onTheLedge1) {
-		    	this.jumps1 = 2;
-		        this.jumping1 = false;	       
-		    }
-		    if (this.jumps1 > 0 && this.upInputIsActive(5)) {
-		    		this.escapist.animations.play('doblejump');
-		    		this.escapist.body.velocity.y = this.salto;
-		        	this.jumping1 = true;    
-		    }
-		    if (this.jumping1 && this.upInputReleased()) {
-		        this.jumps1--;
-		        this.jumping1 = false;
-		    }
-		    if(this.catched){
-		    	this.game.add.sprite(0,0,"catched");
-		    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
-		    }
-		    //control de las trampas
-		    if (this.IinputIsActive() && !this.activatedb){
-		    		this.activatedb = true;	    		
-			    	this.balltrap();	
-		    }
-		    if (this.OInputIsActive() && !this.activatedc){
-		    		this.activatedc = true;
-		    		this.strap();
-		    }
-		    if (this.PInputIsActive() && !this.activatedgp){
-		    		this.activatedgp = true;
-			    	this.ptrap();
-		    }
+		    	//en caso de que se caigan fuera los limites hacen respawn
+			    if(chaser.body.position.y > game.height - 64){
+			    	chaser.body.position.x = 60;
+			    	chaser.body.position.y = game.height - 300;
+			    }
+			    if(escapist.body.position.y > game.height - 64){
+			    	escapist.body.position.x = 1000;
+			    	escapist.body.position.y = game.height - 300;
+			    }	
+				
+		    	if(JustRun.userID == 1){
+		    		 //control animaciones del escapist
+		    		 if(ObjetoAnimaciones.EscapistRunL){
+		    			 escapist.scale.setTo(-1,1);
+		    			 escapist.animations.play("run");
+		    		 }else if(ObjetoAnimaciones.EscapistRunR){
+		    			 escapist.scale.setTo(1,1);
+		    			 escapist.animations.play("run");
+		    		 }else if(ObjetoAnimaciones.EscapistJump){
+		    			 escapist.animations.play("doblejump");
+		    		 }else if(ObjetoAnimaciones.EscapistIdle){
+		    			 escapist.animations.play("idle");
+		    		 }
+			    		escapist.body.position.x = ObjetoEscapist.posicionX;
+				    	escapist.body.position.y = ObjetoEscapist.posicionY;
+		    		 //control de las trampas en el otro cliente
+		    		 if(ObjetoTrampas.IPressed && !activatedb){
+					    	activatedb = true;	    		
+					    	this.balltrap();
+					    }
+					 if (ObjetoTrampas.OPressed && !activatedc){
+				    		activatedc = true;
+				    		this.strap();
+					 }
+					 if (ObjetoTrampas.PPressed && !activatedgp){
+					    	activatedgp = true;
+						    this.ptrap();
+					 }
+					 ObjetoTrampas.IPressed = false;
+					 ObjetoTrampas.OPressed = false;
+					 ObjetoTrampas.PPressed = false;
+					//control del movimiento del chaser
+				    if (this.AInputIsActive()) {
+				    	chaser.scale.setTo(-1, 1);
+				    	if(this.onTheGround || this.onTheLedge){
+				    		chaser.animations.play('run');
+				    		ObjetoAnimaciones.ChaserIdle = false;
+				    		ObjetoAnimaciones.ChaserRunL = true;
+				    		ObjetoAnimaciones.ChaserRunR = false;
+				    		ObjetoAnimaciones.ChaserJump = false;
+				    		
+				    	}
+				        chaser.body.acceleration.x = -aceleracion;
+				    } else if (this.DInputIsActive()) {
+				    	chaser.scale.setTo(1, 1);
+				    	if(this.onTheGround || this.onTheLedge){
+				    		chaser.animations.play('run'); 
+				    		ObjetoAnimaciones.ChaserIdle = false;
+				    		ObjetoAnimaciones.ChaserRunL = false;
+				    		ObjetoAnimaciones.ChaserRunR = true;
+				    		ObjetoAnimaciones.ChaserJump = false;
+				    	}
+				        chaser.body.acceleration.x = aceleracion;
+				    } else {
+				    	ObjetoAnimaciones.ChaserIdle = true;
+			    		ObjetoAnimaciones.ChaserRunL = false;
+			    		ObjetoAnimaciones.ChaserRunR = false;
+			    		ObjetoAnimaciones.ChaserJump = false;
+				    	chaser.animations.play('idle');
+				        chaser.body.acceleration.x = 0
+				    }
+				  //control del doble salto que se resetea si detecta colisiona con una plataforma o con el suelo
+				    if (this.onTheGround || this.onTheLedge) {
+				    	this.jumps = 2;
+				        jumping = false;
+				            
+				    }
+				    if (this.jumps > 0 && this.WInputIsActive(5)) {
+				    	chaser.animations.play('doblejump');
+				    	ObjetoAnimaciones.ChaserIdle = false;
+			    		ObjetoAnimaciones.ChaserRunL = false;
+			    		ObjetoAnimaciones.ChaserRunR = false;
+			    		ObjetoAnimaciones.ChaserJump = true;
+				    	chaser.body.velocity.y = salto;
+				        jumping = true;
+				    }	        
+				    if (jumping && this.WInputReleased()) {
+				        this.jumps--;
+				        jumping = false;
+				    }
+		        	ObjetoChaser.posicionX = chaser.body.position.x;
+		        	ObjetoChaser.posicionY = chaser.body.position.y;
+		    	}
+		    	if(JustRun.userID == 2){	
+		    		//control animaciones del chaser en el otro cliente
+			    	if(ObjetoAnimaciones.ChaserRunL){
+			    		chaser.scale.setTo(-1,1);
+			    		chaser.animations.play("run");
+		    		 }else if(ObjetoAnimaciones.ChaserRunR){
+		    			 chaser.scale.setTo(1,1);
+		    			 chaser.animations.play("run");
+		    		 }else if(ObjetoAnimaciones.ChaserJump){
+		    			 chaser.animations.play("doblejump");
+		    		 }else if(ObjetoAnimaciones.ChaserIdle){
+		    			 chaser.animations.play("idle");
+		    		 }
+			    	chaser.body.position.x = ObjetoChaser.posicionX;
+			    	chaser.body.position.y = ObjetoChaser.posicionY;
+			    	//control movimiento escapist
+		    		if (this.AInputIsActive()) {
+				    	if(this.onTheGround1 || this.onTheLedge1){
+				    		escapist.scale.setTo(-1,1);
+				    		escapist.animations.play('run');
+				    		ObjetoAnimaciones.EscapistIdle = false;
+				    		ObjetoAnimaciones.EscapistRunL = true;
+				    		ObjetoAnimaciones.EscapistRunR = false;
+				    		ObjetoAnimaciones.EscapistJump = false;
+				    	}
+				        	escapist.body.acceleration.x = -aceleracion;
+				    	
+				    } else if (this.DInputIsActive()) {
+				    	if(this.onTheGround1 || this.onTheLedge1){
+				    		escapist.scale.setTo(1,1);
+				    		escapist.animations.play('run');
+				    		ObjetoAnimaciones.EscapistIdle = false;
+				    		ObjetoAnimaciones.EscapistRunL = false;
+				    		ObjetoAnimaciones.EscapistRunR = true;
+				    		ObjetoAnimaciones.EscapistJump = false;
+				    	}
+				           	escapist.body.acceleration.x = aceleracion;
+				    } else {
+				    	escapist.animations.play('idle');
+				    	ObjetoAnimaciones.EscapistIdle = true;
+			    		ObjetoAnimaciones.EscapistRunL = false;
+			    		ObjetoAnimaciones.EscapistRunR = false;
+			    		ObjetoAnimaciones.EscapistJump = false;
+				        escapist.body.acceleration.x = 0;
+				    }
+		    		 if (this.onTheGround1 || this.onTheLedge1) {
+					    	this.jumps1 = 2;
+					        jumping1 = false;	       
+					    }
+					    if (this.jumps1 > 0 && this.WInputIsActive(5)) {
+					    		escapist.animations.play('doblejump');
+					    		ObjetoAnimaciones.EscapistIdle = false;
+					    		ObjetoAnimaciones.EscapistRunL = false;
+					    		ObjetoAnimaciones.EscapistRunR = false;
+					    		ObjetoAnimaciones.EscapistJump = true;
+					    		escapist.body.velocity.y = salto;
+					        	jumping1 = true;    
+					    }
+					    if (jumping1 && this.WInputReleased()) {
+					        this.jumps1--;
+					        jumping1 = false;
+					    }
+					  //detecta si se han pulsado las teclas que activan las trampas
+					   if (this.IinputIsActive() && !activatedb){
+					    		activatedb = true;	    		
+						    	this.balltrap();
+						    	ObjetoTrampas.IPressed = true;	
+					    }
+					    if (this.OInputIsActive() && !activatedc){
+					    		activatedc = true;
+					    		this.strap();
+					    		ObjetoTrampas.OPressed = true;
+					    }
+					    if (this.PInputIsActive() && !activatedgp){
+					    		activatedgp = true;
+						    	this.ptrap();
+						    	ObjetoTrampas.PPressed = true;
+						}
+				    	ObjetoEscapist.posicionX = escapist.body.position.x;
+				    	ObjetoEscapist.posicionY = escapist.body.position.y;
+		    	} 
+			    this.sendear();
 			}else{	
-				this.game.add.sprite(0,0,"catched");
+				//se ha pillado al escapista se muestra la pantalla de cazado y se empieza el cambio de escenas
+				//control del cambio de pantallas
+				ObjetoChaser.puntuacion++;
+				ObjetoEscapist.cazado = true;
+				game.add.sprite(0,0,"catched");
 		    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
-		    }
+
+		}
+
+		emitterc.emitX = chaser.body.position.x+27;
+		emitterc.emitY = chaser.body.position.y+50;
+		emittere.emitX = escapist.body.position.x+27;
+		emittere.emitY = escapist.body.position.y+50;
 		}
 		},
-
 		//controles con las flechas y devuelven un bool en caso de que este activo	
-		leftInputIsActive: function() {
-		    var isActive = false;
-		    isActive = this.input.keyboard.isDown(Phaser.Keyboard.LEFT);
-		    return isActive;
-		},
-		rightInputIsActive: function() {
-		    var isActive = false;
-		    isActive = this.input.keyboard.isDown(Phaser.Keyboard.RIGHT);
-		    return isActive;
-		},
-		//recibe un duración para evitar saltos infinitos
-		upInputIsActive: function(duration) {
-		    var isActive = false;
-		    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.UP, duration);
-		    return isActive;
-		},
-		upInputReleased: function() {
-		    var released = false;
-		    released = this.input.keyboard.upDuration(Phaser.Keyboard.UP);
-		    return released;
-		},
 		//control con WASD
 		AInputIsActive: function() {
 		    var isActive = false;
@@ -176,12 +320,6 @@ JustRun.playvolcanState.prototype = {
 		    released = this.input.keyboard.upDuration(Phaser.Keyboard.W);
 		    return released;
 		},
-		//control de las trampas
-		spaceInputIsAcive: function() {
-		    var isActive = false;
-		    isActive = this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
-		    return isActive;
-		},
 		IinputIsActive: function() {
 		    var isActive = false;
 		    isActive = this.input.keyboard.isDown(Phaser.Keyboard.I);
@@ -197,7 +335,6 @@ JustRun.playvolcanState.prototype = {
 		    isActive = this.input.keyboard.isDown(Phaser.Keyboard.P);
 		    return isActive;
 		},
-
 		//inicia la ola
 		balltrap: function(){	
 			this.ola.body.velocity.x = -200;
@@ -212,7 +349,8 @@ JustRun.playvolcanState.prototype = {
 		    this.ola.body.immovable = true;
 		    this.ola.body.allowGravity = false;	
 		    this.botonola = this.game.add.sprite(1040, 360, 'beola');
-		    this.activatedb = false;
+		    activatedb = false;
+		    ObjetoTrampas.IPressed = false;
 		},	
 		//inicia los meteoritos para que caigan en diagonal
 		strap: function(){
@@ -243,7 +381,8 @@ JustRun.playvolcanState.prototype = {
 		    this.meteor3.body.immovable = true;
 		    this.meteor3.body.allowGravity = false;
 		    this.botonmeteorito = this.game.add.sprite(1040, 330, 'bmeteorito');
-		    this.activatedc = false;
+		    activatedc = false;
+		    ObjetoTrampas.OPressed = false;
 		},
 		//inician los magma cubes
 		ptrap: function(){
@@ -265,7 +404,8 @@ JustRun.playvolcanState.prototype = {
 		    this.p2.body.immovable = true;
 		    this.p2.body.allowGravity = false;
 		    this.botonmagma = this.game.add.sprite(1040, 300, 'bemagma');
-		    this.activatedgp = false;
+		    activatedgp = false;
+		    ObjetoTrampas.PPressed = false;
 		},
 		//crea los elementos estaticos del mundo
 		crearmundo: function(){
@@ -341,145 +481,165 @@ JustRun.playvolcanState.prototype = {
 		    block.body.allowGravity = false;
 		    this.ground.add(block);
 		},
-		
-		//muestra la IU por pantalla
+		//renderia los elementos de la UI
 		render: function () {
-	        if (this.timer.running) {
-	            this.game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), this.game.world.centerX-50, 590, "#ffffff",'50px Arial');
-	        }
-	        this.game.debug.text("Puntuacion Chaser: "+this.pchaser, 100, 590, "#ffffff",'20px Arial');
-	        this.game.debug.text("Puntuacion Escapist: "+this.pescapist, 750, 590, "#ffffff",'20px Arial');
+			 if (this.timer.running) {
+		            game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), game.world.centerX-50, 590, "#ffffff",'50px Arial');
+		        }
+		        game.debug.text("Puntuacion Chaser: "+ObjetoChaser.puntuacion, 100, 590, "#ffffff",'20px Arial');
+		        game.debug.text("Puntuacion Escapist: "+ObjetoEscapist.puntuacion, 750, 590, "#ffffff",'20px Arial');
 	    },
-	    //para el cronometro y gestiona la puntuacion
+	    //gestiona el cambio cuando se acaba el tiempo
 	    endTimer: function() {
-	        this.timer.stop();
-	        this.pescapist++;
-		    this.game.add.sprite(0,0,"libre");
+	    	this.timer.stop();
+	        ObjetoEscapist.puntuacion++;
+			game.add.sprite(0,0,"libre");
 		    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	    },
+	    crearJugadores: function(){
+			ObjetoChaser = {
+					ID: "Chaser",
+					posicionX: 60,
+					posicionY: 300,
+					puntuacion: JustRun.puntuacionC,
+				};
+				ObjetoEscapist = {
+					ID: "Escapist",
+					posicionX: 1000,
+					posicionY: 300,
+					puntuacion: JustRun.puntuacionE,
+					cazado: false,
+				};
+				ObjetoTrampas = {
+					IPressed: false,
+					OPressed: false,
+					PPressed: false,
+				};
+				ObjetoAnimaciones = {
+					ChaserIdle: true,
+					ChaserRunL: false,
+					ChaserRunR: false,
+					ChaserJump: false,
+					EscapistIdle: true,
+					EscapistRunL: false,
+					EscapistRunR: false,
+					EscapistJump: false,
+				};
+			console.log(JustRun.userID);
+			chaser = game.add.sprite(ObjetoChaser.posicionX, ObjetoChaser.posicionY, 'chaser');
+		    game.physics.enable(chaser, Phaser.Physics.ARCADE);
+		    chaser.body.collideWorldBounds = true;
+		    chaser.body.maxVelocity.setTo(velocidadmaxima, velocidadmaxima * 10);
+		    chaser.body.drag.setTo(frenada, 0);
+		    game.physics.arcade.gravity.y = gravedad;
+		    
+		    //animaciones chaser
+		    chaser.animations.add('run', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36], 33, true);
+		    chaser.animations.add('dash', [37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58], 33, true);
+		    chaser.animations.add('doblejump', [59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113], 122, true);
+		    chaser.animations.add('jump', [114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135], 21, true);
+		    chaser.animations.add('idle', [136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178], 42, true);
+		    
+		    //por defecto la animacion idle
+		    chaser.animations.play('idle');
+		    
+		    //Cambio de Eje
+		    chaser.anchor.setTo(0.3,0.5);
+		    
+		    //particulas
+		    emitterc = game.add.emitter(chaser.body.position.x, chaser.body.position.y, 1);
+	   		emitterc.makeParticles('particulas');
+		    
+		    //variable para comprobar el salto
+		    jumping = false;
+		    
+		    escapist = game.add.sprite(ObjetoEscapist.posicionX, ObjetoEscapist.posicionY, 'escapist');
+		    game.physics.enable(escapist, Phaser.Physics.ARCADE);
+		    escapist.body.collideWorldBounds = true;
+		    escapist.body.maxVelocity.setTo(velocidadmaxima, velocidadmaxima * 10);
+		    escapist.body.drag.setTo(frenada, 0);
+		    game.physics.arcade.gravity.y = gravedad;
+
+		    //animaciones escapist
+		  	escapist.animations.add('run', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36], 33, true);
+		    escapist.animations.add('dash', [37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58], 33, true);
+		    escapist.animations.add('doblejump', [59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113], 122, true);
+		    escapist.animations.add('jump', [114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135], 21, true);
+		    escapist.animations.add('idle', [136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157], 21, true);
+
+		    emittere = game.add.emitter(escapist.body.position.x, escapist.body.position.y, 1);
+
+	   		emittere.makeParticles('particulas');			   		
+		    escapist.animations.play('idle');
+
+		    escapist.anchor.setTo(0.3,0.5);			    
+		    jumping1 = false;	 
+		},
 	    //gestiona el cammbio de pantalla
 	    cambio: function(){
-	    	if(this.catched){
-	    		this.pchaser = this.game.state.states["playoceano"].pchaser+1;
+	    	game.sound.stopAll();
+	    	if(ObjetoEscapist.cazado && !sumado){
+	    		ObjetoEsapist.puntuacion++;
+	    		JustRun.puntuacionE++;
+	    		sumado = true;
+	    	}else if(!sumado1){
+	    		ObjetoChaser.puntuacion++;
+	    		JustRun.puntuacionC++;
+	    		sumado1 = true;
 	    	}
-	    	if(this.pchaser > this.pescapist){
+	    	this.sendear();
+	    	console.log(ObjetoChaser.puntuacion);
+	    	console.log(ObjetoEscapist.puntuacion);
+	    	game.sound.stopAll();
+	    	if(ObjetoEscapist.cazado && !sumado){
+	    		ObjetoEscapist.puntuacion++;
+	    		JustRun.puntuacionE++;
+	    		sumado = true;
+	    	}else if(!sumado1){
+	    		ObjetoChaser.puntuacion++;
+	    		JustRun.puntuacionC++;
+	    		sumado1 = true;
+	    	}
+	    	if(JustRun.puntuacionE > JustRun.puntuacionC){
 	    		game.sound.stopAll();
 	    		game.state.start("victoriaC");
 	    	}
-	    	if(this.pescapist > this.pchaser){
+	    	if(JustRun.puntuacionC > JustRun.puntuacionE){
 	    		game.sound.stopAll();
 	    		game.state.start("victoriaE");
 	    	}
 	    },
-	    //crea la logica del cronometro
+	  //crea el formato de timer
 	    formatTime: function(s) {
 	        var minutes = "0" + Math.floor(s / 60);
 	        var seconds = "0" + (s - minutes * 60);
 	        return minutes.substr(-2) + ":" + seconds.substr(-2);   
 	    },
-	    //carga la puntuacion del nivel anterior
-	    init: function(){
-	    	this.pchaser = this.game.state.states["playoceano"].pchaser;
-	    	this.pescapist = this.game.state.states["playoceano"].pescapist;
-	    	var object = JSON.stringify({ID: "chaser", puntuacion: this.pchaser});
-	    	var object1 = JSON.stringify({ID: "escapist", puntuacion: this.pescapist});
-	        $.ajax(URLe, 
-	        {
-	            method: "POST",
-	            data: object,
-	            processData: false,
-	            
-	            success: function() { console.log("yes");},
-	            
-	            headers:{
-	                "Content-Type": "application/json"
-	            },
-	        });
-	        $.ajax(URLc, 
-	                {
-	                    method: "POST",
-	                    data: object1,
-	                    processData: false,
-	                    
-	                    success: function() { console.log("yep");},
-	                    
-	                    headers:{
-	                        "Content-Type": "application/json"
-	                    },
-	                });
-	        $.ajax(URLe, 
-	                {
-	                    method: "GET",
-	                    processData: false,
-	                    
-	                    success: function(data) { console.log(data.puntuacion);},
-	                    
-	                    headers:{
-	                        "Content-Type": "application/json"
-	                    },
-	                });
-	        $.ajax(URLc, 
-	                {
-	                    method: "GET",
-	                    processData: false,
-	                    
-	                    success: function(data) { console.log(data.puntuacion);},
-	                    
-	                    headers:{
-	                        "Content-Type": "application/json"
-	                    },
-	                });
+	    sendear: function(){
+	    	object = {
+	    		id:"post",
+	    		ChaserX: ObjetoChaser.posicionX,
+	    		ChaserY: ObjetoChaser.posicionY,
+	    		ChaserPuntuacion: ObjetoChaser.puntuacion,
+	    		EscapistX: ObjetoEscapist.posicionX,
+	    		EscapistY: ObjetoEscapist.posicionY,
+	    		EscapistPuntuacion: ObjetoEscapist.puntuacion,
+	    		EscapistCazado: ObjetoEscapist.cazado,
+	    		IPressed: ObjetoTrampas.IPressed,
+	    		OPressed: ObjetoTrampas.OPressed,
+	    		PPressed: ObjetoTrampas.PPressed,
+	    		ChaserIdle: ObjetoAnimaciones.ChaserIdle,
+	    		ChaserRunL: ObjetoAnimaciones.ChaserRunL,
+	    		ChaserRunR: ObjetoAnimaciones.ChaserRunR,
+	    		ChaserJump: ObjetoAnimaciones.ChaserJump,
+	    		EscapistIdle: ObjetoAnimaciones.EscapistIdle,
+	    		EscapistRunL: ObjetoAnimaciones.EscapistRunL,
+	    		EscapistRunR: ObjetoAnimaciones.EscapistRunR,
+	    		EscapistJump: ObjetoAnimaciones.EscapistJump,
+	    	}
+	    	connection.send(JSON.stringify(object));
+	    	console.log(object);
 	    },
-	    //crea los jugadores y todas las variables relacionadas	
-		crearJugadores: function(){
-			//variables del movimiento
-		    this.velocidadmaxima = 300;
-		    this.aceleracion = 500;
-		    this.frenada = 3600;
-		    this.gravedad = 1500; 
-		    this.salto = -600; 
-
-			// crear jugadores
-		    this.chaser = this.game.add.sprite(60, this.game.height - 300, 'chaser');
-		    this.game.physics.enable(this.chaser, Phaser.Physics.ARCADE);
-		    this.chaser.body.collideWorldBounds = true;
-		    this.chaser.body.maxVelocity.setTo(this.velocidadmaxima, this.velocidadmaxima * 10);
-		    this.chaser.body.drag.setTo(this.frenada, 0);
-		    game.physics.arcade.gravity.y = this.gravedad;
-
-			this.escapist = this.game.add.sprite(1000, this.game.height - 300, 'escapist');
-		    this.game.physics.enable(this.escapist, Phaser.Physics.ARCADE);
-		    this.escapist.body.collideWorldBounds = true;
-		    this.escapist.body.maxVelocity.setTo(this.velocidadmaxima, this.velocidadmaxima * 10);
-		    this.escapist.body.drag.setTo(this.frenada, 0);
-		    game.physics.arcade.gravity.y = this.gravedad;
-
-		    //animaciones escapist
-		  	this.escapist.animations.add('run', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36], 33, true);
-		    this.escapist.animations.add('dash', [37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58], 33, true);
-		    this.escapist.animations.add('doblejump', [59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113], 122, true);
-		    this.escapist.animations.add('jump', [114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135], 21, true);
-		    this.escapist.animations.add('idle', [136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157], 21, true);
-
-		     //animaciones chaser
-		    this.chaser.animations.add('run', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36], 33, true);
-		    this.chaser.animations.add('dash', [37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58], 33, true);
-		    this.chaser.animations.add('doblejump', [59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113], 122, true);
-		    this.chaser.animations.add('jump', [114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135], 21, true);
-		    this.chaser.animations.add('idle', [136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178], 42, true);
-		    
-		    //por defecto la animacion idle
-		    this.chaser.animations.play('idle');
-		    this.escapist.animations.play('idle');
-
-		    //Cambio de Eje
-		    this.chaser.anchor.setTo(0.3,0.5);
-		    this.escapist.anchor.setTo(0.3,0.5);
-
-		    //variable para comprobar el salto
-		    this.jumping = false;
-		    this.jumping1 = false;	 
-		},
 		//crea el timer, su maximo de tiempo y lo inicia
 		initTimer: function(){		
 	        this.timer = this.game.time.create();
@@ -517,13 +677,6 @@ JustRun.playvolcanState.prototype = {
 		    this.game.physics.enable(this.p2, Phaser.Physics.ARCADE);
 		    this.p2.body.immovable = true;
 		    this.p2.body.allowGravity = false;
-
-
-		    //variable para las trampas
-		    this.activatedb = false;
-		    this.activatedc = false;
-		    this.activatedgp = false;
-
 		    //crear botones
 		    this.botonmagma = this.game.add.sprite(1040, 300, 'bemagma');
 		    this.botonmeteorito = this.game.add.sprite(1040, 330, 'bmeteorito');
@@ -531,18 +684,18 @@ JustRun.playvolcanState.prototype = {
 		},
 		//inicializa las colisiones
 		initCollisions: function(){
-			this.onTheGround = game.physics.arcade.collide(this.chaser, this.ground);
-		    this.onTheLedge = game.physics.arcade.collide(this.chaser, this.ground);
-		    game.physics.arcade.collide(this.chaser, this.ola);
-		    game.physics.arcade.collide(this.chaser, this.meteor1);
-		    game.physics.arcade.collide(this.chaser, this.meteor2);
-		    game.physics.arcade.collide(this.chaser, this.meteor3);
-		    game.physics.arcade.collide(this.chaser, this.p1);
-		    game.physics.arcade.collide(this.chaser, this.p2);
-		    game.physics.arcade.collide(this.chaser, this.p3);
-		    this.onTheGround1 = game.physics.arcade.collide(this.escapist, this.ground);
-		    this.onTheLedge1 = game.physics.arcade.collide(this.escapist, this.ground);
-		    this.catched = game.physics.arcade.collide(this.escapist, this.chaser);
+			this.onTheGround = game.physics.arcade.collide(chaser, this.ground);
+		    this.onTheLedge = game.physics.arcade.collide(chaser, this.ground);
+		    game.physics.arcade.collide(chaser, this.ola);
+		    game.physics.arcade.collide(chaser, this.meteor1);
+		    game.physics.arcade.collide(chaser, this.meteor2);
+		    game.physics.arcade.collide(chaser, this.meteor3);
+		    game.physics.arcade.collide(chaser, this.p1);
+		    game.physics.arcade.collide(chaser, this.p2);
+		    game.physics.arcade.collide(chaser, this.p3);
+		    this.onTheGround1 = game.physics.arcade.collide(escapist, this.ground);
+		    this.onTheLedge1 = game.physics.arcade.collide(escapist, this.ground);
+		    this.catched = game.physics.arcade.collide(escapist, chaser);
 		}
 }
 	

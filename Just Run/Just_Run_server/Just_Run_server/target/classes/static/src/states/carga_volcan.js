@@ -1,5 +1,8 @@
-var loadcarga_volcanState = function(Just_Run) {
-	loadcarga_volcanState.prototype.preload = function(){		
+JustRun.loadcarga_volcanState = function(game){
+	
+}
+JustRun.loadcarga_volcanState.prototype = {
+	preload: function(){		
 		//carga de los sprites del nivel del volcan
 		game.load.image('volcano', 'assets/fondos/volcan.png');
 		game.load.image('ground', 'assets/tiles/volcan/arena.png');	
@@ -16,7 +19,7 @@ var loadcarga_volcanState = function(Just_Run) {
 		game.load.image('bamagma', 'assets/sprites/volcan/lavacubeOFF.png');		
 		game.load.audio('song', 'assets/music/volcan.mp3');
 	},
-	loadcarga_volcanState.prototype.create = function(){	
+	create: function(){	
 		//ejecucíon de la pantalla de carga y del siguiente estado
 		var pantallacarga = game.add.sprite(350, 150, 'carga');
 		var loading = pantallacarga.animations.add('load');
