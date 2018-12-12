@@ -1,0 +1,792 @@
+2018-12-12 09:10:59,641 [Worker-1: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-12 09:11:23,064 [Worker-0: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\bin\Just_Run_server\pom.xml.
+2018-12-12 09:11:24,384 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:11:24,395 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:11:24,424 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:11:25,197 [Worker-3: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\bin\Just_Run_server\pom.xml.
+2018-12-12 09:11:25,355 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:11:25,355 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\bin\Just_Run_server\src\test\resources
+2018-12-12 09:11:27,647 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:11:27,709 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:11:27,740 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:11:28,403 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:11:28,403 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\bin\Just_Run_server\src\test\resources
+2018-12-12 09:14:12,612 [Worker-4: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:14:13,201 [Worker-4: Building workspace] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:766) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:155) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:90) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:87) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:201) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:798) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.100.v20180827-1235.jar:na]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:219) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:262) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:315) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.10.100.v20180827-1235.jar:na]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:318) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:370) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:391) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:145) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:14:13,916 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:14:13,920 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:14:13,941 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:14:14,976 [Worker-13: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:14:15,190 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:14:15,190 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:14:15,729 [Worker-13: Updating Maven Dependencies] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:14:17,754 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:14:17,785 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:14:17,841 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:14:18,446 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:14:18,446 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:17:52,295 [Worker-13: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 09:17:53,007 [Worker-13: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:17:53,178 [Worker-13: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:17:53,386 [Worker-13: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 09:17:53,386 [Worker-13: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:17:53,388 [Worker-13: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:17:53,390 [Worker-13: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 09:17:53,673 [Worker-13: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 09:17:54,364 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:17:54,367 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:17:54,388 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:17:54,972 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:17:54,972 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:18:06,865 [Worker-16: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:18:06,868 [Worker-16: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:18:06,870 [Worker-16: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2018-12-12 09:18:06,877 [Worker-16: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:18:06,877 [Worker-16: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:24:42,040 [Worker-18: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 09:24:42,804 [Worker-18: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:24:43,114 [Worker-18: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:24:43,291 [Worker-18: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 09:24:43,291 [Worker-18: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:24:43,293 [Worker-18: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:24:43,295 [Worker-18: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 09:24:43,597 [Worker-18: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 09:24:44,403 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:24:44,405 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:24:44,426 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:24:45,111 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:24:45,112 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:24:50,869 [Worker-14: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:24:50,871 [Worker-14: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:24:50,872 [Worker-14: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2018-12-12 09:24:50,879 [Worker-14: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:24:50,879 [Worker-14: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:31:53,309 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:31:53,309 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:31:53,310 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:31:53,315 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:31:53,315 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:32:19,847 [Worker-14: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 09:32:20,547 [Worker-14: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:32:20,812 [Worker-14: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:32:20,975 [Worker-14: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 09:32:20,975 [Worker-14: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:32:20,978 [Worker-14: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:32:20,980 [Worker-14: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 09:32:21,238 [Worker-14: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 09:32:21,931 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:32:21,933 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:32:21,950 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:32:22,507 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:32:22,508 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:33:49,727 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:33:49,729 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:33:49,729 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:33:49,733 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:33:49,733 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:33:55,115 [Worker-24: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 09:33:55,771 [Worker-24: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:33:56,012 [Worker-24: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:33:56,183 [Worker-24: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 09:33:56,184 [Worker-24: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:33:56,186 [Worker-24: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:33:56,187 [Worker-24: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 09:33:56,438 [Worker-24: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 09:33:57,101 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:33:57,102 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:33:57,121 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:33:57,696 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:33:57,696 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:37:14,045 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:37:14,047 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:37:14,048 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:37:14,052 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:37:14,053 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:37:20,250 [Worker-25: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 09:37:20,984 [Worker-25: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:37:21,200 [Worker-25: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:37:21,365 [Worker-25: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 09:37:21,365 [Worker-25: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:37:21,367 [Worker-25: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:37:21,369 [Worker-25: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 09:37:21,599 [Worker-25: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 09:37:22,207 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:37:22,209 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:37:22,231 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:37:22,798 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:37:22,798 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:41:04,770 [Worker-4: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 09:41:05,350 [Worker-4: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:41:05,562 [Worker-4: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:41:05,735 [Worker-4: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 09:41:05,735 [Worker-4: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:41:05,737 [Worker-4: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:41:05,740 [Worker-4: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 09:41:06,016 [Worker-4: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 09:41:06,637 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:41:06,640 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:41:06,658 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:41:07,180 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:41:07,180 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:42:38,781 [Worker-36: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:42:38,782 [Worker-36: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:42:38,783 [Worker-36: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2018-12-12 09:42:38,790 [Worker-36: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:42:38,790 [Worker-36: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:47:27,158 [Worker-40: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 09:47:27,812 [Worker-40: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:47:28,013 [Worker-40: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:47:28,183 [Worker-40: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 09:47:28,183 [Worker-40: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:47:28,185 [Worker-40: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:47:28,187 [Worker-40: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 09:47:28,411 [Worker-40: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 09:47:28,953 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:47:28,954 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:47:28,969 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:47:29,495 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:47:29,495 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:47:36,372 [Worker-46: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:47:36,374 [Worker-46: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:47:36,374 [Worker-46: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2018-12-12 09:47:36,400 [Worker-46: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:47:36,400 [Worker-46: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:51:24,685 [Worker-49: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 09:51:25,224 [Worker-49: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:51:25,412 [Worker-49: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:51:25,562 [Worker-49: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 09:51:25,562 [Worker-49: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:51:25,564 [Worker-49: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:51:25,565 [Worker-49: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 09:51:25,821 [Worker-49: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 09:51:26,380 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:51:26,381 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:51:26,397 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:51:26,911 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:51:26,911 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:52:10,947 [Worker-36: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 09:52:11,535 [Worker-36: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 09:52:11,717 [Worker-36: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 09:52:11,882 [Worker-36: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 09:52:11,883 [Worker-36: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:52:11,884 [Worker-36: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 09:52:11,886 [Worker-36: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 09:52:12,111 [Worker-36: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 09:52:12,637 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:52:12,638 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:52:12,652 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 09:52:13,179 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:52:13,180 [Worker-50: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:52:29,597 [Worker-44: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:52:29,599 [Worker-44: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:52:29,600 [Worker-44: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2018-12-12 09:52:29,607 [Worker-44: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:52:29,608 [Worker-44: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:57:19,117 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:57:19,118 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:57:19,118 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:57:19,122 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:57:19,122 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:57:42,422 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:57:42,423 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:57:42,423 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:57:42,426 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:57:42,426 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:57:52,945 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:57:52,945 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:57:52,946 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:57:52,949 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:57:52,949 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:58:02,477 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:58:02,477 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:58:02,478 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:58:02,480 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:58:02,480 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 09:58:15,019 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:58:15,019 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 09:58:15,020 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 09:58:15,022 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 09:58:15,022 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:41:04,009 [Worker-62: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 10:41:04,631 [Worker-62: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 10:41:04,833 [Worker-62: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 10:41:04,986 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 10:41:04,986 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:41:04,988 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:41:04,990 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 10:41:05,245 [Worker-62: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 10:41:05,764 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:41:05,766 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 10:41:05,780 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 10:41:06,339 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:41:06,340 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:43:20,800 [Worker-70: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 10:43:21,361 [Worker-70: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 10:43:21,541 [Worker-70: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 10:43:21,688 [Worker-70: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 10:43:21,688 [Worker-70: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:43:21,690 [Worker-70: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:43:21,692 [Worker-70: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 10:43:21,937 [Worker-70: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 10:43:22,533 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:43:22,535 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 10:43:22,551 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 10:43:23,219 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:43:23,219 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:43:27,450 [Worker-69: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:43:27,451 [Worker-69: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 10:43:27,452 [Worker-69: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 10:43:27,455 [Worker-69: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:43:27,455 [Worker-69: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:45:48,660 [Worker-75: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 10:45:49,195 [Worker-75: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 10:45:49,369 [Worker-75: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 10:45:49,528 [Worker-75: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 10:45:49,529 [Worker-75: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:45:49,530 [Worker-75: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:45:49,532 [Worker-75: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 10:45:49,793 [Worker-75: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 10:45:50,371 [Worker-73: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:45:50,373 [Worker-73: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 10:45:50,387 [Worker-73: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 10:45:51,017 [Worker-73: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:45:51,017 [Worker-73: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:45:57,825 [Worker-73: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:45:57,827 [Worker-73: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 10:45:57,827 [Worker-73: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2018-12-12 10:45:57,833 [Worker-73: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:45:57,834 [Worker-73: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:49:39,459 [Worker-62: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 10:49:39,992 [Worker-62: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 10:49:40,185 [Worker-62: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 10:49:40,378 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 10:49:40,378 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:49:40,380 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:49:40,382 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 10:49:40,615 [Worker-62: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 10:49:41,181 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:49:41,182 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 10:49:41,198 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 10:49:41,797 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:49:41,797 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:50:20,093 [Worker-63: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 10:50:20,662 [Worker-63: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 10:50:20,872 [Worker-63: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 10:50:21,026 [Worker-63: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 10:50:21,026 [Worker-63: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:50:21,028 [Worker-63: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:50:21,030 [Worker-63: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 10:50:21,255 [Worker-63: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 10:50:21,804 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:50:21,805 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 10:50:21,822 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 10:50:22,380 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:50:22,380 [Worker-70: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:50:29,503 [Worker-71: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:50:29,531 [Worker-71: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 10:50:29,559 [Worker-71: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 10:50:29,602 [Worker-71: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:50:29,602 [Worker-71: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:54:48,888 [Worker-77: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:54:48,889 [Worker-77: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 10:54:48,889 [Worker-77: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 10:54:48,893 [Worker-77: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:54:48,894 [Worker-77: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:57:18,709 [Worker-65: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-12-12 10:57:19,232 [Worker-65: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: NyaGames:Just_Run:0.0.1-SNAPSHOT @ C:\Users\Jaime\Desktop\Just_Run_server\pom.xml.
+2018-12-12 10:57:19,390 [Worker-65: Updating Maven Project] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338) ~[org.eclipse.m2e.maven.indexer_1.9.1.20180912-1600/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349) [org.eclipse.m2e.core_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.9.1.20180912-1601.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.100.v20180828-0158.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+2018-12-12 10:57:19,517 [Worker-65: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/main/java
+2018-12-12 10:57:19,518 [Worker-65: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:57:19,519 [Worker-65: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Just_Run/src/main/resources
+2018-12-12 10:57:19,521 [Worker-65: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Just_Run/src/test/java
+2018-12-12 10:57:19,729 [Worker-65: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-12-12 10:57:20,302 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:57:20,303 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-12 10:57:20,318 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 204 resources
+2018-12-12 10:57:20,917 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:57:20,918 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources
+2018-12-12 10:57:32,798 [Worker-63: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:57:32,800 [Worker-63: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-12 10:57:32,800 [Worker-63: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2018-12-12 10:57:32,808 [Worker-63: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-12 10:57:32,809 [Worker-63: Launching App] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jaime\Desktop\Just_Run_server\src\test\resources

@@ -1,7 +1,7 @@
 JustRun.loadcarga_oceanoState = function(game){
 	
 }
-JustRun.loadcarga_castilloState.prototype = {
+JustRun.loadcarga_oceanoState.prototype = {
 	preload: function(){	
 	//carga de los sprites del mundo de oceano	
 		game.load.image('sea', 'assets/fondos/oceano.png');

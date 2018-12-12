@@ -85,10 +85,13 @@ JustRun.playoceanoState.prototype = {
 				break;
 			}
 		};
-		if(this.catched){
-			ObjetoEscapist.cazado = true;
-		}
+		
 	    if(this.timer.running){
+	    	if((ObjetoChaser.posicionX >= ObjetoEscapist.posicionX && ObjetoChaser.posicionX < ObjetoEscapist.posicionX + 60)||(ObjetoChaser.posicionX+60 >= ObjetoEscapist.posicionX && ObjetoChaser.posicionX+60 < ObjetoEscapist.posicionX+60)){
+				if((ObjetoChaser.posicionY >= ObjetoEscapist.posicionY && ObjetoChaser.posicionY < ObjetoEscapist.posicionY + 60)||(ObjetoChaser.posicionY+60 >= ObjetoEscapist.posicionY && ObjetoChaser.posicionY+60 < ObjetoEscapist.posicionY+60)){
+					ObjetoEscapist.cazado = true;
+				}		
+			}
 	    if(!ObjetoEscapist.cazado){		
 
 		    //salto alto  de las burbujas
@@ -135,7 +138,7 @@ JustRun.playoceanoState.prototype = {
 	    		 //control de las trampas en el otro cliente
 	    		 if(ObjetoTrampas.IPressed && !activatedb){
 				    	activatedb = true;	    		
-				    	this.balltrap();
+				    	this.sharktrap();
 				    }
 				 if (ObjetoTrampas.OPressed && !activatedc){
 			    		activatedc = true;
@@ -265,7 +268,7 @@ JustRun.playoceanoState.prototype = {
 				  //detecta si se han pulsado las teclas que activan las trampas
 				   if (this.IinputIsActive() && !activatedb){
 				    		activatedb = true;	    		
-					    	this.balltrap();
+					    	this.sharktrap();
 					    	ObjetoTrampas.IPressed = true;	
 				    }
 				    if (this.OInputIsActive() && !activatedc){
@@ -626,8 +629,8 @@ JustRun.playoceanoState.prototype = {
 		 if (this.timer.running) {
 	            game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), game.world.centerX-50, 590, "#ffffff",'50px Arial');
 	        }
-	        game.debug.text("Puntuacion Chaser: "+ObjetoChaser.puntuacion, 100, 590, "#ffffff",'20px Arial');
-	        game.debug.text("Puntuacion Escapist: "+ObjetoEscapist.puntuacion, 750, 590, "#ffffff",'20px Arial');
+	        game.debug.text("Puntuacion Chaser: "+ JustRun.puntuacionC, 100, 590, "#ffffff",'20px Arial');
+	        game.debug.text("Puntuacion Escapist: "+ JustRun.puntuacionE, 750, 590, "#ffffff",'20px Arial');
     },
     //gestiona el cambio cuando se acaba el tiempo
     endTimer: function() {
@@ -665,7 +668,8 @@ JustRun.playoceanoState.prototype = {
 				EscapistRunR: false,
 				EscapistJump: false,
 			};
-		console.log(JustRun.userID);
+		ObjetoChaser.puntuacion = JustRun.puntuacionC;
+		ObjetoEscapist.puntuacion = JustRun.puntuacionE;
 		chaser = game.add.sprite(ObjetoChaser.posicionX, ObjetoChaser.posicionY, 'chaser');
 	    game.physics.enable(chaser, Phaser.Physics.ARCADE);
 	    chaser.body.collideWorldBounds = true;
@@ -728,9 +732,11 @@ JustRun.playoceanoState.prototype = {
     		sumado1 = true;
     	}
     	this.sendear();
-    	console.log(ObjetoChaser.puntuacion);
-    	console.log(ObjetoEscapist.puntuacion);
     	game.sound.stopAll();
+    	ObjetoChaser.posicionX = 60;
+    	ObjetoChaser.posicionY = 300;
+    	ObjetoEscapist.posicionX = 1000;
+    	ObjetoEscapist.posicionY = 300;
     	game.state.start("loadcarga_volcan");
     },
     //crea el formato de timer
@@ -762,7 +768,6 @@ JustRun.playoceanoState.prototype = {
     		EscapistJump: ObjetoAnimaciones.EscapistJump,
     	}
     	connection.send(JSON.stringify(object));
-    	console.log(object);
     },
 	//crea el timer, su maximo de tiempo y lo inicia
 	initTimer: function(){		

@@ -1,0 +1,1047 @@
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:14:13.202
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:766)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:155)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:90)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:87)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:201)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:798)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:219)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:262)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:315)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:318)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:370)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:391)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:145)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:14:15.729
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:17:53.179
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:24:43.114
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:30:46.357
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:150)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:135)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:30:46.690
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy$1.run(JavascriptReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:129)
+	at org.eclipse.wst.jsdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:85)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:98)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaReconciler.process(JavaReconciler.java:374)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:30:52.086
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:150)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:135)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:30:52.221
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy$1.run(JavascriptReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:129)
+	at org.eclipse.wst.jsdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:85)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:98)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaReconciler.process(JavaReconciler.java:374)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:30:55.884
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:150)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:135)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:07.808
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy$1.run(JavascriptReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:129)
+	at org.eclipse.wst.jsdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:85)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:98)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaReconciler.process(JavaReconciler.java:374)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:07.925
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:150)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:135)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:08.498
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:150)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:135)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:08.832
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy$1.run(JavascriptReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:129)
+	at org.eclipse.wst.jsdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:85)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:98)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaReconciler.process(JavaReconciler.java:374)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:12.561
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:150)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:135)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:12.861
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy$1.run(JavascriptReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.JavascriptReconcilingStrategy.reconcile(JavascriptReconcilingStrategy.java:129)
+	at org.eclipse.wst.jsdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:85)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:98)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.wst.jsdt.internal.ui.text.JavaReconciler.process(JavaReconciler.java:374)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:20.916
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:150)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:135)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:34.746
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.Scope.getKey(Scope.java:398)
+	at org.eclipse.wst.jsdt.internal.core.dom.binding.SymbolBase.getKey(SymbolBase.java:38)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.putBinding(BindingResolverDom.java:199)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.processVariableDeclaration(BindingResolverDom.java:165)
+	at org.eclipse.wst.jsdt.core.dom.BindingResolverDom.resolve(BindingResolverDom.java:105)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.resolveBindings(ASTParser.java:1110)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:656)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:583)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:576)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:511)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:150)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:135)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:50.560
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:51.196
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:31:51.581
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:32:20.812
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:32:53.226
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:32:53.303
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:32:56.888
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:32:57.912
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:32:58.911
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:03.192
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:03.273
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:11.523
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:14.529
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:17.570
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:21.414
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:21.449
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:27.307
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:27.491
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:28.521
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:31.100
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:31.514
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:33.681
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:40.709
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:33:42.010
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:33:56.012
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:37:21.201
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:41:05.563
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 09:45:26.009
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:47:28.014
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:51:25.413
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 09:52:11.718
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:31.498
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.104
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.usblhhQJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.105
+!MESSAGE subscribing to classpath changes: sts4.classpath.usblhhQJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.106
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.106
+!MESSAGE subsribers = [sts4.classpath.usblhhQJ]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.107
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.109
+!MESSAGE project Just_Run ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.110
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.110
+!MESSAGE Preparing classpath changed notification Just_Run
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.111
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.usblhhQJ => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.111
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.119
+!MESSAGE classpath=63 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.120
+!MESSAGE executing callback sts4.classpath.usblhhQJ Just_Run false 63
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 09:58:35.206
+!MESSAGE executing callback sts4.classpath.usblhhQJ SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 4 0 2018-12-12 10:41:01.968
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.util.concurrent.CompletableFuture.reportGet(Unknown Source)
+	at java.util.concurrent.CompletableFuture.get(Unknown Source)
+	at org.eclipse.lsp4e.operations.hover.LSBasedHover.getHoverInfo(LSBasedHover.java:168)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo(SpringBootJavaHoverProvider.java:35)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:173)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 10:41:04.833
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 10:43:21.541
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 10:45:49.370
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 10:49:40.185
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 10:50:20.873
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 10:55:31.783
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 10:55:52.045
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 10:55:52.093
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 10:56:10.590
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 10:56:10.599
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 10:56:35.274
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2018-12-12 10:56:44.093
+!MESSAGE null
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-12-12 10:57:19.391
+!MESSAGE Unable to add NyaGames/Just_Run/0.0.1-SNAPSHOT/Just_Run-0.0.1-SNAPSHOT.pom
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@C:\Users\Jaime\Documents\GitHub\Just-Run\Just Run\Just_Run_server\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0: files: _0.cfs _1.cfs _2.cfs _4.fdt _4.fdx
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.SegmentInfos.readCurrentVersion(SegmentInfos.java:366)
+	at org.apache.lucene.index.DirectoryIndexReader.isCurrent(DirectoryIndexReader.java:237)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexReader(DefaultIndexingContext.java:456)
+	at org.apache.maven.index.context.DefaultIndexingContext.getIndexSearcher(DefaultIndexingContext.java:475)
+	at org.apache.maven.index.context.IndexUtils.getGroups(IndexUtils.java:251)
+	at org.apache.maven.index.context.IndexUtils.getRootGroups(IndexUtils.java:220)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:785)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:150)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:82)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:338)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:580)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:758)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:300)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:405)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:352)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:177)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:349)
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 11:00:10.982
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.usblhhQJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 11:00:10.982
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.usblhhQJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 11:00:10.983
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-12-12 11:00:10.983
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.usblhhQJ => OK

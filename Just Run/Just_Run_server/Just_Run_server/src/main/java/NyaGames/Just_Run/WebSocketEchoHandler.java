@@ -42,15 +42,12 @@ public class WebSocketEchoHandler extends TextWebSocketHandler {
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		synchronized(sessions) {
-		System.out.println("Message received: " + message.getPayload());
 		JsonNode node = mapper.readTree(message.getPayload());
 		
 		ObjectNode newNode = mapper.createObjectNode();
 		newNode = createPlayerInfo(newNode,node);
 		
-		System.out.println("Message sent: " + newNode.toString());
 		session.sendMessage(new TextMessage(newNode.toString()));
-		System.out.println("enviado");
 		}
 	}
 		
@@ -144,7 +141,6 @@ public class WebSocketEchoHandler extends TextWebSocketHandler {
 			animaciones.EscapistJump = nodeReceived.get("EscapistJump").asBoolean();
 			break;
 		case "join":
-			System.out.println(counter);
 			if(counter == 1) {
 				newNode.put("userID", ""+1);
 				if(listo == false) {
@@ -157,8 +153,6 @@ public class WebSocketEchoHandler extends TextWebSocketHandler {
 					listo1 = nodeReceived.get("listo1").asBoolean();					
 				}
 			}
-			System.out.println("jugador 1: "+listo);
-			System.out.println("jugador 2: "+listo1);
 			if(listo) {
 				if(listo1) {
 					newNode.put("cambio", "cambio");
@@ -166,7 +160,6 @@ public class WebSocketEchoHandler extends TextWebSocketHandler {
 			}
 			break;
 		}
-		System.out.println(newNode.toString());
 		return newNode;
 	}
 
