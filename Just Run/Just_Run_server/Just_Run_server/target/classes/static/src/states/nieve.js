@@ -630,8 +630,8 @@ JustRun.playnieveState.prototype = {
 	        if (this.timer.running) {
 	            game.debug.text(this.formatTime(Math.round((this.timerEvent.delay - this.timer.ms) / 1000)), game.world.centerX-50, 590, "#ffffff",'50px Arial');
 	        }
-	        game.debug.text("Puntuacion Chaser: "+ JustRun.puntuacionC, 100, 590, "#ffffff",'20px Arial');
-	        game.debug.text("Puntuacion Escapist: "+ JustRun.puntuacionE, 750, 590, "#ffffff",'20px Arial');
+	        game.debug.text("Puntuacion Chaser: "+ ObjetoChaser.puntuacion, 100, 590, "#ffffff",'20px Arial');
+	        game.debug.text("Puntuacion Escapist: "+ ObjetoEscapist.puntuacion, 750, 590, "#ffffff",'20px Arial');
 	    },
 	    //se activa cuando acaba el tiempo para subir la puntuacion del escapista y activa el cambio
 	    endTimer: function() {
@@ -643,21 +643,23 @@ JustRun.playnieveState.prototype = {
 	    //comprueba que la puntuacion es correcta y cambia de estado
 	    cambio: function(){
 	    	game.sound.stopAll();
-	    	if(ObjetoEscapist.cazado && !sumado){
-	    		ObjetoEscapist.puntuacion++;
-	    		JustRun.puntuacionE++;
-	    		sumado = true;
-	    	}else if(!sumado1){
-	    		ObjetoChaser.puntuacion++;
-	    		JustRun.puntuacionC++;
-	    		sumado1 = true;
+	    	if(ObjetoEscapist.cazado){
+	    		JustRun.puntuacionC = 1;
+	    		JustRun.puntuacionE = 0;
+	    	}else{
+	    		JustRun.puntuacionE = 1;
+	    		JustRun.puntuacionC = 0;
 	    	}
-	    	this.sendear();
-	    	game.sound.stopAll();
 	    	ObjetoChaser.posicionX = 60;
 	    	ObjetoChaser.posicionY = 300;
+	    	ObjetoChaser.puntuacion += JustRun.puntuacionC;
 	    	ObjetoEscapist.posicionX = 1000;
 	    	ObjetoEscapist.posicionY = 300;
+	    	ObjetoEscapist.puntuacion += JustRun.puntuacionE;
+	    	ObjetoEscapist.cazado = false;
+	    	console.log(ObjetoChaser.puntuacion);
+	    	console.log(ObjetoEscapist.puntuacion);
+	    	this.sendear();
 	    	game.state.start("loadcarga_castillo");
 	    		
 	    },
