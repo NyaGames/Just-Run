@@ -282,9 +282,10 @@ JustRun.playnieveState.prototype = {
 			}else{	
 				//se ha pillado al escapista se muestra la pantalla de cazado y se empieza el cambio de escenas
 				//control del cambio de pantallas
-				ObjetoChaser.puntuacion++;
 				ObjetoEscapist.cazado = true;
 				game.add.sprite(0,0,"catched");
+	    		JustRun.puntuacionC = 1;
+	    		JustRun.puntuacionE = 0;
 		    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 
 		}
@@ -636,20 +637,14 @@ JustRun.playnieveState.prototype = {
 	    //se activa cuando acaba el tiempo para subir la puntuacion del escapista y activa el cambio
 	    endTimer: function() {
 	        this.timer.stop();
-	        ObjetoEscapist.puntuacion++;
 			game.add.sprite(0,0,"libre");
+    		JustRun.puntuacionE = 1;
+    		JustRun.puntuacionC = 0;
 		    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
 	    },
 	    //comprueba que la puntuacion es correcta y cambia de estado
 	    cambio: function(){
 	    	game.sound.stopAll();
-	    	if(ObjetoEscapist.cazado){
-	    		JustRun.puntuacionC = 1;
-	    		JustRun.puntuacionE = 0;
-	    	}else{
-	    		JustRun.puntuacionE = 1;
-	    		JustRun.puntuacionC = 0;
-	    	}
 	    	ObjetoChaser.posicionX = 60;
 	    	ObjetoChaser.posicionY = 300;
 	    	ObjetoChaser.puntuacion += JustRun.puntuacionC;

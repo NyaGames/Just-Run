@@ -280,7 +280,8 @@ JustRun.playdesiertoState.prototype = {
 		}else{	
 			//se ha pillado al escapista se muestra la pantalla de cazado y se empieza el cambio de escenas
 			//control del cambio de pantallas
-			ObjetoChaser.puntuacion++;
+    		JustRun.puntuacionC = 1;
+    		JustRun.puntuacionE = 0;
 			ObjetoEscapist.cazado = true;
 			game.add.sprite(0,0,"catched");
 	    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
@@ -585,39 +586,41 @@ JustRun.playdesiertoState.prototype = {
     //gestiona el cambio cuando se acaba el tiempo
     endTimer: function() {
     	this.timer.stop();
-        ObjetoEscapist.puntuacion++;
+		JustRun.puntuacionE = 1;
+		JustRun.puntuacionC = 0;
 		game.add.sprite(0,0,"libre");
 	    game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio,this);
     },
     crearJugadores: function(){
-		ObjetoChaser = {
-				ID: "Chaser",
-				posicionX: 60,
-				posicionY: 300,
-				puntuacion: JustRun.puntuacionC,
-			};
-			ObjetoEscapist = {
-				ID: "Escapist",
-				posicionX: 1000,
-				posicionY: 300,
-				puntuacion: JustRun.puntuacionE,
-				cazado: false,
-			};
-			ObjetoTrampas = {
-				IPressed: false,
-				OPressed: false,
-				PPressed: false,
-			};
-			ObjetoAnimaciones = {
-				ChaserIdle: true,
-				ChaserRunL: false,
-				ChaserRunR: false,
-				ChaserJump: false,
-				EscapistIdle: true,
-				EscapistRunL: false,
-				EscapistRunR: false,
-				EscapistJump: false,
-			};
+    	object = {"id":"get"};
+		//callbacks de los getters, para inicializar los jugadores
+		connection.send(JSON.stringify(object));
+		connection.onmessage = function(event){
+			var msg = event.data;
+			message = JSON.parse(msg);
+			switch(message.id){
+			case "get":
+				ObjetoChaser.posicionX = message.ChaserX;
+				ObjetoChaser.posicionY = message.ChaserY;
+				ObjetoChaser.puntuacion = message.ChaserPuntuacion;
+				ObjetoEscapist.posicionX = message.EscapistX;
+				ObjetoEscapist.posicionY = message.EscapistY;
+				ObjetoEscapist.puntuacion = message.EscapistPuntuacion;
+				ObjetoEscapist.cazado = false;
+				ObjetoTrampas.IPressed = message.IPressed;
+				ObjetoTrampas.OPressed = message.OPressed;
+				ObjetoTrampas.PPressed = message.PPressed;
+				ObjetoAnimaciones.ChaserIdle = message.ChaserIdle;
+				ObjetoAnimaciones.ChaserRunL = message.ChaserRunL;
+				ObjetoAnimaciones.ChaserRunR = message.ChaserRunR;
+				ObjetoAnimaciones.ChaserJump = message.ChaserJump;
+				ObjetoAnimaciones.EscapistIdle = message.EscapistIdle;
+				ObjetoAnimaciones.EscapistRunL = message.EscapistRunL;
+				ObjetoAnimaciones.EscapistRunR = message.EscapistRunR;
+				ObjetoAnimaciones.EscapistJump = message.EscapistJump;
+				break;
+			}
+		};
 		chaser = game.add.sprite(ObjetoChaser.posicionX, ObjetoChaser.posicionY, 'chaser');
 	    game.physics.enable(chaser, Phaser.Physics.ARCADE);
 	    chaser.body.collideWorldBounds = true;
@@ -670,13 +673,6 @@ JustRun.playdesiertoState.prototype = {
     //genera el cambio de pantallas
     cambio: function(){
     	game.sound.stopAll();
-    	if(ObjetoEscapist.cazado){
-    		JustRun.puntuacionC = 1;
-    		JustRun.puntuacionE = 0;
-    	}else{
-    		JustRun.puntuacionE = 1;
-    		JustRun.puntuacionC = 0;
-    	}
     	ObjetoChaser.posicionX = 60;
     	ObjetoChaser.posicionY = 300;
     	ObjetoChaser.puntuacion += JustRun.puntuacionC;
