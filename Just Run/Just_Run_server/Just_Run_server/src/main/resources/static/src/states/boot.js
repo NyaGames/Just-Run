@@ -1,4 +1,5 @@
-var JustRun = {}
+var JustRun = {
+}
 JustRun.bootState = function(game){
 	
 }

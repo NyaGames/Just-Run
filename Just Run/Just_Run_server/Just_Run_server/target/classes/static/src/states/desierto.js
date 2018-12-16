@@ -144,7 +144,7 @@ JustRun.playdesiertoState.prototype = {
 				 ObjetoTrampas.OPressed = false;
 				 ObjetoTrampas.PPressed = false;
 				//control del movimiento del chaser
-			    if (this.AInputIsActive()) {
+			    if (AInputIsActive()) {
 			    	chaser.scale.setTo(-1, 1);
 			    	if(this.onTheGround || this.onTheLedge){
 			    		chaser.animations.play('run');
@@ -155,7 +155,7 @@ JustRun.playdesiertoState.prototype = {
 			    		
 			    	}
 			        chaser.body.acceleration.x = -aceleracion;
-			    } else if (this.DInputIsActive()) {
+			    } else if (DInputIsActive()) {
 			    	chaser.scale.setTo(1, 1);
 			    	if(this.onTheGround || this.onTheLedge){
 			    		chaser.animations.play('run'); 
@@ -179,7 +179,7 @@ JustRun.playdesiertoState.prototype = {
 			        jumping = false;
 			            
 			    }
-			    if (this.jumps > 0 && this.WInputIsActive(5)) {
+			    if (this.jumps > 0 && WInputIsActive(5)) {
 			    	chaser.animations.play('doblejump');
 			    	ObjetoAnimaciones.ChaserIdle = false;
 		    		ObjetoAnimaciones.ChaserRunL = false;
@@ -188,7 +188,7 @@ JustRun.playdesiertoState.prototype = {
 			    	chaser.body.velocity.y = salto;
 			        jumping = true;
 			    }	        
-			    if (jumping && this.WInputReleased()) {
+			    if (jumping && WInputReleased()) {
 			        this.jumps--;
 			        jumping = false;
 			    }
@@ -211,7 +211,7 @@ JustRun.playdesiertoState.prototype = {
 		    	chaser.body.position.x = ObjetoChaser.posicionX;
 		    	chaser.body.position.y = ObjetoChaser.posicionY;
 		    	//control movimiento escapist
-	    		if (this.AInputIsActive()) {
+	    		if (AInputIsActive()) {
 			    	if(this.onTheGround1 || this.onTheLedge1){
 			    		escapist.scale.setTo(-1,1);
 			    		escapist.animations.play('run');
@@ -222,7 +222,7 @@ JustRun.playdesiertoState.prototype = {
 			    	}
 			        	escapist.body.acceleration.x = -aceleracion;
 			    	
-			    } else if (this.DInputIsActive()) {
+			    } else if (DInputIsActive()) {
 			    	if(this.onTheGround1 || this.onTheLedge1){
 			    		escapist.scale.setTo(1,1);
 			    		escapist.animations.play('run');
@@ -244,7 +244,7 @@ JustRun.playdesiertoState.prototype = {
 				    	this.jumps1 = 2;
 				        jumping1 = false;	       
 				    }
-				    if (this.jumps1 > 0 && this.WInputIsActive(5)) {
+				    if (this.jumps1 > 0 && WInputIsActive(5)) {
 				    		escapist.animations.play('doblejump');
 				    		ObjetoAnimaciones.EscapistIdle = false;
 				    		ObjetoAnimaciones.EscapistRunL = false;
@@ -253,22 +253,22 @@ JustRun.playdesiertoState.prototype = {
 				    		escapist.body.velocity.y = salto;
 				        	jumping1 = true;    
 				    }
-				    if (jumping1 && this.WInputReleased()) {
+				    if (jumping1 && WInputReleased()) {
 				        this.jumps1--;
 				        jumping1 = false;
 				    }
 				  //detecta si se han pulsado las teclas que activan las trampas
-				   if (this.IinputIsActive() && !activatedb){
+				   if (IinputIsActive() && !activatedb){
 				    		activatedb = true;	    		
 					    	this.balltrap();
 					    	ObjetoTrampas.IPressed = true;	
 				    }
-				    if (this.OInputIsActive() && !activatedc){
+				    if (OInputIsActive() && !activatedc){
 				    		activatedc = true;
 				    		this.strap();
 				    		ObjetoTrampas.OPressed = true;
 				    }
-				    if (this.PInputIsActive() && !activatedgp){
+				    if (PInputIsActive() && !activatedgp){
 				    		activatedgp = true;
 					    	this.ptrap();
 					    	ObjetoTrampas.PPressed = true;
@@ -294,45 +294,6 @@ JustRun.playdesiertoState.prototype = {
 	emittere.emitY = escapist.body.position.y+50;
 	}
 	   
-	},
-
-	//controles con las flechas y devuelven un bool en caso de que este activo	
-	//control con WASD
-	AInputIsActive: function() {
-	    var isActive = false;
-	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.A);
-	    return isActive;
-	},
-	DInputIsActive: function() {
-	    var isActive = false;
-	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.D);
-	    return isActive;
-	},
-	//recibe un duración para evitar saltos infinitos
-	WInputIsActive: function(duration) {
-	    var isActive = false;
-	    isActive = this.input.keyboard.downDuration(Phaser.Keyboard.W, duration);
-	    return isActive;
-	},
-	WInputReleased: function() {
-	    var released = false;
-	    released = this.input.keyboard.upDuration(Phaser.Keyboard.W);
-	    return released;
-	},
-	IinputIsActive: function() {
-	    var isActive = false;
-	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.I);
-	    return isActive;
-	},
-	OInputIsActive: function() {
-	    var isActive = false;
-	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.O);
-	    return isActive;
-	},
-	PInputIsActive: function() {
-	    var isActive = false;
-	    isActive = this.input.keyboard.isDown(Phaser.Keyboard.P);
-	    return isActive;
 	},
 	//metodos de las trampas
 	//funcion que ejecuta el movimiento de la bola a ras de suelo, modificando la velocidad, cambiando el boton y llamando al metodo que resetea la trampa tras x tiempo
