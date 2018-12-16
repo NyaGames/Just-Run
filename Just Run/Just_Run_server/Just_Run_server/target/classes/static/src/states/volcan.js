@@ -55,6 +55,7 @@ JustRun.playvolcanState.prototype = {
 			//crea las colisiones que los diversos elementos del mapa, asi como las variables de control usadas durante el nivel
 		    this.initCollisions();
 		    get();
+		    //comprueba que el tiempo no se ha acabado y que el escapist no ha sido cazado
 		    if(this.timer.running){
 		    	if((ObjetoChaser.posicionX >= ObjetoEscapist.posicionX && ObjetoChaser.posicionX < ObjetoEscapist.posicionX + 60)||(ObjetoChaser.posicionX+60 >= ObjetoEscapist.posicionX && ObjetoChaser.posicionX+60 < ObjetoEscapist.posicionX+60)){
 					if((ObjetoChaser.posicionY >= ObjetoEscapist.posicionY && ObjetoChaser.posicionY < ObjetoEscapist.posicionY + 60)||(ObjetoChaser.posicionY+60 >= ObjetoEscapist.posicionY && ObjetoChaser.posicionY+60 < ObjetoEscapist.posicionY+60)){

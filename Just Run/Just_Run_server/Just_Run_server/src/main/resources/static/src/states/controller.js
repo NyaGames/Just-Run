@@ -38,34 +38,7 @@ function PInputIsActive(){
 }
 //creacion de los jugadores
 function crearJugadores(){
-		ObjetoChaser = {
-			ID: "Chaser",
-			posicionX: 60,
-			posicionY: 300,
-			puntuacion: JustRun.puntuacionC,
-		};
-		ObjetoEscapist = {
-			ID: "Escapist",
-			posicionX: 1000,
-			posicionY: 300,
-			puntuacion: JustRun.puntuacionE,
-			cazado: false,
-		};
-		ObjetoTrampas = {
-			IPressed: false,
-			OPressed: false,
-			PPressed: false,
-		};
-		ObjetoAnimaciones = {
-			ChaserIdle: true,
-			ChaserRunL: false,
-			ChaserRunR: false,
-			ChaserJump: false,
-			EscapistIdle: true,
-			EscapistRunL: false,
-			EscapistRunR: false,
-			EscapistJump: false,
-		};
+	ObjectEscapist.cazado = false;
 	chaser = game.add.sprite(ObjetoChaser.posicionX, ObjetoChaser.posicionY, 'chaser');
     game.physics.enable(chaser, Phaser.Physics.ARCADE);
     chaser.body.collideWorldBounds = true;
@@ -115,6 +88,7 @@ function crearJugadores(){
     escapist.anchor.setTo(0.3,0.5);			    
     jumping1 = false;	 
 }
+//envia la informacion al servidor
 function sendear(){
 	object = {
 		id:"post",
@@ -139,9 +113,9 @@ function sendear(){
 	}
 	connection.send(JSON.stringify(object));
 }
+//recibe la informacion del servidor
 function get(){
 	object = {"id":"get"};
-	//callbacks de los getters, para inicializar los jugadores
 	connection.send(JSON.stringify(object));
 	connection.onmessage = function(event){
 		var msg = event.data;

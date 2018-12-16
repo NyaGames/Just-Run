@@ -6,14 +6,38 @@ JustRun.playnieveState = function(game){
 	var emitterc;
 	var emittere;
 	
-	var chaser;
-	var escapist;
+	ObjetoChaser = {
+			ID: "Chaser",
+			posicionX: 60,
+			posicionY: 300,
+			puntuacion: 0,
+		};
+		ObjetoEscapist = {
+			ID: "Escapist",
+			posicionX: 1000,
+			posicionY: 300,
+			puntuacion: 0,
+			cazado: false,
+		};
+		ObjetoTrampas = {
+			IPressed: false,
+			OPressed: false,
+			PPressed: false,
+		};
+		ObjetoAnimaciones = {
+			ChaserIdle: true,
+			ChaserRunL: false,
+			ChaserRunR: false,
+			ChaserJump: false,
+			EscapistIdle: true,
+			EscapistRunL: false,
+			EscapistRunR: false,
+			EscapistJump: false,
+		};
 	var object;
 	var sumado = false;
 	var sumado1 = false;
 	
-    //variables de carga de los get
-    var cargacompleta = false;
     var nivel = "nieve";
     
 	//variables del movimiento
@@ -58,7 +82,6 @@ JustRun.playnieveState.prototype = {
 		update: function() {
 			//crea las colisiones que los diversos elementos del mapa, asi como las variables de control usadas durante el nivel
 		    this.initCollisions();
-		    //comprueba que el tiempo no se ha acabado y que el escapist no ha sido cazado
 	    	get();		
 		    if(this.timer.running){
 		    	if((ObjetoChaser.posicionX >= ObjetoEscapist.posicionX && ObjetoChaser.posicionX < ObjetoEscapist.posicionX + 60)||(ObjetoChaser.posicionX+60 >= ObjetoEscapist.posicionX && ObjetoChaser.posicionX+60 < ObjetoEscapist.posicionX+60)){
@@ -256,7 +279,8 @@ JustRun.playnieveState.prototype = {
 				//control del cambio de pantallas
 				ObjetoEscapist.cazado = true;
 				game.add.sprite(0,0,"catched");
-	    		JustRun.puntuacionC++;
+	    		JustRun.puntuacionC = 1;
+	    		JustRun.puntuacionE = 0;
 		    	game.time.events.add(Phaser.Timer.SECOND * 2,this.cambio(),this);
 
 		}
