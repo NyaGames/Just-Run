@@ -1,6 +1,7 @@
 # Just-Run   
 
-Este es el documento de diseño de _Just Run_, un videojuego de PC desarrollado para la asignatura de Juegos en Red con objetivo de crear un producto original y de calidad con lo aprendido en dicha asignatura.
+Este es el documento de diseño de _Just Run_, un videojuego de PC desarrollado para la asignatura de Juegos en Red con objetivo de crear un producto original y de calidad con lo aprendido en dicha asignatura.    
+Video sobre el funcionamiento del videojuego: https://youtu.be/OwWwwuFaNtQ
 
 # 1. Introducción
 
